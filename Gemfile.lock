@@ -8,10 +8,13 @@ GEM
       sass (~> 3.1)
     cri (2.0.2)
     fssm (0.2.7)
+    haml (3.1.2)
+    mime-types (1.16)
     nanoc (3.2.1)
       nanoc3 (>= 3.2.1)
     nanoc3 (3.2.1)
       cri (~> 2.0)
+    rack (1.3.2)
     sass (3.1.7)
 
 PLATFORMS
@@ -19,4 +22,7 @@ PLATFORMS
 
 DEPENDENCIES
   compass
+  haml
+  mime-types
   nanoc
+  rack

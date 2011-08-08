@@ -10,21 +10,25 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
-compile '/stylesheet/' do
-  # don’t filter or layout
+require 'compass'
+
+Compass.add_project_configuration 'config.rb'
+
+compile '/assets/style/*' do
+  filter :sass, Compass.sass_engine_options
 end
 
-compile '*' do
+compile '/' do
   filter :erb
-  layout 'default'
+  layout 'home'
 end
 
-route '/stylesheet/' do
-  '/style.css'
+route '/assets/style/*' do
+  item.identifier.chop + '.css'
 end
 
 route '*' do
   item.identifier + 'index.html'
 end
 
-layout '*', :erb
+layout '*', :haml, :format => :html5

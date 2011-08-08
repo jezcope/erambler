@@ -8,7 +8,7 @@ sass_dir = "content/assets/style"
 images_dir = "output/assets/images"
 javascripts_dir = "output/assets/javascripts"
 
-output_style = :compressed
+output_style = :expanded
 sass_options = {
   syntax: :scss
 }

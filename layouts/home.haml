@@ -1,28 +1,16 @@
 !!!
 %html{ :lang => 'en' }
-  %head
-    %meta{:charset => 'utf8'}
-    %link{:rel => 'stylesheet',
-          :href => '/assets/style/screen.css',
-          :media => 'screen, projection',
-          :type => 'text/css' }
-    %link{:rel => 'stylesheet',
-          :href => '/assets/style/print.css',
-          :media => 'print',
-          :type => 'text/css' }
-    /[if lt IE 8]
-      %link{:rel => 'stylesheet',
-            :href => '/assets/style/ie.css',
-            :media => 'screen, projection',
-            :type => 'text/css' }
-  %body
+  %head= render 'partials/head'
+  %body.bp
     #container
       %header
-        Header
-        %nav
-          Navigation
+        %hgroup
+          <h1>e-Rambler</h1>
+          <h2>Jez Cope's e-learning blog</h2>
+      %nav= render 'partials/nav'
       #content
-        = yield
+        %article
+          = yield
       #sidebar
         Sidebar
       %footer

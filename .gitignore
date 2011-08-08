@@ -1,3 +1,4 @@
 *.sw[op]
 output
 tmp
+.sass-cache

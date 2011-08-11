@@ -16,6 +16,14 @@
 -   Post updates to twitter
 -   Sitemap
 
+# Important post metadata
+
+-   Title
+-   Date
+-   Time?
+-   Category
+-   Tags
+
 # Sidebar
 
 ## Current

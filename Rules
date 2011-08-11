@@ -19,7 +19,12 @@ compile '/assets/style/*' do
 end
 
 compile '/' do
-  filter :erb
+  filter :haml
+  layout 'home'
+end
+
+compile '/articles/*' do
+  filter :kramdown
   layout 'home'
 end
 

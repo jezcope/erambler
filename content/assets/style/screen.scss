@@ -17,7 +17,8 @@ body.bp {
   // Remove the scaffolding when you're ready to start doing visual design.
   // Or leave it in if you're happy with how blueprint looks out-of-the-box
 
-  background: lightgray;
+  font-family: 'Droid Serif', Georgia, serif;
+  /*background: lightgray;*/
 }
 
 form.bp {
@@ -27,7 +28,7 @@ form.bp {
 
 #container {
   @include container;
-  @include showgrid;
+  /*@include showgrid;*/
 }
 
 header, nav, footer {
@@ -44,12 +45,16 @@ header, nav, footer {
 
 article {
   /*padding: 1em $blueprint-grid-margin;*/
-  @include border-radius($blueprint-grid-margin);
+  /*@include border-radius($blueprint-grid-margin);*/
 }
 
 header, nav, footer, #sidebar, article {
-    background-color: transparent;
-  background-color: rgba(255, 255, 255, 0.6);  /* FF3+, Saf3+, Opera 10.10+, Chrome, IE9 */
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99FFFFFF,endColorstr=#99FFFFFF); /* IE6–IE9 */
-            zoom: 1;
+    /*background-color: transparent;*/
+  /*background-color: rgba(255, 255, 255, 0.6);  [> FF3+, Saf3+, Opera 10.10+, Chrome, IE9 <]*/
+            /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99FFFFFF,endColorstr=#99FFFFFF); [> IE6–IE9 <]*/
+            /*zoom: 1;*/
           }
+
+.post-date {
+  font-style: italic;
+}

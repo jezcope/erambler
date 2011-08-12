@@ -1,7 +1,9 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    chunky_png (1.2.0)
+    adsf (1.0.1)
+      rack (>= 1.0.0)
+    chunky_png (1.2.1)
     compass (0.11.5)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -22,6 +24,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  adsf
   compass
   haml
   kramdown

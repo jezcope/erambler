@@ -35,6 +35,15 @@ header, nav, footer {
   @include column($blueprint-grid-columns);
 }
 
+nav {
+  ul {
+    li {
+      display: inline-block;
+      margin-right: 1em;
+    }
+  }
+}
+
 #sidebar {
   @include column(4, true);
 }

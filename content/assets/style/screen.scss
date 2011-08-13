@@ -28,18 +28,27 @@ form.bp {
 
 #container {
   @include container;
-  /*@include showgrid;*/
+	@include showgrid;
 }
 
 header, nav, footer {
   @include column($blueprint-grid-columns);
 }
 
+nav {
+  ul {
+    li {
+      display: inline-block;
+      margin-right: 1em;
+    }
+  }
+}
+
 #sidebar {
   @include column(4, true);
 }
 
-#content {
+#content, .post article {
   @include column(8);
 }
 
@@ -57,4 +66,12 @@ header, nav, footer, #sidebar, article {
 
 .post-date {
   font-style: italic;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
 }

@@ -8,10 +8,6 @@
           <h1>e-Rambler</h1>
           <h2>Jez Cope's e-learning blog</h2>
       %nav= render 'partials/nav'
-      #content
-        %article
-          = yield
-      #sidebar
-        Sidebar
-      %footer
-        Footer
+      #content= yield
+      #sidebar= render 'partials/sidebar'
+      %footer= render 'partials/footer'

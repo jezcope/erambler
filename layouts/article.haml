@@ -1,0 +1,15 @@
+!!!
+%html{ :lang => 'en' }
+  %head= render 'partials/head'
+  %body.bp.post
+    #container
+      %header
+        .blog-title e-Rambler
+        .blog-subtitle Jez Cope's e-learning blog
+      %nav= render 'partials/nav'
+      %article
+        %h1.post-title= @item[:title]
+        .post-date= date_for(@item).strftime '%A %e %B, %Y'
+        .post-content= yield
+      #sidebar= render 'partials/sidebar'
+      %footer= render 'partials/footer'

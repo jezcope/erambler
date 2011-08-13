@@ -1,0 +1,11 @@
+- n = @config[:page_size]
+- sorted_articles.drop(@page*n).take(n).each do |article|
+  %article
+    %h2= link_to article[:title], article
+    .post-date= date_for(article).strftime '%A %e %B, %Y'
+    .post-content= article.compiled_content
+#page-nav
+  - unless @page == 0
+    = link_to '<< Newer posts', archive_page_url(@page - 1)
+  - unless (@page+1) * n >= articles.count
+    = link_to 'Older posts >>', archive_page_url(@page + 1)

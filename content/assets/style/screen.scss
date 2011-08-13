@@ -1,10 +1,11 @@
 @import "blueprint/reset";
 
 @import "partials/base";
-@import "partials/utils";
 
 @import "blueprint";
 @import "blueprint/scaffolding";
+
+@import "compass/css3";
 
 // If you are doing a lot of stylesheet concatenation, it is suggested
 // that you scope your blueprint styles, so that you can better control
@@ -18,7 +19,7 @@ body.bp {
   // Or leave it in if you're happy with how blueprint looks out-of-the-box
 
   font-family: 'Droid Serif', Georgia, serif;
-  /*background: lightgray;*/
+  background: url('/assets/images/stripe2.png');
 }
 
 form.bp {
@@ -28,7 +29,7 @@ form.bp {
 
 #container {
   @include container;
-	@include showgrid;
+	/*@include showgrid;*/
 }
 
 header, nav, footer {
@@ -58,11 +59,11 @@ article {
 }
 
 header, nav, footer, #sidebar, article {
-    /*background-color: transparent;*/
-  /*background-color: rgba(255, 255, 255, 0.6);  [> FF3+, Saf3+, Opera 10.10+, Chrome, IE9 <]*/
-            /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99FFFFFF,endColorstr=#99FFFFFF); [> IE6–IE9 <]*/
-            /*zoom: 1;*/
-          }
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.8);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);
+  zoom: 1;
+}
 
 .post-date {
   font-style: italic;

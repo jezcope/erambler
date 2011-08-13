@@ -8,8 +8,11 @@ require 'compass'
 
 Compass.add_project_configuration 'config/compass.rb'
 
-compile '/assets/style/*' do
+compile '/assets/style/*/' do
   filter :sass, Compass.sass_engine_options
+end
+
+compile '/assets/images/*' do
 end
 
 compile '/' do
@@ -27,7 +30,14 @@ compile '/articles/*' do
   layout 'article'
 end
 
-route '/assets/style/*' do
+route '/assets/style/partials/*' do
+end
+
+route '/assets/images/*' do
+  item.identifier.chop + '.' + item[:extension]
+end
+
+route '/assets/style/*/' do
   item.identifier.chop + '.css'
 end
 

@@ -28,7 +28,7 @@ form.bp {
 
 #container {
   @include container;
-  /*@include showgrid;*/
+	@include showgrid;
 }
 
 header, nav, footer {
@@ -48,7 +48,7 @@ nav {
   @include column(4, true);
 }
 
-#content {
+#content, .post article {
   @include column(8);
 }
 
@@ -66,4 +66,12 @@ header, nav, footer, #sidebar, article {
 
 .post-date {
   font-style: italic;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
 }

@@ -14,3 +14,5 @@
         :type => 'text/css' }
 /[if lt IE 9]
   %script{:src => "http://html5shiv.googlecode.com/svn/trunk/html5.js"}
+
+%title= @item[:title].andand + (" | " + @config[:title]) || @config[:title]

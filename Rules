@@ -32,7 +32,7 @@ route '/assets/style/*' do
 end
 
 route '/articles/*' do
-	'/' + item.identifier.split('/')[-1] + '.html'
+	'/' + item.identifier.split('/')[-1] + '/index.html'
 end
 
 route '*' do

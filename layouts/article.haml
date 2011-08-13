@@ -1,7 +1,7 @@
 !!!
 %html{ :lang => 'en' }
   %head= render 'partials/head'
-  %body.bp
+  %body.bp.post
     #container
       %header
         .blog-title e-Rambler
@@ -11,7 +11,5 @@
         %h1.post-title= @item[:title]
         .post-date= date_for(@item).strftime '%A %e %B, %Y'
         .post-content= yield
-      #sidebar
-        Sidebar
-      %footer
-        Footer
+      #sidebar= render 'partials/sidebar'
+      %footer= render 'partials/footer'

@@ -18,7 +18,7 @@ body.bp {
   // Remove the scaffolding when you're ready to start doing visual design.
   // Or leave it in if you're happy with how blueprint looks out-of-the-box
 
-  font-family: 'Droid Serif', Georgia, serif;
+  font-family: 'Prociono', 'Droid Serif', Georgia, serif;
   background: url('/assets/images/stripe2.png');
 }
 
@@ -54,8 +54,8 @@ nav {
 }
 
 article {
-  /*padding: 1em $blueprint-grid-margin;*/
-  /*@include border-radius($blueprint-grid-margin);*/
+  padding: $blueprint-font-size * 1.5;
+  @include border-radius($blueprint-font-size*1.5);
 }
 
 header, nav, footer, #sidebar, article {

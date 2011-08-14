@@ -5,8 +5,8 @@
     #container
       %header
         %hgroup
-          <h1>e-Rambler</h1>
-          <h2>Jez Cope's e-learning blog</h2>
+          %h1= @config[:title]
+          %h2= @config[:tagline]
       %nav= render 'partials/nav'
       #content= yield
       #sidebar= render 'partials/sidebar'

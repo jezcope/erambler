@@ -18,8 +18,12 @@ body.bp {
   // Remove the scaffolding when you're ready to start doing visual design.
   // Or leave it in if you're happy with how blueprint looks out-of-the-box
 
-  font-family: 'Prociono', 'Droid Serif', Georgia, serif;
-  background: url('/assets/images/stripe3-rotated.png');
+  font-family: 'OFL Sorts Mill Goudy', 'Droid Serif', Georgia, serif;
+  background: fixed url('/assets/images/stripe5.png');
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'ChunkFive', 'Verdana', sans-serif;
 }
 
 form.bp {
@@ -33,10 +37,22 @@ form.bp {
 }
 
 header, nav, footer {
-  @include column($blueprint-grid-columns);
+  @include column($blueprint-grid-columns, true);
+}
+
+header {
+	/*@include border-bottom-radius;*/
+	/*@include append-bottom($baseline);*/
+
+	hgroup {
+		margin: $baseline;
+	}
 }
 
 nav {
+	@include border-bottom-radius;
+	@include append-bottom($baseline);
+
   ul {
     li {
       display: inline-block;
@@ -46,19 +62,26 @@ nav {
 }
 
 #sidebar {
+	@include prepend(1);
   @include column(4, true);
 }
 
+.sidebar-box {
+	padding: $baseline;
+	@include border-radius;
+}
+
 #content, .post article {
-  @include column(8);
+  @include column(7);
 }
 
 article {
-  padding: $blueprint-font-size * 1.5;
-  @include border-radius($blueprint-font-size*1.5);
+  padding: $baseline $baseline 0;
+	@include append-bottom($baseline);
+  @include border-radius;
 }
 
-header, nav, footer, #sidebar, article {
+header, nav, footer, .sidebar-box, article {
   background-color: transparent;
   background-color: rgba(255, 255, 255, 0.8);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);

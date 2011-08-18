@@ -12,3 +12,4 @@ gem "nokogiri"
 gem "coffee-script"
 
 gem "andand"
+gem "faker"

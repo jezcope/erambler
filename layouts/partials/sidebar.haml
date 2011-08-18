@@ -1,3 +1,7 @@
 .sidebar-box.about-me
   %h3 About me
   %p Hi, I'm Jez. Welcome to my blog, where I talk about learning, teaching and educational technology.
+- 4.times do
+  .sidebar-box.lorem
+    %h3= Faker::Lorem.words.join(' ').capitalize
+    %p= Faker::Lorem.paragraph

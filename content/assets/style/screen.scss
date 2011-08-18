@@ -23,7 +23,7 @@ body.bp {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Amaranth', 'Verdana', sans-serif;
+  font-family: 'Amaranth', 'Verdana', sans-serif;
 }
 
 form.bp {
@@ -41,14 +41,14 @@ header, nav, footer {
 }
 
 header {
-	/*@include border-bottom-radius;*/
-	/*@include append-bottom($baseline);*/
+  /*@include border-bottom-radius;*/
+  /*@include append-bottom($baseline);*/
   @include prepend-top;
 }
 
 nav {
-	/*@include border-bottom-radius;*/
-	/*@include append-bottom($baseline);*/
+  /*@include border-bottom-radius;*/
+  /*@include append-bottom($baseline);*/
 
   ul {
     display: inline-block;
@@ -63,7 +63,7 @@ nav {
 }
 
 #sidebar {
-	/*@include prepend(1);*/
+  /*@include prepend(1);*/
   @include column(4, true);
 }
 
@@ -73,8 +73,8 @@ hr.colruler {
 }
 
 .sidebar-box {
-	/*padding: 0 $baseline;*/
-	@include border-radius;
+  /*padding: 0 $baseline;*/
+  @include border-radius;
 }
 
 #content, .post article {
@@ -84,7 +84,7 @@ hr.colruler {
 
 article {
   /*padding: 0 $baseline;*/
-	@include append-bottom($baseline);
+  @include append-bottom($baseline);
   /*@include border-radius;*/
 }
 
@@ -109,9 +109,9 @@ footer {
 }
 
 .alignright {
-	float: right;
+  float: right;
 }
 
 .alignleft {
-	float: left;
+  float: left;
 }

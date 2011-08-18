@@ -71,7 +71,7 @@ hr.colruler {
 }
 
 .sidebar-box {
-	padding: $baseline;
+	padding: 0 $baseline;
 	@include border-radius;
 }
 
@@ -81,7 +81,7 @@ hr.colruler {
 }
 
 article {
-  padding: $baseline $baseline 0;
+  padding: 0 $baseline;
 	@include append-bottom($baseline);
   /*@include border-radius;*/
 }

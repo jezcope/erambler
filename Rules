@@ -36,6 +36,11 @@ compile '/articles/*' do
   layout 'article'
 end
 
+compile '/articles/*', :rep => :archive do
+  filter :kramdown
+  filter :reduce_header_level, :by => -2
+end
+
 route '/assets/style/partials/*' do
 end
 
@@ -53,6 +58,10 @@ end
 
 route '/articles/*' do
 	'/' + item.identifier.split('/')[-1] + '/index.html'
+end
+
+route '/articles/*', :rep => :archive do
+  nil
 end
 
 route '*' do

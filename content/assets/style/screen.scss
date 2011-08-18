@@ -18,12 +18,12 @@ body.bp {
   // Remove the scaffolding when you're ready to start doing visual design.
   // Or leave it in if you're happy with how blueprint looks out-of-the-box
 
-  font-family: 'OFL Sorts Mill Goudy', 'Droid Serif', Georgia, serif;
-  background: fixed url('/assets/images/stripe5.png');
+  font-family: 'OFL Sorts Mill Goudy', 'OFL Sorts Mill Goudy TT', 'Droid Serif', Georgia, serif;
+  /*background: fixed url('/assets/images/stripe5.png');*/
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'ChunkFive', 'Verdana', sans-serif;
+	font-family: 'Amaranth', 'Verdana', sans-serif;
 }
 
 form.bp {
@@ -50,8 +50,8 @@ header {
 }
 
 nav {
-	@include border-bottom-radius;
-	@include append-bottom($baseline);
+	/*@include border-bottom-radius;*/
+	/*@include append-bottom($baseline);*/
 
   ul {
     li {
@@ -62,8 +62,12 @@ nav {
 }
 
 #sidebar {
-	@include prepend(1);
+	/*@include prepend(1);*/
   @include column(4, true);
+}
+
+hr.colruler {
+  @include colruler;
 }
 
 .sidebar-box {
@@ -72,23 +76,25 @@ nav {
 }
 
 #content, .post article {
-  @include column(7);
+  @include column(8);
+  @include border;
 }
 
 article {
   padding: $baseline $baseline 0;
 	@include append-bottom($baseline);
-  @include border-radius;
+  /*@include border-radius;*/
 }
 
-header, nav, footer, .sidebar-box, article {
-  background-color: transparent;
-  background-color: rgba(255, 255, 255, 0.8);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);
-  zoom: 1;
-}
+/*header, nav, footer, .sidebar-box, article {*/
+  /*background-color: transparent;*/
+  /*background-color: rgba(255, 255, 255, 0.8);*/
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);*/
+  /*zoom: 1;*/
+/*}*/
 
 .post-date {
+  @include append-bottom;
   font-style: italic;
 }
 

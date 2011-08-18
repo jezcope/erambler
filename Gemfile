@@ -8,6 +8,7 @@ gem "mime-types"
 gem "compass"
 gem "haml"
 gem "kramdown"
+gem "nokogiri"
 gem "coffee-script"
 
 gem "andand"

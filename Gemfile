@@ -13,3 +13,4 @@ gem "coffee-script"
 
 gem "andand"
 gem "faker"
+gem "therubyracer"

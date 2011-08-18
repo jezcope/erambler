@@ -33,7 +33,7 @@ form.bp {
 
 #container {
   @include container;
-	/*@include showgrid;*/
+  /*@include showgrid;*/
 }
 
 header, nav, footer {
@@ -43,10 +43,7 @@ header, nav, footer {
 header {
 	/*@include border-bottom-radius;*/
 	/*@include append-bottom($baseline);*/
-
-	hgroup {
-		margin: $baseline;
-	}
+  @include prepend-top;
 }
 
 nav {
@@ -54,6 +51,10 @@ nav {
 	/*@include append-bottom($baseline);*/
 
   ul {
+    display: inline-block;
+    padding: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
     li {
       display: inline-block;
       margin-right: 1em;
@@ -68,10 +69,11 @@ nav {
 
 hr.colruler {
   @include colruler;
+  margin-top: -0.05em;
 }
 
 .sidebar-box {
-	padding: 0 $baseline;
+	/*padding: 0 $baseline;*/
 	@include border-radius;
 }
 
@@ -81,7 +83,7 @@ hr.colruler {
 }
 
 article {
-  padding: 0 $baseline;
+  /*padding: 0 $baseline;*/
 	@include append-bottom($baseline);
   /*@include border-radius;*/
 }
@@ -92,6 +94,14 @@ article {
   /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);*/
   /*zoom: 1;*/
 /*}*/
+
+footer {
+  @include prepend-top;
+}
+
+#page-nav {
+  @include append-bottom;
+}
 
 .post-date {
   @include append-bottom;

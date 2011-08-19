@@ -78,8 +78,8 @@ hr.colruler {
 }
 
 #content, .post article {
-  @include column(8);
-  @include border;
+  @include column(7);
+  @include colborder;
 }
 
 article {

@@ -1,20 +1,29 @@
-# Features I want to keep
+# Features to implement
 
--   BackType Connect?
--   Feedburner?
+## Essential
+
+-   Comments
 -   Google Analytics
--   Woopra?
+
+## Nice-to-have
+
+-   Sitemap
 -   Sharing buttons
     -   Twitter
     -   Facebook
     -   +1
--   OpenID
--   Write in MarkDown
--   Archives page
--   Tags (with tag index)
--   Site search?
 -   Post updates to twitter
--   Sitemap
+-   OpenID
+-   Tags (with tag index)
+
+## Not sure
+
+-   Feedburner
+-   Write in MarkDown
+
+## Implemented
+
+-   Archives page
 
 # Important post metadata
 

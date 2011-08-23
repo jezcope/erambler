@@ -12,6 +12,7 @@ tags:
 - Open bibliography
 - Open citation
 - Open data
+wpid: 626
 ---
 My second main session at the JISC conference was entitled [The A-B-C-Ds of Open Scholarship][session info], a panel discussion with four speakers:
 

@@ -12,6 +12,7 @@ tags:
 - BathCR
 - Researcher development
 - Microblogging
+wpid: 642
 ---
 <img alt="Shoots by Gemma Garner" src="http://farm5.static.flickr.com/4077/5414162854_2eba8151a7_m.jpg" title="Shoots" width="240" height="175" class="alignright" /> How often do you try something new? Not sure? Well today a whole bunch of research students at the University of Bath gamely had a go at signing up for Twitter and investigating the power of RSS feeds.
 

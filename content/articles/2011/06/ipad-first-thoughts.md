@@ -10,6 +10,7 @@ tags:
 - Technology
 - iPad
 - Gadgets
+wpid: 654
 ---
 A few weeks ago, I was lucky enough to get a new iPad at work. Now that I've had it for a little while, I thought it was time I shared my first impressions.
 

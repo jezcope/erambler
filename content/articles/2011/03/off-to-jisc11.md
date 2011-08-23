@@ -8,6 +8,7 @@ tags:
 - JISC11
 - ICT
 - Higher education
+wpid: 612
 ---
 Right now I'm on a train on my way to Liverpool for the annual [JISC Conference][] there. There are a few small things going on this afternoon, but the main event doesn't start til tomorrow.
 

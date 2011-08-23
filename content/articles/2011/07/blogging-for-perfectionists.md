@@ -8,6 +8,7 @@ tags:
 - Blogging
 - Perfectionism
 - Writer's block
+wpid: 664
 ---
 I had an idea for a post. I could feel it growing in some ill-defined region inside my skull. I'll just bash it out in half and hour and hit publish — I could do with getting a few more posts up. So I started to write.
 

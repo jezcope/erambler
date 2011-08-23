@@ -38,6 +38,7 @@ class Wordpress < Thor
       date    = post[:post_date]
       excerpt = post[:post_excerpt].to_s
       content = post[:post_content].force_encoding('UTF-8')
+      id      = post[:ID].to_i
 
       categories = []
       post_tags = []
@@ -51,7 +52,8 @@ class Wordpress < Thor
         'excerpt' => excerpt,
         'created_at' => date,
         'categories' => categories,
-        'tags' => post_tags
+        'tags' => post_tags,
+        'wpid' => id
       }.delete_if{|k,v| v.blank?}
 
       create_item slug, metadata, content, options

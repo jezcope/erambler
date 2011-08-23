@@ -9,6 +9,7 @@ tags:
 - Research
 - Social Media
 - University of Bath
+wpid: 607
 ---
 As part of my ongoing efforts to introduce a virtual research environment to the <abbr title="Centre for Sustainable Chemical Technologies">CSCT</abbr>, I've been thinking about running a general [Digital Researcher][] type workshop for our students. After putting out feelers I discovered that quite a few other people across the university are thinking about similar things right now, so we're working together to avoid duplication as much as we can.
 

@@ -9,6 +9,7 @@ tags:
 - Social networking
 - Book review
 - Sociology
+wpid: 602
 ---
 I promised some shorter posts, so here's one. I've just finished reading [Here Comes Everybody][] by [Clay Shirky][] and since it made me think I thought I'd post a few of those thoughts up here.
 

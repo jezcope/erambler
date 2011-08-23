@@ -4,6 +4,7 @@ kind: article
 created_at: 2011-02-02 12:00:30 +00:00
 categories: 
 - Reflection
+wpid: 561
 ---
 As I've grown older, I've gradually made more conscious attempts to think about what I want my life to be like. Like most people, I'm typically rubbish at either making or keeping New Year's resolutions, so this year I'm following David Seah's [Groundhog Day Resolutions][] pattern.
 

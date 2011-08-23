@@ -8,6 +8,7 @@ tags:
 - Open source
 - Video-conferencing
 - BigBlueButton
+wpid: 563
 ---
 Last week, some colleagues and I tried out promising new videoconferencing tool [BigBlueButton][]. I'd previously used it  It's completely open source and based on Adobe Flash so it works in your browser without the need to download any software.
 

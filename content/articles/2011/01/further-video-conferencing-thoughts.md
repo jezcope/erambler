@@ -7,6 +7,7 @@ categories:
 tags: 
 - Video-conferencing
 - Training
+wpid: 580
 ---
 The other day, I blogged about my [experiences using BigBlueButton for video-conferencing][last post]. It occurs to me though, that getting the technology right is only half the battle, or even less: the rest is about people's familiarity with the concept.
 

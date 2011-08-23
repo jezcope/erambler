@@ -7,7 +7,7 @@
         .blog-title e-Rambler
         .blog-subtitle Jez Cope's e-learning blog
       %nav= render 'partials/nav'
-      %article
+      %article.single-post
         %h1.post-title= @item[:title]
         .post-date= date_for(@item).strftime '%A %e %B, %Y'
         .post-content= yield

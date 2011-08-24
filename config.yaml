@@ -3,6 +3,9 @@ tagline:      Jez Cope's e-learning blog
 author_name:  Jez Cope
 author_uri:   http://erambler.co.uk/
 
+hostname:     erambler.co.uk
+base_url:     http://erambler.co.uk
+
 ga_account:   UA-10201101-1
 
 page_size:    10

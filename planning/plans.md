@@ -3,7 +3,6 @@
 ## Essential
 
 -   Comments
--   Google Analytics
 
 ## Nice-to-have
 
@@ -24,6 +23,7 @@
 ## Implemented
 
 -   Archives page
+-   Google Analytics
 
 # Important post metadata
 

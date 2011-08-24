@@ -1,15 +1,18 @@
 # Features to implement
 
-## Essential
+## Essential (before first publish)
+
+-   Map old permalinks to new ones with 301 redirects (nginx)
+-   Map WordTwit shortlinks to correct place (nginx)
+-   RSS feed
+-   About page
+-   "New design" post
+
+## Nice-to-have
 
 -   Comments
     -   JavaScript in place on article pages
     -   Comment counts on index
--   Map old permalinks to new ones with 301 redirects (nginx)
--   Map WordTwit shortlinks to correct place (nginx)
-
-## Nice-to-have
-
 -   Sitemap
 -   Sharing buttons
     -   Twitter

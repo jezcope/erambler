@@ -3,6 +3,10 @@
 ## Essential
 
 -   Comments
+    -   JavaScript in place on article pages
+    -   Comment counts on index
+-   Map old permalinks to new ones with 301 redirects (nginx)
+-   Map WordTwit shortlinks to correct place (nginx)
 
 ## Nice-to-have
 
@@ -14,6 +18,7 @@
 -   Post updates to twitter
 -   OpenID
 -   Tags (with tag index)
+-   iPhone-specific stylesheets
 
 ## Not sure
 
@@ -54,5 +59,8 @@
 
 ## Key features
 
+-   Free
+-   Email integration (notification, possible respond-by-email)
+-   iPhone app?
 -   Import existing comments from WordPress
--   Integrate comments from Twitter etc?
+-   Integrate comments from Twitter etc.?

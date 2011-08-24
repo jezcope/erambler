@@ -2,8 +2,6 @@
 
 ## Essential (before first publish)
 
--   Map old permalinks to new ones with 301 redirects (nginx)
--   Map WordTwit shortlinks to correct place (nginx)
 -   RSS feed
 -   About page
 -   "New design" post
@@ -32,6 +30,8 @@
 
 -   Archives page
 -   Google Analytics
+-   Map old permalinks to new ones with 301 redirects (nginx)
+-   Map WordTwit shortlinks to correct place (nginx)
 
 # Important post metadata
 

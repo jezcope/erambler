@@ -60,6 +60,33 @@ class Wordpress < Thor
     end
   end
 
+  desc 'wordtwit_to_nginx DB_URL', <<-DESC
+    convert tweet_urls table to an nginx rewrite configuration.
+  DESC
+  method_option :prefix,  :default => 'wp', :aliases => '-p'
+  method_option :outfile, :default => 'nginx.wordtwit.conf', :aliases => '-o'
+  def wordtwit_to_nginx(db_url)
+    prefix = options[:prefix]
+    db = Sequel.connect(db_url, :encoding => 'utf8')
+    posts = db[:"#{prefix}_posts"]
+    tweet_urls = db[:"#{prefix}_tweet_urls"]
+
+    posts_query = posts.select(:post_title, :post_name, :post_date,
+                               :post_content, :post_excerpt, :ID, :guid,
+                               :post_status, :post_type, :post_status)
+      .filter(:post_type => 'post', :post_status => 'publish')
+    tweet_urls_query = tweet_urls.select(:url, :post_id).filter('post_id > 0')
+
+    open(options.outfile, 'w') do |out|
+      tweet_urls_query.each do |row|
+        url = row[:url]
+        slug = posts_query.filter(:ID => row[:post_id]).get(:post_name)
+        out.puts %Q(rewrite "^/#{url}/?$" /#{slug}/ redirect;) unless slug.nil?
+      end
+    end
+  end
+
+
   # Helpers #################################################################
   no_tasks do
 

@@ -1,0 +1,51 @@
+--- 
+title: Time for a change
+kind: article
+created_at: 2011-08-18 22:51:39 +01:00
+categories: 
+- Admin
+tags: 
+- Meta
+- Nanoc
+- Ruby
+- Web design
+- WordPress
+---
+Over the next few days and weeks (or months &mdash; we'll see how it goes) I'll be updating
+the theme of this blog to something cleaner, and without the enormous background image (lovely though it is). In the process, I'll be migrating it to a new system
+and I though it was worth talking briefly about why.
+
+## What's wrong with WordPress?
+
+Don't get me wrong &mdash; I really like WordPress. Over the last few years it's
+matured into a full-featured and very easy to use CMS.
+
+The plugin system allows you to do a lot of clever things without a lot of
+technical knowledge.
+
+But recently I got to thinking: how much of what my blog does needs to be
+generated on the server each time someone visits? Answer: none of it! WordPress has a lot of power, and that power is only used when something changes &mdash; when I publish a post or someone adds a comment.
+
+The only thing that really needs some clever stuff behind it is the comments,
+because visitors need to be able to add comments without editing the page source directly. But there are services like
+[Disqus](http://disqus.com) which can deal with that.
+
+The main reason I use WordPress, in the end, is because I can cleanly separate
+content (posts and pages) from design (themes). But there are other ways of
+doing that.
+
+## What's the new system?
+
+The software I'm moving to is called [nanoc](http://nanoc.stoneship.org) and
+here are a few cool things about it:
+
+-   It generates static HTML, so my web server ([Nginx](http://nginx.net)) can
+    just focus on serving up content (and I can save a little bit by downsizing
+    because I'm not having to run a whole RDBMS).
+-   It does this by processing a folder full of plain text files formatted with (for example) [Markdown](http://daringfireball.net/projects/markdown). That means that I can write with whatever tools I have available, whether that's [Vim](http://vim.org/) on the desktop, one of many iPad/iPhone text editors or even an SSH connection to the server.
+-   It's based on Ruby, my current favourite programming language. I love the
+    way Ruby lets you express what you want to do clearly and concisely without
+    compromising on power. There's less code and it does more.
+-   Though it's easy to maintain, it's quite technical (though not difficult) to set up, which gives me a lovely warm geeky feeling inside without anyone else having to put up with it!
+
+I'd be interested to hear from anyone who's gone through the same process, or have been thinking along the same lines. There are a few who've [done it already](http://userprimary.net/posts/2010/02/07/from-wordpress-to-nanoc/), and their experiences are proving handy.

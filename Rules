@@ -32,6 +32,7 @@ compile '/archives/*/' do
 end
 
 compile '/articles/*' do
+  filter :erb
   filter :kramdown
   layout 'article'
 end
@@ -43,6 +44,12 @@ end
 
 compile '/feed/' do
   filter :erb
+end
+
+compile '*' do
+  filter :erb
+  filter :kramdown
+  layout 'page'
 end
 
 route '/assets/style/partials/*' do

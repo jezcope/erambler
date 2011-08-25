@@ -5,7 +5,6 @@
 -   Feedburner
 -   About page
 -   "New design" post
--   Webmaster tools meta tags
 
 ## Nice-to-have
 
@@ -21,6 +20,7 @@
 -   Post updates to twitter (rake/thor)
 -   OpenID
 -   Tags (with tag index)
+-   Bing webmaster tools
 
 ## Not sure
 
@@ -34,6 +34,7 @@
 -   Map WordTwit shortlinks to correct place (nginx)
 -   Write in MarkDown
 -   RSS feed
+-   Webmaster tools meta tags
 
 # Important post metadata
 

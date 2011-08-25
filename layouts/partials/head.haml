@@ -21,3 +21,14 @@
 - if @item.identifier == '/'
   %link{ :rel => 'alternate', :type => 'application/rss+xml',
     :href => @config[:feed_url] }
+
+  -# Verification meta tags
+  %meta(name="verify-v1" content="w4Kexv72BGwI65AWnQlwFS4/AW69DgjGL8it8B1qPUE=")
+  %meta(name="microid" content="mailto+http:sha1:44ae9323f25c973694ac4b0b6c05110dd0a0c83b")
+  %meta(name="y_key" content="19e8f14bb639d967")
+
+  -# OpenID provider
+  %link(rel="openid2.provider" href="https://myvidoop.com/openid")
+  %link(rel="openid2.local_id" href="http://jez.myvidoop.com/")
+  %link(rel="openid.server" href="https://myvidoop.com/openid")
+  %link(rel="openid.delegate" href="http://jez.myvidoop.com/")

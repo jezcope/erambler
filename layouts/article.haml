@@ -4,8 +4,8 @@
   %body.bp.post
     #container
       %header
-        .blog-title e-Rambler
-        .blog-subtitle Jez Cope's e-learning blog
+        .blog-title= @config[:title]
+        .blog-subtitle= @config[:tagline]
       %nav= render 'partials/nav'
       %article.single-post
         %h1.post-title= @item[:title]

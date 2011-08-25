@@ -17,3 +17,7 @@
   %script{:src => "http://html5shiv.googlecode.com/svn/trunk/html5.js"}
 
 %title= @item[:title].andand + (" | " + @config[:title]) || @config[:title]
+
+- if @item.identifier == '/'
+  %link{ :rel => 'alternate', :type => 'application/rss+xml',
+    :href => @config[:feed_url] }

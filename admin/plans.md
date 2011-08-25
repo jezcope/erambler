@@ -2,7 +2,6 @@
 
 ## Essential (before first publish)
 
--   RSS feed
 -   Feedburner
 -   About page
 -   "New design" post
@@ -34,6 +33,7 @@
 -   Map old permalinks to new ones with 301 redirects (nginx)
 -   Map WordTwit shortlinks to correct place (nginx)
 -   Write in MarkDown
+-   RSS feed
 
 # Important post metadata
 

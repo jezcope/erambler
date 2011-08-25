@@ -41,6 +41,10 @@ compile '/articles/*', :rep => :archive do
   filter :reduce_header_level, :by => -2
 end
 
+compile '/feed/' do
+  filter :erb
+end
+
 route '/assets/style/partials/*' do
 end
 
@@ -62,6 +66,10 @@ end
 
 route '/articles/*', :rep => :archive do
   nil
+end
+
+route '/feed/' do
+  '/feed.xml'
 end
 
 route '*' do

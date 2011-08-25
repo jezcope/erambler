@@ -32,11 +32,15 @@ h1, h2, h3, h4, h5, h6 {
   /*margin-bottom: 0.75em;*/
 /*}*/
 
-.single-post {
+.single-post, .single-page {
   h1 {
     @extend h2;
     line-height: 1;
     margin-bottom: 0.5em;
+  }
+
+  h2 {
+    @extend h3;
   }
 }
 

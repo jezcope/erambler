@@ -2,9 +2,6 @@
 
 ## Essential (before first publish)
 
--   Feedburner
--   About page
--   "New design" post
 
 ## Nice-to-have
 
@@ -18,7 +15,6 @@
     -   Facebook
     -   +1
 -   Post updates to twitter (rake/thor)
--   OpenID
 -   Tags (with tag index)
 -   Bing webmaster tools
 
@@ -35,6 +31,10 @@
 -   Write in MarkDown
 -   RSS feed
 -   Webmaster tools meta tags
+-   OpenID
+-   Feedburner
+-   About page
+-   "New design" post
 
 # Important post metadata
 

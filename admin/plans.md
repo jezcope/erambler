@@ -3,11 +3,14 @@
 ## Essential (before first publish)
 
 -   RSS feed
+-   Feedburner
 -   About page
 -   "New design" post
+-   Webmaster tools meta tags
 
 ## Nice-to-have
 
+-   Notify search engines when there's an update (rake/thor)
 -   Comments
     -   JavaScript in place on article pages
     -   Comment counts on index
@@ -16,15 +19,13 @@
     -   Twitter
     -   Facebook
     -   +1
--   Post updates to twitter
+-   Post updates to twitter (rake/thor)
 -   OpenID
 -   Tags (with tag index)
--   iPhone-specific stylesheets
 
 ## Not sure
 
--   Feedburner
--   Write in MarkDown
+-   iPhone-specific stylesheets
 
 ## Implemented
 
@@ -32,6 +33,7 @@
 -   Google Analytics
 -   Map old permalinks to new ones with 301 redirects (nginx)
 -   Map WordTwit shortlinks to correct place (nginx)
+-   Write in MarkDown
 
 # Important post metadata
 

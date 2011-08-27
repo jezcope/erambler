@@ -10,6 +10,7 @@ gem "haml"
 gem "kramdown"
 gem "nokogiri"
 gem "coffee-script"
+gem "builder"
 
 gem "andand"
 gem "faker"

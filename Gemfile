@@ -15,3 +15,9 @@ gem "builder"
 gem "andand"
 gem "faker"
 gem "therubyracer"
+
+group :development do
+  gem "thor"
+  gem "sequel"
+  gem "activesupport"
+end

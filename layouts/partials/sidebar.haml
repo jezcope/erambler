@@ -8,6 +8,12 @@
     -   Learning;
     -   Teaching;
     -   Educational technology.
+.sidebar-box.recent
+  %h3 Recent posts
+  %ul
+    - sorted_articles.take(5).each do |article|
+      %li
+        = link_to article[:title], article
 .sidebar-box.more-soon
   %h3 More changes soon
   :kramdown

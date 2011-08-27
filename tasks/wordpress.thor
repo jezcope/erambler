@@ -81,7 +81,7 @@ class Wordpress < Thor
       tweet_urls_query.each do |row|
         url = row[:url]
         slug = posts_query.filter(:ID => row[:post_id]).get(:post_name)
-        out.puts %Q(rewrite "^/#{url}/?$" /#{slug}/ redirect;) unless slug.nil?
+        out.puts %Q(rewrite "^/#{url}/?$" /blog/#{slug}/ redirect;) unless slug.nil?
       end
     end
   end

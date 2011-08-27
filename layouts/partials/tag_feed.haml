@@ -1,2 +1,3 @@
 - tagged = sorted_articles.select { |a| a[:tags].andand.include?(@tag) }
-= atom_feed :articles => tagged
+- unless tagged.empty?
+  = atom_feed :articles => tagged

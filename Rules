@@ -46,6 +46,9 @@ compile '/feed/' do
   filter :erb
 end
 
+compile '/blank/' do
+end
+
 compile '*' do
   case @item[:extension]
   when 'md'
@@ -84,6 +87,10 @@ end
 
 route '/feed/' do
   '/feed.xml'
+end
+
+route '/blank/' do
+  '/blank.html'
 end
 
 route '*' do

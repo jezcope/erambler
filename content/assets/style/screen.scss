@@ -14,7 +14,7 @@ body {
   /*@include blueprint-typography(true);*/
   @include blueprint-typography-body;
 
-  font-family: 'Gentium Basic', 'Droid Serif', Georgia, serif;
+  font-family: 'Gentium Basic', 'Georgia', serif;
 }
 
 @include blueprint-typography-defaults;
@@ -24,7 +24,7 @@ body {
 @include blueprint-interaction;
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Amaranth', 'Verdana', sans-serif;
+  font-family: 'Amaranth', 'Arial Black', 'Impact', 'Verdana', sans-serif;
 }
 
 /*h2, .post h1 {*/

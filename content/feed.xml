@@ -1,1 +1,4 @@
+---
+feed_url: http://feeds.feedburner.com/erambler
+---
 <%= atom_feed %>

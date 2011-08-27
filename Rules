@@ -51,7 +51,14 @@ compile '/feeds/*' do
 end
 
 compile '/feed/' do
-  filter :erb
+  filter :haml
+end
+
+compile '/sitemap/' do
+  filter :haml
+end
+
+compile '/robots/' do
 end
 
 compile '/ignore-me/' do
@@ -103,6 +110,14 @@ end
 
 route '/feed/' do
   '/feed.xml'
+end
+
+route '/sitemap/' do
+  '/sitemap.xml'
+end
+
+route '/robots/' do
+  '/robots.txt'
 end
 
 route '/blank/' do

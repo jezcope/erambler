@@ -1,15 +1,8 @@
 # Features to implement
 
-## Essential (before first publish)
-
-
 ## Nice-to-have
 
 -   Notify search engines when there's an update (rake/thor)
--   Comments
-    -   JavaScript in place on article pages
-    -   Comment counts on index
--   Sitemap
 -   Sharing buttons
     -   Twitter
     -   Facebook
@@ -35,6 +28,10 @@
 -   Feedburner
 -   About page
 -   "New design" post
+-   Comments
+    -   JavaScript in place on article pages
+    -   Comment counts on index
+-   Sitemap
 
 # Important post metadata
 

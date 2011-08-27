@@ -137,6 +137,11 @@ footer {
   font-style: italic;
 }
 
+.post-tags {
+  @include append-bottom;
+  font-style: italic;
+}
+
 .alignright {
   float: right;
 }

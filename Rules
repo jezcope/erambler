@@ -2,6 +2,10 @@
 
 preprocess do
 	paginate_articles
+
+  ['ALT-C 2011'].each do |tag|
+    @items << tag_feed_for(tag)
+  end
 end
 
 require 'compass'
@@ -40,6 +44,10 @@ end
 compile '/articles/*', :rep => :archive do
   filter :kramdown
   filter :reduce_header_level, :by => -2
+end
+
+compile '/feeds/*' do
+  filter :haml
 end
 
 compile '/feed/' do
@@ -83,6 +91,10 @@ end
 
 route '/articles/*', :rep => :archive do
   nil
+end
+
+route '/feeds/*' do
+  item.identifier.chop + '.xml'
 end
 
 route '/feed/' do

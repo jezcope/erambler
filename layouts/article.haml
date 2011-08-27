@@ -11,6 +11,7 @@
         %h1.post-title= @item[:title]
         .post-date= date_for(@item).strftime '%A %e %B, %Y'
         .post-content= yield
+        .post-tags= render 'partials/post_tags', :item => @item
         #disqus_thread
         :javascript
           /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

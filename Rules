@@ -47,8 +47,15 @@ compile '/feed/' do
 end
 
 compile '*' do
-  filter :erb
-  filter :kramdown
+  case @item[:extension]
+  when 'md'
+    filter :erb
+    filter :kramdown
+  when 'haml'
+    filter :haml, :format => :html5
+  else
+    filter :erb
+  end
   layout 'page'
 end
 

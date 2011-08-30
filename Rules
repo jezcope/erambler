@@ -30,6 +30,9 @@ compile '/' do
   layout 'home'
 end
 
+compile '/downloads/*' do
+end
+
 compile '/archives/*/' do
 	filter :haml
 	layout 'home'
@@ -122,6 +125,10 @@ end
 
 route '/blank/' do
   '/blank.html'
+end
+
+route '/downloads/*' do
+  item.identifier.chop + '.' + item[:extension]
 end
 
 route '*' do

@@ -6,6 +6,6 @@ is_hidden: true
 %html
   %head
     %title Ignore my hits
-  %body{ :onLoad => "javascript:pageTracker._setVar('ignore');" }
+  %body{ :onLoad => "javascript:_gaq.push(['_setVar', 'ignore']);" }
     Ignoring your hits
     = render 'partials/analytics'

@@ -46,7 +46,7 @@ end
 
 compile '/articles/*', :rep => :archive do
   filter :kramdown
-  filter :reduce_header_level, :by => -2
+  filter :reduce_header_level, :by => 2
 end
 
 compile '/feeds/*' do

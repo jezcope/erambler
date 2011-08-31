@@ -7,6 +7,7 @@ categories:
 tags:
 - ALT-C 2011
 - VRE
+- Sakai
 ---
 
 Next week I'll be presenting an ePoster and short presentation at [ALT-C

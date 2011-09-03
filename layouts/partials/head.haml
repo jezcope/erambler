@@ -1,8 +1,4 @@
 %meta{:charset => 'utf8'}
--#%link(href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,400italic|Amaranth:700,700italic' rel='stylesheet' type='text/css')
--#%script{:src => '/assets/js/webfonts.js'}
-= render 'partials/webfonts_js'
-
 %link{:rel => 'stylesheet',
       :href => '/assets/style/screen.css',
       :media => 'screen, projection',
@@ -18,6 +14,11 @@
         :type => 'text/css' }
 /[if lt IE 9]
   %script{:src => "http://html5shiv.googlecode.com/svn/trunk/html5.js"}
+
+-#%link(href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,400italic|Amaranth:700,700italic' rel='stylesheet' type='text/css')
+-#%script{:src => '/assets/js/webfonts.js'}
+= render 'partials/webfonts_js'
+
 
 %title= @item[:title].andand + (" | " + @config[:title]) || @config[:title]
 

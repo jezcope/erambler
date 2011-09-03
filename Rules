@@ -1,5 +1,11 @@
 #!/usr/bin/env ruby
 
+require 'compass'
+
+Compass.add_project_configuration 'config/compass.rb'
+
+# Preprocess ###################################################################
+
 preprocess do
 	paginate_articles
 
@@ -8,37 +14,32 @@ preprocess do
   end
 end
 
-require 'compass'
+# Compilation ##################################################################
 
-Compass.add_project_configuration 'config/compass.rb'
+STATIC_ITEMS = [
+  '/favicon/',
+  '/robots/',
+  '/blank/',
+  %r{/assets/images/.*/},
+  %r{/downloads/.*/}
+]
+compile Regexp.union(*STATIC_ITEMS) do
+  # Don't compile
+end
 
 compile '/assets/style/*/' do
   filter :sass, Compass.sass_engine_options
 end
 
-compile '/assets/images/*' do
-end
-
-compile '/favicon/' do
-end
-
-compile '/assets/js/*' do
+compile '/assets/js/*/' do
   if item[:extension] == 'coffee'
     filter :coffee
   end
 end
 
-compile '/' do
+compile %r{^(/|/archives/.*/)$} do
   filter :haml
   layout 'home'
-end
-
-compile '/downloads/*' do
-end
-
-compile '/archives/*/' do
-	filter :haml
-	layout 'home'
 end
 
 compile '/articles/*' do
@@ -52,26 +53,8 @@ compile '/articles/*', :rep => :archive do
   filter :reduce_header_level, :by => 2
 end
 
-compile '/feeds/*' do
+compile %r{^(/feeds?/.*|/sitemap/|/ignore-me/)$} do
   filter :haml
-end
-
-compile '/feed/' do
-  filter :haml
-end
-
-compile '/sitemap/' do
-  filter :haml
-end
-
-compile '/robots/' do
-end
-
-compile '/ignore-me/' do
-  filter :haml
-end
-
-compile '/blank/' do
 end
 
 compile '*' do
@@ -87,14 +70,13 @@ compile '*' do
   layout 'page'
 end
 
+# Routing ######################################################################
+
 route '/assets/style/partials/*' do
+  # Don't route
 end
 
-route '/assets/images/*' do
-  item.identifier.chop + '.' + item[:extension]
-end
-
-route '/favicon/' do
+route %r{^(/assets/images/.*/|/favicon/|/downloads/)$} do
   item.identifier.chop + '.' + item[:extension]
 end
 
@@ -102,28 +84,20 @@ route '/assets/style/*/' do
   item.identifier.chop + '.css'
 end
 
-route '/assets/js/*' do
+route '/assets/js/*/' do
   item.identifier.chop + '.js'
 end
 
-route '/articles/*' do
+route '/articles/*/' do
 	'/blog/' + item.identifier.split('/')[-1] + '/index.html'
 end
 
-route '/articles/*', :rep => :archive do
-  nil
+route '/articles/*/', :rep => :archive do
+  # Don't route
 end
 
-route '/feeds/*' do
+route %r{^(/feed/|/feeds/.*/|/sitemap/)$} do
   item.identifier.chop + '.xml'
-end
-
-route '/feed/' do
-  '/feed.xml'
-end
-
-route '/sitemap/' do
-  '/sitemap.xml'
 end
 
 route '/robots/' do
@@ -134,12 +108,10 @@ route '/blank/' do
   '/blank.html'
 end
 
-route '/downloads/*' do
-  item.identifier.chop + '.' + item[:extension]
-end
-
 route '*' do
   item.identifier + 'index.html'
 end
+
+# Layouts ######################################################################
 
 layout '*', :haml, :format => :html5

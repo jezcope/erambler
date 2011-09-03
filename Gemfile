@@ -11,6 +11,7 @@ gem "kramdown"
 gem "nokogiri"
 gem "coffee-script"
 gem "builder"
+gem "uglifier"
 
 gem "andand"
 gem "faker"

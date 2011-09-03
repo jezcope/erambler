@@ -35,6 +35,7 @@ compile '/assets/js/*/' do
   if item[:extension] == 'coffee'
     filter :coffee
   end
+  filter :uglify_js
 end
 
 compile %r{^(/|/archives/.*/)$} do

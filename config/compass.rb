@@ -10,7 +10,8 @@ javascripts_dir = "output/assets/javascripts"
 
 output_style = :expanded
 sass_options = {
-  syntax: :scss
+  syntax: :scss,
+  style:  :compressed
 }
 
 # To enable relative paths to assets via compass helper functions. Uncomment:

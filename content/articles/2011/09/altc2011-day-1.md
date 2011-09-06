@@ -8,6 +8,7 @@ tags:
 - ALT-C 2011
 - Google Apps
 - OLPC
+- Sakai
 - Collaboration
 ---
 ![Keynote](http://farm7.static.flickr.com/6208/6121549503_7f7377ccda_m.jpg){: #post-image .alignright}

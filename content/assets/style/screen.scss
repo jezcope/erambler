@@ -52,7 +52,7 @@ form.bp {
 
 #container {
   @include container;
-  /*@include showgrid;*/
+  @include showgrid;
 }
 
 header, nav, footer {
@@ -94,7 +94,7 @@ nav {
 
 #sidebar {
   /*@include prepend(1);*/
-  @include column(4, true);
+  @include column(3, true);
 }
 
 hr.colruler {
@@ -108,14 +108,24 @@ hr.colruler {
 }
 
 #content, .post article {
-  @include column(7);
-  @include colborder;
+  @include column(9);
+  @include border;
+  /*@include colborder;*/
 }
 
 article {
   /*padding: 0 $baseline;*/
+  @include column(9);
   @include append-bottom($baseline);
   /*@include border-radius;*/
+
+  .post-body {
+    @include column(7);
+  }
+
+  .post-info {
+    @include column(2, true);
+  }
 }
 
 /*header, nav, footer, .sidebar-box, article {*/

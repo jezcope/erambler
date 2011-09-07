@@ -2,12 +2,15 @@
 - sorted_articles.drop(@page*n).take(n).each do |article|
   %article
     %h2.post-title= link_to article[:title], article
-    .post-date= date_for(article).strftime '%A %e %B, %Y'
-    .post-content= article.compiled_content :rep => :archive
-    .post-tags= render 'partials/post_tags', :item => article
-    .post-comments-link
-      = link_to 'Comments', url_for(article) + '#disqus_thread',
-                :'data-disqus-identifier' => atom_tag_for(article)
+    .post-body
+      .post-date= date_for(article).strftime '%A %e %B, %Y'
+      .post-content= article.compiled_content :rep => :archive
+      .post-tags= render 'partials/post_tags', :item => article
+      .post-comments-link
+        = link_to 'Comments', url_for(article) + '#disqus_thread',
+                  :'data-disqus-identifier' => atom_tag_for(article)
+    .post-info
+      This will be the post info bit
   -#%hr.colruler
 #page-nav
   - unless @page == 0

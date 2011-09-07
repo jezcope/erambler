@@ -102,7 +102,7 @@ in control of your environment.
 In a little bit it will be time to relax a bit and have a good old chinwag with
 some old and new friends at the gala buffet, so I'll wrap it up for now.
 
---------------------------------------------------------------------------------
+<hr class="colruler" />
 
 PS. If you're wondering where all my tweets about the conference have gone, I'm
 experimenting with a separate conference account,

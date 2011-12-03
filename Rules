@@ -77,7 +77,7 @@ route '/assets/style/partials/*' do
   # Don't route
 end
 
-route %r{^(/assets/images/.*/|/favicon/|/downloads/)$} do
+route %r{^(/assets/images/.*/|/favicon/|/downloads/.*/)$} do
   item.identifier.chop + '.' + item[:extension]
 end
 

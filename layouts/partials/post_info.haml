@@ -1,0 +1,11 @@
+- item_date = date_for(@item)
+.post-date
+  = item_date.strftime '%A'
+  %br
+  = item_date.strftime '%e %B %Y'
+- if @item[:categories]
+  - categories = @item[:categories].map { |x| "&ldquo;#{x}&rdquo;" }.join(', ')
+  .post-cats Filed under #{categories}
+- if @item[:tags]
+  - tags       = @item[:tags].map { |x| "&ldquo;#{x}&rdquo;" }.join(', ')
+  .post-tags Tagged with #{tags}

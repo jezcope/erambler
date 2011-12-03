@@ -14,7 +14,7 @@ body {
   /*@include blueprint-typography(true);*/
   @include blueprint-typography-body;
 
-  font-family: 'Gentium Basic', 'Georgia', serif;
+  font-family: 'Georgia', 'Times New Roman', serif;
 }
 
 @include blueprint-typography-defaults;

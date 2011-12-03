@@ -11,10 +11,10 @@ tags:
 - Sakai
 - Collaboration
 ---
-![Keynote](http://farm7.static.flickr.com/6208/6121549503_7f7377ccda_m.jpg){: #post-image .alignright}
 
 ## Plan Ceibal
 
+![Keynote](http://farm7.static.flickr.com/6208/6121549503_7f7377ccda_m.jpg){: #post-image .alignright}
 After a short introduction from the Lord Mayor of Leeds, conference chair John Cook handed over to Miguel Brechner from Uruguay to talk about the inspiring Plan Ceibal.
 
 This project started in 2006 and tapped into the One Laptop Per Child programme to provide every schoolchild in Uruguay with a laptop and Internet access. I can't really do it justice here, but I encourage you to watch the [recording of his talk and the questions afterwards][ALT YouTube].

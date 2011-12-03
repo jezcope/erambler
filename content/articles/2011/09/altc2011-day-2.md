@@ -11,8 +11,8 @@ tags:
 - Web conferencing
 - Identity
 ---
-![Home on the range](http://farm7.static.flickr.com/6210/6123669460_c6a81e8d3e_m.jpg){: #post-image .alignright}
 
+![Home on the range](http://farm7.static.flickr.com/6210/6123669460_c6a81e8d3e_m.jpg){: #post-image .alignright}
 Continuing with the task I began yesterday, here are my initial thoughts on
 today's talks and workshops at ALT-C 2011.
 

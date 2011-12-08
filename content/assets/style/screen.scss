@@ -136,7 +136,7 @@ article {
   .post-info {
     @include column(2);
 
-    color: #bbb;
+    color: #999;
   }
 }
 
@@ -161,7 +161,7 @@ footer {
 }
 
 .post-date {
-  color: #666;
+  color: #999;
 }
 
 .alignright {
@@ -172,4 +172,17 @@ footer {
 .alignleft {
   float: left;
   margin: 1em 1em 1em 0;
+}
+
+.tag {
+  background: adjust-lightness(#06c, 50);
+  border: #06c thin solid;
+  color: #06c;
+  padding: 1px;
+  margin: {
+    top: -1px;
+    bottom: -1px;
+    right: 2px;
+  }
+  @include border-radius(3px);
 }

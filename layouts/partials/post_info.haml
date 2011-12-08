@@ -4,8 +4,12 @@
   %br
   = item_date.strftime '%e %B %Y'
 - if @item[:categories]
-  - categories = @item[:categories].map { |x| "&ldquo;#{x}&rdquo;" }.join(', ')
-  .post-cats Filed under #{categories}
+  .post-cats
+    Filed under
+    - @item[:categories].each do |x|
+      %span.tag= x
 - if @item[:tags]
-  - tags       = @item[:tags].map { |x| "&ldquo;#{x}&rdquo;" }.join(', ')
-  .post-tags Tagged with #{tags}
+  .post-tags
+    Tagged with
+    - @item[:tags].each do |x|
+      %span.tag= x

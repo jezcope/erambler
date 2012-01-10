@@ -9,7 +9,7 @@ Compass.add_project_configuration 'config/compass.rb'
 preprocess do
 	paginate_articles
 
-  ['ALT-C 2011', 'Sakai'].each do |tag|
+  ['ALT-C 2011', 'Sakai', 'IOE12'].each do |tag|
     @items << tag_feed_for(tag)
   end
 end

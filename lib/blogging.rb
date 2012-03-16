@@ -20,3 +20,10 @@ def archive_page_url(i)
 		"/archives/#{i}/"
 	end
 end
+
+def fix_atom_link_type(text)
+  feed = Nokogiri::XML(text)
+  links = feed.css('feed entry link')
+  links.attr('type', 'text/html')
+  feed.to_xml
+end

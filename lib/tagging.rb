@@ -30,7 +30,7 @@ class TagIndex
   def tag_feed_for(tag)
     slug = tag.downcase.gsub(/[^a-z0-9]/, '-')
     Nanoc3::Item.new(
-      "= render 'partials/tag_feed', :tag => #{tag.inspect}",
+      "= render 'partials/feed', :articles => tag_index.items_for_tag(#{tag.inspect})",
       {},
       "/feeds/tag/#{slug}")
   end

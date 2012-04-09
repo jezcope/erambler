@@ -1,5 +1,0 @@
--#- tagged = sorted_articles.select { |a| a[:tags].andand.include?(@tag) }
-- tagged = tag_index.items_for_tag(@tag)
-end
-- unless tagged.empty?
-  = atom_feed :articles => tagged

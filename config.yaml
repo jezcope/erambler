@@ -55,5 +55,6 @@ data_sources:
 
 deploy:
   default:
-    dst: "jez@redkite.knighterrantdesign.co.uk:/var/www/sites/erambler.co.uk/htdocs.static"
-    options: ['-Pcrvz', '--exclude=".git"', '--delete']
+    kind:                   rsync
+    dst:                    "jez@redkite.knighterrantdesign.co.uk:/var/www/sites/erambler.co.uk/htdocs"
+    options:                ['-Pcrvz', '--exclude=".git"', '--delete']

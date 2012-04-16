@@ -5,14 +5,9 @@
     .post-info= render 'partials/post_info', :item => article
     .post-body
       .post-content= article.compiled_content :rep => :archive
-      -#.post-tags= render 'partials/post_tags', :item => article
-      .post-comments-link
-        = link_to 'Comments', url_for(article) + '#disqus_thread',
-                  :'data-disqus-identifier' => atom_tag_for(article)
-  -#%hr.colruler
+      .post-comments-link= disqus_comments_link article
 #page-nav
   - unless @page == 0
     = link_to '<< Newer posts', archive_page_url(@page - 1)
   - unless (@page+1) * n >= articles.count
     = link_to 'Older posts >>', archive_page_url(@page + 1)
--#%hr.colruler

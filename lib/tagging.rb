@@ -10,6 +10,10 @@ def url_for_tag(tag)
   "/tag/#{slug_for tag}/"
 end
 
+def feed_url_for_tag(tag)
+  url_for_tag(tag) + "feed/"
+end
+
 def link_for_tag(tag)
   link_to tag, url_for_tag(tag), class: 'tag'
 end
@@ -44,7 +48,7 @@ class TagIndex
       {
         mtime: items_for_tag(tag).collect {|i| i[:mtime]}.max
       },
-      "/feeds/tag/#{slug_for tag}/")
+      feed_url_for_tag(tag))
   end
 
   def tag_pages

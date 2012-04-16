@@ -102,7 +102,11 @@ route '/articles/*/', :rep => :archive do
   # Don't route
 end
 
-route %r{^(/feed/|/feeds/.*/|/sitemap/)$} do
+route %r{^(/feed/|/sitemap/)$} do
+  item.identifier.chop + '.xml'
+end
+
+route '/tag/*/feed/' do
   item.identifier.chop + '.xml'
 end
 

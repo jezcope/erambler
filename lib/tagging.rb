@@ -27,13 +27,15 @@ class TagIndex
   end
 
   def tag_feeds
-    @tags.keys.map { |t| tag_feed_for t }
+    @tags.keys.map {|t| tag_feed_for t}
   end
 
   def tag_feed_for(tag)
     Nanoc3::Item.new(
       "= render 'partials/feed', :articles => tag_index.items_for_tag(#{tag.inspect})",
-      {},
+      {
+        mtime: items_for_tag(tag).collect {|i| i[:mtime]}.max
+      },
       "/feeds/tag/#{slug_for tag}")
   end
   end

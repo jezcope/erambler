@@ -194,3 +194,7 @@ footer {
   }
   @include border-radius(3px);
 }
+
+a.tag {
+  text-decoration: none;
+}

@@ -2,14 +2,22 @@ def tag_index
   TagIndex.tag_index
 end
 
+def slug_for(tag)
+  tag.downcase.gsub(/[^a-z0-9]/, '-')
+end
+
+def url_for_tag(tag)
+  "/tag/#{slug_for tag}/"
+end
+
+def link_for_tag(tag)
+  link_to tag, url_for_tag(tag), class: 'tag'
+end
+
 class TagIndex
 
   def TagIndex.tag_index
     @@instance ||= TagIndex.new
-  end
-
-  def slug_for(tag)
-    tag.downcase.gsub(/[^a-z0-9]/, '-')
   end
 
   def add_articles(items)
@@ -36,7 +44,7 @@ class TagIndex
       {
         mtime: items_for_tag(tag).collect {|i| i[:mtime]}.max
       },
-      "/feeds/tag/#{slug_for tag}")
+      "/feeds/tag/#{slug_for tag}/")
   end
 
   def tag_pages
@@ -50,7 +58,7 @@ class TagIndex
         mtime: items_for_tag(tag).collect {|i| i[:mtime]}.max,
         title: %(Articles tagged "#{tag}")
       },
-      "/tag/#{slug_for tag}")
+      url_for_tag(tag))
   end
 
 end

@@ -18,6 +18,18 @@ def link_for_tag(tag)
   link_to tag, url_for_tag(tag), class: 'tag'
 end
 
+def url_for_category(cat)
+  "/category/#{slug_for cat}/"
+end
+
+def feed_url_for_category(cat)
+  url_for_category(cat) + "feed/"
+end
+
+def link_for_category(cat)
+  link_to cat, url_for_category(cat), class: 'tag'
+end
+
 class TagIndex
 
   def TagIndex.tag_index
@@ -26,11 +38,11 @@ class TagIndex
 
   def add_articles(items)
     @tags = Hash.new{|hash, key| hash[key] = []}
+    @cats = Hash.new{|hash, key| hash[key] = []}
 
     items.each do |i|
-      i[:tags].andand.each do |tag|
-        @tags[tag] << i
-      end
+      i[:tags].andand.each {|tag| @tags[tag] << i}
+      i[:categories].andand.each {|cat| @cats[cat] << i}
     end
   end
 
@@ -46,7 +58,8 @@ class TagIndex
     Nanoc3::Item.new(
       "= render 'partials/feed', :articles => tag_index.items_for_tag(#{tag.inspect})",
       {
-        mtime: items_for_tag(tag).collect {|i| i[:mtime]}.max
+        mtime: items_for_tag(tag).collect {|i| i[:mtime]}.max,
+        type:  :feed
       },
       feed_url_for_tag(tag))
   end
@@ -63,6 +76,38 @@ class TagIndex
         title: %(Articles tagged "#{tag}")
       },
       url_for_tag(tag))
+  end
+
+  def items_for_category(cat)
+    @cats[cat]
+  end
+
+  def category_feeds
+    @cats.keys.map {|t| category_feed_for t}
+  end
+
+  def category_feed_for(cat)
+    Nanoc3::Item.new(
+      "= render 'partials/feed', :articles => tag_index.items_for_category(#{cat.inspect})",
+      {
+        mtime: items_for_category(cat).collect {|i| i[:mtime]}.max,
+        type:  :feed
+      },
+      feed_url_for_category(cat))
+  end
+
+  def category_pages
+    @cats.keys.map {|t| category_page_for t}
+  end
+
+  def category_page_for(cat)
+    Nanoc3::Item.new(
+      "= render 'partials/brief_index', :articles => tag_index.items_for_category(#{cat.inspect})",
+      {
+        mtime: items_for_category(cat).collect {|i| i[:mtime]}.max,
+        title: %(Articles filed under "#{cat}")
+      },
+      url_for_category(cat))
   end
 
 end

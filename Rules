@@ -12,6 +12,8 @@ preprocess do
   tag_index.add_articles(articles)
   @items.concat(tag_index.tag_feeds)
   @items.concat(tag_index.tag_pages)
+  @items.concat(tag_index.category_feeds)
+  @items.concat(tag_index.category_pages)
 end
 
 # Compilation ##################################################################
@@ -58,9 +60,9 @@ compile %r{^(/feeds?/.*|/sitemap/|/ignore-me/)$} do
   filter :haml
 end
 
-compile '/tag/*' do
+compile %r{^/(tag|category)/} do
   filter :haml
-  layout 'page'
+  layout 'page' unless item[:type] == :feed
 end
 
 compile '*' do
@@ -102,11 +104,7 @@ route '/articles/*/', :rep => :archive do
   # Don't route
 end
 
-route %r{^(/feed/|/sitemap/)$} do
-  item.identifier.chop + '.xml'
-end
-
-route '/tag/*/feed/' do
+route %r{/(feed|sitemap)/$} do
   item.identifier.chop + '.xml'
 end
 

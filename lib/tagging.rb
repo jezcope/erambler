@@ -38,6 +38,18 @@ class TagIndex
       },
       "/feeds/tag/#{slug_for tag}")
   end
+
+  def tag_pages
+    @tags.keys.map {|t| tag_page_for t}
+  end
+
+  def tag_page_for(tag)
+    Nanoc3::Item.new(
+      "= render 'partials/brief_index', :articles => tag_index.items_for_tag(#{tag.inspect})",
+      {
+        mtime: items_for_tag(tag).collect {|i| i[:mtime]}.max
+      },
+      "/tag/#{slug_for tag}")
   end
 
 end

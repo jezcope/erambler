@@ -11,6 +11,7 @@ preprocess do
 
   tag_index.add_articles(articles)
   @items.concat(tag_index.tag_feeds)
+  @items.concat(tag_index.tag_pages)
 end
 
 # Compilation ##################################################################
@@ -55,6 +56,11 @@ end
 
 compile %r{^(/feeds?/.*|/sitemap/|/ignore-me/)$} do
   filter :haml
+end
+
+compile '/tag/*' do
+  filter :haml
+  layout 'home'
 end
 
 compile '*' do

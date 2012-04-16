@@ -47,7 +47,8 @@ class TagIndex
     Nanoc3::Item.new(
       "= render 'partials/brief_index', :articles => tag_index.items_for_tag(#{tag.inspect})",
       {
-        mtime: items_for_tag(tag).collect {|i| i[:mtime]}.max
+        mtime: items_for_tag(tag).collect {|i| i[:mtime]}.max,
+        title: %(Articles tagged "#{tag}")
       },
       "/tag/#{slug_for tag}")
   end

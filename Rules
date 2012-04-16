@@ -60,7 +60,7 @@ end
 
 compile '/tag/*' do
   filter :haml
-  layout 'home'
+  layout 'page'
 end
 
 compile '*' do

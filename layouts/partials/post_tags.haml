@@ -1,7 +1,5 @@
-%ul
-  - if @item[:categories]
-    - categories = @item[:categories].map { |x| "&ldquo;#{x}&rdquo;" }.join(', ')
-    %li Filed under #{categories}
-  - if @item[:tags]
-    - tags       = @item[:tags].map { |x| "&ldquo;#{x}&rdquo;" }.join(', ')
-    %li Tagged with #{tags}
+- if @item[:tags]
+  .post-tags
+    Tagged with
+    - @item[:tags].each do |x|
+      %span.tag= x

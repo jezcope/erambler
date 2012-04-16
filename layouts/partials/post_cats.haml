@@ -1,0 +1,5 @@
+- if @item[:categories]
+  .post-cats
+    Filed under
+    - @item[:categories].each do |x|
+      %span.tag= x

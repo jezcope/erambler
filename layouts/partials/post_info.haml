@@ -1,15 +1,3 @@
-- item_date = date_for(@item)
-.post-date
-  = item_date.strftime '%A'
-  %br
-  = item_date.strftime '%e %B %Y'
-- if @item[:categories]
-  .post-cats
-    Filed under
-    - @item[:categories].each do |x|
-      %span.tag= x
-- if @item[:tags]
-  .post-tags
-    Tagged with
-    - @item[:tags].each do |x|
-      %span.tag= x
+=render 'partials/post_date', :item => @item
+=render 'partials/post_cats', :item => @item
+=render 'partials/post_tags', :item => @item

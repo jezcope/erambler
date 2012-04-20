@@ -18,6 +18,8 @@ gem "faker"
 gem "therubyracer"
 
 group :development do
+  gem "rack-rewrite"
+
   gem "thor"
   gem "sequel"
   gem "activesupport"

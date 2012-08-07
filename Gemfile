@@ -17,6 +17,8 @@ gem "andand"
 gem "faker"
 gem "therubyracer"
 
+gem "systemu"
+
 group :development do
   gem "rack-rewrite"
 

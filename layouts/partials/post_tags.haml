@@ -1,5 +1,5 @@
 - if @item[:tags]
-  .post-tags
-    Tagged with
+  Tagged with
+  %ul.post-tags
     - @item[:tags].each do |x|
-      =link_for_tag x
+      %li= link_for_tag x

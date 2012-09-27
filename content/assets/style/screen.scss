@@ -172,6 +172,12 @@ footer {
   color: #999;
 }
 
+ul.post-cats, ul.post-tags {
+  list-style-type: none;
+  padding-left: 0;
+  margin-right: 0;
+}
+
 .alignright {
   float: right;
   margin: 1em 0 1em 1em;
@@ -186,10 +192,10 @@ footer {
   background: adjust-lightness(#06c, 50);
   border: #06c thin solid;
   color: #06c;
-  padding: 1px;
+  padding: 0 1px;
   margin: {
-    top: -1px;
-    bottom: -1px;
+    /*top: -1px;*/
+    /*bottom: -1px;*/
     right: 2px;
   }
   @include border-radius(3px);

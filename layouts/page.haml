@@ -9,7 +9,8 @@
       %nav= render 'partials/nav'
       %article.single-page
         %h1.post-title= @item[:title]
-        .post-content= yield
+        .post-body
+          .post-content= yield
       #sidebar= render 'partials/sidebar'
       %footer= render 'partials/footer'
     = render 'partials/analytics'

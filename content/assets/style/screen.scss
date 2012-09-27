@@ -133,6 +133,10 @@ article {
     @include column(7, true);
   }
 
+  &.single-page .post-body {
+    @include prepend(2);
+  }
+
   .post-info {
     @include column(2);
 

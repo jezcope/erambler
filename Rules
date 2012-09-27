@@ -97,7 +97,7 @@ route '/assets/js/*/' do
 end
 
 route '/articles/*/' do
-	'/blog/' + item.identifier.split('/')[-1] + '/index.html'
+  '/blog/' + item.identifier.split('/')[-1] + '/index.html'
 end
 
 route '/articles/*/', :rep => :archive do

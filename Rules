@@ -46,6 +46,7 @@ compile %r{^(/|/archives/.*/)$} do
 end
 
 compile '/articles/*' do
+  filter :erb
   filter :kramdown
   layout 'article'
 end

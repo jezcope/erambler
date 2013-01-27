@@ -1,15 +1,18 @@
-title:        eRambler
-tagline:      Jez Cope's blog on becoming a research technologist
-author_name:  Jez Cope
-author_uri:   http://erambler.co.uk/
+title:          eRambler
+tagline:        Jez Cope's blog on becoming a research technologist
+author_name:    Jez Cope
+author_uri:     http://erambler.co.uk/
 
-hostname:     erambler.co.uk
-base_url:     http://erambler.co.uk
-feed_url:     http://feeds.feedburner.com/erambler
+hostname:       erambler.co.uk
+base_url:       http://erambler.co.uk
+feed_url:       http://feeds.feedburner.com/erambler
 
-ga_account:   UA-10201101-1
+ga_account:     UA-10201101-1
 
-page_size:    10
+openid_server:  "https://www.google.com/accounts/o8/ud?source=profiles"
+openid_id:      http://www.google.com/profiles/jez.cope
+
+page_size:      10
 
 # A list of file extensions that nanoc will consider to be textual rather than
 # binary. If an item with an extension not in this list is found,  the file

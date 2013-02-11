@@ -22,7 +22,7 @@ module Blogging
     end
 
     def print_alphabetically(hash)
-      hash.keys.sort{|a,b| a.downcase <=> b.downcase}.each do |key|
+      hash.keys.sort{|a,b| a.casecmp(b)}.each do |key|
         puts "#{key}: #{hash[key]}"
       end
     end

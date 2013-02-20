@@ -7,8 +7,8 @@ categories:
 tags: 
 - Research
 - Open source
-- Bibliographic Management
-- Open Science
+- Bibliographic management
+- Open science
 wpid: 523
 ---
 I've just discovered a great piece of reference management software called [Mendeley][]. I've heard it mentioned a bit recently, by people like [Brian Kelly][], [Peter Murray-Rust][] and [Jean-Claude Bradley][], but when my wife mentioned it after her recent visit to the [ILI2010 (Internet Library International)][ILI2010] conference I finally thought I'd give it a go.

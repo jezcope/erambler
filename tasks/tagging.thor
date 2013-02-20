@@ -83,8 +83,8 @@ module Blogging
 
     include Helpers
 
-    desc "list", "list all used tags"
-    def list
+    desc "count_articles", "list all used tags"
+    def count_articles
       tags = {}
 
       article_metadata.each do |info|
@@ -94,6 +94,24 @@ module Blogging
       end
 
       process_alphabetically(tags) {|k,v| puts "#{k}: #{v.count}"}
+    end
+    
+    desc "list_articles", "list all used categories"
+    def list_articles
+      tags = {}
+
+      article_metadata.each do |info|
+        info["tags"].andand.each do |tag|
+          (tags[tag] ||= []) << info
+        end
+      end
+
+      process_alphabetically(tags) do |k,v|
+        puts "#{k}:"
+        v.each do |a|
+          puts "  #{a['filename']}"
+        end
+      end
     end
 
   end

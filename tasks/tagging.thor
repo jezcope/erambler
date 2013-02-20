@@ -17,13 +17,13 @@ module Blogging
       article_files.map do |filename|
         data = File.read(filename)
         pieces =  data.split(/^(-{5}|-{3})\s*$/)
-        YAML.load(pieces[2])
+        YAML.load(pieces[2]).merge('filename' => filename)
       end
     end
 
-    def print_alphabetically(hash)
+    def process_alphabetically(hash)
       hash.keys.sort{|a,b| a.casecmp(b)}.each do |key|
-        puts "#{key}: #{hash[key]}"
+        yield key, hash[key]
       end
     end
 
@@ -46,17 +46,35 @@ module Blogging
 
     include Helpers
 
-    desc "list", "list all used categories"
-    def list
-      categories = Hash.new(0)
+    desc "count_articles", "list all used categories"
+    def count_articles
+      categories = {}
 
       article_metadata.each do |info|
-        info["categories"].each do |cat|
-          categories[cat] += 1
+        info["categories"].andand.each do |cat|
+          (categories[cat] ||= []) << info
         end
       end
 
-      print_alphabetically categories
+      process_alphabetically(categories) {|k,v| puts "#{k}: #{v.count}"}
+    end
+
+    desc "list_articles", "list all used categories"
+    def list_articles
+      categories = {}
+
+      article_metadata.each do |info|
+        info["categories"].andand.each do |cat|
+          (categories[cat] ||= []) << info
+        end
+      end
+
+      process_alphabetically(categories) do |k,v|
+        puts "#{k}:"
+        v.each do |a|
+          puts "  #{a['filename']}"
+        end
+      end
     end
 
   end
@@ -67,15 +85,15 @@ module Blogging
 
     desc "list", "list all used tags"
     def list
-      tags = Hash.new(0)
+      tags = {}
 
       article_metadata.each do |info|
         info["tags"].andand.each do |tag|
-          tags[tag] += 1
+          (tags[tag] ||= []) << info
         end
       end
 
-      print_alphabetically tags
+      process_alphabetically(tags) {|k,v| puts "#{k}: #{v.count}"}
     end
 
   end

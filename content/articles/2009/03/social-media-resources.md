@@ -9,7 +9,7 @@ tags:
 - Learning
 - PCHE
 - Resources
-- Social Media
+- Social media
 - Teaching
 - Technology
 - University of Sheffield

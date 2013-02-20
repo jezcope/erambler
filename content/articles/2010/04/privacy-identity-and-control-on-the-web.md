@@ -3,10 +3,10 @@ title: Privacy, identity and control on the web
 kind: article
 created_at: 2010-04-15 13:52:48 +01:00
 categories: 
-- Social Media
+- Social media
 tags: 
 - Google
-- Social Media
+- Social media
 - Social networking
 - Web 2.0
 - Identity

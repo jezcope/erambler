@@ -5,7 +5,7 @@ created_at: 2011-02-15 12:09:19 +00:00
 categories: 
 - Reviews
 tags: 
-- Social Media
+- Social media
 - Social networking
 - Book review
 - Sociology

@@ -3,7 +3,7 @@ title: "Teaching with social media: engaging the audience"
 kind: article
 created_at: 2009-04-01 18:52:06 +01:00
 categories: 
-- Social Media
+- Social media
 tags: 
 - Blogs
 - Education

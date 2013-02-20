@@ -3,11 +3,11 @@ title: "Beginner&#39;s guide to Twitter Part I: messages, followers and searchin
 kind: article
 created_at: 2009-03-15 21:33:50 +00:00
 categories: 
-- Social Media
+- Social media
 tags: 
 - Howto
 - Message
-- Social Media
+- Social media
 - Social networking
 - Tutorial
 - Tweet

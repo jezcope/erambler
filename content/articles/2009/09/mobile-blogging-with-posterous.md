@@ -3,11 +3,11 @@ title: Mobile blogging with Posterous
 kind: article
 created_at: 2009-09-03 09:00:50 +01:00
 categories: 
-- Social Media
+- Social media
 tags: 
 - Blogging
 - Email
-- Social Media
+- Social media
 - Posterous
 - Photos
 - Video

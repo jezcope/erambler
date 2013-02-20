@@ -3,10 +3,10 @@ title: Connected researcher at Bath
 kind: article
 created_at: 2011-04-14 22:16:04 +01:00
 categories: 
-- Social Media
+- Social media
 tags: 
 - Academia
-- Social Media
+- Social media
 - RSS
 - University of Bath
 - BathCR

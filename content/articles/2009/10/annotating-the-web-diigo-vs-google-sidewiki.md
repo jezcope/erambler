@@ -3,7 +3,7 @@ title: "Annotating the web: Diigo vs. Google Sidewiki"
 kind: article
 created_at: 2009-10-31 10:25:54 +00:00
 categories: 
-- Social Media
+- Social media
 tags: 
 - Google
 - Diigo

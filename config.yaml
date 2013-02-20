@@ -61,3 +61,8 @@ deploy:
     kind:                   rsync
     dst:                    "jez@redkite.knighterrantdesign.co.uk:/var/www/sites/erambler.co.uk/htdocs"
     options:                ['-Pcrvz', '--exclude=".git"', '--delete']
+  s3:
+    kind:                   fog
+    provider:               aws
+    region:                 eu-west-1
+    bucket:                 erambler.co.uk

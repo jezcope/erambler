@@ -19,6 +19,8 @@ gem "therubyracer"
 
 gem "systemu"
 
+gem "fog"
+
 group :development do
   gem "rack-rewrite"
 

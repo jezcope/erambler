@@ -9,9 +9,9 @@
           %h2= @config[:tagline]
       %nav= render 'partials/nav'
       #content= yield
-      #sidebar= render 'partials/sidebar'
-      %footer= render 'partials/footer'
-    = render 'partials/analytics'
+      #sidebar= render_cached 'partials/sidebar'
+      %footer= render_cached 'partials/footer'
+    = render_cached 'partials/analytics'
     :javascript
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
       var disqus_shortname = 'erambler'; // required: replace example with your forum shortname

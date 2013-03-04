@@ -6,7 +6,7 @@
       %header
         .blog-title= @config[:title]
         .blog-subtitle= @config[:tagline]
-      %nav= render 'partials/nav'
+      %nav= render_cached 'partials/nav'
       %article.single-post
         %h1.post-title= @item[:title]
         .post-info= render 'partials/post_info', :item => @item
@@ -30,6 +30,6 @@
                 dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
             })();
-      #sidebar= render 'partials/sidebar'
-      %footer= render 'partials/footer'
-    = render 'partials/analytics'
+      #sidebar= render_cached 'partials/sidebar'
+      %footer= render_cached 'partials/footer'
+    = render_cached 'partials/analytics'

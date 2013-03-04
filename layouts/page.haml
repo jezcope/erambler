@@ -11,6 +11,6 @@
         %h1.post-title= @item[:title]
         .post-body
           .post-content= yield
-      #sidebar= render 'partials/sidebar'
-      %footer= render 'partials/footer'
-    = render 'partials/analytics'
+      #sidebar= render_cached 'partials/sidebar'
+      %footer= render_cached 'partials/footer'
+    = render_cached 'partials/analytics'

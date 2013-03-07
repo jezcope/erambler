@@ -3,11 +3,11 @@ title: What uses do researchers have for new/social media?
 kind: article
 created_at: 2011-03-07 11:41:12 +00:00
 categories: 
-- Social Media
+- Social media
 tags: 
 - Academia
 - Research
-- Social Media
+- Social media
 - University of Bath
 wpid: 607
 ---

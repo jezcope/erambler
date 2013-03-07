@@ -8,7 +8,7 @@ tags:
 - Blogging
 - Links
 - Reading
-- Social Media
+- Social media
 - Social networking
 - Social media
 wpid: 226

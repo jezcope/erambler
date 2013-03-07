@@ -3,13 +3,13 @@ title: "Beginner&#39;s guide to Twitter Part II: @s, #s and RTs"
 kind: article
 created_at: 2009-03-16 23:11:07 +00:00
 categories: 
-- Social Media
+- Social media
 tags: 
 - Twitter
 - Tweet
 - Tutorial
 - Social networking
-- Social Media
+- Social media
 - Retweeting
 - Message
 - Howto

@@ -3,10 +3,10 @@ title: "Ask yourself: &quot;What is this for?&quot;"
 kind: article
 created_at: 2009-03-23 22:39:47 +00:00
 categories: 
-- Social Media
+- Social media
 tags: 
 - Evaluation
-- Social Media
+- Social media
 - Tools
 wpid: 148
 ---

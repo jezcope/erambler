@@ -3,12 +3,12 @@ title: "Social networking at the University of Sheffield: uSpace"
 kind: article
 created_at: 2009-07-28 11:27:45 +01:00
 categories: 
-- Social Media
+- Social media
 tags: 
 - Academia
 - Education
 - Research
-- Social Media
+- Social media
 - Social networking
 - University of Sheffield
 - uSpace

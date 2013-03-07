@@ -3,13 +3,13 @@ title: "Beginners guide to Twitter Part III: cool tools"
 kind: article
 created_at: 2009-03-17 20:54:58 +00:00
 categories: 
-- Social Media
+- Social media
 tags: 
 - Twitter
 - Tweet
 - Tutorial
 - Social networking
-- Social Media
+- Social media
 - Howto
 - Hashtags
 - Clients

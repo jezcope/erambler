@@ -3,7 +3,7 @@ title: Does Wikipedia have a place in education?
 kind: article
 created_at: 2009-04-06 22:36:29 +01:00
 categories: 
-- Social Media
+- Social media
 tags: 
 - Academia
 - Education

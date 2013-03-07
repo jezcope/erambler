@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-04-20 20:55:47 +01:00
 categories: 
 - Quickies
-- Social Media
+- Social media
 tags: 
 - Clients
 - Tweetie

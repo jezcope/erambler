@@ -4,10 +4,10 @@ kind: article
 created_at: 2009-10-02 10:40:14 +01:00
 categories: 
 - Ask the readers
-- Social Media
+- Social media
 tags: 
 - Blogging
-- Social Media
+- Social media
 - Social networking
 - Technology
 - Web 2.0

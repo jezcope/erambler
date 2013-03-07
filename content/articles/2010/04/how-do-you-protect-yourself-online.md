@@ -5,7 +5,7 @@ created_at: 2010-04-27 12:06:46 +01:00
 categories: 
 - Ask the readers
 tags: 
-- Social Media
+- Social media
 - Social networking
 - Twitter
 - Web 2.0

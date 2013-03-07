@@ -1,5 +1,6 @@
 - if @item[:categories]
   .post-cats
     Filed under
+    %br
     - @item[:categories].each do |x|
       =link_for_category x

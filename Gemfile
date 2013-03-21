@@ -7,7 +7,7 @@ gem "mime-types"
 
 gem "compass"
 gem "haml"
-gem "pandoc-ruby"
+gem "kramdown"
 gem "nokogiri"
 gem "coffee-script"
 gem "builder"

@@ -22,9 +22,10 @@
 
 %title= @item[:title].andand + (" | " + @config[:title]) || @config[:title]
 
+%link{ :rel => 'alternate', :type => 'application/rss+xml',
+  :href => @config[:feed_url] }
+
 - if @item.identifier == '/'
-  %link{ :rel => 'alternate', :type => 'application/rss+xml',
-    :href => @config[:feed_url] }
 
   -# Verification meta tags
   %meta(name="verify-v1" content="w4Kexv72BGwI65AWnQlwFS4/AW69DgjGL8it8B1qPUE=")

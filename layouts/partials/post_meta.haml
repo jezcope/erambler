@@ -1,0 +1,4 @@
+%meta{name: 'DC.title',   content: @item[:title]}
+%meta{name: 'DC.author',  content: @item[:author] || @config[:author_name]}
+%meta{name: 'DC.issued',  content: date_for(@item).strftime('%F')}
+%meta{name: 'DC.relation.ispartof', content: @config[:title]}

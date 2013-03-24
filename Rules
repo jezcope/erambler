@@ -35,7 +35,7 @@ end
 
 compile '/assets/js/*/' do
   if item[:extension] == 'coffee'
-    filter :coffee
+    filter :coffeescript
   end
   filter :uglify_js
 end

@@ -1,5 +1,4 @@
-%meta{name: 'DC.Title',   content: @item[:title]}
-%meta{name: 'DC.Author',  content: @item[:author] || @config[:author_name]}
-%meta{name: 'DC.Issued',  content: date_for(@item).strftime('%F')}
-%meta{name: 'DC.Relation.IsPartOf', content: @config[:base_url]}
-%meta{name: 'DC.Subject', content: ((@item[:categories]||[]) + (@item[:tags]||[])).join('; ')}
+%meta{name: 'citation_title',   content: @item[:title]}
+%meta{name: 'citation_author',  content: @item[:author] || @config[:author_name]}
+%meta{name: 'citation_publication_date',  content: date_for(@item).strftime('%F')}
+%meta{name: 'citation_journal_title', content: @config[:title]}

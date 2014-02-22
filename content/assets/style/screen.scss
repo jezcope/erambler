@@ -137,12 +137,11 @@ article {
 
 blockquote {
   margin: 0px;
-  @include column(5, true);
-  @include prepend(1);
-  @include append(1);
   clear: right;
-}
 
+  border-left: #ddd 0.5em solid;
+  padding-left: 1em
+}
 
 footer {
   @include prepend-top;
@@ -178,9 +177,9 @@ ul.post-cats, ul.post-tags {
 }
 
 .tag {
-  background: adjust-lightness(#06c, 50);
-  border: #06c thin solid;
-  color: #06c;
+  background: adjust-lightness($colour-tag, 50);
+  border: $colour-tag thin solid;
+  color: $colour-tag;
   padding: 0 1px;
   margin-right: 2px;
   @include border-radius(3px);
@@ -188,4 +187,33 @@ ul.post-cats, ul.post-tags {
 
 a.tag {
   text-decoration: none;
+}
+
+@mixin code-colouring {
+  background: adjust-lightness($colour-code, 50);
+  border: adjust-lightness($colour-code, 20) thin solid;
+  color: $colour-code;
+}
+
+pre {
+  @include code-colouring;
+  @include border-radius(0.5em);
+  padding: 0.5em;
+
+  & code {
+    background: none;
+    border: none;
+    color: inherit;
+  }
+}
+
+code {
+  @include code-colouring;
+  @include border-radius(0.5ex);
+}
+
+.main-illustration {
+  @include column(4, true);
+  float: right;
+  margin-left: $blueprint-grid-margin;
 }

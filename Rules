@@ -122,4 +122,4 @@ end
 
 # Layouts ######################################################################
 
-layout '*', :haml, :format => :html5
+layout '*', :haml, format: :html5, ugly: true

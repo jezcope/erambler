@@ -27,4 +27,6 @@ group :development do
   gem "thor"
   gem "sequel"
   gem "activesupport"
+
+  gem "guard-nanoc"
 end

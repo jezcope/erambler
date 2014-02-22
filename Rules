@@ -51,9 +51,9 @@ compile '/articles/*' do
   layout 'article'
 end
 
-compile '/articles/*', :rep => :archive do
+compile '/articles/*', rep: :archive do
   filter :kramdown
-  filter :reduce_header_level, :by => 2
+  filter :reduce_header_level, by: 2
 end
 
 compile %r{^(/feeds?/.*|/sitemap/|/ignore-me/)$} do
@@ -71,7 +71,7 @@ compile '*' do
     filter :erb
     filter :kramdown
   when 'haml'
-    filter :haml, :format => :html5
+    filter :haml, format: :html5
   else
     filter :erb
   end
@@ -100,7 +100,7 @@ route '/articles/*/' do
   '/blog/' + item.identifier.split('/')[-1] + '/index.html'
 end
 
-route '/articles/*/', :rep => :archive do
+route '/articles/*/', rep: :archive do
   # Don't route
 end
 

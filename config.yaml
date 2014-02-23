@@ -58,7 +58,11 @@ data_sources:
 
 deploy:
   default:
-    kind:                   fog
-    provider:               aws
-    region:                 eu-west-1
-    bucket:                 erambler.co.uk
+    kind:       fog
+    provider:   aws
+    region:     eu-west-1
+    bucket:     erambler.co.uk
+    
+    # Required for SSL cert verification:
+    # See https://github.com/fog/fog/issues/2357
+    path_style: true

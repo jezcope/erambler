@@ -20,6 +20,7 @@ gem "therubyracer"
 gem "systemu"
 
 gem "fog"
+gem "unf"
 
 group :development do
   gem "rack-rewrite"

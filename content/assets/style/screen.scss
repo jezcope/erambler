@@ -212,8 +212,15 @@ code {
   @include border-radius(0.5ex);
 }
 
-.main-illustration {
-  @include column(4, true);
+.main-illustration, .main-illustration-s {
   float: right;
   margin-left: $blueprint-grid-margin;
+}
+
+.main-illustration {
+  width: span(4);
+}
+
+.main-illustration-s {
+  width: span(2);
 }

@@ -16,8 +16,7 @@ tags:
 
 ![Gnu](http://farm3.staticflickr.com/2588/3872158703_cdb8e3aacf.jpg){:.main-illustration}
 
-As I've [mentioned previously](/blog/gtd-things-vs-omnifocus), I periodically try out new task
-management software.  The latest in that story is Emacs and Org-mode.
+As I've [mentioned previously](/blog/gtd-things-vs-omnifocus), I periodically try out new task management software.  The latest in that story is Emacs and Org-mode.
 
 ## What is Org?
 
@@ -29,7 +28,7 @@ It started as an Emacs extension for authoring documents with some neat outlinin
 
 ### But wait, what the \*\*\*\* is Emacs?
 
-[Emacs](http://en.m.wikipedia.org/wiki/Emacs) is the mother of all text editors. It's one of the oldest pieces of free software, having been around since the ~~dawn of time~~ 1970's, and is still under active development. Being so venerable, it still cleaves to the conventions of the 70's and is entirely keyboard-controllable (though it now has excellent support for your favourite rodent as well).
+[Emacs](http://en.m.wikipedia.org/wiki/Emacs) is the mother of all text editors. It's one of the oldest pieces of free software, having been around since the <del>dawn of time</del> 1970's, and is still under active development. Being so venerable, it still cleaves to the conventions of the 70's and is entirely keyboard-controllable (though it now has excellent support for your favourite rodent as well).
 
 "Text editor" is actually a pretty loose term in this instance: it's completely programmable, in a slightly odd language called Elisp (which appeals to my computer scientist side). Because many of the people who use it are programmers, it's been extended to do almost anything that you might want, from transparently editing encrypted or remote (or both) files to browsing the web and checking your email.
 
@@ -46,7 +45,7 @@ And Org very much fits the bill.
 
 ### One system for everything
 
-Emacs has been ported to pretty much every operating system under the sun, so I know I can use it on my Linux desktop at work, my iMac at home plus whatever I end up with in the future. Because the files are all plain text, they're trivial to keep syncronised between multiple machines.
+Emacs has been ported to pretty much every operating system under the sun, so I know I can use it on my Linux desktop at work, my iMac at home plus whatever I end up with in the future. Because the files are all plain text, they're trivial to keep synchronised between multiple machines.
 
 There are also [apps for iOS and Android](http://orgmode.org/manual/MobileOrg.html), and while they're not perfect, they're good enough for when I want to take my todo list on the road.
 
@@ -68,7 +67,7 @@ Org has a lot of very clever features added by its user community over its 10+ y
 
 And changing `TODO` to `DONE` is a single keystroke. Simplicity itself.
 
-Here's [Casten Dominik on the subject](http://article.gmane.org/gmane.emacs.orgmode/6224)
+Here's [Carsten Dominik on the subject](http://article.gmane.org/gmane.emacs.orgmode/6224)
 
 > "[Org-mode] is a zero-setup, totally simple TODO manager that works with plain files, files that can be edited on pretty much any system out there, either as plain text in **any** editor ...
 >

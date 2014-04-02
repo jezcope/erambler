@@ -17,13 +17,20 @@ Here are a few links to things that I mentioned (and maybe a few that I didn't) 
 
 Once you start following more than two or three blogs, you might find it easier to use a piece of software called a "feed reader" or "news aggregator" (or other similar terms) to do the hard work and collect all the new posts in one place. Here are a few options:
 
--   [Google Reader](http://reader.google.com/) — web based
+-   <del>[Google Reader](http://reader.google.com/) — web based</del> *discontinued --- see below*
 -   [FeedDemon](http://www.feeddemon.com/) — Windows (optional sync with Google Reader)
 -   [Reeder](http://reederapp.com/) — Mac, iOS (Google Reader account required)
 -   [Feedly](http://feedly.com/) — Browser plugin, iOS, Android (Google Reader account required)
 -   All major web browsers now have some sort of feed reader built in too
 
 [Technorati](http://technorati.com/blogs/directory/) and [Google Blog Search](http://www.google.com/blogsearch) are good ways to find something to read.
+
+### Update (2 April 2014)
+
+As a few people are coming back here after today's social media conversation, I'd better mention that [Google Reader closed its doors on 1 July 2013](http://googlereader.blogspot.co.uk/), but the other options mentioned above are still good.  A couple of other, relatively new, options are:
+
+- [The Old Reader](http://theoldreader.com/)
+- [Feedbin](https://feedbin.com/)
 
 ## Ways to blog
 

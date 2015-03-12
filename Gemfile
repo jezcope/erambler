@@ -6,6 +6,7 @@ gem "adsf"
 gem "mime-types"
 
 gem "compass"
+gem "compass-blueprint"
 gem "haml"
 gem "kramdown"
 gem "nokogiri"

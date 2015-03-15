@@ -52,6 +52,7 @@ compile '/articles/*' do
 end
 
 compile '/articles/*', rep: :archive do
+  filter :erb
   filter :kramdown
   filter :reduce_header_level, by: 2
 end

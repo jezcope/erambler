@@ -224,3 +224,13 @@ code {
 .main-illustration-s {
   width: span(2);
 }
+
+pre {
+  font-family: $fonts-code;
+}
+
+.prompt {
+  font-family: $fonts-code;
+}
+
+@import "partials/pygments-zenburn";

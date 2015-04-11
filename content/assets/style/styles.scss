@@ -6,3 +6,41 @@
 
 // Import Bootstrap for Sass
 @import "bootstrap";
+
+#container {
+    @include container-fixed;
+
+    @media (min-width: $screen-sm-min) {
+        width: $container-sm;
+    }
+    @media (min-width: $screen-md-min) {
+        width: $container-md;
+    }
+    @media (min-width: $screen-lg-min) {
+        width: $container-lg;
+    }
+}
+
+section {
+    @include make-row;
+}
+
+#content {
+    @include make-md-column(8);
+}
+
+#sidebar {
+    @include make-md-column(4);
+}
+
+article {
+    @include make-row;
+}
+
+.post-info {
+    @include make-md-column(3);
+}
+
+.post-body {
+    @include make-md-column(9);
+}

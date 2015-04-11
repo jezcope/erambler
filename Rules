@@ -18,14 +18,15 @@ end
 
 # Compilation ##################################################################
 
-STATIC_ITEMS = [
-  '/favicon/',
-  '/robots/',
-  '/blank/',
+STATIC_ITEMS = Regexp.union(
+  '/favicon.ico/',
+  '/robots.txt/',
+  '/blank.html/',
   %r{/assets/images/.*/},
+  %r{/assets/fonts/.*/},
   %r{/downloads/.*/}
-]
-compile Regexp.union(*STATIC_ITEMS) do
+)
+compile STATIC_ITEMS do
   # Don't compile
 end
 
@@ -85,8 +86,11 @@ route '/assets/style/partials/*' do
   # Don't route
 end
 
-route %r{^(/assets/images/.*/|/favicon/|/downloads/.*/)$} do
-  item.identifier.chop + '.' + item[:extension]
+# route %r{^(/assets/images/.*/|/favicon/|/downloads/.*/)$} do
+#   item.identifier.chop + '.' + item[:extension]
+# end
+route STATIC_ITEMS do
+  item.identifier.chomp('/')
 end
 
 route '/assets/style/*/' do

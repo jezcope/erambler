@@ -1,4 +1,1 @@
----
-is_hidden: true
----
 Sitemap: http://erambler.co.uk/sitemap.xml

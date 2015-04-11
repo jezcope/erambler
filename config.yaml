@@ -1,5 +1,5 @@
 title:          eRambler
-tagline:        Jez Cope's blog on becoming a research technologist
+tagline:        "Jez Cope's blog on becoming a research technologist"
 author_name:    Jez Cope
 author_uri:     http://erambler.co.uk/
 
@@ -55,6 +55,11 @@ data_sources:
     # The path where layouts should be mounted. The layouts root behaves the
     # same as the items root, but applies to layouts rather than items.
     layouts_root: /
+  -
+    # The `static` data source loads from the 'static/' directory,
+    # keeps file extensions in the item identifier and marks
+    # everything as binary
+    type: static
 
 deploy:
   default:

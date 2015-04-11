@@ -22,8 +22,7 @@ STATIC_ITEMS = Regexp.union(
   '/favicon.ico/',
   '/robots.txt/',
   '/blank.html/',
-  %r{/assets/images/.*/},
-  %r{/assets/fonts/.*/},
+  %r{/assets/(images|fonts|javascripts)/.*/},
   %r{/downloads/.*/}
 )
 compile STATIC_ITEMS do
@@ -111,14 +110,6 @@ end
 
 route %r{/(feed|sitemap)/$} do
   item.identifier.chop + '.xml'
-end
-
-route '/robots/' do
-  '/robots.txt'
-end
-
-route '/blank/' do
-  '/blank.html'
 end
 
 route '*' do

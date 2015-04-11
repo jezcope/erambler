@@ -8,6 +8,7 @@
 @import "bootstrap";
 
 @import "partials/base";
+
 #container {
     @include container-fixed;
 
@@ -37,6 +38,11 @@ section {
 
 #content {
     @include make-md-column(8);
+
+    .static-page & {
+        @include make-md-column-offset(2);
+        @include make-md-column(6);
+    }
 }
 
 #sidebar {

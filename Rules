@@ -14,6 +14,9 @@ preprocess do
   @items.concat(tag_index.tag_pages)
   @items.concat(tag_index.category_feeds)
   @items.concat(tag_index.category_pages)
+
+  articles.each {|item| item[:page_type] = 'single-post'}
+  @items.each   {|item| item[:page_type] ||= 'static-page'}
 end
 
 # Compilation ##################################################################
@@ -42,13 +45,13 @@ end
 
 compile %r{^(/|/archives/.*/)$} do
   filter :haml
-  layout 'home'
+  layout 'main'
 end
 
 compile '/articles/*' do
   filter :erb
   filter :kramdown
-  layout 'article'
+  layout 'main'
 end
 
 compile '/articles/*', rep: :archive do
@@ -63,7 +66,7 @@ end
 
 compile %r{^/(tag|category)/} do
   filter :haml
-  layout 'page' unless item[:type] == :feed
+  layout 'main' unless item[:type] == :feed
 end
 
 compile '*' do
@@ -76,7 +79,7 @@ compile '*' do
   else
     filter :erb
   end
-  layout 'page'
+  layout 'main'
 end
 
 # Routing ######################################################################

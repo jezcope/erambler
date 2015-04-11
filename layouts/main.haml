@@ -1,0 +1,58 @@
+!!!
+%html{ :lang => 'en' }
+  %head= render 'partials/head'
+  %body{:class => [@item[:page_type]]}
+    #container
+      %header.page-header
+        %hgroup
+          %h1= @config[:title]
+          %p.lead= @config[:tagline]
+        %nav= render 'partials/nav'
+      %section
+        #content
+          - if @item[:page_type] == 'single-post'
+            %article
+              .row
+                %h1.post-title= @item[:title]
+              .row
+                .post-info= render 'partials/post_info', :item => @item
+                .post-body
+                  .post-content= yield
+                  -#.post-tags= render 'partials/post_tags', :item => @item
+                  #disqus_thread
+                  :javascript
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'erambler'; // required: replace example with your forum shortname
+                    var disqus_identifier = '#{atom_tag_for @item}';
+                    var disqus_title = '#{@item[:title]}'
+                    var disqus_url = '#{url_for @item}';
+                    var disqus_developer = 0;
+                    if (window.location.hostname == 'localhost')
+                      disqus_developer = 1;
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+          - else
+            = yield
+        #sidebar= render_cached 'partials/sidebar'
+      %footer= render_cached 'partials/footer'
+    = render_cached 'partials/analytics'
+
+    - if @item.identifier == '/'
+      :javascript
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'erambler'; // required: replace example with your forum shortname
+        if (window.location.hostname == 'localhost')
+          disqus_developer = 1;
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());

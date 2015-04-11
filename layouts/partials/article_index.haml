@@ -1,7 +1,8 @@
 - n = @config[:page_size]
 - sorted_articles.drop(@page*n).take(n).each do |article|
   %article
-    %h2.post-title= link_to article[:title], article
+    .row
+      %h2.post-title= link_to article[:title], article
     .row
       .post-info= render 'partials/post_info', :item => article
       .post-body

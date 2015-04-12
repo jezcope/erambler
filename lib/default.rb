@@ -10,3 +10,7 @@ def render_cached(partial, *args)
 
   $cache[partial] ||= render(partial, *args)
 end
+
+def reset_cache
+  $cache = {}
+end

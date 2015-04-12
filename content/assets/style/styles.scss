@@ -56,6 +56,11 @@ article {
 .post-title {
     @include make-md-column-offset(3);
     @include make-md-column(9);
+
+    .static-page & {
+        @include make-md-column-offset(0);
+        @include make-md-column(12);
+    }
 }
 
 .post-info {
@@ -89,6 +94,22 @@ article {
 
 .post-body {
     @include make-md-column(9);
+
+    .static-page & {
+        @include make-md-column(12);
+    }
+}
+
+.single-post, .static-page {
+
+    article {
+        h1, .h1 { font-size: $font-size-h2; }
+        h2, .h2 { font-size: $font-size-h3; }
+        h3, .h3 { font-size: $font-size-h4; }
+        h4, .h4 { font-size: $font-size-h5; }
+        h5, .h5 { font-size: $font-size-h6; }
+    }
+
 }
 
 nav {

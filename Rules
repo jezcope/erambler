@@ -7,6 +7,8 @@ Compass.add_project_configuration 'config/compass.rb'
 # Preprocess ###################################################################
 
 preprocess do
+  reset_cache
+  
 	paginate_articles
 
   tag_index.add_articles(articles)
@@ -57,7 +59,7 @@ end
 compile '/articles/*', rep: :archive do
   filter :erb
   filter :kramdown
-  filter :reduce_header_level, by: 2
+  filter :reduce_header_level, by: 1
 end
 
 compile %r{^(/feeds?/.*|/sitemap/|/ignore-me/)$} do

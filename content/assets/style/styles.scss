@@ -10,6 +10,10 @@
 // Some other useful partials
 @import "partials/pygments-tango";
 
+/*****************************************************************************
+ * General structure
+ */
+
 #container {
     @include container-fixed;
 
@@ -23,6 +27,27 @@
         width: $container-lg;
     }
 }
+
+section {
+    @include make-row;
+}
+
+#content {
+    @include make-md-column(8);
+
+    .static-page & {
+        @include make-md-column-offset(2);
+        @include make-md-column(6);
+    }
+}
+
+article {
+    @include container-fixed(0px);
+}
+
+/*****************************************************************************
+ * Blog header
+ */
 
 header.page-header {
     @include make-row;
@@ -40,21 +65,14 @@ header.page-header {
 
     nav {
         padding-top: $grid-gutter-width / 2;
-        /* background-color: lighten($brand-primary, 40%); */
-        /* @include border-bottom-radius($grid-gutter-width / 2); */
-    }
-}
-
-section {
-    @include make-row;
-}
-
-#content {
-    @include make-md-column(8);
-
-    .static-page & {
-        @include make-md-column-offset(2);
-        @include make-md-column(6);
+        ul {
+            display: inline-block;
+            padding: 0 !important;
+            li {
+                display: inline-block;
+                margin-right: 1em;
+            }
+        }
     }
 }
 
@@ -70,9 +88,9 @@ section {
     border-radius: $grid-gutter-width / 2;
 }
 
-article {
-    @include container-fixed(0px);
-}
+/*****************************************************************************
+ * Posts and static pages
+ */
 
 .post-title {
     @include make-md-column-offset(3);
@@ -120,6 +138,7 @@ article {
     }
 }
 
+// Fix heading sizes for single post pages
 .single-post, .static-page {
 
     article {
@@ -132,17 +151,7 @@ article {
 
 }
 
-nav {
-    ul {
-        display: inline-block;
-        padding: 0 !important;
-        li {
-            display: inline-block;
-            margin-right: 1em;
-        }
-    }
-}
-
+// Tags & categories
 ul.post-cats, ul.post-tags {
     display: inline;
     list-style-type: none;

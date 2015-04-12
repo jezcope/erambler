@@ -1,1 +1,10 @@
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/2.0/uk/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">eRambler</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://erambler.co.uk/" property="cc:attributionName" rel="cc:attributionURL">Jez Cope</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/uk/">Creative Commons Attribution-ShareAlike 2.0 UK: England & Wales License</a>.
+%a.license(rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/uk/")
+  %img(alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/2.0/uk/88x31.png")
+%span(xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type")
+  = @config[:title]
+by
+%a(xmlns:cc="http://creativecommons.org/ns#" href="#{@config[:author_uri]}" property="cc:attributionName" rel="cc:attributionURL")
+  = @config[:author_name]
+is licensed under a
+%a(rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/uk/")
+  Creative Commons Attribution-ShareAlike 2.0 UK: England & Wales License

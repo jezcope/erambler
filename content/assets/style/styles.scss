@@ -53,6 +53,11 @@ header.page-header {
         background-color: $brand-primary;
         color: white;
         border-radius: $grid-gutter-width / 2;
+
+        h1 a, .h1 a {
+            color: white;
+            text-decoration: none;
+        }
     }
 
     nav {
@@ -78,6 +83,16 @@ header.page-header {
 
     background-color: lighten($brand-primary, 60%);
     border-radius: $grid-gutter-width / 2;
+}
+
+footer {
+    @include make-md-column-offset(2);
+    @include make-md-column(6);
+
+    a.license {
+        @extend .pull-left;
+        margin-right: 1em;
+    }
 }
 
 /*****************************************************************************
@@ -231,6 +246,10 @@ a.tag {
     display: none;
 }
 
-.output_subarea img {
+.output_png {
     text-align: center;
+
+    img {
+        max-width: 100%;
+    }
 }

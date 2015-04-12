@@ -5,7 +5,6 @@
     .post-info
       =render 'partials/post_date', :item => article
     .post-body
-      -#.post-content= article.compiled_content :rep => :archive
-      = render 'partials/post_cats', :item => article
-      = render 'partials/post_tags', :item => article
+      %p.post-cats= render 'partials/post_cats', :item => article
+      %p.post-cats= render 'partials/post_tags', :item => article
       .post-comments-link= disqus_comments_link article

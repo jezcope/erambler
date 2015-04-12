@@ -8,7 +8,7 @@
           - if @item.identifier == '/'
             %h1= @config[:title]
           - else
-            .h1= @config[:title]
+            .h1= link_to @config[:title], '/'
           .lead= @config[:tagline]
         %nav= render 'partials/nav'
       %section
@@ -44,7 +44,8 @@
           - else
             = yield
         #sidebar= render_cached 'partials/sidebar'
-      %footer= render_cached 'partials/footer'
+        .row
+          %footer= render_cached 'partials/footer'
     = render_cached 'partials/analytics'
 
     - if @item.identifier == '/'

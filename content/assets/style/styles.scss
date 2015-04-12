@@ -192,6 +192,15 @@ a.tag {
 }
 
 /*****************************************************************************
+ * Utility classes for posts etc.
+ */
+
+.main-illustration {
+    max-width: 50%;
+    @extend .pull-right;
+}
+
+/*****************************************************************************
  * IPython notebook support (including syntax highlighting)
  */
 

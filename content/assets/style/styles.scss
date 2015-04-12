@@ -76,7 +76,7 @@ header.page-header {
         bottom: $grid-gutter-width / 2;
     }
 
-    background-color: lighten($brand-primary, 70%);
+    background-color: lighten($brand-primary, 60%);
     border-radius: $grid-gutter-width / 2;
 }
 
@@ -91,6 +91,11 @@ header.page-header {
     .static-page & {
         @include make-md-column-offset(0);
         @include make-md-column(12);
+    }
+
+    a, a:hover {
+        text-decoration: none;
+        color: $text-color;
     }
 }
 

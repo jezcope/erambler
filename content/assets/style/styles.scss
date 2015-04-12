@@ -102,7 +102,9 @@ header.page-header {
 .post-info {
     @include make-md-column(3);
     font-style: italic;
-    color: $gray;
+    color: $gray-light;
+
+    text-align: right;
 
     .post-date, .post-cats, .post-tags {
         @media (min-width: $screen-md-min) {

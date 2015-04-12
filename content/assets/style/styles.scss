@@ -7,8 +7,6 @@
 // Import Bootstrap for Sass
 @import "bootstrap";
 
-@import "partials/base";
-
 #container {
     @include container-fixed;
 
@@ -29,6 +27,18 @@ header.page-header {
     hgroup, nav {
         @include make-md-column-offset(2);
         @include make-md-column(10);
+    }
+
+    hgroup {
+        background-color: $brand-primary;
+        color: white;
+        border-radius: $grid-gutter-width / 2;
+    }
+
+    nav {
+        padding-top: $grid-gutter-width / 2;
+        /* background-color: lighten($brand-primary, 40%); */
+        /* @include border-bottom-radius($grid-gutter-width / 2); */
     }
 }
 
@@ -53,6 +63,8 @@ section {
         bottom: $grid-gutter-width / 2;
     }
 
+    background-color: lighten($brand-primary, 70%);
+    border-radius: $grid-gutter-width / 2;
 }
 
 article {
@@ -72,12 +84,11 @@ article {
 .post-info {
     @include make-md-column(3);
     font-style: italic;
-    color: #999;
+    color: $gray;
 
     .post-date, .post-cats, .post-tags {
         @media (min-width: $screen-md-min) {
             margin-bottom: 1em;
-            font-style: italic;
         }
 
         @media (max-width: $screen-md-min) {
@@ -141,9 +152,9 @@ ul.post-cats, ul.post-tags {
 }
 
 a.tag {
-    background: adjust-lightness($colour-tag, 50);
-    border: $colour-tag thin solid;
-    color: $colour-tag;
+    background: lighten($brand-primary, 50%);
+    border: $brand-primary thin solid;
+    color: $brand-primary;
     padding: 0 1px;
     margin-right: 2px;
     border-radius: 3px;
@@ -171,6 +182,14 @@ a.tag {
         @include make-xs-column(6);
         text-align: right;
     }
+
+    .newer-posts, .older-posts {
+        a {
+            @extend .btn;
+            @extend .btn-primary;
+        }
+    }
+}
 }
 
 @import "partials/pygments-zenburn";

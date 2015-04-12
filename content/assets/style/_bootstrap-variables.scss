@@ -15,11 +15,13 @@
 // $gray-light:             lighten($gray-base, 46.7%) // #777
 // $gray-lighter:           lighten($gray-base, 93.5%) // #eee
 
-// $brand-primary:         darken(#428bca, 6.5%) // #337ab7
-// $brand-success:         #5cb85c
-// $brand-info:            #5bc0de
-// $brand-warning:         #f0ad4e
-// $brand-danger:          #d9534f
+// Colours from http://paletton.com/#uid=73A260kq3o6gcBkljsGtti2E59y
+
+$brand-primary:         #1f4d7d;
+$brand-success:         #1b942a;
+$brand-info:            $brand-primary;
+$brand-warning:         #bf8123;
+$brand-danger:          #bf2b23;
 
 //== Scaffolding
 //
@@ -31,7 +33,7 @@
 // $text-color:            $gray-dark
 
 //** Global textual link color.
-// $link-color:            $brand-primary
+$link-color:            $brand-danger;
 //** Link hover color set via `darken()` function.
 // $link-hover-color:      darken($link-color, 15%)
 //** Link hover decoration.

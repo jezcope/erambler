@@ -47,6 +47,12 @@ section {
 
 #sidebar {
     @include make-md-column(4);
+
+    padding: {
+        top: $grid-gutter-width / 2;
+        bottom: $grid-gutter-width / 2;
+    }
+
 }
 
 article {
@@ -144,5 +150,27 @@ a.tag {
     text-decoration: none;
 }
 
+#page-nav {
+    @include make-row;
+
+    margin: {
+        top: 2em;
+        bottom: 2em;
+    }
+
+    .newer-posts {
+        @include make-md-column-offset(3);
+        @include make-md-column(3);
+        @include make-xs-column(6);
+        text-align: left;
+    }
+
+    .older-posts {
+        @include make-md-column-offset(3);
+        @include make-md-column(3);
+        @include make-xs-column(6);
+        text-align: right;
+    }
+}
 
 @import "partials/pygments-zenburn";

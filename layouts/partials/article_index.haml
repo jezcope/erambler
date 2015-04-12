@@ -9,7 +9,9 @@
         .post-content= article.compiled_content :rep => :archive
         .post-comments-link= disqus_comments_link article
 #page-nav
-  - unless @page == 0
-    = link_to '<< Newer posts', archive_page_url(@page - 1)
-  - unless (@page+1) * n >= articles.count
-    = link_to 'Older posts >>', archive_page_url(@page + 1)
+  .newer-posts
+    - unless @page == 0
+      = link_to '<< Newer posts', archive_page_url(@page - 1)
+  .older-posts
+    - unless (@page+1) * n >= articles.count
+      = link_to 'Older posts >>', archive_page_url(@page + 1)

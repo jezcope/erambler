@@ -8,7 +8,10 @@ def paginate_articles
 	1.upto(articles.count/@config[:page_size]) do |page|
 		@items << Nanoc3::Item.new(
 			"= render 'partials/article_index', :page => #{page}",
-			{ :title => "Archive page #{page}" },
+			{
+        title: "Archive page #{page}",
+        page_type: 'index'
+      },
 			"/archives/#{page}")
 	end
 end

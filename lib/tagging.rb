@@ -73,7 +73,8 @@ class TagIndex
       "= render 'partials/brief_index', :articles => tag_index.items_for_tag(#{tag.inspect})",
       {
         mtime: items_for_tag(tag).collect {|i| i[:mtime]}.max,
-        title: %(Articles tagged "#{tag}")
+        title: %(Articles tagged "#{tag}"),
+        page_type: %w{index tag-page}
       },
       url_for_tag(tag))
   end
@@ -105,7 +106,8 @@ class TagIndex
       "= render 'partials/brief_index', :articles => tag_index.items_for_category(#{cat.inspect})",
       {
         mtime: items_for_category(cat).collect {|i| i[:mtime]}.max,
-        title: %(Articles filed under "#{cat}")
+        title: %(Articles filed under "#{cat}"),
+        page_type: %w{index tag-page}
       },
       url_for_category(cat))
   end

@@ -190,6 +190,23 @@ a.tag {
         }
     }
 }
+
+/*****************************************************************************
+ * IPython notebook support (including syntax highlighting)
+ */
+
+.prompt {
+    font-family: $font-family-monospace;
 }
 
-@import "partials/pygments-zenburn";
+.highlight pre {
+    @include pygments-colors-tango;
+}
+
+.cell .anchor-link {
+    display: none;
+}
+
+.output_subarea img {
+    text-align: center;
+}

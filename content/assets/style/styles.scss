@@ -7,6 +7,9 @@
 // Import Bootstrap for Sass
 @import "bootstrap";
 
+// Some other useful partials
+@import "partials/pygments-tango";
+
 #container {
     @include container-fixed;
 
@@ -160,6 +163,10 @@ a.tag {
     border-radius: 3px;
     text-decoration: none;
 }
+
+/*****************************************************************************
+ * Archive page navigation
+ */
 
 #page-nav {
     @include make-row;

@@ -23,6 +23,11 @@ end
 
 # Compilation ##################################################################
 
+KRAMDOWN_OPTIONS = {
+  input: :GFM,
+  syntax_highlighter: :rouge
+}
+
 STATIC_ITEMS = Regexp.union(
   '/favicon.ico/',
   '/robots.txt/',
@@ -52,13 +57,13 @@ end
 
 compile '/articles/*' do
   filter :erb
-  filter :kramdown
+  filter :kramdown, KRAMDOWN_OPTIONS
   layout 'main'
 end
 
 compile '/articles/*', rep: :archive do
   filter :erb
-  filter :kramdown
+  filter :kramdown, KRAMDOWN_OPTIONS
   filter :reduce_header_level, by: 1
 end
 
@@ -75,7 +80,7 @@ compile '*' do
   case @item[:extension]
   when 'md'
     filter :erb
-    filter :kramdown
+    filter :kramdown, KRAMDOWN_OPTIONS
   when 'haml'
     filter :haml, format: :html5
   else

@@ -27,6 +27,18 @@ module Blogging
       end
     end
 
+    def index_tags
+      tags = {}
+
+      article_metadata.each do |info|
+        ((info["tags"] || []) + (info["categories"] || [])).uniq.each do |tag|
+          (tags[tag] ||= []) << info
+        end
+      end
+
+      tags
+    end
+
   end
 
   class Articles < Thor
@@ -42,71 +54,18 @@ module Blogging
 
   end
 
-  class Categories < Thor
-
-    include Helpers
-
-    desc "count_articles", "list all used categories"
-    def count_articles
-      categories = {}
-
-      article_metadata.each do |info|
-        info["categories"].andand.each do |cat|
-          (categories[cat] ||= []) << info
-        end
-      end
-
-      process_alphabetically(categories) {|k,v| puts "#{k}: #{v.count}"}
-    end
-
-    desc "list_articles", "list all used categories"
-    def list_articles
-      categories = {}
-
-      article_metadata.each do |info|
-        info["categories"].andand.each do |cat|
-          (categories[cat] ||= []) << info
-        end
-      end
-
-      process_alphabetically(categories) do |k,v|
-        puts "#{k}:"
-        v.each do |a|
-          puts "  #{a['filename']}"
-        end
-      end
-    end
-
-  end
-
   class Tags < Thor
 
     include Helpers
 
     desc "count_articles", "list all used tags"
     def count_articles
-      tags = {}
-
-      article_metadata.each do |info|
-        info["tags"].andand.each do |tag|
-          (tags[tag] ||= []) << info
-        end
-      end
-
-      process_alphabetically(tags) {|k,v| puts "#{k}: #{v.count}"}
+      process_alphabetically(index_tags) {|k,v| puts "#{k}: #{v.count}"}
     end
     
     desc "list_articles", "list all used categories"
     def list_articles
-      tags = {}
-
-      article_metadata.each do |info|
-        info["tags"].andand.each do |tag|
-          (tags[tag] ||= []) << info
-        end
-      end
-
-      process_alphabetically(tags) do |k,v|
+      process_alphabetically(index_tags) do |k,v|
         puts "#{k}:"
         v.each do |a|
           puts "  #{a['filename']}"

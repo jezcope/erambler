@@ -1,3 +1,11 @@
-=render 'partials/post_date', :item => @item
-=render 'partials/post_cats', :item => @item
-=render 'partials/post_tags', :item => @item
+- item_date = date_for @item
+- all_tags = tags_for @item
+
+.post-date
+  = item_date.strftime '%A %e %B %Y'
+
+- if all_tags.length > 0
+  Tagged with
+  %ul.post-tags
+    - all_tags.each do |x|
+      %li= link_for_tag x

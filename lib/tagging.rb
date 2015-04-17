@@ -113,3 +113,7 @@ class TagIndex
   end
 
 end
+
+def tags_for(item)
+  ((@item[:tags] || []) + (@item[:categories] || [])).sort
+end

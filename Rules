@@ -14,8 +14,6 @@ preprocess do
   tag_index.add_articles(articles)
   @items.concat(tag_index.tag_feeds)
   @items.concat(tag_index.tag_pages)
-  @items.concat(tag_index.category_feeds)
-  @items.concat(tag_index.category_pages)
 
   articles.each {|item| item[:page_type] = 'single-post'}
   @items.each   {|item| item[:page_type] ||= 'static-page'}

@@ -8,7 +8,7 @@ tags:
 - JISC11
 - Cloud computing
 - JANET
-- E-science
+- eScience
 wpid: 614
 ---
 *This post is part of a short series in which I share the thoughts prompted by the recent [JISC conference in Liverpool][JISC11].*

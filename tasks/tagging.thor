@@ -17,8 +17,12 @@ module Blogging
       article_files.map do |filename|
         data = File.read(filename)
         pieces =  data.split(/^(-{5}|-{3})\s*$/)
-        YAML.load(pieces[2]).merge('filename' => filename)
-      end
+        if pieces[2] then
+          YAML.load(pieces[2]).merge('filename' => filename)
+        else
+          nil
+        end
+      end.reject {|x| x.nil?}
     end
 
     def process_alphabetically(hash)

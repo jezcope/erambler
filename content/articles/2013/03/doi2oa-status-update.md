@@ -61,7 +61,7 @@ Ok, this one's pretty easy to solve. I'm releasing the code under the [GNU Gener
 
 *And here's the video I promised:*
 
-<iframe width="487" height="274" src="http://www.youtube.com/embed/gMiA8AIX03Q" frameborder="0" allowfullscreen></iframe>
+<%= embed_youtube "gMiA8AIX03Q" %>
 
 [EPrints]: http://eprints.org/
 [Heroku]: http://heroku.com/

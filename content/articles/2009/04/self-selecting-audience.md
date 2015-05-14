@@ -15,7 +15,7 @@ tags:
 - Wikis
 wpid: 197
 ---
-[caption id="" align="alignright" width="350" caption="Photo by Pete Ashton"]<a href="http://www.flickr.com/photos/51035602859@N01/814099991"><img class=" " src="http://farm2.static.flickr.com/1235/814099991_1114cdd4a0.jpg" alt="Photo by Pete Ashton" width="350" height="233" /></a>[/caption]
+<div class="wp-caption alignright"><a href="http://www.flickr.com/photos/51035602859@N01/814099991"><img class=" " src="http://farm2.static.flickr.com/1235/814099991_1114cdd4a0.jpg" alt="Photo by Pete Ashton" width="350" height="233" /></a><p>Photo by Pete Ashton</p></div>
 
 Do you like having an audience? I know I do: that's at least part of the reason I'm writing this blog post.
 

@@ -235,6 +235,22 @@ a.tag {
     @extend .pull-right;
 }
 
+.wp-caption {
+    background: $gray-lighter;
+    border: solid 1px $gray-light;
+    border-radius: 2px;
+    padding: 4px;
+
+    &.alignright {
+        @extend .pull-right;
+
+        p { text-align: right; }
+    }
+    &.alignleft {
+        @extend .pull-left;
+    }
+}
+
 .video-container {
     position: relative;
     padding-bottom: 56.25%;

@@ -15,7 +15,7 @@ tags:
 - Bookmarking
 wpid: 406
 ---
-[caption id="" align="alignright" width="180" caption="Margin Notes by Peter Lindberg"]<a href="http://www.flickr.com/photos/plindberg/32809925/"><img alt="Margin Notes by Peter Lindberg" src="http://farm1.static.flickr.com/21/32809925_6b27ccbda6_m.jpg" title="Margin Notes" width="180" height="240" /></a>[/caption]
+<div class="wp-caption alignright"><a href="http://www.flickr.com/photos/plindberg/32809925/"><img alt="Margin Notes by Peter Lindberg" src="http://farm1.static.flickr.com/21/32809925_6b27ccbda6_m.jpg" title="Margin Notes" width="180" height="240" /></a><p>Margin Notes by Peter Lindberg</p></div>
 
 For a long time, I've been the sort of person who tends to read and absorb information, without really wanting or needing to scribble notes down. This is probably because my background has been maths and computing, and the elegance of mathematics as a language is in its ability to express big ideas and small in a concise way: no annotation needed if everything you need is there.
 

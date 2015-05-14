@@ -30,7 +30,7 @@ First, an aside. One of the things that makes Twitter so powerful is its Applica
 <h2>URL shrinking</h2>
 If youâ€™ve been using Twitter for any length of time, youâ€™ve probably used it to pass on the URL (web address) of a web page to your network. In that case, you might have noticed that since URLs can be pretty long, you donâ€™t get much space left to describe what it is youâ€™re actually passing on. This is where URL shrinkers come in.
 
-[caption id="attachment_174" align="alignleft" width="178" caption="A shrunk URL"]<img class="size-full wp-image-174" src="http://allacademic.files.wordpress.com/2009/03/shrunkurl.png" alt="A shrunk URL" width="178" height="53" />[/caption]
+<div class="wp-caption alignleft"><img class="size-full wp-image-174" src="http://allacademic.files.wordpress.com/2009/03/shrunkurl.png" alt="A shrunk URL" width="178" height="53" /><p>A shrunk URL</p></div>
 
 Quite simply, a URL shrinker takes your long, unwieldy URL and spits out a nice, short URL which points to the same web page. You can copy-and-paste a URL from your browserâ€™s location bar into the URL shrinker, but most of these services will give you a bookmarklet; a link which you can drag to your browserâ€™s bookmarks/favourites bar which becomes a button to automatically grab the URL, shrink it and copy it to the clipboard ready for use. Look this up in the online help for your URL shrinker, or look for links with titles like â€œTrim thisâ€.
 
@@ -73,7 +73,7 @@ If youâ€™re really interested in that kind of thing, you might want to look
 </ul>
 <h2>
 
-[caption id="attachment_175" align="alignright" width="200" caption="Twitter on Facebook"]<img class="size-full wp-image-175" src="http://allacademic.files.wordpress.com/2009/03/twitter-on-facebook.png" alt="Twitter on Facebook" width="200" height="197" />[/caption]
+<div class="wp-caption alignright"><img class="size-full wp-image-175" src="http://allacademic.files.wordpress.com/2009/03/twitter-on-facebook.png" alt="Twitter on Facebook" width="200" height="197" /><p>Twitter on Facebook</p></div>
 
 Other social networks</h2>
 There are, of course, other social networks out there, and there are a number of ways to get them to play nicely with Twitter. Thereâ€™s a <a href="http://apps.facebook.com/twitter/">Twitter app</a> for Facebook, which allows you to tweet from within Facebook, and even offers to post each tweet as a status update in your Facebook profile. I donâ€™t use Facebook much these days, but this is an easy way for me to keep it updated.

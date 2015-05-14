@@ -13,7 +13,7 @@ tags:
 - Printing
 wpid: 549
 ---
-[caption id="" align="alignright" width="240" caption="Photo by orb9220"]<a href="http://www.flickr.com/photos/orb9220/4794069185/"><img alt="Nook Storytelling A New Way 2 of 2" src="http://farm5.static.flickr.com/4135/4794069185_bde57cedd6_m.jpg" title="Nook Storytelling A New Way 2 of 2" width="240" height="161" /></a>[/caption]Last week, in conversation over a cup of tea with a handful of PhD students and the <abbr title="Doctoral Training Centre">DTC</abbr> Co-ordinator, someone remarked on the large quantity of printing that PhD students (and researchers in general) do. It's common to end up with piles and piles of printed articles which have been read only a few times before being "archived".
+<div class="wp-caption alignright"><a href="http://www.flickr.com/photos/orb9220/4794069185/"><img alt="Nook Storytelling A New Way 2 of 2" src="http://farm5.static.flickr.com/4135/4794069185_bde57cedd6_m.jpg" title="Nook Storytelling A New Way 2 of 2" width="240" height="161" /></a><p>Photo by orb9220</p></div>Last week, in conversation over a cup of tea with a handful of PhD students and the <abbr title="Doctoral Training Centre">DTC</abbr> Co-ordinator, someone remarked on the large quantity of printing that PhD students (and researchers in general) do. It's common to end up with piles and piles of printed articles which have been read only a few times before being "archived".
 
 Not only is this wasteful, both environmentally and economically, it also means carrying all of those dead-tree documents around if you want to read them out of the office (which most people do).
 

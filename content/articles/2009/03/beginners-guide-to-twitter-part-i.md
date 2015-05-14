@@ -15,7 +15,7 @@ tags:
 - Web 2.0
 wpid: 152
 ---
-[caption id="attachment_153" align="alignright" width="300" caption="Twitter home page"]<img class="size-medium wp-image-153" src="http://allacademic.files.wordpress.com/2009/03/twitterhomepage.png?w=300" alt="Twitter home page" width="300" height="194" />[/caption]
+<div class="wp-caption alignright"><img class="size-medium wp-image-153" src="http://allacademic.files.wordpress.com/2009/03/twitterhomepage.png?w=300" alt="Twitter home page" width="300" height="194" /><p>Twitter home page</p></div>
 
 Iâ€™ve recently signed up to <a href="http://twitter.com/">Twitter</a>. Itâ€™s not a new thing; itâ€™s been around for a few years and itâ€™s probably safe to say that Iâ€™m way behind the curve on this one. For those who havenâ€™t come across it yet, itâ€™s a very, <em>very</em> simple social networking site which allows you to broadcast 140-character messages. However, in spite of this simplicity, itâ€™s a very powerful tool, and can be quite off-putting for new users.
 
@@ -39,11 +39,11 @@ Wading through the tweets of every other twitterer on the planet is going to tak
 
 This hands control over what you read back to you: you donâ€™t have to follow anyone you donâ€™t want to. I canâ€™t emphasise enough how important this is: <em>donâ€™t follow anyone whose tweets arenâ€™t worth reading</em>. By all means follow someone for a while before you make this decision, and change your mind all you want. Just remember that if youâ€™re not interested in updates on userxyzâ€™s cat at 90-second intervals, no-one says you have to follow them.
 
-[caption id="attachment_155" align="alignright" width="157" caption="Follow button"]<img class="size-full wp-image-155" src="http://allacademic.files.wordpress.com/2009/03/followbutton.png" alt="Follow button" width="157" height="129" />[/caption]
+<div class="wp-caption alignright"><img class="size-full wp-image-155" src="http://allacademic.files.wordpress.com/2009/03/followbutton.png" alt="Follow button" width="157" height="129" /><p>Follow button</p></div>
 
 You can follow someone by visiting their profile page, which will have the form â€œhttp://twitter.com/<em>username</em>â€. This page lists their most recent tweets, newest first. Right at the top, underneath their picture, thereâ€™s a button marked â€œFollowâ€: click this and itâ€™ll change to a message telling you that youâ€™re now following them. To stop following someone, click this message and itâ€™ll reveal a â€œRemoveâ€ button for you to press. Twitter will send them an email when you start following them, but not when you stop.
 
-[caption id="attachment_156" align="alignleft" width="500" caption="Following info"]<img class="size-full wp-image-156" src="http://allacademic.files.wordpress.com/2009/03/following.png" alt="Following info" width="500" height="200" />[/caption]
+<div class="wp-caption alignleft"><img class="size-full wp-image-156" src="http://allacademic.files.wordpress.com/2009/03/following.png" alt="Following info" width="500" height="200" /><p>Following info</p></div>
 
 On the left of your home page, there are links entitled â€œFollowingâ€ and â€œFollowersâ€ which take you to a list of people you follow and people who follow you, respectively. On your followers list, youâ€™ll see a tick next to anyone youâ€™re also following, and a follow button next to anyone youâ€™re not. Following people who follow you is good for at least three reasons:
 <ol>

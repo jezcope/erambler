@@ -30,7 +30,7 @@ Letâ€™s get on with the second part, on some of the conventions that are co
 In my previous post, I introduced you to the basic tools of the Twitter trade: messages, followers and searches. But it doesnâ€™t end there. Since its inception, a number of conventions have sprung up which make it much more powerful, but they can be quite confusing to the beginner. Youâ€™ll probably have noticed lots of â€œ@thisâ€ and â€œ#thatâ€ and â€œRT the otherâ€. This post attempts to explain what all these actually mean.
 <h2>
 
-[caption id="attachment_168" align="alignright" width="300" caption="Some replies on Twitter"]<a href="http://twitter.com/replies"><img class="size-medium wp-image-168 " src="http://allacademic.files.wordpress.com/2009/03/twitterreplies.png?w=300" alt="Some replies on Twitter" width="300" height="190" /></a>[/caption]
+<div class="wp-caption alignright"><a href="http://twitter.com/replies"><img class="size-medium wp-image-168 " src="http://allacademic.files.wordpress.com/2009/03/twitterreplies.png?w=300" alt="Some replies on Twitter" width="300" height="190" /></a><p>Some replies on Twitter</p></div>
 
 @replies</h2>
 This is the most common convention: you can refer to another twitterer in a tweet (and by extension, it seems, anywhere else) by preceding their username with an â€˜@â€™ sign. So in my case, that would be â€˜@jezcopeâ€™. This is so common, in fact, that itâ€™s been absorbed into Twitter itself. Each mention of @<em>username</em> will be turned into a link to that userâ€™s profile page: this is a very easy way to follow new people.
@@ -48,7 +48,7 @@ and I think it's interesting enough to pass on to those of my followers not alre
 Many Twitter clients (see tomorrow's post) allow you to do this with a single click.
 <h2>
 
-[caption id="attachment_169" align="alignright" width="300" caption="Search results for #ngtip"]<a href="http://search.twitter.com/search?q=%23ngtip09"><img class="size-medium wp-image-169 " src="http://allacademic.files.wordpress.com/2009/03/ngtip.png?w=300" alt="Search results for #ngtip" width="300" height="251" /></a>[/caption]
+<div class="wp-caption alignright"><a href="http://search.twitter.com/search?q=%23ngtip09"><img class="size-medium wp-image-169 " src="http://allacademic.files.wordpress.com/2009/03/ngtip.png?w=300" alt="Search results for #ngtip" width="300" height="251" /></a><p>Search results for #ngtip</p></div>
 
 #hashtags</h2>
 Tagging is a way of describing an item on the internet, such as a blog post, using single-word descriptions. Someone had the bright idea of tagging tweets using the form #word: itâ€™s then trivial to find everything with this tag using Twitter search. Remember that this is just a convention, and it works simply because putting # on the start of a word makes a unique string of characters that you can search for.

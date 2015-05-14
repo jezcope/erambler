@@ -98,6 +98,6 @@ While all of the above have educational uses and many of them provide specific s
 <h1>The seminar</h1>
 The goal of the seminar was to introduce some of my fellow trainee teachers to the potential of social media for learning and teaching, and perhaps infect them with some of my enthusiasm, and also to inform them about the <a href="http://snipr.com/bluecloud">bluecloud project</a>. I began by showing the wonderful video from <a href="http://www.commoncraft.com/show">the Common Craft Show</a> on social media, using ice cream as a metaphor. I then gave a few examples of well-known social media tools and listed the common features, before asking those present to split into groups to come up with ideas for how they could use these new tools in their own learning, teaching or research. We then discussed these together as a whole group, and I demonstrated one way of using blogging by directing them here for further resources.
 
-[slideshare id=1122467&amp;doc=socialmediainteachingandlearning-090309130637-phpapp01]
+<div class="video-container"><iframe src="//www.slideshare.net/slideshow/embed_code/key/40vegaZNIXqbo3" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/jezcope/social-media-in-teaching-and-learning" title="Social Media In Teaching And Learning" target="_blank">Social Media In Teaching And Learning</a> </strong> from <strong><a href="//www.slideshare.net/jezcope" target="_blank">Jez Cope</a></strong> </div></div>
 
-[youtube=http://www.youtube.com/watch?v=MpIOClX1jPE]
+<%= embed_youtube 'MpIOClX1jPE' %>

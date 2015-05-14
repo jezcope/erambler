@@ -11,7 +11,7 @@ tags:
 - IOE12
 ---
 
-<a id="post-image" class="alignright" href="http://www.flickr.com/photos/biwook/145765624/" title="A copyright will protect you from PIRATES by Ioan Sameli, on Flickr"><img src="http://farm1.staticflickr.com/54/145765624_65d3eaf886_m.jpg" width="191" height="240" alt="A copyright will protect you from PIRATES"></a>
+<a id="post-image" class="alignright" href="http://www.flickr.com/photos/biwook/145765624/" title="A copyright will protect you from PIRATES by Ioan Sameli, on Flickr"><img src="http://farm1.staticflickr.com/54/145765624_65d3eaf886_m.jpg" width="191" height="240" alt="A copyright will protect you from PIRATES" /></a>
 *This blog post is part of my contribution to the open online course
 [Introduction to Openness in Education](http://openeducation.us/).*
 

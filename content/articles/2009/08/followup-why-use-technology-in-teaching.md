@@ -14,7 +14,7 @@ Some while ago, now, I asked for answers to the question [Why use technology in 
 
 I put together the slides for the initial presentation using [SlideRocket][], and you can flip through them here:
 
-<embed src="http://data.sliderocket.com/SlideRocketPlayer.swf" flashvars="id=C2A0613E-357C-9C91-9A93-A272D250341D" width="400" height="300" allowFullScreen="true" type="application/x-shockwave-flash"></embed>
+<embed src="http://data.sliderocket.com/SlideRocketPlayer.swf" flashvars="id=C2A0613E-357C-9C91-9A93-A272D250341D" width="400" height="300" allowFullScreen="true" type="application/x-shockwave-flash" />
 
 [SlideRocket]: http://sliderocket.com/
 

@@ -10,7 +10,7 @@ tags:
 - eBooks
 ---
 
-<a id="post-image" class="alignright" href="http://www.flickr.com/photos/43602175@N06/4070018686/" title="Amazon Kindle PDF by goXunuReviews, on Flickr"><img src="http://farm3.staticflickr.com/2605/4070018686_b8febdd20a_m.jpg" width="185" height="240" alt="Amazon Kindle PDF"></a>
+<a id="post-image" class="alignright" href="http://www.flickr.com/photos/43602175@N06/4070018686/" title="Amazon Kindle PDF by goXunuReviews, on Flickr"><img src="http://farm3.staticflickr.com/2605/4070018686_b8febdd20a_m.jpg" width="185" height="240" alt="Amazon Kindle PDF" /></a>
 I've now had my [Kindle](http://amazon.com/kindle) for just over 12 months — it
 was last year's Christmas gift from my wonderful wife — and I can quite
 honestly say that it's completely changed the way I read.

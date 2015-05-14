@@ -55,13 +55,13 @@ end
 
 compile '/articles/*' do
   filter :erb
-  filter :kramdown, KRAMDOWN_OPTIONS
+  filter :kramdown, KRAMDOWN_OPTIONS if @item[:extension] == 'md'
   layout 'main'
 end
 
 compile '/articles/*', rep: :archive do
   filter :erb
-  filter :kramdown, KRAMDOWN_OPTIONS
+  filter :kramdown, KRAMDOWN_OPTIONS if @item[:extension] == 'md'
   filter :reduce_header_level, by: 1
 end
 

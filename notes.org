@@ -1,0 +1,10 @@
+* Problems to fix in old posts:
+
+- [ ] Convert DOS-style line endings to Unix
+- [ ] Fix up double-encoded UTF characters
+- [X] Fix improperly closed tags that kramdown whinges about
+- [-] Fix old WordPress shortcodes
+  - [X] caption
+  - [X] youtube
+  - [X] slideshare
+  - [ ] polldaddy

@@ -69,7 +69,7 @@ And changing `TODO` to `DONE` is a single keystroke. Simplicity itself.
 
 Here's [Carsten Dominik on the subject](http://article.gmane.org/gmane.emacs.orgmode/6224)
 
-> "[Org-mode] is a zero-setup, totally simple TODO manager that works with plain files, files that can be edited on pretty much any system out there, either as plain text in **any** editor ...
+> "\[Org-mode] is a zero-setup, totally simple TODO manager that works with plain files, files that can be edited on pretty much any system out there, either as plain text in **any** editor ...
 >
 > Of course, Org-mode allows you to do more, but I would hope in a non-imposing way!  It has lots of features under the hood that you can pull in when you are ready, when you find out that there is something more you'd like to do."
 

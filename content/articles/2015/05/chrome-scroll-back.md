@@ -7,7 +7,7 @@ tags:
 - Chrome
 - Extension
 - JavaScript
-- Open Source
+- Open source
 - Things I made
 ---
 

@@ -17,5 +17,5 @@ I hope you find what I have to say interesting enough to follow me on a regular 
 
 Enjoy...
 
-<em>* Well, not quite that new â€” I first registered it over a year ago but never got around to writing anything until now.
+<em>* Well, not quite that new — I first registered it over a year ago but never got around to writing anything until now.
 </em>

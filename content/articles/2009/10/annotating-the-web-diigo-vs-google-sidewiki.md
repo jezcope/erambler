@@ -23,7 +23,7 @@ More recently, though, I've been reading things with, well, more words in them.
 
 <!--more-->
 
-Learning how to teach has been an education (pun fully intended) â€” I've started reading a much broader range of material, and a lot of it is quite social-sciencey. This stuff is necessarily quite verbose, and I find I need to take notes and rephrase things in my own way to get the most out of them.
+Learning how to teach has been an education (pun fully intended) — I've started reading a much broader range of material, and a lot of it is quite social-sciencey. This stuff is necessarily quite verbose, and I find I need to take notes and rephrase things in my own way to get the most out of them.
 
 Now, with library books, people seem to get a bit upset if you start scribbling in the margins. I have to keep a notebook in which to jot down thoughts.
 
@@ -55,7 +55,7 @@ And that's *pretty cool*. If you want to learn more, check out this [video guide
 [video guide]: http://squiremorley.wordpress.com/2009/09/25/video-guide-to-diigo-annotations/
 [annotated blog post]: http://www.diigo.com/bookmark/http%3A%2F%2Fwww.copyblogger.com%2Fbad-writing-habits?tab=comment
 
-Now, a few weeks ago, Google got in on the act with their new [Sidewiki][] project, and it's [caused][Squire Morley] [a bit][OUseful] [of a][SME] [stir][Web Strategist]. It's not as flexible as as Diigo â€” it's a very simple sidebar-type affair â€” but it does a similar job in terms of turning the web into a conversation.
+Now, a few weeks ago, Google got in on the act with their new [Sidewiki][] project, and it's [caused][Squire Morley] [a bit][OUseful] [of a][SME] [stir][Web Strategist]. It's not as flexible as as Diigo — it's a very simple sidebar-type affair — but it does a similar job in terms of turning the web into a conversation.
 
 The big advantage it has is the Google brand behind it. It's built into a special version of the Google Toolbar and I think we can expect it to make it into the standard version before long; it'll also be working its way into Google's new browser, Chrome. There's an open API too, which means that if you don't want to use Google Toolbar, there's [this standalone client for Firefox][standalone client].
 

@@ -12,7 +12,7 @@ tags:
 - Technology
 wpid: 43
 ---
-In hindsight, my <a title="Part I" href="http://allacademic.wordpress.com/2008/09/03/introduction-to-slc-20-part-i/">previous post</a> on the subject of SLC 2.0 seems rather vague. Itâ€™s definitely a worthwhile description of the motivation behind the project (or at least my motivation) but it doesnâ€™t really describe what weâ€™re actually doing. Iâ€™ll seek to remedy that a little with this, part II of my introduction to SLC 2.0.
+In hindsight, my <a title="Part I" href="http://allacademic.wordpress.com/2008/09/03/introduction-to-slc-20-part-i/">previous post</a> on the subject of SLC 2.0 seems rather vague. It's definitely a worthwhile description of the motivation behind the project (or at least my motivation) but it doesn't really describe what we're actually doing. I'll seek to remedy that a little with this, part II of my introduction to SLC 2.0.
 
 <!--more-->
 
@@ -24,10 +24,10 @@ Second, one from the Theory of Change document put together at the very start of
 <blockquote>Students creating a sustainable way of sharing tools, processes and
 ideas, and knowedge on how to best use and adapt them for their
 learning and research.</blockquote>
-I think between them, these summarise what weâ€™re about pretty succinctly. Recent student feedback suggests that students are genuinely surprised that we donâ€™t support this. The reasons that weâ€™re not currently doing this are quite clear:
+I think between them, these summarise what we're about pretty succinctly. Recent student feedback suggests that students are genuinely surprised that we don't support this. The reasons that we're not currently doing this are quite clear:
 <ol>
 	<li>It spans departmental boundaries, so no individual department sees it as a priority;</li>
-	<li>There is no central support for this type of personal development, either from the University or the Studentsâ€™ Union (other than the Careers Service, which is tightly focussed on the job application process).</li>
+	<li>There is no central support for this type of personal development, either from the University or the Students' Union (other than the Careers Service, which is tightly focussed on the job application process).</li>
 </ol>
 Bearing in mind that, as in any large institution, there is a great deal of inertia in this state of affairs, the most effective approach will therefore be a grassroots one.
 <h1>Involving students</h1>
@@ -39,18 +39,18 @@ We will be running focus groups in the upcoming (Autumn 2008) term, to find out:
 	<li>What students are already doing which can be adopted by the SLC; and</li>
 	<li>What support students are prepared to give to the SLC.</li>
 </ol>
-At the same time, we will be recruiting student volunteers to fulfil roles in the project as they become necessary. In particular, weâ€™ll probably need a network of ambassadors to represent the project to the students and the university, most likely on a departmental basis. The existing student course representatives may be a useful starting point.
+At the same time, we will be recruiting student volunteers to fulfil roles in the project as they become necessary. In particular, we'll probably need a network of ambassadors to represent the project to the students and the university, most likely on a departmental basis. The existing student course representatives may be a useful starting point.
 
 There are also several groups of students who will be worth involving, both because they have appropriate insight and expertise, and because they have an interest in the outcome. These include:
 <ul>
-	<li>Studentsâ€™ Union</li>
+	<li>Students' Union</li>
 	<li>CILASS Student Ambassador Network</li>
 	<li>PGRC/Progress</li>
 	<li>Departmental societies (particularly Computer Science, Education)</li>
 	<li>Other relevant societies (e.g. Free Software)</li>
 </ul>
 <h1>Likely directions</h1>
-Although we have yet to begin polling the students, weâ€™ve already started coming up with ideas for how to proceed with the project. Here are some of them.
+Although we have yet to begin polling the students, we've already started coming up with ideas for how to proceed with the project. Here are some of them.
 <h2>Online home for the community</h2>
 This will provide a central point of contact for students; it will be a place to share and discuss tools, processes and ideas for students actively contributing to the project, and a work of reference for many others. Discussion forums and a wiki of some description will be required for this. Some social networking features may also be useful.
 <h2>Student-led seminars</h2>
@@ -66,4 +66,4 @@ There are a wide range of ways in which the community can be publicised to the s
 	<li>Word-of-mouth/viral marketing</li>
 	<li><a title="Sheffield Graduate Award" href="http://www.shef.ac.uk/thesheffieldgraduateaward/">Sheffield Graduate Award</a></li>
 </ul>
-<em>So, thatâ€™s what the SLC 2.0 project is all about, and what we're doing so far. What do you think? Share your opinion in the comments section below, and subscribe to the <a href="http://allacademic.wordpress.com/feed/">RSS feed</a> for updates as they come.</em>
+<em>So, that's what the SLC 2.0 project is all about, and what we're doing so far. What do you think? Share your opinion in the comments section below, and subscribe to the <a href="http://allacademic.wordpress.com/feed/">RSS feed</a> for updates as they come.</em>

@@ -1,7 +1,6 @@
 --- 
 title: "Introduction to SLC 2.0: Part I"
 kind: article
-excerpt: "I\xC3\xA2\xE2\x82\xAC\xE2\x84\xA2ve recently become involved in a new project, under the University of Sheffield\xC3\xA2\xE2\x82\xAC\xE2\x84\xA2s SeeChange initiative, going by the name of \xC3\xA2\xE2\x82\xAC\xC5\x93Student Learning Community 2.0\xC3\xA2\xE2\x82\xAC\xC2\x9D. What's this all about? Well, it's to do with using social networking and other Web 2.0 ideas to support student learning at the university, but that sounds more fuzzily defined to me every time I read it. I'll be using the rest of this post to clarify what the purpose looks like from my perspective at the very outset of the project."
 created_at: 2008-09-03 18:38:36 +01:00
 categories: 
 - Bluecloud
@@ -15,7 +14,7 @@ tags:
 - Technology
 wpid: 8
 ---
-Iâ€™ve recently become involved in a new project, under the University of Sheffieldâ€™s <a title="SeeChange 2008" href="http://www.shef.ac.uk/seechange/">SeeChange</a> initiative, going by the name of â€œStudent Learning Community 2.0â€. What's this all about? Well, it's to do with using social networking and other Web 2.0 ideas to support student learning at the university, but that sounds more fuzzily defined to me every time I read it. It's quite a blue-skies project, so I guess a certain amount of fuzziness is to be expected, but I think it will be helpful in the coming months to have some more concrete aims. I'll be using the rest of this post to try and clarify the project goals, or at least how they look here at the outset of the project.
+I've recently become involved in a new project, under the University of Sheffield's <a title="SeeChange 2008" href="http://www.shef.ac.uk/seechange/">SeeChange</a> initiative, going by the name of "Student Learning Community 2.0". What's this all about? Well, it's to do with using social networking and other Web 2.0 ideas to support student learning at the university, but that sounds more fuzzily defined to me every time I read it. It's quite a blue-skies project, so I guess a certain amount of fuzziness is to be expected, but I think it will be helpful in the coming months to have some more concrete aims. I'll be using the rest of this post to try and clarify the project goals, or at least how they look here at the outset of the project.
 <!--more-->
 <h1>What's in a name?</h1>
 First and foremost, we wish to benefit our <em>students</em>. With any project involving new teaching methods, and particularly those involving new technology, it is easy to get excited about the techniques, but less easy to see how they are relevant to the learners. If this project is to be successful, we must have a positive impact on students.
@@ -38,7 +37,7 @@ So, how can we say whether the project has been a success? For me, I think the k
 	<li>Make teaching a more enjoyable occupation; and, of course,</li>
 	<li>Make the university more attractive to potential students.</li>
 </ul>
-These are, naturally, difficult to measure objectively. However, I feel that by keeping these aims in mind it will not just be possible for the project to succeed; it will be impossible for it to fail. Call me idealistic if you like â€” I've got a good feeling about this.
+These are, naturally, difficult to measure objectively. However, I feel that by keeping these aims in mind it will not just be possible for the project to succeed; it will be impossible for it to fail. Call me idealistic if you like — I've got a good feeling about this.
 
 <em>That's all for now. In my next post on this subject, I'll start to address the following:</em>
 <ul>

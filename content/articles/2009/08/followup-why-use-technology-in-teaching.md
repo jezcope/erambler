@@ -24,7 +24,7 @@ I put together the slides for the initial presentation using [SlideRocket][], an
 
 [Tomaz Lasic][] made an insightful comment that many the skills we were looking to achieve with technology (or education in general) are far from new:
 
-> â€œ2nd century BCâ€ skills that even some of the old Greek wise heads were talking about â€“ democracy, participation, freedom of expression & thought, active citizenship â€¦ you know those pesky old things that never seemed to go out of fashion with thoughtful people.
+> "2nd century BC" skills that even some of the old Greek wise heads were talking about — democracy, participation, freedom of expression & thought, active citizenship — you know those pesky old things that never seemed to go out of fashion with thoughtful people.
 
 Tomaz followed up with a [thought-provoking post][4th-century skills] on his own blog, which underscored the point that I was trying to make originally: that it's vital to consider what we want to achieve with technology, not just how cool it is.
 
@@ -34,7 +34,7 @@ Tomaz followed up with a [thought-provoking post][4th-century skills] on his own
 
 [Jenny Evans][] drew on her work with Wolverhampton City Council interviewing kids for an [e-learning promotional video][BSF Focus] (the site seems to have some odd certificate problems, but you can view the video there). She summarised her experience thus:
 
->We got loads of interviews with kids about what they got from from technology â€“ a really strong theme of improving life chances emerged.
+>We got loads of interviews with kids about what they got from from technology — a really strong theme of improving life chances emerged.
 
 Finally, [Paul Jinks][] suggested that teachers tend to use technology when it makes their lives easier and students use it when it's necessary for their assessments: a paraphrasing of his [earlier blog post][Technology for learning]. Although I agree with this in part, I think this overgeneralises a complex situation. I also live in hope that some, if not all, teachers can be persuaded that improving their own teaching practice and using technology is one (though not the only) way to do this.
 

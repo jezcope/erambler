@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<opml version="1.0">
+  <head>
+    <title>Jez subscriptions in feedly Cloud</title>
+  </head>
+  <body>
+    <outline text="Research technology" title="Research technology">
+      <outline type="rss" text="Joss Winn » Blog" title="Joss Winn » Blog" xmlUrl="http://josswinn.org/category/blog/feed/" htmlUrl="http://josswinn.org"/>
+      <outline type="rss" text="Amber at Warwick: academic technology | technology thinking for teaching and research" title="Amber at Warwick: academic technology | technology thinking for teaching and research" xmlUrl="http://amberatwarwick.wordpress.com/feed/" htmlUrl="https://amberatwarwick.wordpress.com"/>
+      <outline type="rss" text="David F. Flanders" title="David F. Flanders" xmlUrl="http://dfflanders.wordpress.com/feed/" htmlUrl="https://dfflanders.wordpress.com"/>
+      <outline type="rss" text="Martin Hamilton's blog" title="Martin Hamilton's blog" xmlUrl="http://blog.martinh.net/feeds/posts/default" htmlUrl="http://blog.martinh.net/"/>
+      <outline type="rss" text="Research Software Develop..." title="Research Software Develop..." xmlUrl="http://blogs.ucl.ac.uk/research-software-development/feed/" htmlUrl="http://blogs.ucl.ac.uk/research-software-development"/>
+      <outline type="rss" text="fragments of amber | digital, political, personal, mine." title="fragments of amber | digital, political, personal, mine." xmlUrl="http://fragmentsofamber.wordpress.com/feed/" htmlUrl="https://fragmentsofamber.wordpress.com"/>
+      <outline type="rss" text="Repository Fringe 2014" title="Repository Fringe 2014" xmlUrl="http://rfringe14.blogs.edina.ac.uk/feed/" htmlUrl="http://rfringe14.blogs.edina.ac.uk"/>
+    </outline>
+    <outline text="Sport" title="Sport">
+      <outline type="rss" text="Test Match Special" title="Test Match Special" xmlUrl="http://www.bbc.co.uk/blogs/tms/atom.xml" htmlUrl="http://www.bbc.co.uk/blogs/tms/"/>
+    </outline>
+    <outline text="Emacs" title="Emacs">
+      <outline type="rss" text="Planet Emacsen" title="Planet Emacsen" xmlUrl="http://planet.emacsen.org/atom.xml" htmlUrl="http://planet.emacsen.org/"/>
+      <outline type="rss" text="Pragmatic Emacs" title="Pragmatic Emacs" xmlUrl="http://pragmaticemacs.com/feed/" htmlUrl="http://pragmaticemacs.com"/>
+      <outline type="rss" text="emacs-fu" title="emacs-fu" xmlUrl="http://emacs-fu.blogspot.com/feeds/posts/default" htmlUrl="http://emacs-fu.blogspot.com/"/>
+    </outline>
+    <outline text="Support" title="Support">
+      <outline type="rss" text="newest questions tagged data - A..." title="newest questions tagged data - A..." xmlUrl="http://academia.stackexchange.com/feeds/tag?tagnames=data&amp;sort=newest" htmlUrl="http://academia.stackexchange.com/questions/tagged/?tagnames=data&amp;sort=newest"/>
+    </outline>
+    <outline text="Recreational reading" title="Recreational reading">
+      <outline type="rss" text="Collectively Unconscious | News from the Frontiers of Science" title="Collectively Unconscious | News from the Frontiers of Science" xmlUrl="http://collectivelyunconscious.wordpress.com/feed/" htmlUrl="https://collectivelyunconscious.wordpress.com"/>
+      <outline type="rss" text="The New Adventures of Stephen Fry" title="The New Adventures of Stephen Fry" xmlUrl="http://www.stephenfry.com/feed/" htmlUrl="http://www.stephenfry.com"/>
+      <outline type="rss" text="Nautilus" title="Nautilus" xmlUrl="http://nautil.us/rss/all" htmlUrl="http://nautil.us/rss/all"/>
+      <outline type="rss" text="pause - ReadWrite" title="pause - ReadWrite" xmlUrl="http://readwrite.com/tags/feed/pause/articles.xml" htmlUrl="http://readwrite.com/tag/pause"/>
+      <outline type="rss" text="Science: Bad science | guardian.co.uk" title="Science: Bad science | guardian.co.uk" xmlUrl="http://feeds.guardian.co.uk/theguardian/science/series/badscience/rss" htmlUrl="http://www.theguardian.com/science/series/badscience"/>
+      <outline type="rss" text="Untangling the web with Aleks Krotoski | guardian.co.uk" title="Untangling the web with Aleks Krotoski | guardian.co.uk" xmlUrl="http://www.guardian.co.uk/technology/series/untangling-the-web-with-aleks-krotoski/rss" htmlUrl="http://www.theguardian.com/technology/series/untangling-the-web-with-aleks-krotoski"/>
+      <outline type="rss" text="Middle Zone Musings" title="Middle Zone Musings" xmlUrl="http://feeds.feedburner.com/middlezonemusings/EQGS" htmlUrl="http://middlezonemusings.com"/>
+      <outline type="rss" text="Professor Bruce M. Hood" title="Professor Bruce M. Hood" xmlUrl="http://brucemhood.wordpress.com/feed/" htmlUrl="https://brucemhood.wordpress.com"/>
+      <outline type="rss" text="Mind your language" title="Mind your language" xmlUrl="http://www.theguardian.com/media/mind-your-language/rss" htmlUrl="http://www.theguardian.com/media/mind-your-language"/>
+    </outline>
+    <outline text="Friends" title="Friends">
+      <outline type="rss" text="Camper Van Conversion" title="Camper Van Conversion" xmlUrl="http://blog.urbanchicken.org.uk/rss.php?blogId=8&amp;profile=rss20" htmlUrl="http://van.blog.urbanchicken.org.uk/index.php?blogId=8"/>
+      <outline type="rss" text="Bald Pamphleteer" title="Bald Pamphleteer" xmlUrl="http://baldpamphleteer.wordpress.com/feed/" htmlUrl="https://baldpamphleteer.wordpress.com"/>
+      <outline type="rss" text="why social?" title="why social?" xmlUrl="http://evestirling.wordpress.com/feed/" htmlUrl="https://evestirling.wordpress.com"/>
+      <outline type="rss" text="Bookish Brunette" title="Bookish Brunette" xmlUrl="http://bookishbrunette.wordpress.com/feed/" htmlUrl="https://bookishbrunette.wordpress.com"/>
+    </outline>
+    <outline text="Science" title="Science">
+      <outline type="rss" text="Occam's Typewriter" title="Occam's Typewriter" xmlUrl="http://occamstypewriter.org/feed/" htmlUrl="http://occamstypewriter.org"/>
+      <outline type="rss" text="Sauropod Vertebra Picture of the Week" title="Sauropod Vertebra Picture of the Week" xmlUrl="http://svpow.com/feed/" htmlUrl="http://svpow.com"/>
+      <outline type="rss" text="Science + Technology – Articles – T..." title="Science + Technology – Articles – T..." xmlUrl="http://theconversation.com/uk/technology/articles.atom" htmlUrl="https://theconversation.com"/>
+      <outline type="rss" text="ORCID blogs" title="ORCID blogs" xmlUrl="http://orcid.org/blog/feed" htmlUrl="http://orcid.org/blog"/>
+    </outline>
+    <outline text="Data" title="Data">
+      <outline type="rss" text="Data Scientist Training for Librarians" title="Data Scientist Training for Librarians" xmlUrl="http://altbibl.io/dst4l/feed/" htmlUrl="http://altbibl.io/dst4l"/>
+    </outline>
+    <outline text="Programming" title="Programming">
+      <outline type="rss" text="Software Carpentry" title="Software Carpentry" xmlUrl="http://software-carpentry.org/feed.xml" htmlUrl="http://software-carpentry.org"/>
+      <outline type="rss" text="SciRuby" title="SciRuby" xmlUrl="http://sciruby.com/atom.xml" htmlUrl="http://sciruby.com/"/>
+      <outline type="rss" text="The Changelog" title="The Changelog" xmlUrl="http://feeds.feedburner.com/thechangelog" htmlUrl="https://changelog.com"/>
+    </outline>
+    <outline text="Life" title="Life">
+      <outline type="rss" text="zenhabits" title="zenhabits" xmlUrl="http://zenhabits.net/feed/" htmlUrl="http://zenhabits.net"/>
+      <outline type="rss" text="99U" title="99U" xmlUrl="http://99u.com/feed" htmlUrl="http://99u.com"/>
+      <outline type="rss" text="Blog | Personal Kanban | visualize. learn. improve." title="Blog | Personal Kanban | visualize. learn. improve." xmlUrl="http://www.personalkanban.com/pk/feed/" htmlUrl="http://www.personalkanban.com/pk"/>
+      <outline type="rss" text="Unclutterer" title="Unclutterer" xmlUrl="http://feeds.feedburner.com/unclutterer" htmlUrl="https://unclutterer.com"/>
+      <outline type="rss" text="Personal Kanban Gallery" title="Personal Kanban Gallery" xmlUrl="http://yeswekanban.net/rss" htmlUrl="http://yeswekanban.net/"/>
+      <outline type="rss" text="Headspace RSS News Feed" title="Headspace RSS News Feed" xmlUrl="http://www.getsomeheadspace.com/news.rss" htmlUrl="http://www.getsomeheadspace.com/"/>
+    </outline>
+    <outline text="Libraries" title="Libraries">
+      <outline type="rss" text="Letters to a Young Librarian" title="Letters to a Young Librarian" xmlUrl="http://letterstoayounglibrarian.blogspot.com/feeds/posts/default" htmlUrl="http://letterstoayounglibrarian.blogspot.com/"/>
+      <outline type="rss" text="Information Wants To Be Free" title="Information Wants To Be Free" xmlUrl="http://meredith.wolfwater.com/wordpress/wp-rss2.php" htmlUrl="http://meredith.wolfwater.com/wordpress"/>
+      <outline type="rss" text="College &amp; Research Libraries current issue" title="College &amp; Research Libraries current issue" xmlUrl="http://feeds.feedburner.com/candrl" htmlUrl="http://crl.acrl.org"/>
+      <outline type="rss" text="Eleni's First Steps" title="Eleni's First Steps" xmlUrl="https://zazani.wordpress.com/feed/" htmlUrl="https://zazani.wordpress.com"/>
+      <outline type="rss" text="Journal of eScience Librarianship" title="Journal of eScience Librarianship" xmlUrl="http://escholarship.umassmed.edu/jeslib/recent.rss" htmlUrl="http://escholarship.umassmed.edu/jeslib"/>
+      <outline type="rss" text="Ginformation Systems" title="Ginformation Systems" xmlUrl="http://www.preater.com/feed/" htmlUrl="http://www.preater.com"/>
+      <outline type="rss" text="Lorcan Dempsey's Weblog" title="Lorcan Dempsey's Weblog" xmlUrl="http://orweblog.oclc.org/atom.xml" htmlUrl="http://orweblog.oclc.org/"/>
+      <outline type="rss" text="Emerald Group Publishing Limited: Program: Table of Contents" title="Emerald Group Publishing Limited: Program: Table of Contents" xmlUrl="http://www.emeraldinsight.com/action/showFeed?type=etoc&amp;feed=rss&amp;jc=prog" htmlUrl="http://www.emeraldinsight.com/loi/prog?af=R"/>
+      <outline type="rss" text="Blog - Ned Potter" title="Blog - Ned Potter" xmlUrl="http://feeds.feedburner.com/thewikiman" htmlUrl="http://www.ned-potter.com/blog/"/>
+      <outline type="rss" text="Donna Lanclos" title="Donna Lanclos" xmlUrl="http://www.donnalanclos.com/?feed=rss2" htmlUrl="http://www.donnalanclos.com"/>
+      <outline type="rss" text="the Anthropologist in the Stacks" title="the Anthropologist in the Stacks" xmlUrl="http://atkinsanthro.blogspot.com/feeds/posts/default" htmlUrl="http://atkinsanthro.blogspot.com/"/>
+      <outline type="rss" text="Eleni's First Steps" title="Eleni's First Steps" xmlUrl="http://zazani.wordpress.com/feed/" htmlUrl="https://zazani.wordpress.com"/>
+      <outline type="rss" text="#UKAnthroLib" title="#UKAnthroLib" xmlUrl="http://ukanthrolib.wordpress.com/feed/" htmlUrl="https://ukanthrolib.wordpress.com"/>
+      <outline type="rss" text="" title="" xmlUrl="https://karinelarose.wordpress.com/feed/" htmlUrl="https://karinelarose.wordpress.com"/>
+    </outline>
+    <outline text="Open Data" title="Open Data">
+      <outline type="rss" text="Open Data Impacts" title="Open Data Impacts" xmlUrl="http://www.practicalparticipation.co.uk/odi/feed/" htmlUrl="http://www.opendataimpacts.net"/>
+      <outline type="rss" text="Data Scientist Training for Librarians" title="Data Scientist Training for Librarians" xmlUrl="http://altbibl.io/dst4l/feed/" htmlUrl="http://altbibl.io/dst4l"/>
+      <outline type="rss" text="Core  blogs" title="Core  blogs" xmlUrl="http://project.core.ac.uk/blog/feed" htmlUrl="http://project.core.ac.uk/blog"/>
+      <outline type="rss" text="ASCII by Jason Scott" title="ASCII by Jason Scott" xmlUrl="http://ascii.textfiles.com/feed" htmlUrl="http://ascii.textfiles.com"/>
+      <outline type="rss" text="An Exercise in Irrelevanc..." title="An Exercise in Irrelevanc..." xmlUrl="http://www.russet.org.uk/blog/feed" htmlUrl="http://www.russet.org.uk/blog"/>
+    </outline>
+    <outline text="Escience" title="Escience">
+      <outline type="rss" text="Digital researcher blog 2010" title="Digital researcher blog 2010" xmlUrl="http://www.vitae.ac.uk/researchers/219961/Digital-researcher-blog-2010.rss" htmlUrl="http://vitae.ac.uk/researchers/219961/Digital-researcher-blog-2010.html"/>
+      <outline type="rss" text="Science Library Pad" title="Science Library Pad" xmlUrl="http://feeds.feedburner.com/ScienceLibraryPad" htmlUrl="http://scilib.typepad.com/science_library_pad/"/>
+      <outline type="rss" text="Science in the Open" title="Science in the Open" xmlUrl="http://feeds.feedburner.com/ScienceInTheOpen" htmlUrl="http://cameronneylon.net"/>
+      <outline type="rss" text="Science of the Invisible" title="Science of the Invisible" xmlUrl="http://scienceoftheinvisible.blogspot.com/feeds/posts/default/-/altc2011" htmlUrl="http://scienceoftheinvisible.blogspot.com/search/label/altc2011"/>
+      <outline type="rss" text="The Scholarly Kitchen | What's Hot &amp; What's Cooking in Scholarly Publishing – from the Society for Scholarly Publishing" title="The Scholarly Kitchen | What's Hot &amp; What's Cooking in Scholarly Publishing – from the Society for Scholarly Publishing" xmlUrl="http://scholarlykitchen.sspnet.org/feed/" htmlUrl="http://scholarlykitchen.sspnet.org"/>
+      <outline type="rss" text="Science 2.0 study" title="Science 2.0 study" xmlUrl="http://science20study.wordpress.com/feed/" htmlUrl="https://science20study.wordpress.com"/>
+      <outline type="rss" text="cameln" title="cameln" xmlUrl="http://cameln.wordpress.com/feed/" htmlUrl="https://cameln.wordpress.com"/>
+      <outline type="rss" text="NGS" title="NGS" xmlUrl="http://nationalgridservice.blogspot.com/feeds/posts/default" htmlUrl="http://nationalgridservice.blogspot.com/"/>
+      <outline type="rss" text="Christopher Brown's Blog" title="Christopher Brown's Blog" xmlUrl="http://chriscb.jiscinvolve.org/wp/feed/" htmlUrl="http://chriscb.jiscinvolve.org/wp"/>
+      <outline type="rss" text="Sakai Project blogs" title="Sakai Project blogs" xmlUrl="http://sakaiproject.org/blog/feed" htmlUrl="http://www.sakaiproject.org/blog"/>
+      <outline type="rss" text="Useful Chemistry" title="Useful Chemistry" xmlUrl="http://usefulchem.blogspot.com/feeds/posts/default" htmlUrl="http://usefulchem.blogspot.com/"/>
+      <outline type="rss" text="ceptional" title="ceptional" xmlUrl="http://alexholcombe.wordpress.com/feed/" htmlUrl="https://alexholcombe.wordpress.com"/>
+      <outline type="rss" text="Scientific Data Sharing Project" title="Scientific Data Sharing Project" xmlUrl="http://scientificdatasharing.com/feed/atom/" htmlUrl="http://scientificdatasharing.com"/>
+      <outline type="rss" text="Dr. Chucks Blog" title="Dr. Chucks Blog" xmlUrl="http://www.dr-chuck.com/csev-blog/feed/" htmlUrl="http://www.dr-chuck.com/csev-blog"/>
+      <outline type="rss" text="Reseach Information Network" title="Reseach Information Network" xmlUrl="http://feeds.feedburner.com/rin/all" htmlUrl="http://www.rin.ac.uk/feeds/our-work"/>
+      <outline type="rss" text="myExperiment - Site Announcements" title="myExperiment - Site Announcements" xmlUrl="http://www.myexperiment.org/announcements.rss" htmlUrl="http://www.myexperiment.org/announcements"/>
+      <outline type="rss" text="Software Sustainability Institut..." title="Software Sustainability Institut..." xmlUrl="http://www.software.ac.uk/rss" htmlUrl="http://www.software.ac.uk/rss"/>
+      <outline type="rss" text="Software Sustainability Institut..." title="Software Sustainability Institut..." xmlUrl="http://software.ac.uk/blog/rss" htmlUrl="http://www.software.ac.uk/blog/rss"/>
+      <outline type="rss" text="Digital researcher blog 2011" title="Digital researcher blog 2011" xmlUrl="http://www.vitae.ac.uk/researchers/315451/Digital-researcher-blog-2011.rss" htmlUrl="http://vitae.ac.uk/researchers/315451/Digital-researcher-blog-2011.html"/>
+      <outline type="rss" text="EPSRC News RSS Feed" title="EPSRC News RSS Feed" xmlUrl="http://www.epsrc.ac.uk/newsevents/news/pages/rss2.aspx" htmlUrl="http://www.epsrc.ac.uk"/>
+      <outline type="rss" text="DataCite" title="DataCite" xmlUrl="http://datacite.wordpress.com/feed/" htmlUrl="https://datacite.wordpress.com"/>
+      <outline type="rss" text="The Integrated Lab" title="The Integrated Lab" xmlUrl="http://feeds2.feedburner.com/TheIntegratedLab" htmlUrl="http://theintegratedlab.com"/>
+      <outline type="rss" text="business|bytes|genes|molecules" title="business|bytes|genes|molecules" xmlUrl="http://mndoci.com/feed/"/>
+      <outline type="rss" text="Home" title="Home" xmlUrl="http://www.techliterate.co.uk/home/atom.xml" htmlUrl="http://www.techliterate.co.uk/home/"/>
+      <outline type="rss" text="recomputation.org" title="recomputation.org" xmlUrl="http://recomputation.org/atom.xml" htmlUrl="http://www.recomputation.org/"/>
+      <outline type="rss" text="petermr's blog" title="petermr's blog" xmlUrl="http://feeds.feedburner.com/PetermrsBlog" htmlUrl="http://blogs.ch.cam.ac.uk/pmr"/>
+      <outline type="rss" text="Building Blogs of Science" title="Building Blogs of Science" xmlUrl="http://buildingblogsofscience.wordpress.com/feed/" htmlUrl="https://buildingblogsofscience.wordpress.com"/>
+      <outline type="rss" text="Sakai Recent News" title="Sakai Recent News" xmlUrl="http://sakaiproject.org/announcements/feed" htmlUrl="http://www.sakaiproject.org/announcements/feed"/>
+    </outline>
+    <outline text="CSCT" title="CSCT">
+      <outline type="rss" text="Walsh Materials Design Group" title="Walsh Materials Design Group" xmlUrl="http://people.bath.ac.uk/aw558/WMD/News/rss.xml" htmlUrl="http://people.bath.ac.uk/aw558/WMD/News/News.html"/>
+      <outline type="rss" text="The Chuck Group" title="The Chuck Group" xmlUrl="http://chuckgroup.wordpress.com/feed/" htmlUrl="https://chuckgroup.wordpress.com"/>
+      <outline type="rss" text="thelostelectron" title="thelostelectron" xmlUrl="http://thelostelectron.wordpress.com/feed/" htmlUrl="https://thelostelectron.wordpress.com"/>
+      <outline type="rss" text="Centre for Sustainable Chemical Tec..." title="Centre for Sustainable Chemical Tec..." xmlUrl="http://blogs.bath.ac.uk/csct/feed/" htmlUrl="http://blogs.bath.ac.uk/csct"/>
+    </outline>
+    <outline text="Language" title="Language">
+      <outline type="rss" text="Mind your language" title="Mind your language" xmlUrl="http://www.theguardian.com/media/mind-your-language/rss" htmlUrl="http://www.theguardian.com/media/mind-your-language"/>
+    </outline>
+    <outline text="IT" title="IT">
+      <outline type="rss" text="First Monday" title="First Monday" xmlUrl="http://www.uic.edu/htbin/cgiwrap/bin/ojs/index.php/fm/feed/atom" htmlUrl="http://journals.uic.edu/ojs/index.php/fm"/>
+    </outline>
+    <outline text="Project management" title="Project management">
+      <outline type="rss" text="LibraryProject.Info" title="LibraryProject.Info" xmlUrl="http://www.libraryproject.info/feed/" htmlUrl="http://www.libraryproject.info"/>
+    </outline>
+    <outline text="Open Source" title="Open Source">
+      <outline type="rss" text="Opensource.com" title="Opensource.com" xmlUrl="https://opensource.com/feed" htmlUrl="https://opensource.com/frontpage"/>
+    </outline>
+    <outline text="Hobbies" title="Hobbies">
+      <outline type="rss" text="Life and style: The running blog | guardian.co.uk" title="Life and style: The running blog | guardian.co.uk" xmlUrl="http://www.guardian.co.uk/lifeandstyle/the-running-blog/rss" htmlUrl="http://www.theguardian.com/lifeandstyle/the-running-blog"/>
+      <outline type="rss" text="Crosswords: Crossword blog | guardian.co.uk" title="Crosswords: Crossword blog | guardian.co.uk" xmlUrl="http://www.guardian.co.uk/crosswords/crossword-blog/rss" htmlUrl="http://www.theguardian.com/crosswords/crossword-blog"/>
+      <outline type="rss" text="The BakeryBits Blog" title="The BakeryBits Blog" xmlUrl="http://feeds.feedburner.com/BakerybitsBlog" htmlUrl="http://blog.bakerybits.co.uk"/>
+      <outline type="rss" text="Wild Running" title="Wild Running" xmlUrl="http://wildrunning.net/feed/" htmlUrl="http://wildrunning.net"/>
+    </outline>
+    <outline text="Imperial College" title="Imperial College">
+      <outline type="rss" text="Staff Noticeboard" title="Staff Noticeboard" xmlUrl="https://wwwf.imperial.ac.uk/blog/staffnoticeboard/feed/" htmlUrl="https://wwwf.imperial.ac.uk/blog/staffnoticeboard"/>
+      <outline type="rss" text="Open Access and Digital Scholarship Blog" title="Open Access and Digital Scholarship Blog" xmlUrl="http://wwwf.imperial.ac.uk/blog/openaccess/feed/" htmlUrl="http://wwwf.imperial.ac.uk/blog/openaccess"/>
+    </outline>
+    <outline text="University of Sheffield" title="University of Sheffield">
+      <outline type="rss" text="From a Distance..." title="From a Distance..." xmlUrl="http://cicsdir.blogspot.com/feeds/posts/default" htmlUrl="http://cicsdir.blogspot.com/"/>
+    </outline>
+    <outline text="Events" title="Events">
+      <outline type="rss" text="Library Connect" title="Library Connect" xmlUrl="https://www.brighttalk.com/channel/9995/feed/rss" htmlUrl="http://libraryconnect.elsevier.com/library-connect-webinars"/>
+      <outline type="rss" text="ALT Conference Weblog" title="ALT Conference Weblog" xmlUrl="http://conference-weblog.alt.ac.uk/alt_conference_weblog/atom.xml" htmlUrl="http://conference-weblog.alt.ac.uk/alt_conference_weblog/"/>
+      <outline type="rss" text="JISC Events Web Feed" title="JISC Events Web Feed" xmlUrl="http://feeds.feedburner.com/ac/toXU" htmlUrl="http://www.jisc.ac.uk/events/rss.xml"/>
+      <outline type="rss" text="Dana Centre events" title="Dana Centre events" xmlUrl="http://feeds.feedburner.com/danaevents" htmlUrl="http://www.danacentre.org.uk/events"/>
+      <outline type="rss" text="Events organized by Judy Heminsley" title="Events organized by Judy Heminsley" xmlUrl="http://www.eventbrite.com/atom/organizer_list_events/329134929" htmlUrl="http://www.eventbrite.com/org/329134929"/>
+      <outline type="rss" text="Events - BathSPARK" title="Events - BathSPARK" xmlUrl="http://www.meetup.com/BathSpark/events/rss/BathSPARK/" htmlUrl="http://www.meetup.com/BathSpark/events/"/>
+      <outline type="rss" text="Events" title="Events" xmlUrl="http://www.eresearchsouth.ac.uk/events/aggregator/RSS" htmlUrl="http://www.eresearchsouth.ac.uk"/>
+    </outline>
+    <outline text="Research data management" title="Research data management">
+      <outline type="rss" text="data.bris" title="data.bris" xmlUrl="http://data.blogs.ilrt.org/feed/atom/" htmlUrl="http://data.bris.ac.uk"/>
+      <outline type="rss" text="The CMM for RDM Blog" title="The CMM for RDM Blog" xmlUrl="http://rdm.ischool.syr.edu/xwiki/bin/view/Blog/GlobalBlogRss?xpage=plain" htmlUrl="http://rdm.ischool.syr.edu/xwiki/bin/view/Main/WebHome"/>
+      <outline type="rss" text="Research360@Bath" title="Research360@Bath" xmlUrl="http://blogs.bath.ac.uk/research360/feed/" htmlUrl="http://blogs.bath.ac.uk/research360"/>
+      <outline type="rss" text="JISC MRD: Evidence Gathering" title="JISC MRD: Evidence Gathering" xmlUrl="http://mrdevidence.jiscinvolve.org/wp/feed/" htmlUrl="http://mrdevidence.jiscinvolve.org/wp"/>
+      <outline type="rss" text="Data Carpentry Blog" title="Data Carpentry Blog" xmlUrl="http://datacarpentry.github.io/blog/atom.atom" htmlUrl="https://datacarpentry.github.io/blog"/>
+      <outline type="rss" text="Your Data Stories" title="Your Data Stories" xmlUrl="http://datastories.jiscinvolve.org/wp/feed/" htmlUrl="http://datastories.jiscinvolve.org/wp"/>
+      <outline type="rss" text="Research Data Blog" title="Research Data Blog" xmlUrl="http://datablog.is.ed.ac.uk/feed/" htmlUrl="http://datablog.is.ed.ac.uk"/>
+      <outline type="rss" text="SWORD" title="SWORD" xmlUrl="http://swordapp.org/feed/" htmlUrl="http://swordapp.org"/>
+      <outline type="rss" text="Scholarly Output Notification and Exchange (SONEX)" title="Scholarly Output Notification and Exchange (SONEX)" xmlUrl="http://sonexworkgroup.blogspot.com/feeds/posts/default" htmlUrl="http://sonexworkgroup.blogspot.com/"/>
+      <outline type="rss" text="DaMaRO" title="DaMaRO" xmlUrl="http://blogs.oucs.ox.ac.uk/damaro/feed/" htmlUrl="http://blogs.it.ox.ac.uk/damaro"/>
+      <outline type="rss" text="EUDAT News" title="EUDAT News" xmlUrl="http://www.eudat.eu/news/rss.xml" htmlUrl="http://www.eudat.eu/news/rss.xml"/>
+      <outline type="rss" text="Google Alert: research data management" title="Google Alert: research data management" xmlUrl="https://www.google.com/alerts/feeds/16518345416216548412/17958777813281312814"/>
+      <outline type="rss" text="Data Ab Initio" title="Data Ab Initio" xmlUrl="http://dataabinitio.com/?feed=rss2" htmlUrl="http://dataabinitio.com"/>
+      <outline type="rss" text="MiSS" title="MiSS" xmlUrl="http://www.miss.manchester.ac.uk/?feed=rss2" htmlUrl="http://www.miss.manchester.ac.uk"/>
+      <outline type="rss" text="UoLRDM" title="UoLRDM" xmlUrl="http://amburnham.jiscinvolve.org/wp/feed/" htmlUrl="http://amburnham.jiscinvolve.org/wp"/>
+      <outline type="rss" text="Matters of Opinion and Science" title="Matters of Opinion and Science" xmlUrl="http://matters-of-opinion-and-science.blogspot.com/feeds/posts/default" htmlUrl="http://matters-of-opinion-and-science.blogspot.com/"/>
+      <outline type="rss" text="Research Data @Essex" title="Research Data @Essex" xmlUrl="http://researchdataessex.posterous.com/rss.xml"/>
+      <outline type="rss" text="Scientific Data" title="Scientific Data" xmlUrl="http://blogs.nature.com/scientificdata/feed/" htmlUrl="http://blogs.nature.com/scientificdata"/>
+      <outline type="rss" text="Digital Curation News" title="Digital Curation News" xmlUrl="http://www.dcc.ac.uk/news/feed" htmlUrl="http://www.dcc.ac.uk/news"/>
+      <outline type="rss" text="Iridium" title="Iridium" xmlUrl="http://iridiummrd.wordpress.com/feed/" htmlUrl="https://iridiummrd.wordpress.com"/>
+      <outline type="rss" text="Data Management Planning &amp; Storage for Psychology" title="Data Management Planning &amp; Storage for Psychology" xmlUrl="http://dmsppsych.blogspot.com/feeds/posts/default" htmlUrl="http://dmsppsych.blogspot.com/"/>
+      <outline type="rss" text="University of Hertfordshire - Research Data Toolkit" title="University of Hertfordshire - Research Data Toolkit" xmlUrl="http://research-data-toolkit.herts.ac.uk/feed/" htmlUrl="http://research-data-toolkit.herts.ac.uk"/>
+      <outline type="rss" text="Research Data Discovery Service" title="Research Data Discovery Service" xmlUrl="http://rdds.jiscinvolve.org/wp/feed/" htmlUrl="http://rdds.jiscinvolve.org/wp"/>
+      <outline type="rss" text="Open Research Exeter" title="Open Research Exeter" xmlUrl="http://blogs.exeter.ac.uk/openresearchexeter/feed/" htmlUrl="http://blogs.exeter.ac.uk/openresearchexeter"/>
+      <outline type="rss" text="St Andrews Research Computing" title="St Andrews Research Computing" xmlUrl="http://research-computing.wp.st-andrews.ac.uk/feed/" htmlUrl="http://research-computing.wp.st-andrews.ac.uk"/>
+      <outline type="rss" text="Sustainable Management of Digital Music Research Data blogs" title="Sustainable Management of Digital Music Research Data blogs" xmlUrl="http://rdm.c4dm.eecs.qmul.ac.uk/blog/feed" htmlUrl="http://rdm.c4dm.eecs.qmul.ac.uk/blog"/>
+      <outline type="rss" text="Managing Research Data: a pilot study in Health and Life Sciences" title="Managing Research Data: a pilot study in Health and Life Sciences" xmlUrl="http://blogs.uwe.ac.uk/teams/mrd/rss.xml" htmlUrl="http://blogs.uwe.ac.uk/teams/mrd"/>
+      <outline type="rss" text="JISC DataPool Project" title="JISC DataPool Project" xmlUrl="http://datapool.soton.ac.uk/feed/" htmlUrl="http://datapool.soton.ac.uk"/>
+      <outline type="rss" text="Data Management Planning for Secure Services (DMP-SS)" title="Data Management Planning for Secure Services (DMP-SS)" xmlUrl="http://blogs.ucl.ac.uk/dmp-ss/feed/" htmlUrl="http://blogs.ucl.ac.uk/dmp-ss"/>
+      <outline type="rss" text="REDm-MED" title="REDm-MED" xmlUrl="http://blogs.bath.ac.uk/redm-med/feed/" htmlUrl="http://blogs.bath.ac.uk/redm-med"/>
+      <outline type="rss" text="datamanagementuel" title="datamanagementuel" xmlUrl="http://datamanagementuel.wordpress.com/feed/" htmlUrl="https://datamanagementuel.wordpress.com"/>
+      <outline type="rss" text="Research Data Management" title="Research Data Management" xmlUrl="http://researchdata.ox.ac.uk/feed/" htmlUrl="http://researchdata.ox.ac.uk"/>
+      <outline type="rss" text="Modus Operandi for Repository Deposits" title="Modus Operandi for Repository Deposits" xmlUrl="http://blogs.ecs.soton.ac.uk/depositmo/feed/" htmlUrl="http://blog.soton.ac.uk/depositmo"/>
+      <outline type="rss" text="Orbital" title="Orbital" xmlUrl="http://orbital.blogs.lincoln.ac.uk/feed/" htmlUrl="http://orbital.blogs.lincoln.ac.uk"/>
+      <outline type="rss" text="CERIF for Datasets" title="CERIF for Datasets" xmlUrl="http://cerif4datasets.wordpress.com/feed/" htmlUrl="https://cerif4datasets.wordpress.com"/>
+      <outline type="rss" text="International Journal of Digital..." title="International Journal of Digital..." xmlUrl="http://www.ijdc.net/index.php/ijdc/gateway/plugin/WebFeedGatewayPlugin/atom" htmlUrl="http://www.ijdc.net/index.php/ijdc"/>
+      <outline type="rss" text="Digital Curation Centre blogs" title="Digital Curation Centre blogs" xmlUrl="http://www.dcc.ac.uk/blog/feed" htmlUrl="http://www.dcc.ac.uk/blog"/>
+      <outline type="rss" text="Open Data Impacts" title="Open Data Impacts" xmlUrl="http://www.practicalparticipation.co.uk/odi/feed/" htmlUrl="http://www.opendataimpacts.net"/>
+      <outline type="rss" text="BRISSkit" title="BRISSkit" xmlUrl="http://brisskit.blogspot.com/feeds/posts/default"/>
+      <outline type="rss" text="History DMP" title="History DMP" xmlUrl="http://historydmp.wordpress.com/feed/" htmlUrl="https://historydmp.wordpress.com"/>
+      <outline type="rss" text="KAPTUR" title="KAPTUR" xmlUrl="https://kaptur.wordpress.com/feed/" htmlUrl="https://kaptur.wordpress.com"/>
+      <outline type="rss" text="Jisc Monitor" title="Jisc Monitor" xmlUrl="http://jiscmonitor.jiscinvolve.org/wp/feed/" htmlUrl="http://jiscmonitor.jiscinvolve.org/wp"/>
+      <outline type="rss" text="EDINA and Data Library: News" title="EDINA and Data Library: News" xmlUrl="http://www.ed.ac.uk/rssServlet?contentID=2.5576" htmlUrl="http://www.ed.ac.uk/schools-departments/information-services/about/organisation/edl/news"/>
+      <outline type="rss" text="Open Exeter: Human Factors in Research Data Management" title="Open Exeter: Human Factors in Research Data Management" xmlUrl="http://blogs.exeter.ac.uk/openexeterrdm/feed/" htmlUrl="http://blogs.exeter.ac.uk/openexeterrdm"/>
+      <outline type="rss" text="Research Data Management" title="Research Data Management" xmlUrl="http://researchdatamanagement.blogspot.com/feeds/posts/default" htmlUrl="http://researchdatamanagement.blogspot.com/"/>
+      <outline type="rss" text="REWARD - News" title="REWARD - News" xmlUrl="https://www.ucl.ac.uk/reward/reward-news-viewer/rss.xml" htmlUrl="https://www.ucl.ac.uk/reward/reward-news-viewer/rss"/>
+      <outline type="rss" text="REWARD - Events" title="REWARD - Events" xmlUrl="https://www.ucl.ac.uk/reward/reward-events-viewer/rss.xml" htmlUrl="https://www.ucl.ac.uk/reward/reward-events-viewer/rss"/>
+      <outline type="rss" text="Tools for RDM Development" title="Tools for RDM Development" xmlUrl="http://uoy-rdmproject.blogspot.com/feeds/posts/default" htmlUrl="http://uoy-rdmproject.blogspot.com/"/>
+      <outline type="rss" text="Arkivum" title="Arkivum" xmlUrl="http://arkivum.com/feed/" htmlUrl="http://arkivum.com"/>
+      <outline type="rss" text="RDM Insight" title="RDM Insight" xmlUrl="http://rdminsight.wordpress.com/feed/" htmlUrl="https://rdminsight.wordpress.com"/>
+      <outline type="rss" text="RoaDMap blog" title="RoaDMap blog" xmlUrl="http://blog.library.leeds.ac.uk/blog/roadmap/rss" htmlUrl="http://blog.library.leeds.ac.uk/blog/roadmap"/>
+      <outline type="rss" text="Creating data management plans online" title="Creating data management plans online" xmlUrl="http://datamanagementplanning.wordpress.com/feed/" htmlUrl="https://datamanagementplanning.wordpress.com"/>
+      <outline type="rss" text="JISC Managing Research Data Programme" title="JISC Managing Research Data Programme" xmlUrl="http://researchdata.jiscinvolve.org/wp/feed/" htmlUrl="http://researchdata.jiscinvolve.org/wp"/>
+      <outline type="rss" text="Rapid Organization of Health Research Data" title="Rapid Organization of Health Research Data" xmlUrl="http://rapidhealthdata.wordpress.com/feed/" htmlUrl="https://rapidhealthdata.wordpress.com"/>
+      <outline type="rss" text="ADMIRe" title="ADMIRe" xmlUrl="http://admire.jiscinvolve.org/wp/feed/" htmlUrl="http://admire.jiscinvolve.org/wp"/>
+      <outline type="rss" text="PIMMS - Blog" title="PIMMS - Blog" xmlUrl="http://proj.badc.rl.ac.uk/pimms/blog?format=rss" htmlUrl="http://proj.badc.rl.ac.uk/pimms/blog"/>
+      <outline type="rss" text="Databib Published records" title="Databib Published records" xmlUrl="http://databib.org/displayRssFeeds.php" htmlUrl="http://www.databib.org"/>
+      <outline type="rss" text="LSHTM Research Data Management Support Service" title="LSHTM Research Data Management Support Service" xmlUrl="http://blogs.lshtm.ac.uk/rdmss/feed/" htmlUrl="http://blogs.lshtm.ac.uk/rdmss"/>
+      <outline type="rss" text="DATUM" title="DATUM" xmlUrl="http://datumrdm.blogspot.com/feeds/posts/default" htmlUrl="http://datumrdm.blogspot.com/"/>
+    </outline>
+    <outline text="Food" title="Food">
+      <outline type="rss" text="LondonEats" title="LondonEats" xmlUrl="http://londoneats.wordpress.com/feed/" htmlUrl="https://londoneats.wordpress.com"/>
+      <outline type="rss" text="Eat Weeds" title="Eat Weeds" xmlUrl="http://feeds.feedburner.com/EatWeeds" htmlUrl="http://www.eatweeds.co.uk"/>
+      <outline type="rss" text="The BakeryBits Blog" title="The BakeryBits Blog" xmlUrl="http://feeds.feedburner.com/BakerybitsBlog" htmlUrl="http://blog.bakerybits.co.uk"/>
+      <outline type="rss" text="Chilli Marmalade" title="Chilli Marmalade" xmlUrl="http://chillimarmalade.com/feed/" htmlUrl="http://chillimarmalade.com"/>
+      <outline type="rss" text="The Domestic Man" title="The Domestic Man" xmlUrl="http://thedomesticman.com/feed/" htmlUrl="http://thedomesticman.com"/>
+    </outline>
+    <outline text="Comics" title="Comics">
+      <outline type="rss" text="Questionable Content" title="Questionable Content" xmlUrl="http://www.questionablecontent.net/QCRSS.xml" htmlUrl="http://www.questionablecontent.net"/>
+      <outline type="rss" text="PHD Comics" title="PHD Comics" xmlUrl="http://www.phdcomics.com/gradfeed.php" htmlUrl="http://www.phdcomics.com"/>
+      <outline type="rss" text="Unshelved" title="Unshelved" xmlUrl="http://www.unshelved.com/rss.aspx" htmlUrl="http://www.unshelved.com/"/>
+      <outline type="rss" text="Not Invented Here" title="Not Invented Here" xmlUrl="http://feeds.feedburner.com/NotInventedHere" htmlUrl="http://notinventedhe.re/"/>
+      <outline type="rss" text="DRIVE™: The SciFi Comic, by Dave Kellett" title="DRIVE™: The SciFi Comic, by Dave Kellett" xmlUrl="http://www.drivecomic.com/index.xml" htmlUrl="http://www.drivecomic.com"/>
+      <outline type="rss" text="Empty Triangle webcomics" title="Empty Triangle webcomics" xmlUrl="http://www.emptytriangle.com/comics/rss" htmlUrl="http://www.emptytriangle.com/"/>
+      <outline type="rss" text="The Brads - A Comic About Web Design" title="The Brads - A Comic About Web Design" xmlUrl="http://bradcolbow.com/site/feed/" htmlUrl="http://bradcolbow.com/"/>
+      <outline type="rss" text="xkcd.com" title="xkcd.com" xmlUrl="http://xkcd.com/atom.xml" htmlUrl="http://xkcd.com/"/>
+      <outline type="rss" text="Daily Venn" title="Daily Venn" xmlUrl="http://dailyvenn.tumblr.com/rss" htmlUrl="http://dailyvenn.tumblr.com/"/>
+      <outline type="rss" text="The Oatmeal - Comics, Quizzes, &amp; St..." title="The Oatmeal - Comics, Quizzes, &amp; St..." xmlUrl="http://feeds.feedburner.com/oatmealfeed" htmlUrl="http://theoatmeal.com/"/>
+      <outline type="rss" text="Basic Instructions" title="Basic Instructions" xmlUrl="http://basicinstructions.net/basic-instructions/rss.xml" htmlUrl="http://basicinstructions.net/basic-instructions/"/>
+      <outline type="rss" text="Saturday Morning Breakfast Cereal (updated daily)" title="Saturday Morning Breakfast Cereal (updated daily)" xmlUrl="http://www.smbc-comics.com/rss.php" htmlUrl="http://www.smbc-comics.com/"/>
+      <outline type="rss" text="that_might_be_emo" title="that_might_be_emo" xmlUrl="http://thatmightbeemo.wordpress.com/feed/" htmlUrl="https://thatmightbeemo.wordpress.com"/>
+    </outline>
+    <outline text="Scholarly Comms" title="Scholarly Comms">
+      <outline type="rss" text="Publications Router" title="Publications Router" xmlUrl="http://publicationsrouter.blogs.edina.ac.uk/feed/" htmlUrl="http://publicationsrouter.blogs.edina.ac.uk"/>
+      <outline type="rss" text="Latest Issue of Learned Publishing" title="Latest Issue of Learned Publishing" xmlUrl="http://api.ingentaconnect.com/content/alpsp/lp/latest?format=rss" htmlUrl="http://www.ingentaconnect.com/content/alpsp/lp/latest"/>
+      <outline type="rss" text="Sauropod Vertebra Picture of the Week" title="Sauropod Vertebra Picture of the Week" xmlUrl="http://svpow.com/feed/" htmlUrl="http://svpow.com"/>
+      <outline type="rss" text="The Orb » Feed" title="The Orb » Feed" xmlUrl="http://www.open.ac.uk/blogs/the_orb/?feed=rss2" htmlUrl="http://www.open.ac.uk/blogs/the_orb"/>
+      <outline type="rss" text="Open Access Button" title="Open Access Button" xmlUrl="http://blog.openaccessbutton.org/feed/" htmlUrl="http://blog.openaccessbutton.org"/>
+      <outline type="rss" text="Impact of Social Sciences" title="Impact of Social Sciences" xmlUrl="http://feeds.feedburner.com/ImpactOfSocialSciences" htmlUrl="http://blogs.lse.ac.uk/impactofsocialsciences"/>
+      <outline type="rss" text="Sparrho" title="Sparrho" xmlUrl="http://sparrho.tumblr.com/rss" htmlUrl="http://blog.sparrho.com/"/>
+      <outline type="rss" text="The CRC Blog from the Centre for Research Communications" title="The CRC Blog from the Centre for Research Communications" xmlUrl="https://thecrcblog.wordpress.com/feed/" htmlUrl="https://thecrcblog.wordpress.com"/>
+      <outline type="rss" text="ORCID blogs" title="ORCID blogs" xmlUrl="http://orcid.org/blog/feed" htmlUrl="http://orcid.org/blog"/>
+      <outline type="rss" text="Jisc Scholarly Communications" title="Jisc Scholarly Communications" xmlUrl="http://scholarlycommunications.jiscinvolve.org/wp/feed/" htmlUrl="http://scholarlycommunications.jiscinvolve.org/wp"/>
+      <outline type="rss" text="The Third Bit" title="The Third Bit" xmlUrl="http://www.third-bit.com/feed.xml" htmlUrl="http://third-bit.com"/>
+      <outline type="rss" text="UKCoRR » Blog" title="UKCoRR » Blog" xmlUrl="http://ukcorr.org/feed/" htmlUrl="http://ukcorr.org"/>
+    </outline>
+    <outline text="Higher Education" title="Higher Education">
+      <outline type="rss" text="Research Fundermentals" title="Research Fundermentals" xmlUrl="http://fundermental.blogspot.com/feeds/posts/default" htmlUrl="http://fundermental.blogspot.com/"/>
+      <outline type="rss" text="Higher Education Academy - News Feed" title="Higher Education Academy - News Feed" xmlUrl="http://www.heacademy.ac.uk/rss/newsfeeds" htmlUrl="https://www.heacademy.ac.uk/rss/newsfeeds"/>
+      <outline type="rss" text="Higher Education Network: Blog | guardian.co.uk" title="Higher Education Network: Blog | guardian.co.uk" xmlUrl="http://www.guardian.co.uk/higher-education-network/blog/rss" htmlUrl="http://www.theguardian.com/higher-education-network/blog"/>
+      <outline type="rss" text="HEFCE blog" title="HEFCE blog" xmlUrl="http://blog.hefce.ac.uk/feed/" htmlUrl="http://blog.hefce.ac.uk"/>
+      <outline type="rss" text="Education – Articles – The Conversa..." title="Education – Articles – The Conversa..." xmlUrl="http://theconversation.com/uk/education/articles.atom" htmlUrl="https://theconversation.com"/>
+      <outline type="rss" text="Change.org's Education Blog" title="Change.org's Education Blog" xmlUrl="http://education.change.org/blog/rss"/>
+    </outline>
+    <outline text="Digital preservation" title="Digital preservation">
+      <outline type="rss" text="Bits and Pieces" title="Bits and Pieces" xmlUrl="http://libraryblogs.is.ed.ac.uk/bitsandpieces/feed/" htmlUrl="http://libraryblogs.is.ed.ac.uk/bitsandpieces"/>
+      <outline type="rss" text="Open Planets Foundation" title="Open Planets Foundation" xmlUrl="http://www.openplanetsfoundation.org/rss.xml" htmlUrl="http://www.openplanetsfoundation.org"/>
+    </outline>
+  </body>
+</opml>

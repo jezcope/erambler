@@ -9,10 +9,19 @@ title: Blogroll
 
 - feeds = Nokogiri::XML(@items['/blogroll/feeds/'].raw_content)
 .blogroll
-  - feeds.xpath('//body/outline').each do |section|
-    %h2= section['title']
+  - sections = feeds.xpath('//body/outline').sort_by {|s| s['title']}
 
-    %ul
+  %ul.sections
+    - sections.each do |section|
+      %li
+        %a{href: '#' + section['title'].downcase.tr(' ', '-')}
+          = section['title']
+
+  - sections.each do |section|
+    %h2{id: section['title'].downcase.tr(' ', '-')}
+      = section['title']
+
+    %ul.feeds
       - section.xpath('./outline').each do |feed|
         %li
           %a{href: feed['htmlUrl']}= feed['title']

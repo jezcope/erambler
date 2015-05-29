@@ -1,5 +1,18 @@
+---
+title: Blogroll
+---
+
 :kramdown
-  This is a list of the blog and news feeds I read, taken directly from my [feedly](http://feedly.com) account.
+  This is a list of the blog and news feeds I read, updated occasionally from my [feedly](http://feedly.com) account.
 
   You can also [download the full list in OPML format](feeds.opml).
+
+- feeds = Nokogiri::XML(@items['/blogroll/feeds/'].raw_content)
 .blogroll
+  - feeds.xpath('//body/outline').each do |section|
+    %h2= section['title']
+
+    %ul
+      - section.xpath('./outline').each do |feed|
+        %li
+          %a{href: feed['htmlUrl']}= feed['title']

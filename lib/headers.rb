@@ -12,7 +12,7 @@ end
 
 module ERambler
   
-  class ReduceHeaderLevel < Nanoc3::Filter
+  class ReduceHeaderLevel < Nanoc::Filter
     identifier :reduce_header_level
 
     def run(content, params = {})

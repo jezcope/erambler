@@ -1,4 +1,4 @@
-include Nanoc3::Helpers::Blogging
+include Nanoc::Helpers::Blogging
 
 def date_for(article)
   attribute_to_time article[:created_at]
@@ -6,7 +6,7 @@ end
 
 def paginate_articles
 	1.upto(articles.count/@config[:page_size]) do |page|
-		@items << Nanoc3::Item.new(
+		@items << Nanoc::Item.new(
 			"= render 'partials/article_index', :page => #{page}",
 			{
         title: "Archive page #{page}",

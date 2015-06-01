@@ -41,7 +41,7 @@ class TagIndex
   end
 
   def tag_feed_for(tag)
-    Nanoc3::Item.new(
+    Nanoc::Item.new(
       "= render 'partials/feed', :articles => tag_index.items_for_tag(#{tag.inspect})",
       {
         mtime: items_for_tag(tag).collect {|i| i[:mtime]}.max,
@@ -55,7 +55,7 @@ class TagIndex
   end
 
   def tag_page_for(tag)
-    Nanoc3::Item.new(
+    Nanoc::Item.new(
       "= render 'partials/brief_index', :articles => tag_index.items_for_tag(#{tag.inspect})",
       {
         mtime: items_for_tag(tag).collect {|i| i[:mtime]}.max,

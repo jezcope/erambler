@@ -1,9 +1,9 @@
 require 'andand'
 require 'faker'
 
-include Nanoc3::Helpers::LinkTo
-include Nanoc3::Helpers::Rendering
-include Nanoc3::Helpers::XMLSitemap
+include Nanoc::Helpers::LinkTo
+include Nanoc::Helpers::Rendering
+include Nanoc::Helpers::XMLSitemap
 
 def render_cached(partial, *args)
   $cache ||= {}

@@ -12,8 +12,8 @@ preprocess do
 	paginate_articles
 
   tag_index.add_articles(articles)
-  @items.concat(tag_index.tag_feeds)
-  @items.concat(tag_index.tag_pages)
+  tag_index.create_tag_feeds(@items)
+  tag_index.create_tag_pages(@items)
 
   articles.each {|item| item[:page_type] = 'single-post'}
   @items.each   {|item| item[:page_type] ||= 'static-page'}

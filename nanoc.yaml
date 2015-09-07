@@ -33,7 +33,9 @@ index_filenames: [ 'index.html' ]
 # Whether or not to generate a diff of the compiled content when compiling a
 # site. The diff will contain the differences between the compiled content
 # before and after the last site compilation.
-enable_output_diff: false
+enable_output_diff: true
+
+string_pattern_type: legacy
 
 # The data sources where nanoc loads its data from. This is an array of
 # hashes; each array element represents a single data source. By default,
@@ -41,25 +43,13 @@ enable_output_diff: false
 # “layout/” directories in the site directory.
 data_sources:
   -
-    # The type is the identifier of the data source. By default, this will be
-    # `filesystem_unified`.
-    type: filesystem_unified
-
-    # The path where items should be mounted (comparable to mount points in
-    # Unix-like systems). This is “/” by default, meaning that items will have
-    # “/” prefixed to their identifiers. If the items root were “/en/”
-    # instead, an item at content/about.html would have an identifier of
-    # “/en/about/” instead of just “/about/”.
-    items_root: /
-
-    # The path where layouts should be mounted. The layouts root behaves the
-    # same as the items root, but applies to layouts rather than items.
-    layouts_root: /
-  -
-    # The `static` data source loads from the 'static/' directory,
-    # keeps file extensions in the item identifier and marks
-    # everything as binary
-    type: static
+    type: filesystem
+    identifier_type: legacy
+  # -
+  #   type: filesystem
+  #   items_root: /static
+  #   content_dir: static
+  #   layouts_dir: null
 
 deploy:
   default:

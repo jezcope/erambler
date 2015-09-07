@@ -12,7 +12,7 @@ def paginate_articles
         title: "Archive page #{page}",
         page_type: 'index'
       },
-			"/archives/#{page}")
+			"/archives/#{page}/")
 	end
 end
 

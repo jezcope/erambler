@@ -246,6 +246,3 @@ DEPENDENCIES
   thor
   uglifier
   unf
-
-BUNDLED WITH
-   1.10.2

@@ -30,6 +30,7 @@ STATIC_ITEMS = Regexp.union(
   '/favicon.ico/',
   '/robots.txt/',
   '/blank.html/',
+  '/blogroll/feeds/',
   %r{/assets/(images|fonts|javascripts)/.*/},
   %r{/downloads/.*/}
 )
@@ -93,9 +94,10 @@ route '/assets/style/partials/*' do
   # Don't route
 end
 
-# route %r{^(/assets/images/.*/|/favicon/|/downloads/.*/)$} do
-#   item.identifier.chop + '.' + item[:extension]
-# end
+route '/blogroll/feeds/' do
+  item.identifier.chop + '.opml'
+end
+
 route STATIC_ITEMS do
   item.identifier.chomp('/')
 end

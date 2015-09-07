@@ -1,0 +1,34 @@
+---
+title: Blogroll
+extra_scripts:
+  - http://code.jquery.com/jquery-1.11.3.min.js
+  - /assets/javascripts/bootstrap/collapse.js
+  - /assets/javascripts/bootstrap/transition.js
+---
+
+:kramdown
+  This is a list of the blog and news feeds I read. It's auto-generated from an [OPML](http://en.wikipedia.org/wiki/OPML) export from my [feedly](http://feedly.com) account (which probably needs some tidying up).
+
+  You can also [download the full list in OPML format](feeds.opml).
+
+- feeds = Nokogiri::XML(@items['/blogroll/feeds/'].raw_content)
+- sections = feeds.xpath('//body/outline').sort_by {|s| s['title']}
+
+#blogroll.panel-group{role: 'tablist', 'aria-multiselectable': 'true'}
+  - sections.each_with_index do |section, i|
+    .panel.panel-default
+
+      .panel-heading{id: "heading#{i+1}", role: 'tab'}
+        %h4.panel-title
+          %a{data: {toggle: 'collapse', parent: '#blogroll'},
+             href: "#section#{i+1}",
+             aria: {expanded: 'false', controls: "#section#{i+1}"}}
+            = section['title']
+
+      .panel-collapse.collapse{id: "section#{i+1}", role: 'tabpanel',
+                               'aria-labelledby': "heading#{i+1}"}
+        .panel-body
+          %ul.feeds
+            - section.xpath('./outline').sort_by{|s| s['title'].downcase}.each do |feed|
+              %li
+                %a{href: feed['htmlUrl']}= feed['title']

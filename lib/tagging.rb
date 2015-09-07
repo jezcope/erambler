@@ -68,5 +68,5 @@ class TagIndex
 end
 
 def tags_for(item)
-  ((item[:tags] || []) + (item[:categories] || [])).uniq
+  ((item[:tags] || []) + (item[:categories] || [])).compact.uniq
 end

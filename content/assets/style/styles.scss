@@ -54,6 +54,16 @@ header.page-header {
         color: white;
         border-radius: $grid-gutter-width / 2;
 
+        @media (max-width: 1440px) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        @media (max-width: $screen-sm-max) {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
         h1 a, .h1 a {
             color: white;
             text-decoration: none;
@@ -83,6 +93,12 @@ header.page-header {
 
     background-color: lighten($brand-primary, 60%);
     border-radius: $grid-gutter-width / 2;
+
+    @media (max-width: 1440px) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
 }
 
 footer {
@@ -265,6 +281,14 @@ a.tag {
         width: 100%;
         height: 100%;
     }
+}
+
+/*****************************************************************************
+ * Blogroll
+ */
+
+#blogroll ul.feeds {
+    margin-bottom: 0;
 }
 
 /*****************************************************************************

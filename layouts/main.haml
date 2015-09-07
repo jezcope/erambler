@@ -46,6 +46,9 @@
         #sidebar= render_cached 'partials/sidebar'
         .row
           %footer= render_cached 'partials/footer'
+
+    - @item[:extra_scripts].andand.each do |s|
+      %script{type: 'text/javascript', src: s}
     = render_cached 'partials/analytics'
 
     - if @item.identifier == '/'

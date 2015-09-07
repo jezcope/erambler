@@ -26,7 +26,7 @@ module Blogging
     end
 
     def process_alphabetically(hash)
-      hash.keys.sort{|a,b| a.casecmp(b)}.each do |key|
+      hash.keys.compact.sort{|a,b| a.casecmp(b)}.each do |key|
         yield key, hash[key]
       end
     end

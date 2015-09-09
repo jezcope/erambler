@@ -45,11 +45,11 @@ data_sources:
   -
     type: filesystem
     identifier_type: legacy
-  # -
-  #   type: filesystem
-  #   items_root: /static
-  #   content_dir: static
-  #   layouts_dir: null
+  -
+    type: filesystem
+    # items_root: /static
+    content_dir: static
+    layouts_dir: null
 
 deploy:
   default:

@@ -27,15 +27,15 @@ KRAMDOWN_OPTIONS = {
 }
 
 STATIC_ITEMS = Regexp.union(
-  '/favicon.ico/',
-  '/robots.txt/',
-  '/blank.html/',
+  '/favicon.ico',
+  '/robots.txt',
+  '/blank.html',
   '/blogroll/feeds/',
-  %r{/assets/(images|fonts|javascripts)/.*/},
-  %r{/downloads/.*/}
+  %r{\A/assets/(images|fonts|javascripts)/.*},
+  %r{\A/downloads/}
 )
 compile STATIC_ITEMS do
-  # Don't compile
+  nil
 end
 
 compile '/assets/style/*/' do
@@ -99,7 +99,7 @@ route '/blogroll/feeds/' do
 end
 
 route STATIC_ITEMS do
-  item.identifier.chomp('/')
+  item.identifier.to_s
 end
 
 route '/assets/style/*/' do
@@ -116,6 +116,7 @@ end
 
 route '/articles/*/', rep: :archive do
   # Don't route
+  nil
 end
 
 route %r{/(feed|sitemap)/$} do

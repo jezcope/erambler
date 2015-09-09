@@ -63,7 +63,6 @@ end
 compile '/articles/*', rep: :archive do
   filter :erb
   filter :kramdown, KRAMDOWN_OPTIONS if @item[:extension] == 'md'
-  filter :reduce_header_level, by: 1
 end
 
 compile %r{^(/feeds?/.*|/sitemap/|/ignore-me/)$} do

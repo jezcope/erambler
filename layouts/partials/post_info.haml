@@ -1,11 +1,11 @@
 - item_date = date_for @item
 - all_tags = tags_for @item
 
-.post-date
-  = item_date.strftime '%A %e %B %Y'
+.post-date.dt-published
+  %a.u-url{:href => url_for(@item)}= item_date.strftime '%A %e %B %Y'
 
 - if all_tags.length > 0
   Tagged with
   %ul.post-tags
     - all_tags.each do |x|
-      %li= link_for_tag x
+      %li.p-category= link_for_tag x

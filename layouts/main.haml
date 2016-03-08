@@ -14,14 +14,14 @@
       %section
         #content
           - if %w{single-post static-page}.include? @item[:page_type]
-            %article
+            %article.h-entry
               .row
-                %h1.post-title= @item[:title]
+                %h1.post-title.p-name= @item[:title]
               .row
                 - if @item[:page_type] == 'single-post'
                   .post-info= render 'partials/post_info', :item => @item
                 .post-body
-                  .post-content= yield
+                  .post-content.e-content= yield
 
                   - if @item[:page_type] == 'single-post'
                     #disqus_thread

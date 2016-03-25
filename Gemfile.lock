@@ -208,6 +208,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    rb-readline (0.5.3)
     rbvmomi (1.8.2)
       builder
       nokogiri (>= 1.4.1)
@@ -259,6 +260,7 @@ DEPENDENCIES
   nokogiri
   rack
   rack-rewrite
+  rb-readline
   rouge
   sequel
   systemu
@@ -268,4 +270,4 @@ DEPENDENCIES
   unf
 
 BUNDLED WITH
-   1.10.6
+   1.11.2

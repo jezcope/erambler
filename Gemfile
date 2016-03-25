@@ -20,6 +20,7 @@ gem "faker"
 gem "therubyracer"
 
 gem "systemu"
+gem "rb-readline"
 
 gem "fog"
 gem "unf"

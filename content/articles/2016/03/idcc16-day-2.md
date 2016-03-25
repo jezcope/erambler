@@ -1,5 +1,6 @@
 ---
 title: '#IDCC16 day 2: new ideas'
+teaser: 'Lots of new ideas from #IDCC16 day 2!'
 kind: article
 created_at: Wednesday 16 Mar 2016 07:44:14
 tags:

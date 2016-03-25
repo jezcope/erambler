@@ -2,4 +2,32 @@
 feed_url: http://feeds.feedburner.com/erambler
 is_hidden: true
 ---
-= fix_atom_link_type atom_feed
+!!! XML UTF-8
+%feed{'xmlns': 'http://www.w3.org/2005/Atom',
+      'xmlns:prism': 'http://prismstandard.org/namespaces/basic/2.1/'}
+  %id= @config[:base_url] + '/'
+  %title= @config[:title]
+  %updated= attribute_to_time(articles.last[:updated_at] || articles.last[:created_at]).to_iso8601_time
+  %link{rel: 'alternate', href: @config[:base_url] + '/'}
+  %link{rel: 'self', href: @config[:feed_url]}
+  %author
+    %name= @config[:author_name]
+    %uri= @config[:author_uri]
+
+  - articles.last(5).each do |a|
+    %entry
+      %id= atom_tag_for a
+      %title{type: 'html'}= a[:title]
+      - if a[:teaser] then
+        %prism:teaser= a[:teaser]
+
+      %published= attribute_to_time(a[:created_at]).to_iso8601_time
+      %updated= attribute_to_time(a[:updated_at] || a[:created_at]).to_iso8601_time
+
+      %link{rel: :alternate,
+            href: url_for(a),
+            type: 'text/html'}
+
+      %content{type: :html}
+        &= a.compiled_content(snapshot: :pre)
+        -# %div{xmlns: 'http://www.w3.org/1999/xhtml'}= a.compiled_content(snapshot: :pre)

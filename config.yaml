@@ -56,6 +56,9 @@ data_sources:
     # The path where layouts should be mounted. The layouts root behaves the
     # same as the items root, but applies to layouts rather than items.
     layouts_root: /
+
+    config:
+      encoding: utf-8
   -
     # The `static` data source loads from the 'static/' directory,
     # keeps file extensions in the item identifier and marks

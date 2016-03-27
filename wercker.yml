@@ -1,6 +1,9 @@
 box: ruby
 build:
   steps:
+    - script:
+        name: configure nokogiri gem
+        code: bundle config build.nokogiri --use-system-libraries
     - bundle-install
     - script:
         name: nanoc compile

@@ -46,6 +46,8 @@ data_sources:
   -
     type: filesystem
     identifier_type: legacy
+    config:
+      encoding: utf-8
   -
     type: filesystem
     # items_root: /static

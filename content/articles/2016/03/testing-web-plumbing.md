@@ -2,7 +2,7 @@
 title: "Testing automatic posting to Twitter"
 teaser: "If it all works correctly, this should be autoposted to Twitter"
 kind: article
-created_at: Sun 27 Mar 2016 21:34:26 BST
+created_at: Tue 29 Mar 2016 14:39:12 BST
 tags:
 - Meta
 - Test

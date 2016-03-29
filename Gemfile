@@ -1,6 +1,6 @@
 source 'https://rubygems.org/'
 
-gem "nanoc", "~> 3.8.0"
+gem "nanoc"
 gem "rack"
 gem "adsf"
 gem "mime-types"

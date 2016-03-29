@@ -7,13 +7,11 @@ Compass.add_project_configuration 'config/compass.rb'
 # Preprocess ###################################################################
 
 preprocess do
-  reset_cache
-  
 	paginate_articles
 
   tag_index.add_articles(articles)
-  @items.concat(tag_index.tag_feeds)
-  @items.concat(tag_index.tag_pages)
+  tag_index.create_tag_feeds(@items)
+  tag_index.create_tag_pages(@items)
 
   articles.each {|item| item[:page_type] = 'single-post'}
   @items.each   {|item| item[:page_type] ||= 'static-page'}
@@ -27,15 +25,15 @@ KRAMDOWN_OPTIONS = {
 }
 
 STATIC_ITEMS = Regexp.union(
-  '/favicon.ico/',
-  '/robots.txt/',
-  '/blank.html/',
+  '/favicon.ico',
+  '/robots.txt',
+  '/blank.html',
   '/blogroll/feeds/',
-  %r{/assets/(images|fonts|javascripts)/.*/},
-  %r{/downloads/.*/}
+  %r{\A/assets/(images|fonts|javascripts)/.*},
+  %r{\A/downloads/}
 )
 compile STATIC_ITEMS do
-  # Don't compile
+  nil
 end
 
 compile '/assets/style/*/' do
@@ -52,18 +50,19 @@ end
 compile %r{^(/|/archives/.*/)$} do
   filter :haml
   layout 'main'
+  filter :relativize_paths, type: :html
 end
 
 compile '/articles/*' do
   filter :erb
   filter :kramdown, KRAMDOWN_OPTIONS if @item[:extension] == 'md'
   layout 'main'
+  filter :relativize_paths, type: :html
 end
 
 compile '/articles/*', rep: :archive do
   filter :erb
   filter :kramdown, KRAMDOWN_OPTIONS if @item[:extension] == 'md'
-  filter :reduce_header_level, by: 1
 end
 
 compile %r{^(/feeds?/.*|/sitemap/|/ignore-me/)$} do
@@ -73,6 +72,7 @@ end
 compile %r{^/(tag|category)/} do
   filter :haml
   layout 'main' unless item[:type] == :feed
+  filter :relativize_paths, type: :html
 end
 
 compile '*' do
@@ -86,6 +86,7 @@ compile '*' do
     filter :erb
   end
   layout 'main'
+  filter :relativize_paths, type: :html
 end
 
 # Routing ######################################################################
@@ -99,7 +100,7 @@ route '/blogroll/feeds/' do
 end
 
 route STATIC_ITEMS do
-  item.identifier.chomp('/')
+  item.identifier.to_s
 end
 
 route '/assets/style/*/' do
@@ -111,11 +112,12 @@ route '/assets/js/*/' do
 end
 
 route '/articles/*/' do
-  '/blog/' + item.identifier.split('/')[-1] + '/index.html'
+  '/blog/' + item.identifier.to_s.split('/')[-1] + '/index.html'
 end
 
 route '/articles/*/', rep: :archive do
   # Don't route
+  nil
 end
 
 route %r{/(feed|sitemap)/$} do

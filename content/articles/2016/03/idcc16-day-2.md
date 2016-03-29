@@ -6,8 +6,8 @@ created_at: Wednesday 16 Mar 2016 07:44:14
 tags:
 - IDCC16
 - Conference
-- Open Data
-- Research Data Management
+- Open data
+- Research data management
 ---
 
 *Well, I did a great job of blogging the conference for a couple of days, but then I was hit by the bug that's been going round and didn't have a lot of energy for anything other than paying attention and making notes during the day!  I've now got round to reviewing my notes so here are a few reflections on day 2.*

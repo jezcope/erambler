@@ -1,16 +1,7 @@
 require 'andand'
 require 'faker'
+require 'nokogiri'
 
-include Nanoc3::Helpers::LinkTo
-include Nanoc3::Helpers::Rendering
-include Nanoc3::Helpers::XMLSitemap
-
-def render_cached(partial, *args)
-  $cache ||= {}
-
-  $cache[partial] ||= render(partial, *args)
-end
-
-def reset_cache
-  $cache = {}
-end
+include Nanoc::Helpers::LinkTo
+include Nanoc::Helpers::Rendering
+include Nanoc::Helpers::XMLSitemap

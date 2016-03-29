@@ -43,13 +43,13 @@
                       })();
           - else
             = yield
-        #sidebar= render_cached 'partials/sidebar'
+        #sidebar= render 'partials/sidebar'
         .row
-          %footer= render_cached 'partials/footer'
+          %footer= render 'partials/footer'
 
     - @item[:extra_scripts].andand.each do |s|
       %script{type: 'text/javascript', src: s}
-    = render_cached 'partials/analytics'
+    = render 'partials/analytics'
 
     - if @item.identifier == '/'
       :javascript

@@ -1,6 +1,6 @@
 source 'https://rubygems.org/'
 
-gem "nanoc", "~> 4.0.0b3"
+gem "nanoc"
 gem "rack"
 gem "adsf"
 gem "mime-types"
@@ -20,6 +20,7 @@ gem "faker"
 gem "therubyracer"
 
 gem "systemu"
+gem "rb-readline"
 
 gem "fog"
 gem "unf"

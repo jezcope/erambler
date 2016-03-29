@@ -8,6 +8,7 @@ css_dir = "output/assets/style"
 sass_dir = "content/assets/style"
 images_dir = "output/assets/images"
 javascripts_dir = "output/assets/javascripts"
+fonts_dir = "output/assets/fonts"
 
 output_style = :expanded
 sass_options = {

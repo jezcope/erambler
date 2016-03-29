@@ -6,11 +6,11 @@ is_hidden: true
 %feed{'xmlns': 'http://www.w3.org/2005/Atom',
       'xmlns:prism': 'http://prismstandard.org/namespaces/basic/2.1/'}
 
-  - articles_sorted = articles.sort_by{|a| attribute_to_time(a[:updated_at] || a[:created_at]).to_iso8601_time}.reverse
+  - articles_sorted = articles.sort_by{|a| attribute_to_time(a[:updated_at] || a[:created_at]).iso8601}.reverse
 
   %id= @config[:base_url] + '/'
   %title= @config[:title]
-  %updated= attribute_to_time(articles_sorted.first[:updated_at] || articles_sorted.first[:created_at]).to_iso8601_time
+  %updated= attribute_to_time(articles_sorted.first[:updated_at] || articles_sorted.first[:created_at]).iso8601
   %link{rel: :alternate, href: @config[:base_url] + '/'}
   %link{rel: :self, href: @config[:feed_url]}
   %link{rel: :license, type: 'application/rdf+xml', href: @config[:license_url] + 'rdf'}
@@ -25,8 +25,8 @@ is_hidden: true
       - if a[:teaser] then
         %prism:teaser= a[:teaser]
 
-      %published= attribute_to_time(a[:created_at]).to_iso8601_time
-      %updated= attribute_to_time(a[:updated_at] || a[:created_at]).to_iso8601_time
+      %published= attribute_to_time(a[:created_at]).iso8601
+      %updated= attribute_to_time(a[:updated_at] || a[:created_at]).iso8601
 
       %link{rel: :alternate,
             href: url_for(a),

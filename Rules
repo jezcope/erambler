@@ -7,8 +7,6 @@ Compass.add_project_configuration 'config/compass.rb'
 # Preprocess ###################################################################
 
 preprocess do
-  reset_cache
-  
 	paginate_articles
 
   tag_index.add_articles(articles)

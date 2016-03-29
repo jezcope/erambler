@@ -1,5 +1,5 @@
 def tag_index
-  TagIndex.tag_index
+  @config[:tag_index] ||= TagIndex.new
 end
 
 def slug_for(tag)
@@ -20,20 +20,16 @@ end
 
 class TagIndex
 
-  def TagIndex.tag_index
-    @@instance ||= TagIndex.new
-  end
-
   def add_articles(items)
     @tags = Hash.new{|hash, key| hash[key] = []}
 
     items.each do |i|
-      tags_for(i).each {|tag| @tags[tag] << i}
+      tags_for(i).each {|tag| @tags[tag] << i.identifier}
     end
   end
 
-  def items_for_tag(tag)
-    @tags[tag]
+  def items_for_tag(tag, items)
+    @tags[tag].map {|i| items[i]}
   end
 
   def create_tag_feeds(items)
@@ -42,9 +38,9 @@ class TagIndex
 
   def create_tag_feed_for(tag, items)
     items.create(
-      "= render 'partials/feed', :articles => tag_index.items_for_tag(#{tag.inspect})",
+      "= render 'partials/feed', :articles => tag_index.items_for_tag(#{tag.inspect}, @items)",
       {
-        mtime: items_for_tag(tag).collect {|i| i[:mtime]}.max,
+        mtime: items_for_tag(tag, items).collect {|i| i[:mtime]}.max,
         type:  :feed
       },
       feed_url_for_tag(tag))
@@ -56,9 +52,9 @@ class TagIndex
 
   def create_tag_page_for(tag, items)
     items.create(
-      "= render 'partials/brief_index', :articles => tag_index.items_for_tag(#{tag.inspect})",
+      "= render 'partials/brief_index', :articles => tag_index.items_for_tag(#{tag.inspect}, @items)",
       {
-        mtime: items_for_tag(tag).collect {|i| i[:mtime]}.max,
+        mtime: items_for_tag(tag, items).collect {|i| i[:mtime]}.max,
         title: %(Articles tagged "#{tag}"),
         page_type: %w{index tag-page}
       },

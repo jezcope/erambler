@@ -50,12 +50,14 @@ end
 compile %r{^(/|/archives/.*/)$} do
   filter :haml
   layout 'main'
+  filter :relativize_paths, type: :html
 end
 
 compile '/articles/*' do
   filter :erb
   filter :kramdown, KRAMDOWN_OPTIONS if @item[:extension] == 'md'
   layout 'main'
+  filter :relativize_paths, type: :html
 end
 
 compile '/articles/*', rep: :archive do
@@ -70,6 +72,7 @@ end
 compile %r{^/(tag|category)/} do
   filter :haml
   layout 'main' unless item[:type] == :feed
+  filter :relativize_paths, type: :html
 end
 
 compile '*' do
@@ -83,6 +86,7 @@ compile '*' do
     filter :erb
   end
   layout 'main'
+  filter :relativize_paths, type: :html
 end
 
 # Routing ######################################################################

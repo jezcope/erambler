@@ -8,8 +8,9 @@ is_hidden: true
   %id= @config[:base_url] + '/'
   %title= @config[:title]
   %updated= attribute_to_time(articles.last[:updated_at] || articles.last[:created_at]).to_iso8601_time
-  %link{rel: 'alternate', href: @config[:base_url] + '/'}
-  %link{rel: 'self', href: @config[:feed_url]}
+  %link{rel: :alternate, href: @config[:base_url] + '/'}
+  %link{rel: :self, href: @config[:feed_url]}
+  %link{rel: :license, type: 'application/rdf+xml', href: @config[:license_url] + 'rdf'}
   %author
     %name= @config[:author_name]
     %uri= @config[:author_uri]

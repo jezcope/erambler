@@ -1,10 +1,10 @@
-%a.license(rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/uk/")
-  %img(alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/2.0/uk/88x31.png")
+%a.license{rel: :license, href: @config[:license_url]}
+  %img(alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png")
 %span(xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type")
   = @config[:title]
 by
 %a(xmlns:cc="http://creativecommons.org/ns#" href="#{@config[:author_uri]}" property="cc:attributionName" rel="cc:attributionURL")
   = @config[:author_name]
 is licensed under a
-%a(rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/uk/")
-  Creative Commons Attribution-ShareAlike 2.0 UK: England & Wales License
+%a{rel: :license, href: @config[:license_url]}
+  Creative Commons Attribution-ShareAlike 4.0 International

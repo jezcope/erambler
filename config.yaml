@@ -6,6 +6,7 @@ author_uri:     http://erambler.co.uk/
 hostname:       erambler.co.uk
 base_url:       http://erambler.co.uk
 feed_url:       http://erambler.co.uk/feed.xml
+license_url:    http://creativecommons.org/licenses/by-sa/4.0/
 
 ga_account:     UA-10201101-1
 

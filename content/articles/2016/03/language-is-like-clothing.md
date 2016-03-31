@@ -4,9 +4,9 @@ teaser: "Data is like information in more ways than one, and it's like water too
 kind: article
 created_at: Thu 31 March 2016, 17:40 BST
 tags:
-- language
-- grammar
-- data
+- Language
+- Grammar
+- Data
 ---
 
 I admit it: I'm a grammar nerd.  I know the difference between 'who' and 'whom', and I'm proud.

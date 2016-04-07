@@ -9,6 +9,8 @@ tags:
 - IFTTT
 ---
 
+![XKCD: automation](http://imgs.xkcd.com/comics/automation.png){:.main-illustration}
+
 I'm a nut for automating repetitive tasks, so I was dead pleased a few years ago when I discovered that [IFTTT](https://ifttt.com) let me plug different bits of the web together. I now use it for tasks such as:
 
 - Syndicating blog posts to social media
@@ -16,8 +18,6 @@ I'm a nut for automating repetitive tasks, so I was dead pleased a few years ago
 - Making a note to revisit an article I've starred in Feedly
 
 I'd probably only be half-joking if I said that I spend more time automating things than I save not having to do said things manually. Thankfully it's also a great opportunity to learn, and recently I've been thinking about reimplementing some of my IFTTT workflows myself to get to grips with how it all works.
-
-![XKCD: automation](http://imgs.xkcd.com/comics/automation.png){:.main-illustration}
 
 There are some interesting open source projects designed to offer a lot of this functionality, such as [Huginn](https://github.com/cantino/huginn), but I decided to go for a simpler option for two reasons:
 

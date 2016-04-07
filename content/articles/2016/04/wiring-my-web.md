@@ -9,7 +9,7 @@ tags:
 - IFTTT
 ---
 
-I'm a nut for automating repetetive tasks, so I was dead pleased a few years ago when I discovered that [IFTTT](https://ifttt.com) let me plug different bits of the web together. I now use it for tasks such as:
+I'm a nut for automating repetitive tasks, so I was dead pleased a few years ago when I discovered that [IFTTT](https://ifttt.com) let me plug different bits of the web together. I now use it for tasks such as:
 
 - Syndicating blog posts to social media
 - Creating scheduled/repeating todo items from a Google Calendar

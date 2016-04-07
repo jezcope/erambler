@@ -17,7 +17,7 @@ I'm a nut for automating repetitive tasks, so I was dead pleased a few years ago
 
 I'd probably only be half-joking if I said that I spend more time automating things than I save not having to do said things manually. Thankfully it's also a great opportunity to learn, and recently I've been thinking about reimplementing some of my IFTTT workflows myself to get to grips with how it all works.
 
-![XKCD: automation](http://imgs.xkcd.com/comics/automation.png)
+![XKCD: automation](http://imgs.xkcd.com/comics/automation.png){:.main-illustration}
 
 There are some interesting open source projects designed to offer a lot of this functionality, such as [Huginn](https://github.com/cantino/huginn), but I decided to go for a simpler option for two reasons:
 

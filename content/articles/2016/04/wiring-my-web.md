@@ -9,7 +9,7 @@ tags:
 - IFTTT
 ---
 
-![XKCD: automation](http://imgs.xkcd.com/comics/automation.png){:.main-illustration}
+[![XKCD: automation](http://imgs.xkcd.com/comics/automation.png){:.main-illustration}](https://xkcd.com/1319/)
 
 I'm a nut for automating repetitive tasks, so I was dead pleased a few years ago when I discovered that [IFTTT](https://ifttt.com) let me plug different bits of the web together. I now use it for tasks such as:
 
@@ -27,3 +27,5 @@ There are some interesting open source projects designed to offer a lot of this 
 Instead I've gone old-school with a little collection of individual scripts to do particular jobs. I'm using the built-in scheduling functionality of systemd, which is already part of a modern Linux operating system, to get them to run periodically. It also means I can vary the language I use to write each one depending on the needs of the job at hand and what I want to learn/feel like at the time. Currently it's all done in Python, but I want to have a go at Lisp sometime, and there are some interesting new languages like Go and Julia that I'd like to get my teeth into as well.
 
 You can see my code on github as it develops: <https://github.com/jezcope/web-plumbing>. Comments and contributions are welcome (if not expected) and let me know if you find any of the code useful.
+
+*Image credit: [xkcd #1319, Automation](https://xkcd.com/1319/)*

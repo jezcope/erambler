@@ -32,7 +32,8 @@ STATIC_ITEMS = Regexp.union(
   '/blank.html',
   '/blogroll/feeds/',
   %r{\A/assets/(images|fonts|javascripts)/.*},
-  %r{\A/downloads/}
+  %r{\A/downloads/},
+  %r{\.(?i:jpg|png|gif)\z}
 )
 compile STATIC_ITEMS do
   nil

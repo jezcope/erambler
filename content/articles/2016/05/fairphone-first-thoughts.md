@@ -11,7 +11,7 @@ tags:
 - Ethics
 ---
 
-![Naked Fairphone](images/fairphone.jpg){:.main-illustration}
+![Naked Fairphone](/assets/images/posts/2016-05-07-fairphone.jpg){:.main-illustration}
 I've had my eye on the [Fairphone 2](https://www.fairphone.com/) for a while now, and when my current phone, an aging Samsung Galany S4, started playing up I decided it was time to take the plunge. A few people have asked for my thoughts on the Fairphone so here are a few notes.
 
 # Why I bought it

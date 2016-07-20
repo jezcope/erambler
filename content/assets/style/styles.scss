@@ -278,6 +278,24 @@ a.tag {
     }
 }
 
+.archive-warning {
+    @include make-md-column-offset(2);
+    @include make-md-column(10);
+    @extend .bg-warning;
+
+    padding: {
+        top: $grid-gutter-width / 2;
+        bottom: $grid-gutter-width / 2;
+    }
+
+    border-radius: $grid-gutter-width / 2;
+
+    @media (max-width: 1440px) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+
 /*****************************************************************************
  * Blogroll
  */

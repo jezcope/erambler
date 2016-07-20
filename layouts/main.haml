@@ -12,6 +12,11 @@
           .lead= @config[:tagline]
         %nav= render 'partials/nav'
       %section
+        .row
+          :kramdown
+            ***Please note:*** this older content has been **archived** and is no longer fully linked into the site. Please go to the [current home page](/) for up-to-date content.
+            {: .archive-warning}
+
         #content
           - if %w{single-post static-page}.include? @item[:page_type]
             %article.h-entry

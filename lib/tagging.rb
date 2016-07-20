@@ -15,7 +15,7 @@ def feed_url_for_tag(tag)
 end
 
 def link_for_tag(tag)
-  link_to tag, url_for_tag(tag), class: 'tag'
+  '<span class="tag">' + tag + '</span>'
 end
 
 class TagIndex

@@ -193,7 +193,7 @@ ul.post-cats, ul.post-tags {
     }
 }
 
-a.tag {
+a.tag, span.tag {
     background: lighten($brand-primary, 50%);
     border: $brand-primary thin solid;
     color: $brand-primary;

@@ -1,7 +1,11 @@
-about:
+10 about:
   Name: "about"
   URL: "/about/"
 
-rdm:
+20 rdm:
   Name: "rdm resources"
   URL: "/rdm-resources/"
+
+90 license:
+  Name: license
+  URL: "/license/"

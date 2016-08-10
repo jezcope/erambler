@@ -1,0 +1,38 @@
+baseurl: http://erambler.co.uk/
+title: eRambler
+copyright: "(c) 2016 Jez Cope"
+
+languageCode: en-GB
+metaDataFormat: yaml
+
+ignoreFiles: ["^\\.#"]
+
+theme: sidmouth
+
+disqusShortname: erambler
+
+permalinks:
+  post: '/blog/:slug/'
+  page: '/:slug/'
+
+taxonomies:
+  tag: tags
+
+author:
+  name: Jez Cope
+
+params:
+  home: home
+  brand: a blog about
+  topline: 'research communication + higher education + technology + stuff'
+  copyright: "Powered by [Hugo](http://gohugo.io)."
+
+  sidebar: left
+  
+  author: Jez Cope
+  authorlocation: Yorkshire, United Kingdom
+  bio: "where does my bio appear?"
+  github: jezcope
+  twitter: jezcope
+  linkedin: jezcope
+...

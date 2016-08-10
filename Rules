@@ -98,11 +98,11 @@ route STATIC_ITEMS do
 end
 
 route '/assets/style/*/' do
-  item.identifier.chop + '.css'
+  '/old' + item.identifier.chop + '.css'
 end
 
 route '/assets/js/*/' do
-  item.identifier.chop + '.js'
+  '/old' + item.identifier.chop + '.js'
 end
 
 route '/articles/*/' do
@@ -112,6 +112,10 @@ end
 route '/articles/*/', rep: :archive do
   # Don't route
   nil
+end
+
+route '/archives/*/' do
+  '/old' + item.identifier + 'index.html'
 end
 
 route '*' do

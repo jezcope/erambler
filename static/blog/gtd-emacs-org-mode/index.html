@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../old/assets/style/styles.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  (function() {
+    var s, scheme, wf;
+  
+    this.WebFontConfig = {
+      google: {
+        families: ['Amaranth:700,700italic:latin', 'Inconsolata::latin']
+      }
+    };
+  
+    wf = document.createElement('script');
+  
+    scheme = 'https:' === document.location.protocol ? 'https' : 'http';
+  
+    wf.src = scheme + "://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
+  
+    wf.type = 'text/javascript';
+  
+    wf.async = 'true';
+  
+    s = document.getElementsByTagName('script')[0];
+  
+    s.parentNode.insertBefore(wf, s);
+  
+  }).call(this);
+</script>
+
+<title>Getting Things Done with Emacs and org-mode | eRambler</title>
+<link href="http://erambler.co.uk/feed.xml" rel="alternate" type="application/rss+xml">
+</head>
+<body class="single-post">
+<div id="container">
+<header class="page-header">
+<hgroup>
+<div class="h1"><a href="../../">eRambler</a></div>
+<div class="lead">Jez Cope's blog on becoming a research technologist</div>
+</hgroup>
+<nav><ul>
+<li><a href="../../">Home</a></li>
+<li><a href="../../about/">About</a></li>
+<li><a href="../../blogroll/">Blogroll</a></li>
+</ul>
+</nav>
+</header>
+<section>
+<div class="row">
+<p class="archive-warning"><strong><em>Please note:</em></strong> this older content has been <strong>archived</strong> and is no longer fully linked into the site. Please go to the <a href="../../">current home page</a> for up-to-date content.</p>
+</div>
+<div id="content">
+<article class="h-entry">
+<div class="row">
+<h1 class="post-title p-name">Getting Things Done with Emacs and org-mode</h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/gtd-emacs-org-mode/">Saturday 22 February 2014</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Productivity</span></li>
+<li class="p-category"><span class="tag">GTD</span></li>
+<li class="p-category"><span class="tag">Emacs</span></li>
+<li class="p-category"><span class="tag">Org-mode</span></li>
+<li class="p-category"><span class="tag">Task management</span></li>
+<li class="p-category"><span class="tag">Free software</span></li>
+<li class="p-category"><span class="tag">Process</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content e-content">
+<p><img src="http://farm3.staticflickr.com/2588/3872158703_cdb8e3aacf.jpg" alt="Gnu" class="main-illustration"></p>
+
+<p>As I’ve <a href="../gtd-things-vs-omnifocus">mentioned previously</a>, I periodically try out new task management software.  The latest in that story is Emacs and Org-mode.</p>
+
+<h2 id="what-is-org">What is Org?</h2>
+
+<p>In its creator’s own words, <a href="http://orgmode.org">Org</a> is:</p>
+
+<blockquote>
+  <p>“for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective plain-text system”</p>
+</blockquote>
+
+<p>It started as an Emacs extension for authoring documents with some neat outlining features, then went mad with power and became a complete personal information organiser.</p>
+
+<h3 id="but-wait-what-the--is-emacs">But wait, what the **** is Emacs?</h3>
+
+<p><a href="http://en.m.wikipedia.org/wiki/Emacs">Emacs</a> is the mother of all text editors. It’s one of the oldest pieces of free software, having been around since the <del>dawn of time</del> 1970’s, and is still under active development. Being so venerable, it still cleaves to the conventions of the 70’s and is entirely keyboard-controllable (though it now has excellent support for your favourite rodent as well).</p>
+
+<p>“Text editor” is actually a pretty loose term in this instance: it’s completely programmable, in a slightly odd language called Elisp (which appeals to my computer scientist side). Because many of the people who use it are programmers, it’s been extended to do almost anything that you might want, from transparently editing encrypted or remote (or both) files to browsing the web and checking your email.</p>
+
+<h2 id="my-needs-for-an-organisational-system">My needs for an organisational system</h2>
+
+<p>In my <a href="../gtd-things-vs-omnifocus/">last productivity-related post</a> I mentioned that the key properties of a task management system were:</p>
+
+<ul>
+  <li>One system for everything</li>
+  <li>Multiple ways of structuring and viewing tasks</li>
+</ul>
+
+<p>I would now probably add a third property: the ability to “shrink-wrap”, or be as simple as possible for the current situation while keeping extra features hidden until needed.</p>
+
+<p>And Org very much fits the bill.</p>
+
+<h3 id="one-system-for-everything">One system for everything</h3>
+
+<p>Emacs has been ported to pretty much every operating system under the sun, so I know I can use it on my Linux desktop at work, my iMac at home plus whatever I end up with in the future. Because the files are all plain text, they’re trivial to keep synchronised between multiple machines.</p>
+
+<p>There are also <a href="http://orgmode.org/manual/MobileOrg.html">apps for iOS and Android</a>, and while they’re not perfect, they’re good enough for when I want to take my todo list on the road.</p>
+
+<h3 id="multiple-ways-of-structuring-and-viewing-tasks">Multiple ways of structuring and viewing tasks</h3>
+
+<p>Whatever I’m doing in Emacs, an instant agenda with all my current tasks is only two keystrokes away. That’s programmable too, so I have it customised to view my tasks in the way that makes most sense to me.</p>
+
+<h3 id="shrink-wrapping">Shrink wrapping</h3>
+
+<p>Org has a lot of very clever features added by its user community over its 10+ years, but you don’t have to use them, or even know they exist, until you need them. As an illustration, a simple task list in Org looks like this:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>* TODO Project 1
+** TODO Task one
+** TODO Task two
+
+* TODO Project 2
+** DONE Another task
+** TODO A further task
+</code></pre>
+</div>
+
+<p>And changing <code class="highlighter-rouge">TODO</code> to <code class="highlighter-rouge">DONE</code> is a single keystroke. Simplicity itself.</p>
+
+<p>Here’s <a href="http://article.gmane.org/gmane.emacs.orgmode/6224">Carsten Dominik on the subject</a></p>
+
+<blockquote>
+  <p>”[Org-mode] is a zero-setup, totally simple TODO manager that works with plain files, files that can be edited on pretty much any system out there, either as plain text in <strong>any</strong> editor …</p>
+
+  <p>Of course, Org-mode allows you to do more, but I would hope in a non-imposing way!  It has lots of features under the hood that you can pull in when you are ready, when you find out that there is something more you’d like to do.”</p>
+</blockquote>
+
+<h3 id="wow-what-else-can-it-do">Wow, what else can it do?</h3>
+
+<p><a href="HTTP://youtu.be/8uF4W29dGLk">“I didn’t know I could do <em>that</em>!”</a></p>
+
+<p>If that’s not enough, here are a few more reasons:</p>
+
+<ul>
+  <li>Keyboard shortcuts for quick outline editing</li>
+  <li>Lots of detailed organisational tools (but only when you need them):
+    <ul>
+      <li>Schedule and deadline dates for tasks</li>
+      <li>Flexible system for repeating tasks/projects</li>
+      <li>Complete tasks in series or parallel</li>
+      <li>Arbitrary properties, notes and tags for tasks and projects</li>
+    </ul>
+  </li>
+  <li>Use the same tools for <a href="http://orgmode.org/manual/Exporting.html">authoring HTML/LaTeX documents</a> or even <a href="http://orgmode.org/manual/Working-With-Source-Code.html#Working-With-Source-Code">literate programming</a>
+</li>
+  <li>It’s programmable! If it doesn’t have the functionality you want just write it, from adding keyboard shortcuts to whole new use cases (such as a <a href="http://julien.danjou.info/projects/emacs-packages#org-contacts">contact manager</a> or <a href="http://orgmode.org/manual/Tracking-your-habits.html">habit tracker</a>)</li>
+</ul>
+
+<h2 id="give-it-a-try">Give it a try</h2>
+
+<p>Emacs is worth trying on its own, especially if you do a lot of programming, web design or anything else that involves a lot of time editing text files. A recent version of Org is bundled with the latest GNU Emacs, and can easily be updated to the current version.</p>
+
+<ul>
+  <li><a href="http://www.gnu.org/software/emacs/">GNU Emacs</a></li>
+  <li><a href="http://orgmode.org/">Org-mode</a></li>
+</ul>
+</div>
+<div id="disqus_thread"></div>
+<script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'erambler'; // required: replace example with your forum shortname
+  var disqus_identifier = 'tag:erambler.co.uk,2014-02-22:/blog/gtd-emacs-org-mode/';
+  var disqus_title = 'Getting Things Done with Emacs and org-mode'
+  var disqus_url = 'http://erambler.co.uk/blog/gtd-emacs-org-mode/';
+  var disqus_developer = 0;
+  if (window.location.hostname == 'localhost')
+    disqus_developer = 1;
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+</div>
+</div>
+</article>
+</div>
+<div id="sidebar">
+<div class="sidebar-box about-me h-card">
+<p>Hi, I’m <a href="http://erambler.co.uk" class="p-name u-url">Jez Cope</a> and this is my
+blog, where I talk about technology in research and higher
+education, including:</p>
+
+<ul>
+  <li>Research data management;</li>
+  <li>e-Research;</li>
+  <li>Learning;</li>
+  <li>Teaching;</li>
+  <li>Educational technology.</li>
+</ul>
+</div>
+<div class="sidebar-box links">
+<h2>Me elsewhere</h2>
+<ul>
+  <li><a href="https://twitter.com/jezcope" rel="me">Twitter</a></li>
+  <li><a href="https://github.com/jezcope" rel="me">github</a></li>
+  <li><a href="https://linkedin.com/in/jezcope">LinkedIn</a></li>
+  <li><a href="http://diigo.com/user/jezcope">Diigo</a></li>
+  <li><a href="https://www.zotero.org/jezcope">Zotero</a></li>
+  <li><a href="http://gplus.to/jezcope">Google+</a></li>
+</ul>
+</div>
+</div>
+<div class="row">
+<footer><a class="license" href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+<img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="border-width:0">
+</a>
+<span href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type" xmlns:dct="http://purl.org/dc/terms/">
+eRambler
+</span>
+by
+<a href="http://erambler.co.uk/" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+Jez Cope
+</a>
+is licensed under a
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+Creative Commons Attribution-ShareAlike 4.0 International license
+</a>
+</footer>
+</div>
+</section>
+</div>
+<script>
+  if (!/^http:\/\/localhost/.test(window.location)) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10201101-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+
+</body>
+</html>

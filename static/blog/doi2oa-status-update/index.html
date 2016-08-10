@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../old/assets/style/styles.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  (function() {
+    var s, scheme, wf;
+  
+    this.WebFontConfig = {
+      google: {
+        families: ['Amaranth:700,700italic:latin', 'Inconsolata::latin']
+      }
+    };
+  
+    wf = document.createElement('script');
+  
+    scheme = 'https:' === document.location.protocol ? 'https' : 'http';
+  
+    wf.src = scheme + "://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
+  
+    wf.type = 'text/javascript';
+  
+    wf.async = 'true';
+  
+    s = document.getElementsByTagName('script')[0];
+  
+    s.parentNode.insertBefore(wf, s);
+  
+  }).call(this);
+</script>
+
+<title>OA DOI resolver status update | eRambler</title>
+<link href="http://erambler.co.uk/feed.xml" rel="alternate" type="application/rss+xml">
+</head>
+<body class="single-post">
+<div id="container">
+<header class="page-header">
+<hgroup>
+<div class="h1"><a href="../../">eRambler</a></div>
+<div class="lead">Jez Cope's blog on becoming a research technologist</div>
+</hgroup>
+<nav><ul>
+<li><a href="../../">Home</a></li>
+<li><a href="../../about/">About</a></li>
+<li><a href="../../blogroll/">Blogroll</a></li>
+</ul>
+</nav>
+</header>
+<section>
+<div class="row">
+<p class="archive-warning"><strong><em>Please note:</em></strong> this older content has been <strong>archived</strong> and is no longer fully linked into the site. Please go to the <a href="../../">current home page</a> for up-to-date content.</p>
+</div>
+<div id="content">
+<article class="h-entry">
+<div class="row">
+<h1 class="post-title p-name">OA DOI resolver status update</h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/doi2oa-status-update/">Wednesday 20 March 2013</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">DOI</span></li>
+<li class="p-category"><span class="tag">Open access</span></li>
+<li class="p-category"><span class="tag">Open scholarship</span></li>
+<li class="p-category"><span class="tag">OAI-PMH</span></li>
+<li class="p-category"><span class="tag">Programming</span></li>
+<li class="p-category"><span class="tag">Open source</span></li>
+<li class="p-category"><span class="tag">Things I made</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content e-content">
+<p>So, as you’ll have seen from my last post, I’ve been putting together an <a href="http://doi2oa.erambler.co.uk/">alternative DOI resolver that points to open access copies in institutional repositories</a>. I’m enjoying learning some new tools and the challenge of cleaning up some not-quite-ideal data, but if it’s to grow into a useful service, it needs several several things:</p>
+
+<h2 id="a-better-name">A better name</h2>
+
+<p>Seriously. “Open Access DOI Resolver” is descriptive but not very distinctive. Sadly, the only name I’ve come up with so far is “Duh-DOI!” (see the YouTube video below), which doesn’t quite convey the right impression.</p>
+
+<h2 id="a-new-home">A new home</h2>
+
+<p>I’ve grabbed a list of DOI endpoints for British institutional repositories — well over 100. Having tested the code on my iMac, I can confirm it happily harvests DOIs from most <a href="http://eprints.org/">EPrints</a>-based repositories. But I’ve hit 10,000 database rows (the free limit on <a href="http://heroku.com/">Heroku</a>, the current host) with just the DOIs from a single repository, which means the public version won’t be able to resolve anything from outside Bath until the situation changes.</p>
+
+<h2 id="better-standards-compliance">Better standards compliance</h2>
+
+<p>It’s a fact of life that everyone implements a standard differently. OAI-PMH and Dublin Core are no exception. Some repositories report both the DOI and the open access URL in <code class="highlighter-rouge">&lt;dc:identifier&gt;</code> elements; others use <code class="highlighter-rouge">&lt;dc:relation&gt;</code> for both while using <code class="highlighter-rouge">&lt;dc:identifier&gt;</code> for something totally different, like the title. Some don’t report a URL for the items repository entry at all, only the publisher’s (usually paywalled) official URL.</p>
+
+<p>There are efforts under way to improve the situation (like <a href="http://www.rioxx.net/about/">RIOXX</a>), but until then, the best I can do is to implement gradually better heuristics to standardise the diverse data available. To do that, I’m gradually collecting examples of repositories that break my harvesting algorithm and fixing them, but that’s a fairly slow process since I’m only working on this in my free time.</p>
+
+<p><a href="http://xkcd.com/927/"><em>xkcd: Standards</em></a></p>
+
+<h2 id="better-data">Better data</h2>
+
+<p>Even with better standards compliance, the tool can only be as good as the available data. I can only resolve a DOI if it’s actually been associated with its article in an institutional repository, but not every record that should have a DOI has one. It’s possible that a side benefit of this tool is that it will flag up the proportion of IR records that have DOIs assigned.</p>
+
+<p>Then there’s the fact that most repository front ends seem not to do any validation on DOIs. As they’re entered by humans, there’s always going to be scope for error, which there should be some validation in place to at least try and detect. Here are just a few of the “DOIs” from an anonymous sample of British repositories:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">+10.1063/1.3247966</code></li>
+  <li><code class="highlighter-rouge">/10.1016/S0921-4526(98)01208-3</code></li>
+  <li><code class="highlighter-rouge">0.1111/j.1467-8322.2006.00410.x</code></li>
+  <li><code class="highlighter-rouge">07510210.1088/0953-8984/21/7/075102</code></li>
+  <li><code class="highlighter-rouge">10.2436 / 20.2500.01.93</code></li>
+  <li><code class="highlighter-rouge">235109 10.1103/PhysRevB.71.235109</code></li>
+  <li><code class="highlighter-rouge">DOI: 10.1109/TSP.2012.2212434</code></li>
+  <li><code class="highlighter-rouge">ShowEdit 10.1074/jbc.274.22.15678</code></li>
+  <li><code class="highlighter-rouge">http://doi.acm.org/10.1145/989863.989893</code></li>
+  <li><code class="highlighter-rouge">http://hdl.handle.net/10.1007/s00191-008-0096-6</code></li>
+  <li><code class="highlighter-rouge">&lt;U+200B&gt;10.&lt;U+200B&gt;1104/&lt;U+200B&gt;pp.&lt;U+200B&gt;111.&lt;U+200B&gt;186957</code></li>
+</ul>
+
+<p>In some cases it’s clear what the error is and how to correct it programmatically. In other cases any attempt to correct it is guesswork at best and could introduce as many problems as it solves.</p>
+
+<p>That last one is particularly interesting: the <code class="highlighter-rouge">&lt;U+200B&gt;</code> codes are “zero width spaces”. They don’t show on screen but are still there to trip up computers trying to read the DOI. I’m not sure how they would get there other than by a deliberate attempt on the part of the publisher to obfuscate the identifier.</p>
+
+<p>It’s also only really useful where the repository record we’re pointing to actually has the open access full text, rather than just linking to the publisher version, which many do.</p>
+
+<h2 id="a-license">A license</h2>
+
+<p>Ok, this one’s pretty easy to solve. I’m releasing the code under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>. <a href="http://github.com/jezcope/doi2oa">It’s on github so go fork it</a>.</p>
+
+<p><em>And here’s the video I promised:</em></p>
+
+<div class="video-container"><iframe width="487" height="274" src="https://www.youtube.com/embed/gMiA8AIX03Q" frameborder="0" allowfullscreen=""></iframe></div>
+
+</div>
+<div id="disqus_thread"></div>
+<script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'erambler'; // required: replace example with your forum shortname
+  var disqus_identifier = 'tag:erambler.co.uk,2013-03-20:/blog/doi2oa-status-update/';
+  var disqus_title = 'OA DOI resolver status update'
+  var disqus_url = 'http://erambler.co.uk/blog/doi2oa-status-update/';
+  var disqus_developer = 0;
+  if (window.location.hostname == 'localhost')
+    disqus_developer = 1;
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+</div>
+</div>
+</article>
+</div>
+<div id="sidebar">
+<div class="sidebar-box about-me h-card">
+<p>Hi, I’m <a href="http://erambler.co.uk" class="p-name u-url">Jez Cope</a> and this is my
+blog, where I talk about technology in research and higher
+education, including:</p>
+
+<ul>
+  <li>Research data management;</li>
+  <li>e-Research;</li>
+  <li>Learning;</li>
+  <li>Teaching;</li>
+  <li>Educational technology.</li>
+</ul>
+</div>
+<div class="sidebar-box links">
+<h2>Me elsewhere</h2>
+<ul>
+  <li><a href="https://twitter.com/jezcope" rel="me">Twitter</a></li>
+  <li><a href="https://github.com/jezcope" rel="me">github</a></li>
+  <li><a href="https://linkedin.com/in/jezcope">LinkedIn</a></li>
+  <li><a href="http://diigo.com/user/jezcope">Diigo</a></li>
+  <li><a href="https://www.zotero.org/jezcope">Zotero</a></li>
+  <li><a href="http://gplus.to/jezcope">Google+</a></li>
+</ul>
+</div>
+</div>
+<div class="row">
+<footer><a class="license" href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+<img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="border-width:0">
+</a>
+<span href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type" xmlns:dct="http://purl.org/dc/terms/">
+eRambler
+</span>
+by
+<a href="http://erambler.co.uk/" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+Jez Cope
+</a>
+is licensed under a
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+Creative Commons Attribution-ShareAlike 4.0 International license
+</a>
+</footer>
+</div>
+</section>
+</div>
+<script>
+  if (!/^http:\/\/localhost/.test(window.location)) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10201101-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+
+</body>
+</html>

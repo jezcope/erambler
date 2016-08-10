@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../old/assets/style/styles.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  (function() {
+    var s, scheme, wf;
+  
+    this.WebFontConfig = {
+      google: {
+        families: ['Amaranth:700,700italic:latin', 'Inconsolata::latin']
+      }
+    };
+  
+    wf = document.createElement('script');
+  
+    scheme = 'https:' === document.location.protocol ? 'https' : 'http';
+  
+    wf.src = scheme + "://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
+  
+    wf.type = 'text/javascript';
+  
+    wf.async = 'true';
+  
+    s = document.getElementsByTagName('script')[0];
+  
+    s.parentNode.insertBefore(wf, s);
+  
+  }).call(this);
+</script>
+
+<title>Simple video-conferencing with BigBlueButton | eRambler</title>
+<link href="http://erambler.co.uk/feed.xml" rel="alternate" type="application/rss+xml">
+</head>
+<body class="single-post">
+<div id="container">
+<header class="page-header">
+<hgroup>
+<div class="h1"><a href="../../">eRambler</a></div>
+<div class="lead">Jez Cope's blog on becoming a research technologist</div>
+</hgroup>
+<nav><ul>
+<li><a href="../../">Home</a></li>
+<li><a href="../../about/">About</a></li>
+<li><a href="../../blogroll/">Blogroll</a></li>
+</ul>
+</nav>
+</header>
+<section>
+<div class="row">
+<p class="archive-warning"><strong><em>Please note:</em></strong> this older content has been <strong>archived</strong> and is no longer fully linked into the site. Please go to the <a href="../../">current home page</a> for up-to-date content.</p>
+</div>
+<div id="content">
+<article class="h-entry">
+<div class="row">
+<h1 class="post-title p-name">Simple video-conferencing with BigBlueButton</h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/simple-video-conferencing-with-bigbluebutton/">Monday 24 January 2011</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Open source</span></li>
+<li class="p-category"><span class="tag">Video-conferencing</span></li>
+<li class="p-category"><span class="tag">BigBlueButton</span></li>
+<li class="p-category"><span class="tag">eLearning</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content e-content">
+<p>Last week, some colleagues and I tried out promising new videoconferencing tool <a href="http://bigbluebutton.org/">BigBlueButton</a>. I’d previously used it  It’s completely open source and based on Adobe Flash so it works in your browser without the need to download any software.</p>
+
+<p>University of Bath colleagues <a href="http://colligo.wordpress.com/2011/01/21/focusing-on-bigbluebutton/">Nitin</a> and <a href="http://blogs.bath.ac.uk/al412/2011/01/21/an-assessment-of-bigbluebutton/">Alex</a> have already published their thoughts, so I’ll try to avoid duplicating them. I’ll also draw comparisons with <a href="http://www.elluminate.com/">Elluminate! Live</a>, which I’ve been using quite a bit recently to facilitate a guest lecturer on our course: she lives in Yorkshire and we’re trying to reduce the need for her to travel to Bath, especially since our course is all about sustainability!</p>
+
+<p>As someone who supports the IT needs of research staff and students, I can clearly see the value in this type of tool: all the end user needs is a web browser and they’re away.</p>
+
+<h1 id="positives">Positives</h1>
+
+<ul>
+  <li>Uses technology that almost all users have installed already — Elluminate, for example, requires users to download and install Java on platforms that don’t ship with it, and there’s always one person who didn’t read the instructions and complains 10 minutes into a session that they can’t connect;</li>
+  <li>Seems to cope quite well with lots of people — we had 6+ transmitting sound and video at times;</li>
+  <li>Simple, no-nonsense interface — Elluminate has lots and lots and <strong>lots</strong> of features, which can be useful but makes for a very cluttered and confusing interface.</li>
+</ul>
+
+<h1 id="negatives">Negatives</h1>
+
+<ul>
+  <li>There’s currently no pre-flight check for users to test their hardware is detected and set up correctly, so there tends to be a lot of testing going on as people connect — ideally this could be done beforehand;</li>
+  <li>There are a few minor user interface tweaks which would be useful: for example, it’s not clear why you need to enable your microphone to hear audio, and there’s no easy way to neatly arrange a large number of video feeds;</li>
+  <li>There’s apparently an incompatibility between the current Flash plugin for Mac and Google Voice which prevents video from working, but this will apparently be fixed in the next Flash release.</li>
+</ul>
+
+<h1 id="other-notes">Other notes</h1>
+
+<p>Importantly for us in the CSCT, there’s a rapidly maturing <a href="https://confluence.sakaiproject.org/display/BBB/Home">Sakai interface for BigBlueButton</a> which allows users to schedule their own meeting for collaborators in their project sites. It’s one of the few Sakai tools being developed in the UK, with Adrian Fish of the University of Lancaster as a major (main?) contributor.</p>
+
+<p>The Sakai interface is also open source, making it much cheaper than the Sakai bridge for Elluminate! Live (the bridge itself is open source, but requires Elluminate to flick a switch at their end to enable the API it uses).</p>
+
+<h1 id="summary">Summary</h1>
+
+<p>Overall I think that, for fairly technically savvy users, BigBlueButton can and should be used in higher education. Open source projects like this need the oxygen of community, and the only way to smooth off the rough edges is to find them and talk about them.</p>
+
+<p>For everyday use, it might need a little more polish, but probably not much. As long as it avoids the feature bloat which plagues Elluminate! Live, it will soon become a much better option than that product, both on price (usual caveats about open source cost-of-ownership notwithstanding) and on usability<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>.</p>
+
+<p>If you’d like to try it out for yourself, just visit the <a href="http://demo.bigbluebutton.org/">BigBlueButton demo server</a>: as long as you’ve got Flash installed, it should just work.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>And as a bonus, it lacks the annoying extraneous exclamation mark too. <a href="#fnref:1" class="reversefootnote">↩</a></p>
+    </li>
+  </ol>
+</div>
+</div>
+<div id="disqus_thread"></div>
+<script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'erambler'; // required: replace example with your forum shortname
+  var disqus_identifier = 'tag:erambler.co.uk,2011-01-24:/blog/simple-video-conferencing-with-bigbluebutton/';
+  var disqus_title = 'Simple video-conferencing with BigBlueButton'
+  var disqus_url = 'http://erambler.co.uk/blog/simple-video-conferencing-with-bigbluebutton/';
+  var disqus_developer = 0;
+  if (window.location.hostname == 'localhost')
+    disqus_developer = 1;
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+</div>
+</div>
+</article>
+</div>
+<div id="sidebar">
+<div class="sidebar-box about-me h-card">
+<p>Hi, I’m <a href="http://erambler.co.uk" class="p-name u-url">Jez Cope</a> and this is my
+blog, where I talk about technology in research and higher
+education, including:</p>
+
+<ul>
+  <li>Research data management;</li>
+  <li>e-Research;</li>
+  <li>Learning;</li>
+  <li>Teaching;</li>
+  <li>Educational technology.</li>
+</ul>
+</div>
+<div class="sidebar-box links">
+<h2>Me elsewhere</h2>
+<ul>
+  <li><a href="https://twitter.com/jezcope" rel="me">Twitter</a></li>
+  <li><a href="https://github.com/jezcope" rel="me">github</a></li>
+  <li><a href="https://linkedin.com/in/jezcope">LinkedIn</a></li>
+  <li><a href="http://diigo.com/user/jezcope">Diigo</a></li>
+  <li><a href="https://www.zotero.org/jezcope">Zotero</a></li>
+  <li><a href="http://gplus.to/jezcope">Google+</a></li>
+</ul>
+</div>
+</div>
+<div class="row">
+<footer><a class="license" href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+<img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="border-width:0">
+</a>
+<span href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type" xmlns:dct="http://purl.org/dc/terms/">
+eRambler
+</span>
+by
+<a href="http://erambler.co.uk/" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+Jez Cope
+</a>
+is licensed under a
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+Creative Commons Attribution-ShareAlike 4.0 International license
+</a>
+</footer>
+</div>
+</section>
+</div>
+<script>
+  if (!/^http:\/\/localhost/.test(window.location)) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10201101-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../old/assets/style/styles.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  (function() {
+    var s, scheme, wf;
+  
+    this.WebFontConfig = {
+      google: {
+        families: ['Amaranth:700,700italic:latin', 'Inconsolata::latin']
+      }
+    };
+  
+    wf = document.createElement('script');
+  
+    scheme = 'https:' === document.location.protocol ? 'https' : 'http';
+  
+    wf.src = scheme + "://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
+  
+    wf.type = 'text/javascript';
+  
+    wf.async = 'true';
+  
+    s = document.getElementsByTagName('script')[0];
+  
+    s.parentNode.insertBefore(wf, s);
+  
+  }).call(this);
+</script>
+
+<title>Archive page 2 | eRambler</title>
+<link href="http://erambler.co.uk/feed.xml" rel="alternate" type="application/rss+xml">
+</head>
+<body class="index">
+<div id="container">
+<header class="page-header">
+<hgroup>
+<div class="h1"><a href="../../">eRambler</a></div>
+<div class="lead">Jez Cope's blog on becoming a research technologist</div>
+</hgroup>
+<nav><ul>
+<li><a href="../../">Home</a></li>
+<li><a href="../../about/">About</a></li>
+<li><a href="../../blogroll/">Blogroll</a></li>
+</ul>
+</nav>
+</header>
+<section>
+<div class="row">
+<p class="archive-warning"><strong><em>Please note:</em></strong> this older content has been <strong>archived</strong> and is no longer fully linked into the site. Please go to the <a href="../../">current home page</a> for up-to-date content.</p>
+</div>
+<div id="content">
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/from-doi-to-open-access/">Resolving DOIs with green OA copies</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/from-doi-to-open-access/">Thursday  7 March 2013</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">DOI</span></li>
+<li class="p-category"><span class="tag">Open access</span></li>
+<li class="p-category"><span class="tag">Open scholarship</span></li>
+<li class="p-category"><span class="tag">OAI-PMH</span></li>
+<li class="p-category"><span class="tag">Programming</span></li>
+<li class="p-category"><span class="tag">Ruby</span></li>
+<li class="p-category"><span class="tag">Sinatra</span></li>
+<li class="p-category"><span class="tag">Things I made</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>The other week I was at a <a href="http://orbital.blogs.lincoln.ac.uk/2013/02/27/ckan-for-rdm-workshop/">gathering of developers, librarians and researchers with an interest in institutional data repositories</a>. Amongst other things, we spent some time brainstorming the requirements for such a repository, but there was one minor-sounding one that caught my imagination.</p>
+
+<p>It boiled down to this question: given only the <a href="http://en.wikipedia.org/wiki/Digital_object_identifier">DOI</a> for a published article (or other artefact), how do you find an open access copy archived in an institutional repository? Some (rather cursory) Googling didn’t come up with an obvious solution, so I thought “How hard can it be to implement?”.</p>
+
+<p>All that’s required is a database mapping DOIs onto URLs, and a spot of glue to make it accessible over the web. The data that you need is freely available in machine-readable format from most repositories via <a href="http://en.wikipedia.org/wiki/Open_Archives_Initiative_Protocol_for_Metadata_Harvesting">OAI-PMH</a>, so you can fill up the database using that as a data source.</p>
+
+<p>So, without further ado here it is:</p>
+
+<ul>
+  <li><a href="http://doi2oa.erambler.co.uk">Open Access DOI resolver</a></li>
+</ul>
+
+<p>A few caveats:</p>
+
+<ol>
+  <li>I don’t get much chance to write code at work at the moment, so this was an opportunity to exercise under-used brain muscles and learn some new stuff. It could probably be done better (and the <a href="http://github.com/jezcope/doi2oa">source code</a> is on github, so feel free to fork it and add improvements). It’s written in <a href="http://ruby-lang.org/">Ruby</a> using the awesome <a href="http://sinatrarb.com/">Sinatra</a> web framework.</li>
+  <li>It’s currently hosted on <a href="http://heroku.com/">Heroku</a>’s free starter-level service, so there’s very little capacity. It therefore only includes DOI’s from the University of Bath’s <a href="http://opus.bath.ac.uk">Opus</a> repository, and the database is full.</li>
+</ol>
+
+<p>Go try it out and let me know what you think. If it’s useful, I’ll look into how I can make it more robust and resolve more DOIs.</p>
+
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2013-03-07:/blog/from-doi-to-open-access/" href="http://erambler.co.uk/blog/from-doi-to-open-access/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/gtd-things-vs-omnifocus/">Task management: Things vs. OmniFocus</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/gtd-things-vs-omnifocus/">Monday 11 February 2013</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">GTD</span></li>
+<li class="p-category"><span class="tag">OmniFocus</span></li>
+<li class="p-category"><span class="tag">Things</span></li>
+<li class="p-category"><span class="tag">Task management</span></li>
+<li class="p-category"><span class="tag">Productivity</span></li>
+<li class="p-category"><span class="tag">Mac</span></li>
+<li class="p-category"><span class="tag">Apps</span></li>
+<li class="p-category"><span class="tag">Reviews</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>It’s taken a while for me to realise it, but I’m a bit of a list-maker. Some years ago I read David Allen’s <a href="http://en.wikipedia.org/wiki/Getting_Things_Done">Getting Things Done</a> (often abbreviated as GTD) and found some useful tips that have had a big impact in how I manage my tasks and my time.</p>
+
+<p>There are <em>heaps</em> of apps to help you Get your Things Done, but I generally seem to oscillate between two: Omni Group’s <a href="http://www.omnigroup.com/products/omnifocus/">OmniFocus</a> and Cultured Code’s <a href="http://culturedcode.com/things/">Things</a>. The choice between the two is closely balanced in my head, and I seem to end up switching every 12-18 months. Until recently, Things’ lightning-fast cloud sync had be, but now OmniFocus has tempted me back with its general feature-richness.</p>
+
+<p>Some key factors for me:</p>
+
+<ul>
+  <li>One system for everything:
+    <ul>
+      <li>One system that syncs across computers and mobile devices, so I always have it with me;</li>
+      <li>One system for work stuff and personal stuff, because sometimes I need phone my bank while at work and sometimes the solution to a work problem comes to me while watching TV;</li>
+    </ul>
+  </li>
+  <li>Multiple ways of structuring and viewing tasks:
+    <ul>
+      <li>When I need to check that I’ve captured all my tasks, I need to view them by project to see what’s missing;</li>
+      <li>When I need to actually do things, I need to see my tasks by context, i.e. what equipment/location is required to do them.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="aside-switching-is-not-inefficient">Aside: switching is not inefficient</h2>
+
+<p>You might think that it’s a waste of time laboriously transferring all my projects and tasks from one system to another, but it’s really not. This only happens once every 12-18 months, and it’s a great way to do a full audit of everything I want to achieve, spot what’s missing and cull the dead wood.</p>
+
+<p>Even if you have one task management system that works for you, I suggest you try occasionally printing the whole lot off (on real dead trees) and re-entering the important stuff. Because it takes more effort, it makes you more ruthless in what stuff you allow onto your todo list and sharpens your focus on what’s important.</p>
+
+<h2 id="omnifocus-vs-things">OmniFocus vs. Things</h2>
+
+<p>OmniFocus’ strength is it’s flexibility. Each task has not only a title and a checkbox, but a project, a context, a start date, a due date, an expected amount of effort and, if that’s not enough, a freeform note field. It has a rich, hierarchical structure for projects and tasks, and the ability to create customised views of the system or “perspectives”.</p>
+
+<p>Things, on the other hand, strives for simplicity. It lacks much of the complexity of OmniFocus and replaces it with tags. Tags can be hierarchical, which is handy, and because you can assign more than one to a task, you can actually use them to replicate a number of OmniFocus’ detail fields.</p>
+
+<h2 id="things-is-pretty-good">Things is pretty good…</h2>
+
+<p>That simplicity means that there’s very little effort involved in using Things — just throw in your tasks and get started. You can assign one or more tags to each task and then filter on those, and that allows you replicate quite a lot of what OmniFocus allows.</p>
+
+<p>The other area where Things beats OmniFocus is in synchronisation. Every time you make a change in Things it’s synced up to the cloud, and updating another app takes moments. There’s no need to manually initiate a sync, so everything is always available everywhere.</p>
+
+<h2 id="but-omnifocus-is-winning">…but OmniFocus is winning</h2>
+
+<p>Sooner or later, though, the lack of expressiveness in Things gets to me. OmniFocus panders to my desire for structure: I can have tasks from any project (or any part of a project) appear one at a time or all at once. That all takes a little more time to set up (though it soon becomes second nature), but it means when I actually want to get on with work I see only the tasks I need to see and no more.</p>
+
+<p>OmniFocus’ perspectives are another example of where the extra power is useful. It’s trivial to set up one-click views that only show a certain set of projects (such as work stuff) or a particular set of tasks (such as things I can do offline), or even just group tasks differently (such as by due date or age).</p>
+
+<p>Finally, the iPad app for OmniFocus has a killer feature: Review mode. This makes it trivial for me to sit down at the end of each week with a cup of tea and go through the entire system, finishing off loose ends and capturing next actions. This is central to the GTD way, and is the part of my routine that guarantees everything is in order and nothing gets missed.</p>
+
+<p>Of course there are plenty of situations where you don’t need all of this complexity, and that’s fine too. It doesn’t force you into using all of the features to have a functioning system: you only have to use what you need for the current situation.</p>
+
+<h2 id="what-about-you">What about you?</h2>
+
+<p>So there you have it. I’d be interested in finding out how you use OmniFocus or Things, or if you have your own preferred system. There are even people who implement <a href="http://www.diyplanner.com/templates/official/hpda">GTD using a biro, a binder clip and a stack of 6x4” index cards</a>.</p>
+
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2013-02-11:/blog/gtd-things-vs-omnifocus/" href="http://erambler.co.uk/blog/gtd-things-vs-omnifocus/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/twitter-favourites-daily-email/">Twitter favourites by daily email</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/twitter-favourites-daily-email/">Sunday 27 January 2013</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Twitter</span></li>
+<li class="p-category"><span class="tag">Email</span></li>
+<li class="p-category"><span class="tag">GTD</span></li>
+<li class="p-category"><span class="tag">Productivity</span></li>
+<li class="p-category"><span class="tag">Tech recipe</span></li>
+<li class="p-category"><span class="tag">Social media</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>I quite often favourite tweets that I want to come back and refer to. Unfortunately, I rarely actually get round to going back over my favourite tweets, so I wanted a way to get them into an inbox that I check regularly (á la <a href="http://wiki.43folders.com/index.php/Getting_Things_Done">Getting Things Done</a>).</p>
+
+<p>I finally got round to figuring this out the other day, so here’s my recipe:</p>
+
+<ol>
+  <li>You can get an RSS feed of your favourites using a URL of the form <a href="https://api.twitter.com/1/favorites.rss?screen_name=jezcope"><code class="highlighter-rouge">https://api.twitter.com/1/favorites.rss?screen_name=jezcope</code></a>, though obviously you should replace “jezcope” with your own Twitter handle.
+    <ul>
+      <li><a href="https://dev.twitter.com/discussions/4759">Source: Twitter developers forum</a></li>
+    </ul>
+  </li>
+  <li>Once you’ve checked that’s working, copy it and feed it to a daily email digest generator. I’m currently trying <a href="http://blogtrottr.com/">blogtrottr</a> which seems to be working well and gives you the option of checking at a range of frequencies from 1 to 24 hours.
+    <ul>
+      <li>There’s also a <a href="http://www.feedmyinbox.com/">list of RSS to email options on the old Feed My Inbox site</a>
+</li>
+    </ul>
+  </li>
+</ol>
+
+<p>That’s it — pretty simple huh? You’ll probably get an email containing all of your favourites to start, and then future emails will contain just the latest favourites.</p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2013-01-27:/blog/twitter-favourites-daily-email/" href="http://erambler.co.uk/blog/twitter-favourites-daily-email/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/uobsocial-blogging/">Links for #UoBSocial blogging session</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/uobsocial-blogging/">Wednesday 23 January 2013</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Blogging</span></li>
+<li class="p-category"><span class="tag">University of Bath</span></li>
+<li class="p-category"><span class="tag">Research</span></li>
+<li class="p-category"><span class="tag">Researcher development</span></li>
+<li class="p-category"><span class="tag">Social media</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>Here are a few links to things that I mentioned (and maybe a few that I didn’t) in today’s briefing session for University of Bath researchers. Please feel free to leave your own suggestions, or links to your own blog, in the comments at the bottom.</p>
+
+<h2 id="reading-blogs">Reading blogs</h2>
+
+<p>Once you start following more than two or three blogs, you might find it easier to use a piece of software called a “feed reader” or “news aggregator” (or other similar terms) to do the hard work and collect all the new posts in one place. Here are a few options:</p>
+
+<ul>
+  <li>
+<del><a href="http://reader.google.com/">Google Reader</a> — web based</del> <em>discontinued — see below</em>
+</li>
+  <li>
+<a href="http://www.feeddemon.com/">FeedDemon</a> — Windows (optional sync with Google Reader)</li>
+  <li>
+<a href="http://reederapp.com/">Reeder</a> — Mac, iOS (Google Reader account required)</li>
+  <li>
+<a href="http://feedly.com/">Feedly</a> — Browser plugin, iOS, Android (Google Reader account required)</li>
+  <li>All major web browsers now have some sort of feed reader built in too</li>
+</ul>
+
+<p><a href="http://technorati.com/blogs/directory/">Technorati</a> and <a href="http://www.google.com/blogsearch">Google Blog Search</a> are good ways to find something to read.</p>
+
+<h3 id="update-2-april-2014">Update (2 April 2014)</h3>
+
+<p>As a few people are coming back here after today’s social media conversation, I’d better mention that <a href="http://googlereader.blogspot.co.uk/">Google Reader closed its doors on 1 July 2013</a>, but the other options mentioned above are still good.  A couple of other, relatively new, options are:</p>
+
+<ul>
+  <li><a href="http://theoldreader.com/">The Old Reader</a></li>
+  <li><a href="https://feedbin.com/">Feedbin</a></li>
+</ul>
+
+<h2 id="ways-to-blog">Ways to blog</h2>
+
+<h3 id="hosted">Hosted</h3>
+
+<p>The simplest way to start a blog is to use a service (free or paid-for) which handles everything for you. Here are some examples:</p>
+
+<ul>
+  <li><a href="http://wordpress.com/">WordPress.com</a></li>
+  <li><a href="http://blogs.bath.ac.uk/">University of Bath blogs</a></li>
+  <li><a href="http://blogger.com/">Blogger</a></li>
+  <li><a href="http://typepad.com/">Typepad</a></li>
+</ul>
+
+<h3 id="self-hosted">Self-hosted</h3>
+
+<p>If you’re a bit more technical and/or demanding, you may prefer to host your own blog on a server. Here are some examples of software that will help:</p>
+
+<ul>
+  <li><a href="http://wordpress.org/">WordPress</a></li>
+  <li><a href="http://movabletype.org/">Movable Type</a></li>
+  <li><a href="http://drupal.org/">Drupal</a></li>
+</ul>
+
+<h2 id="other-tips">Other tips</h2>
+
+<ul>
+  <li>Create an <a href="../../about/">about page</a> to explain who you are</li>
+  <li>Use <a href="https://ifttt.com/">ifttt (“if that then this”)</a> to push blog posts out to other social media</li>
+  <li>And always remember: <a href="http://rationalwiki.org/wiki/Don%27t_feed_the_Troll">don’t feed the trolls!</a>
+</li>
+</ul>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2013-01-23:/blog/uobsocial-blogging/" href="http://erambler.co.uk/blog/uobsocial-blogging/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/altc2012-part-3/">#altc2012 Part 3: Pilots and changes</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/altc2012-part-3/">Saturday  6 October 2012</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">ALT-C 2012</span></li>
+<li class="p-category"><span class="tag">Change management</span></li>
+<li class="p-category"><span class="tag">JISC</span></li>
+<li class="p-category"><span class="tag">Pilot projects</span></li>
+<li class="p-category"><span class="tag">Conferences</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p><em>Finally, the moment you’ve all been waiting for: day 3 of ALT-C 2012!</em></p>
+
+<p>First up, Professor Mark Stubbs (Head of Learning and Research Technologies at Manchester Metropolitan University) gave an interesting talk on the MMU curriculum redesign. This isn’t my primary interest, but there were some useful nuggets in there about change management. The key lessons they learned from a complete redesign of the undergraduate curriculum in a very short time were:</p>
+
+<ol>
+  <li>Engage people; and</li>
+  <li>Keep it simple.</li>
+</ol>
+
+<p>I particularly liked how they revamped the forms for approving new modules to keep them short, focused and aligned with the desired outcomes of the project (rather than gathering huge amounts of spurious info and getting loads of irrelevant people to sign off). This approach has important lessons for us at Bath as we introduce Data Management Planning to our researchers.</p>
+
+<p>Next up was JISC Head of Innovation <a href="http://www.jisc.ac.uk/contactus/staff/sarahporter">Sarah Porter</a>, talking about the ongoing reshaping of JISC in the wake of the <a href="http://www.jisc.ac.uk/aboutus/hefcereview.aspx">HEFCE review</a>.</p>
+
+<p>My second session of the day was James Clay’s “<a href="http://elearningstuff.net/2012/02/29/alt-c-2012-pilot-mentality/">Pilot mentality</a>” symposium. This was based on James’s observation that although “pilot” usually implies something that will be tried out then reported on and scaled up, there seem to be a lot of so-called “pilots” which end up being one-offs. More worryingly, we see the same “pilots” being run across the sector.</p>
+
+<p>I actually ended up writing a whole lot about this session here originally, without feeling like I’d done the topic justice, so I’ve scooped all of that out into its own post, to appear in the near future.</p>
+
+<p>So, onto the final session of the conference, entitled “TEL<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> Research: Who needs it?” from the London Knowledge Lab’s <a href="http://elearningstuff.net/2012/02/29/alt-c-2012-pilot-mentality/">Richard Noss</a>. My reaction to this was mixed, I have to say, but overall there some good points.</p>
+
+<p>80 years after the invention of the printing press, it was still only being used to print the bible, and we’ve been using computers in education for fewer than 50 years, so I agree that we probably don’t have a clue what ed. tech. will eventually end up looking like. We’re very good at using new technology to reproduce existing practices and processes, but it takes a while to realise its true potential.</p>
+
+<p>He also wheeled out the old argument that you have to understand how a technology works to use it effectively. Agreed, his examples of senior managers in investment banks failing to understand basic statistics is compelling, but I don’t think it’s fully generalisable. After all, people have been making pretty good bread and cheese for centuries without understanding microbiology.</p>
+
+<p>Understanding a technology means we can be <em>more</em> effective (and more subtle) about its use, but I don’t think complete understanding is a requirement for some level of effectiveness: part of being human is being very good at getting by.</p>
+
+<p>I did like his comments about studying extremes of human behaviour to learn about the norm: I find in my work, sometimes, that I’m drawn to techies and luddites!</p>
+
+<p>Anyway, it was quite a thought provoking conference again, the more so because I’m more focused on research technology at the moment and attending helped me cross-fertilise a bit. I’m not sure if I’ll be going again next year: <a href="http://digital-research.oerc.ox.ac.uk/">Digital Research</a> is looking very interesting and tends to clash, so we’ll see.</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>For those not involved in this area, <em>TEL</em> is the acronym for technology-enhanced learning. <a href="#fnref:1" class="reversefootnote">↩</a></p>
+    </li>
+  </ol>
+</div>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2012-10-06:/blog/altc2012-part-3/" href="http://erambler.co.uk/blog/altc2012-part-3/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/cfhe12-mooc/">#cfhe12: another attempt at MOOCing</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/cfhe12-mooc/">Friday  5 October 2012</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">CFHE12</span></li>
+<li class="p-category"><span class="tag">MOOC</span></li>
+<li class="p-category"><span class="tag">Admin</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>It’s October, which means the autumn TV season has started, which means that <a href="http://en.wikipedia.org/wiki/Strictly_come_dancing">Strictly Come Dancing</a> is back on for another year, which means it’s time for a flurry of blog posts as I leave my wonderful other half to shout at the TV on weekend evenings.</p>
+
+<p>I’ve decided to have another go at joining in with another <a href="http://en.wikipedia.org/wiki/Mooc">MOOC</a> to give me some blog fuel, and this time round it’s <a href="http://edfuture.mooc.ca/">Current &amp; Future State of Higher Education 2012</a>.</p>
+
+<p>My last MOOC attempt, <a href="http://openeducation.us/">IOE12</a>, sort of fizzled out (my participation, not the course itself) as I didn’t really have the time to keep it going. Hopefully I’ll do better this time, but if not I’m sure I’ll learn something anyway.</p>
+
+<p>So, hello fellow MOOCers and watch this space!</p>
+
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2012-10-05:/blog/cfhe12-mooc/" href="http://erambler.co.uk/blog/cfhe12-mooc/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/altc2012-part-2/">#altc2012 Part 2: Apps &amp; networks</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/altc2012-part-2/">Sunday 16 September 2012</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">ALT-C 2012</span></li>
+<li class="p-category"><span class="tag">Apps</span></li>
+<li class="p-category"><span class="tag">Digital literacy</span></li>
+<li class="p-category"><span class="tag">Network analysis</span></li>
+<li class="p-category"><span class="tag">Conferences</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p><em>It’s been a little while since ALT-C 2012 now, so I thought I’d better write up the rest of my notes. Here’s day 2 in all it’s glory.</em></p>
+
+<p>My day started off with James Clay’s workshop entitled “A few of my favourite things” — just an opportunity for gadget lovers to share some of their favourite apps (mostly iPad/iPhone, but a few Androids in there too).</p>
+
+<p>There were a lot of popular apps in there, like the ever-present <a href="http://evernote.com/">Evernote</a> and <a href="http://instagram.com/">Instagram</a>, but there were a few interesting ones I hadn’t come across, or was able to see in a new light:</p>
+
+<dl>
+  <dt><a href="http://en.wikipedia.org/wiki/JotNot!_Scan">JotNot</a></dt>
+  <dd>Lets you take a photo of a page and semi-automatically straightens it and enhances it so you get a flat, high-contrast version — a scanner in your pocket. Looks like this is abandonware, but instead I discovered <a href="http://www.thegrizzlylabs.com/genius-scan/">Genius Scan</a>, which has many more features.</dd>
+  <dt><a href="http://tunepal.org/">TunePal</a></dt>
+  <dd>One for lovers of traditional music: search for info on and dots for a traditional tune by playing a bit of it into your phone.</dd>
+</dl>
+
+<p>Next followed an interesting session introducing some tools from projects on the JISC Digital Literacies programme. I particularly liked the digital literacies lens on the <a href="https://www.sconul.ac.uk/groups/information_literacy/seven_pillars.html">SCONUL Seven Pillars of Information Literacy</a>. There’s a lot of (perhaps true but not very helpful) talk going round at the moment about “everyone having a different definition of digital literacy”, so it’s good to see a fairly concise high-level view of what we’re actually talking about on that subject.</p>
+
+<p>As a recovering mathematician, I found Natasa Milic-Frayling’s keynote on network analysis fascinating. Her team at Microsoft Research have developed an Excel plugin, <a href="http://research.microsoft.com/en-us/projects/nodexl/">NodeXL</a> for analysing networks (and obtaining data from social networks to analyse).</p>
+
+<p>She described some interesting work analysing voting patterns of US senators, and correlating connections in social networks with geographic distribution.</p>
+
+<p>Students introduced to NodeXL were able to get straight into playing with network data, and quickly took on board the basic concepts (various ideas of the importance of a network node) without needing to grasp the underlying maths (such as the various equations for <a href="http://en.wikipedia.org/wiki/Centrality">centrality</a>).</p>
+
+<p>My last session of the day was from Clive Young of University College London, talking about “blended” roles in e-learning. These are typically those people who provide general admin support to lecturers, and are increasingly being expected to managed VLE modules and other online elements of courses on behalf of the lecturers.</p>
+
+<p>At UCL, these teaching administrators with blended roles had self-organised into a support network, as they were getting no targeted support on how to use Moodle from the e-learning team. This was, of course, rectified, and in the end 10% of the staff identified in blended roles went on to achieve <a href="http://www.alt.ac.uk/get-involved/certified-membership">CMALT</a> status.</p>
+
+<p>All interesting stuff, and I’ll be back to post my thoughts on day 3 soon.</p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2012-09-16:/blog/altc2012-part-2/" href="http://erambler.co.uk/blog/altc2012-part-2/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/altc2012-part-1/">#altc2012 Part 1: Bring on the data!</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/altc2012-part-1/">Tuesday 11 September 2012</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">ALT-C 2012</span></li>
+<li class="p-category"><span class="tag">Research360</span></li>
+<li class="p-category"><span class="tag">Data</span></li>
+<li class="p-category"><span class="tag">Science</span></li>
+<li class="p-category"><span class="tag">Scientific method</span></li>
+<li class="p-category"><span class="tag">Teaching practice</span></li>
+<li class="p-category"><span class="tag">Conferences</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>So today was day 1 of ALT-C 2012. Here are a few thoughts from the day.</p>
+
+<p>The conference kicked off with an inspiring keynote from Eric Mazur. Eric is a physicist at Harvard, and when he’s not doing photonics research, he brings the scientific method to bear on his teaching practice.</p>
+
+<p>He gave three examples that were interesting in their own right, but the key takeaway message was this: <strong>data is essential to improving teaching practice</strong>. Rather than coming up with anecdotes that go “well, my students seem to like it when I blah blah blah”, why not set up a simple experiment to actually test what helps those students learn.</p>
+
+<p>After lunch, Cathy and I did a workshop on using research data for teaching, as part of the <a href="http://blogs.bath.ac.uk/research360">Research360 project</a>. I won’t go into too much detail (it did what it said on the tin), other than to say that I felt like it went pretty well — all the attendees got into the exercises and some really productive discussions took place.</p>
+
+<p><a href="http://altc2012.alt.ac.uk/talks/27974">Take a look at the session page to see the slides and exercises</a>.</p>
+
+<p>After that, I saw a couple of demonstrations of some cool stuff (<a href="http://blogs.kingston.ac.uk/ltrg/category/nooblab/">NoobLab</a>, <a href="http://curatr.co.uk/">curatr</a>), and caught up with a few of the JISC digital literacy projects.</p>
+
+<p>So far, then, another interesting conference. The catering’s been pretty good too. A lot of carbohydrate, though: lunch was served with cous cous, chips and boiled potatoes (and bread rolls if you wanted) and dinner was equally carbalicious. Perhaps it’ll help me run faster in the morning.</p>
+
+<p>It’s late. I’m wittering. Bye for now!</p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2012-09-11:/blog/altc2012-part-1/" href="http://erambler.co.uk/blog/altc2012-part-1/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/altc2012-part-0/">#altc2012 Part 0: preliminaries</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/altc2012-part-0/">Monday 10 September 2012</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">ALT-C 2012</span></li>
+<li class="p-category"><span class="tag">Conferences</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>Well, I’ve arrived in Manchester for ALT-C 2012, registered and checked into my room. Tomorrow Cathy Pink and I will be talking about <a href="http://www.ukoln.ac.uk/news/get/2012/09/10/exploiting-research-data-for-teaching-at-alt-c-2012/">using research data for teaching</a>.</p>
+
+<p>Leave a comment here or contact me via Twitter if you’d like to meet up — I’m here for the whole conference, and hopefully blogging as I go along.</p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2012-09-10:/blog/altc2012-part-0/" href="http://erambler.co.uk/blog/altc2012-part-0/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/oxford-open-science-2012/">Oxford Open Science meeting</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/oxford-open-science-2012/">Monday 10 September 2012</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Openness</span></li>
+<li class="p-category"><span class="tag">Open data</span></li>
+<li class="p-category"><span class="tag">Open science</span></li>
+<li class="p-category"><span class="tag">Research data management</span></li>
+<li class="p-category"><span class="tag">Social media</span></li>
+<li class="p-category"><span class="tag">Presentations</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>On Wednesday 22 August 2012, I gave an invited presentation at the August meeting of Oxford Open Science, hosted at the Oxford e-Research Centre. The theme of the evening was “How do we prepare postgraduate research student for the era of big data?”</p>
+
+<p>There were some interesting presentations around that subject:</p>
+
+<ul>
+  <li>Juliet Ralph and Oliver Bridle from the <a href="http://www.bodleian.ox.ac.uk/bodley">Bodleian</a> discussed information seeking behaviour amongst students;</li>
+  <li>
+<a href="http://okfn.org/">Open Knowledge Foundation’s</a> Laura Newman told us about the <a href="http://schoolofdata.org/">School of Data</a>, a project to produce learning resources for those working with data;</li>
+  <li>Anna Collins from <a href="http://www.dspace.cam.ac.uk/">DSpace Cambridge</a> talked about “long tail in the shadow of big data”.</li>
+</ul>
+
+<p>My own presentation discussed some of the work I’ve done providing social media and data management training for PGRs, and the slides can be viewed here:</p>
+
+<iframe src="http://www.slideshare.net/slideshow/embed_code/14237401" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen=""> </iframe>
+<div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/jezcope/technology-training-for-pg-students" title="Technology training for PG students" target="_blank">Technology training for PG students</a> </strong> from <strong><a href="http://www.slideshare.net/jezcope" target="_blank">Jez Cope</a></strong> </div>
+
+<p>As an experiment, the <a href="http://github.com/jezcope/oxford-open-science-2012">LaTeX source of the slides</a> is also available on github. Let me know if they’re any use.</p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2012-09-10:/blog/oxford-open-science-2012/" href="http://erambler.co.uk/blog/oxford-open-science-2012/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<div id="page-nav">
+<div class="newer-posts">
+<a href="../1/">
+</a>
+</div>
+<div class="older-posts">
+<a href="../3/">Older posts &gt;&gt;</a>
+</div>
+</div>
+
+</div>
+<div id="sidebar">
+<div class="sidebar-box about-me h-card">
+<p>Hi, I’m <a href="http://erambler.co.uk" class="p-name u-url">Jez Cope</a> and this is my
+blog, where I talk about technology in research and higher
+education, including:</p>
+
+<ul>
+  <li>Research data management;</li>
+  <li>e-Research;</li>
+  <li>Learning;</li>
+  <li>Teaching;</li>
+  <li>Educational technology.</li>
+</ul>
+</div>
+<div class="sidebar-box links">
+<h2>Me elsewhere</h2>
+<ul>
+  <li><a href="https://twitter.com/jezcope" rel="me">Twitter</a></li>
+  <li><a href="https://github.com/jezcope" rel="me">github</a></li>
+  <li><a href="https://linkedin.com/in/jezcope">LinkedIn</a></li>
+  <li><a href="http://diigo.com/user/jezcope">Diigo</a></li>
+  <li><a href="https://www.zotero.org/jezcope">Zotero</a></li>
+  <li><a href="http://gplus.to/jezcope">Google+</a></li>
+</ul>
+</div>
+</div>
+<div class="row">
+<footer><a class="license" href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+<img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="border-width:0">
+</a>
+<span href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type" xmlns:dct="http://purl.org/dc/terms/">
+eRambler
+</span>
+by
+<a href="http://erambler.co.uk/" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+Jez Cope
+</a>
+is licensed under a
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+Creative Commons Attribution-ShareAlike 4.0 International license
+</a>
+</footer>
+</div>
+</section>
+</div>
+<script>
+  if (!/^http:\/\/localhost/.test(window.location)) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10201101-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+box: debian
+build:
+  steps:
+    - arjen/hugo-build:
+        version: '0.16'
+        disable_pygments: true
+# deploy:
+#   steps:
+#     - s3sync:
+#         source_dir: output/
+#         delete-removed: true
+#         bucket-url: $AWS_BUCKET_URL
+#         key-id: $AWS_ACCESS_KEY_ID
+#         key-secret: $AWS_SECRET_ACCESS_KEY
+#   testing:
+#     - script:
+#         name: configure git
+#         code: |-
+#           git config --global user.email "j.cope@erambler.co.uk"
+#           git config --global user.name "Jez Cope"
+
+#           rm -rf .git
+#     - script:
+#         name: deploy to github pages
+#         code: |-
+#           cd output
+
+#           git init
+#           git add .
+#           git commit -m "Deploy commit from $WERCKER_STARTED_BY"
+#           git push -f $GIT_REMOTE master:gh-pages

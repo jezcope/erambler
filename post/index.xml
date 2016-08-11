@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on eRambler</title>
+    <link>http://erambler.co.uk/post/</link>
+    <description>Recent content in Posts on eRambler</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>(c) 2016 Jez Cope — [CC-BY-SA](/license/)</copyright>
+    <lastBuildDate>Sat, 07 May 2016 16:56:29 +0100</lastBuildDate>
+    <atom:link href="http://erambler.co.uk/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Fairphone 2: initial thoughts on the original ethical smartphone</title>
+      <link>http://erambler.co.uk/blog/fairphone-first-thoughts/</link>
+      <pubDate>Sat, 07 May 2016 16:56:29 +0100</pubDate>
+      
+      <guid>http://erambler.co.uk/blog/fairphone-first-thoughts/</guid>
+      <description>
+
+&lt;!-- ![Naked Fairphone](/assets/images/posts/2016-05-07-fairphone.jpg){:.main-illustration} --&gt;
+
+&lt;p&gt;
+&lt;figure class=&#34;main-illustration fr&#34;&gt;
+    
+        &lt;img src=&#34;http://erambler.co.uk/assets/images/posts/2016-05-07-fairphone.jpg&#34; alt=&#34;Naked Fairphone&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+I&amp;rsquo;ve had my eye on the &lt;a href=&#34;https://www.fairphone.com/&#34;&gt;Fairphone 2&lt;/a&gt; for a while now, and when my current phone, an aging Samsung Galaxy S4, started playing up I decided it was time to take the plunge. A few people have asked for my thoughts on the Fairphone so here are a few notes.&lt;/p&gt;
+
+&lt;h2 id=&#34;why-i-bought-it&#34;&gt;Why I bought it&lt;/h2&gt;
+
+&lt;p&gt;The thing that sparked my interest, and the main reason for buying the phone really, was the ethical stance of the manufacturer. The small Swedish company have gone to great lengths to ensure that both labour and materials are sourced as responsibly as possible. They regularly inspect the factories where the parts are made and assembled to ensure fair treatment of the workers and they source all the raw materials carefully to minimise the environmental impact and the use of conflict minerals.&lt;/p&gt;
+
+&lt;p&gt;Another side to this ethical stance is a focus on longevity of the phone itself. This is not a product with an intentionally limited lifespan. Instead, it&amp;rsquo;s designed to be modular and as repairable as possible, by the owner themselves. Spares are available for all of the parts that commonly fail in phones (including screen and camera), and at the time of writing the &lt;a href=&#34;https://www.ifixit.com/Teardown/Fairphone+2+Teardown/52523&#34;&gt;Fairphone 2 is the only phone to receive &lt;sup&gt;10&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt; for reparability from iFixit&lt;/a&gt;. There are plans to allow hardware upgrades, including an expansion port on the back so that NFC or wireless charging could be added with a new case, for example.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-i-like&#34;&gt;What I like&lt;/h2&gt;
+
+&lt;p&gt;So far, the killer feature for me is the dual SIM card slots. I have both a personal and a work phone, and the latter was always getting left at home or in the office or running out of charge. Now I have both SIMs in the one phone: I can recieve calls on either number, turn them on and off independently and choose which account to use when sending a text or making a call.&lt;/p&gt;
+
+&lt;p&gt;The OS is very close to &amp;ldquo;standard&amp;rdquo; Android, which is nice, and I really don&amp;rsquo;t miss all the extra bloatware that came with the Galaxy S4. It also has twice the storage of that phone, which is hardly unique but is still nice to have.&lt;/p&gt;
+
+&lt;p&gt;Overall, it seems like a solid, reliable phone, though it&amp;rsquo;s not going to outperform anything else at the same price point. It certainly feels nice and snappy for everything I want to use it for. I&amp;rsquo;m no mobile gamer, but there is that distant promise of upgradability on the horizon if you are.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-i-don-t-like&#34;&gt;What I don&amp;rsquo;t like&lt;/h2&gt;
+
+&lt;p&gt;I only have two bugbears so far. Once or twice it&amp;rsquo;s locked up and become unresponsive, requiring a &amp;ldquo;manual reset&amp;rdquo; (removing and replacing the battery) to get going again. It also lacks NFC, which isn&amp;rsquo;t really a deal breaker, but I was just starting to make occasional use of it on the S4 (mostly experimenting with my &lt;a href=&#34;https://www.yubico.com/products/yubikey-hardware/yubikey-neo/&#34;&gt;Yubikey NEO&lt;/a&gt;) and it would have been nice to try out Android Pay when it finally arrives in the UK.&lt;/p&gt;
+
+&lt;h2 id=&#34;overall&#34;&gt;Overall&lt;/h2&gt;
+
+&lt;p&gt;It&amp;rsquo;s definitely a serious contender if you&amp;rsquo;re looking for a new smartphone and aren&amp;rsquo;t bothered about serious mobile gaming. You do pay a premium for the ethical sourcing and modularity, but I feel that&amp;rsquo;s worth it for me. I&amp;rsquo;m looking forward to seeing how it works out as a phone.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Wiring my web</title>
+      <link>http://erambler.co.uk/blog/wiring-my-web/</link>
+      <pubDate>Fri, 01 Apr 2016 17:37:00 +0100</pubDate>
+      
+      <guid>http://erambler.co.uk/blog/wiring-my-web/</guid>
+      <description>&lt;!-- [![XKCD: automation](http://imgs.xkcd.com/comics/automation.png){:.main-illustration}](https://xkcd.com/1319/) --&gt;
+
+
+&lt;figure class=&#34;main-illustration fr&#34;&gt;
+    &lt;a href=&#34;https://xkcd.com/1319/&#34;&gt;
+        &lt;img src=&#34;http://imgs.xkcd.com/comics/automation.png&#34; alt=&#34;XKCD: automation&#34; /&gt;
+    &lt;/a&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;I&amp;rsquo;m a nut for automating repetitive tasks, so I was dead pleased a few years ago when I discovered that &lt;a href=&#34;https://ifttt.com&#34;&gt;IFTTT&lt;/a&gt; let me plug different bits of the web together. I now use it for tasks such as:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Syndicating blog posts to social media&lt;/li&gt;
+&lt;li&gt;Creating scheduled/repeating todo items from a Google Calendar&lt;/li&gt;
+&lt;li&gt;Making a note to revisit an article I&amp;rsquo;ve starred in Feedly&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;d probably only be half-joking if I said that I spend more time automating things than I save not having to do said things manually. Thankfully it&amp;rsquo;s also a great opportunity to learn, and recently I&amp;rsquo;ve been thinking about reimplementing some of my IFTTT workflows myself to get to grips with how it all works.&lt;/p&gt;
+
+&lt;p&gt;There are some interesting open source projects designed to offer a lot of this functionality, such as &lt;a href=&#34;https://github.com/cantino/huginn&#34;&gt;Huginn&lt;/a&gt;, but I decided to go for a simpler option for two reasons:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;I want to spend my time learning about the APIs of the services I use and how to wire them together, rather than learning how to use another big framework; and&lt;/li&gt;
+&lt;li&gt;I only have a small Amazon EC2 server to pay with and a heavy Ruby on Rails app like Huginn (plus web server) needs more memory than I have.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Instead I&amp;rsquo;ve gone old-school with a little collection of individual scripts to do particular jobs. I&amp;rsquo;m using the built-in scheduling functionality of systemd, which is already part of a modern Linux operating system, to get them to run periodically. It also means I can vary the language I use to write each one depending on the needs of the job at hand and what I want to learn/feel like at the time. Currently it&amp;rsquo;s all done in Python, but I want to have a go at Lisp sometime, and there are some interesting new languages like Go and Julia that I&amp;rsquo;d like to get my teeth into as well.&lt;/p&gt;
+
+&lt;p&gt;You can see my code on github as it develops: &lt;a href=&#34;https://github.com/jezcope/web-plumbing&#34;&gt;https://github.com/jezcope/web-plumbing&lt;/a&gt;. Comments and contributions are welcome (if not expected) and let me know if you find any of the code useful.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Image credit: &lt;a href=&#34;https://xkcd.com/1319/&#34;&gt;xkcd #1319, Automation&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data is like water, and language is like clothing</title>
+      <link>http://erambler.co.uk/blog/language-is-like-clothing/</link>
+      <pubDate>Thu, 31 Mar 2016 17:40:00 +0100</pubDate>
+      
+      <guid>http://erambler.co.uk/blog/language-is-like-clothing/</guid>
+      <description>&lt;p&gt;I admit it: I&amp;rsquo;m a grammar nerd.  I know the difference between &amp;lsquo;who&amp;rsquo; and &amp;lsquo;whom&amp;rsquo;, and I&amp;rsquo;m proud.&lt;/p&gt;
+
+&lt;p&gt;I used to be pretty militant, but these days I&amp;rsquo;m more relaxed.  I still take joy in the mechanics of the language, but I also believe that English is defined by its usage, not by a set of arbitrary rules.  I&amp;rsquo;m just as happy to abuse it as to use it, although I still think it&amp;rsquo;s important to know what rules you&amp;rsquo;re breaking and why.&lt;/p&gt;
+
+&lt;p&gt;My approach now boils down to this: &lt;strong&gt;language is like clothing&lt;/strong&gt;.  You (probably) wouldn&amp;rsquo;t show up to a job interview in your pyjamas&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, but neither are you going to wear a tuxedo or ballgown to the pub.&lt;/p&gt;
+
+&lt;p&gt;Getting commas and semicolons in the right place is like getting your shirt buttons done up right.  Getting it wrong doesn&amp;rsquo;t mean you&amp;rsquo;re an idiot.  Everyone will know what you meant.  It will affect how you&amp;rsquo;re perceived, though, and that will affect how your &lt;em&gt;message&lt;/em&gt; is perceived.&lt;/p&gt;
+
+&lt;p&gt;And there are former rules&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; that some still enforce that are nonetheless dropping out of regular usage.  There was a time when everyone in an office job wore formal clothing.  Then it became acceptable just to have a blouse, or a shirt and tie.  Then the tie became optional and now there are many professions where perfectly well-respected and competent people are expected to show up wearing nothing smarter than jeans and a t-shirt.&lt;/p&gt;
+
+&lt;p&gt;One such rule IMHO is that &amp;lsquo;data&amp;rsquo; is a plural and should take pronouns like &amp;lsquo;they&amp;rsquo; and &amp;lsquo;these&amp;rsquo;.  The origin of the word &amp;lsquo;data&amp;rsquo; is in the Latin plural of &amp;lsquo;datum&amp;rsquo;, and that idea has clung on for a considerable period.  But we don&amp;rsquo;t speak Latin and the English language continues to evolve: &amp;lsquo;agenda&amp;rsquo; also began life as a Latin plural, but we don&amp;rsquo;t use the word &amp;lsquo;agendum&amp;rsquo; any more.  It&amp;rsquo;s common everyday usage to refer to data with singular pronouns like &amp;lsquo;it&amp;rsquo; and &amp;lsquo;this&amp;rsquo;, and it&amp;rsquo;s very rare to see someone referring to a single datum (as opposed to &amp;lsquo;data point&amp;rsquo; or something).&lt;/p&gt;
+
+&lt;p&gt;If you want to get technical, I tend to think of data as a mass noun, like &amp;lsquo;water&amp;rsquo; or &amp;lsquo;information&amp;rsquo;.  It&amp;rsquo;s uncountable: talking about &amp;lsquo;a water&amp;rsquo; or &amp;lsquo;an information&amp;rsquo; doesn&amp;rsquo;t make much sense, but it uses singular pronouns, as in &amp;lsquo;this information&amp;rsquo;.  If you&amp;rsquo;re interested, the Oxford English Dictionary also takes this position, while Chambers leaves the choice of singular or plural noun up to you.&lt;/p&gt;
+
+&lt;p&gt;There is absolutely nothing wrong, in my book, with referring to data in the plural as many people still do.  But it&amp;rsquo;s no longer a rule and for me it&amp;rsquo;s weakened further from guideline to preference.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s like wearing a bow-tie to work. There&amp;rsquo;s nothing wrong with it and some people really make it work, but it&amp;rsquo;s increasingly outdated and even a little eccentric.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:2&#34;&gt;or maybe you&amp;rsquo;d totally rock it.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34;&gt;Like not starting a sentence with a conjunction&amp;hellip;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>#IDCC16 day 2: new ideas</title>
+      <link>http://erambler.co.uk/blog/idcc16-day-2/</link>
+      <pubDate>Wed, 16 Mar 2016 07:44:14 +0100</pubDate>
+      
+      <guid>http://erambler.co.uk/blog/idcc16-day-2/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;Well, I did a great job of blogging the conference for a couple of days, but then I was hit by the bug that&amp;rsquo;s been going round and didn&amp;rsquo;t have a lot of energy for anything other than paying attention and making notes during the day!  I&amp;rsquo;ve now got round to reviewing my notes so here are a few reflections on day 2.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Day 2 was the day of many parallel talks!  So many great and inspiring ideas to take in!  Here are a few of my take-home points.&lt;/p&gt;
+
+&lt;h2 id=&#34;big-science-and-the-long-tail&#34;&gt;Big science and the long tail&lt;/h2&gt;
+
+&lt;p&gt;The first parallel session had examples of practical data management in the real world.  Jian Qin &amp;amp; Brian Dobreski (School of Information Studies, Syracuse University) worked on reproducibility with one of the research groups involved with the recent gravitational wave discovery.  &amp;ldquo;Reproducibility&amp;rdquo; for this work (as with much of physics) mostly equates to computational reproducibility: tracking the provenance of the code and its input and output is key.  They also found that in practice the scientists&amp;rsquo; focus was on making the big discovery, and ensuring reproducibility was seen as secondary.  This goes some way to explaining why current workflows and tools don&amp;rsquo;t really capture enough metadata.&lt;/p&gt;
+
+&lt;p&gt;Milena Golshan &amp;amp; Ashley Sands (Center for Knowledge Infrastructures, UCLA) investigated the use of Software-as-a-Service (SaaS, such as Google Drive, Dropbox or more specialised tools) as a way of meeting the needs of long-tail science research such as ocean science.  This research is characterised by small teams, diverse data, dynamic local development of tools, local practices and difficulty disseminating data.  This results in a need for researchers to be generalists, as opposed to &amp;ldquo;big science&amp;rdquo; research areas, where they can afford to specialise much more deeply.  Such generalists tend to develop their own isolated workflows, which can differ greatly even within a single lab.  Long-tail research also often struggles from a lack of dedicated IT support.  They found that use of SaaS could help to meet these challenges, but with a high cost required to cover the needed guarantees of security and stability.&lt;/p&gt;
+
+&lt;h2 id=&#34;education-training&#34;&gt;Education &amp;amp; training&lt;/h2&gt;
+
+&lt;p&gt;This session focussed on the professional development of library staff.  Eleanor Mattern (University of Pittsburgh) described the immersive training introduced to improve librarians&amp;rsquo; understanding of the data needs of their subject areas in delivering their &lt;a href=&#34;http://d-scholarship.pitt.edu/26738/&#34;&gt;RDM service delivery model&lt;/a&gt;.  The participants each conducted a &amp;ldquo;disciplinary deep dive&amp;rdquo;, shadowing researchers and then reporting back to the group on their discoveries with a presentation and discussion.&lt;/p&gt;
+
+&lt;p&gt;Liz Lyon (also University of Pittsburgh, formerly UKOLN/DCC) gave a systematic breakdown of the skills, knowledge and experience required in different data-related roles, obtained from an analysis of job adverts.  She identified distinct roles of data analyst, data engineer and data journalist, and as well as each role&amp;rsquo;s distinctive skills, pinpointed common requirements of all three: Python, R, SQL and Excel.  This work follows on from an earlier phase which identified an allied set of roles: data archivist, data librarian and data steward.&lt;/p&gt;
+
+&lt;h2 id=&#34;data-sharing-and-reuse&#34;&gt;Data sharing and reuse&lt;/h2&gt;
+
+&lt;p&gt;This session gave an overview of several specific workflow tools designed for researchers. Marisa Strong (University of California Curation Centre/California Digital Libraries) presented &lt;em&gt;&lt;a href=&#34;https://dash.cdlib.org/&#34;&gt;Dash&lt;/a&gt;&lt;/em&gt;, a highly modular tool for manual data curation and deposit by researchers. It&amp;rsquo;s built on their flexible backend, &lt;em&gt;Stash&lt;/em&gt;, and though it&amp;rsquo;s currently optimised to deposit in their Merritt data repository it could easily be hooked up to other repositories. It captures DataCite metadata and a few other fields, and is integrated with ORCID to uniquely identify people.&lt;/p&gt;
+
+&lt;p&gt;In a different vein, Eleni Castro (Institute for Quantitative Social Science, Harvard University) discussed some of the ways that &lt;a href=&#34;http://dataverse.org/&#34;&gt;Harvard&amp;rsquo;s Dataverse&lt;/a&gt; repository is streamlining deposit by enabling automation. It provides a number of standardised endpoints such as &lt;a href=&#34;https://www.openarchives.org/pmh/&#34;&gt;OAI-PMH&lt;/a&gt; for metadata harvest and &lt;a href=&#34;http://swordapp.org/&#34;&gt;SWORD&lt;/a&gt; for deposit, as well as custom APIs for discovery and deposit. Interesting use cases include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;An addon for the &lt;a href=&#34;https://osf.io/&#34;&gt;Open Science Framework&lt;/a&gt; to deposit in Dataverse via SWORD&lt;/li&gt;
+&lt;li&gt;An &lt;a href=&#34;https://cran.r-project.org/web/packages/dvn/README.html&#34;&gt;R package&lt;/a&gt; to enable automatic deposit of simulation and analysis results&lt;/li&gt;
+&lt;li&gt;Integration with publisher workflows Open Journal Systems&lt;/li&gt;
+&lt;li&gt;A growing set of visualisations for deposited data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In the future they&amp;rsquo;re also looking to integrate with &lt;a href=&#34;https://dmptool.org/&#34;&gt;DMPtool&lt;/a&gt; to capture data management plans and with Archivematica for digital preservation.&lt;/p&gt;
+
+&lt;p&gt;Andrew Treloar (&lt;a href=&#34;http://ands.org.au/&#34;&gt;Australian National Data Service&lt;/a&gt;) gave us some reflections on the ANDS &amp;ldquo;applications programme&amp;rdquo;, a series of 25 small funded projects intended to address the fourth of their strategic transformations, &lt;em&gt;single use&lt;/em&gt; → &lt;em&gt;reusable&lt;/em&gt;. He observed that essentially these projects worked because they were able to throw money at a problem until they found a solution: not very sustainable. Some of them stuck to a &lt;a href=&#34;https://en.m.wikipedia.org/wiki/Waterfall_model&#34;&gt;traditional &amp;ldquo;waterfall&amp;rdquo; approach to project management&lt;/a&gt;, resulting in &amp;ldquo;the right solution 2 years late&amp;rdquo;. Every researcher&amp;rsquo;s needs are &amp;ldquo;special&amp;rdquo; and communities are still constrained by old ways of working. The conclusions from this programme were that:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;Good enough&amp;rdquo; is fine most of the time&lt;/li&gt;
+&lt;li&gt;Adopt/Adapt/Augment is better than Build&lt;/li&gt;
+&lt;li&gt;Existing toolkits let you focus on the 10% functionality that&amp;rsquo;s missing&lt;/li&gt;
+&lt;li&gt;Succussful projects involved research champions who can: 1) articulate their community&amp;rsquo;s requirements; and 2) promote project outcomes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;All in all, it was a really exciting conference, and I&amp;rsquo;ve come home with loads of new ideas and plans to develop our services at Sheffield. I noticed a continuation of some of the trends I spotted at last year&amp;rsquo;s IDCC, especially an increasing focus on &amp;ldquo;second-order&amp;rdquo; problems: we&amp;rsquo;re no longer spending most of our energy just convincing researchers to take data management seriously and are able to spend more time helping them to do it &lt;em&gt;better&lt;/em&gt; and get value out of it. There&amp;rsquo;s also a shift in emphasis (identified by closing speaker Cliff Lynch) from sharing to reuse, and making sure that data is not just available but valuable.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>#IDCC16 Day 1: Open Data</title>
+      <link>http://erambler.co.uk/blog/idcc16-day-1/</link>
+      <pubDate>Tue, 23 Feb 2016 19:43:57 +0100</pubDate>
+      
+      <guid>http://erambler.co.uk/blog/idcc16-day-1/</guid>
+      <description>&lt;p&gt;The main conference opened today with an inspiring keynote by Barend Mons, Professor in Biosemantics, Leiden University Medical Center. The talk had plenty of great stuff, but two points stood out for me.&lt;/p&gt;
+
+&lt;p&gt;First, Prof Mons described a newly discovered link between Huntingdon&amp;rsquo;s Disease and a previously unconsidered gene. No-one had previously recognised this link, but on mining the literature, an indirect link was identified in more than 10% of the roughly 1 million scientific claims analysed. This is knowledge for which we already had more than enough evidence, but &lt;strong&gt;which could never have been discovered without such a wide-ranging computational study&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Second, he described a number of behaviours which &lt;strong&gt;should be considered &amp;ldquo;malpractice&amp;rdquo; in science&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Relying on supplementary data in articles for data sharing: the majority of this is trash (paywalled, embedded in bitmap images, missing)&lt;/li&gt;
+&lt;li&gt;Using the Journal Impact Factor to evaluate science and ignoring altmetrics&lt;/li&gt;
+&lt;li&gt;Not writing data stewardship plans for projects (he prefers this term to &amp;ldquo;data management plan&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;Obstructing tenure for data experts by assuming that all highly-skilled scientists must have a long publication record&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A second plenary talk from Andrew Sallons of the &lt;a href=&#34;http://cos.io&#34;&gt;Centre for Open Science&lt;/a&gt; introduced a number of interesting-looking bits and bobs, including the &lt;a href=&#34;https://osf.io/9f6gx/wiki/Guidelines/&#34;&gt;Transparency &amp;amp; Openness Promotion (TOP) Guidelines&lt;/a&gt; which set out a pathway to help funders, publishers and institutions move towards more open science.&lt;/p&gt;
+
+&lt;p&gt;The rest of the day was taken up with a panel on open data, a poster session, some demos and a birds-of-a-feather session on sharing sensitive/confidential data. There was a great range of posters, but a few that stood out to me were:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lessons learned about ISO 16363 (&amp;ldquo;Audit and certification of trustworthy digital repositories&amp;rdquo;) certification from the British Library&lt;/li&gt;
+&lt;li&gt;Two separate posters (from the Universities of Toronto and Colorado) about disciplinary RDM information &amp;amp; training for liaison librarians&lt;/li&gt;
+&lt;li&gt;A template for sharing psychology data developed by a psychologist-turned-information researcher from Carnegie Mellon University&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;More to follow, but for now it&amp;rsquo;s time for the conference dinner!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>#IDCC16 Day 0: business models for research data management</title>
+      <link>http://erambler.co.uk/blog/idcc16-day-0/</link>
+      <pubDate>Mon, 22 Feb 2016 18:20:55 +0100</pubDate>
+      
+      <guid>http://erambler.co.uk/blog/idcc16-day-0/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m at the &lt;a href=&#34;http://www.dcc.ac.uk/events/idcc16&#34;&gt;International Digital Curation Conference 2016&lt;/a&gt; (#IDCC16) in Amsterdam this week. It&amp;rsquo;s always a good opportunity to pick up some new ideas and catch up with colleagues from around the world, and I always come back full of new possibilities. I&amp;rsquo;ll try and do some more reflective posts after the conference but I thought I&amp;rsquo;d do some quick reactions while everything is still fresh.&lt;/p&gt;
+
+&lt;p&gt;Monday and Thursday are pre- and post-conference workshop days, and today I attended &lt;a href=&#34;http://www.dcc.ac.uk/events/idcc16/workshops#Workshop%201&#34;&gt;&lt;em&gt;Developing Research Data Management Services&lt;/em&gt;&lt;/a&gt;. Joy Davidson and Jonathan Rans from the &lt;a href=&#34;http://www.dcc.ac.uk/&#34;&gt;Digital Curation Centre (DCC)&lt;/a&gt; introduced us to the &lt;a href=&#34;http://www.businessmodelgeneration.com/canvas/bmc&#34;&gt;Business Model Canvas&lt;/a&gt;, a template for designing a business model on a single sheet of paper. The model prompts you to think about all of the key facets of a sustainable, profitable business, and can easily be adapted to the task of building a service model within a larger institution. The DCC used it as part of the &lt;a href=&#34;http://www.curationexchange.org/about#4cproject&#34;&gt;Collaboration to Clarify Curation Costs (4C) project&lt;/a&gt;, whose output the &lt;a href=&#34;http://www.curationexchange.org/&#34;&gt;Curation Costs Exchange&lt;/a&gt; is also worth a look.&lt;/p&gt;
+
+&lt;p&gt;It was a really useful exercise to be able to work through the whole process for an aspect of research data management (my table focused on training &amp;amp; guidance provision), both because of the ideas that came up and also the experience of putting the framework into practice. It seems like a really valuable tool and I look forward to seeing how it might help us with our RDM service development.&lt;/p&gt;
+
+&lt;p&gt;Tomorrow the conference proper begins, with a range of keynotes, panel sessions and birds-of-a-feather meetings so hopefully more then!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

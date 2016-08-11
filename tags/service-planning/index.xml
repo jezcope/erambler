@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Service Planning on eRambler</title>
+    <link>http://erambler.co.uk/tags/service-planning/</link>
+    <description>Recent content in Service Planning on eRambler</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>(c) 2016 Jez Cope — [CC-BY-SA](/license/)</copyright>
+    <lastBuildDate>Mon, 22 Feb 2016 18:20:55 +0100</lastBuildDate>
+    <atom:link href="http://erambler.co.uk/tags/service-planning/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>#IDCC16 Day 0: business models for research data management</title>
+      <link>http://erambler.co.uk/blog/idcc16-day-0/</link>
+      <pubDate>Mon, 22 Feb 2016 18:20:55 +0100</pubDate>
+      
+      <guid>http://erambler.co.uk/blog/idcc16-day-0/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m at the &lt;a href=&#34;http://www.dcc.ac.uk/events/idcc16&#34;&gt;International Digital Curation Conference 2016&lt;/a&gt; (#IDCC16) in Amsterdam this week. It&amp;rsquo;s always a good opportunity to pick up some new ideas and catch up with colleagues from around the world, and I always come back full of new possibilities. I&amp;rsquo;ll try and do some more reflective posts after the conference but I thought I&amp;rsquo;d do some quick reactions while everything is still fresh.&lt;/p&gt;
+
+&lt;p&gt;Monday and Thursday are pre- and post-conference workshop days, and today I attended &lt;a href=&#34;http://www.dcc.ac.uk/events/idcc16/workshops#Workshop%201&#34;&gt;&lt;em&gt;Developing Research Data Management Services&lt;/em&gt;&lt;/a&gt;. Joy Davidson and Jonathan Rans from the &lt;a href=&#34;http://www.dcc.ac.uk/&#34;&gt;Digital Curation Centre (DCC)&lt;/a&gt; introduced us to the &lt;a href=&#34;http://www.businessmodelgeneration.com/canvas/bmc&#34;&gt;Business Model Canvas&lt;/a&gt;, a template for designing a business model on a single sheet of paper. The model prompts you to think about all of the key facets of a sustainable, profitable business, and can easily be adapted to the task of building a service model within a larger institution. The DCC used it as part of the &lt;a href=&#34;http://www.curationexchange.org/about#4cproject&#34;&gt;Collaboration to Clarify Curation Costs (4C) project&lt;/a&gt;, whose output the &lt;a href=&#34;http://www.curationexchange.org/&#34;&gt;Curation Costs Exchange&lt;/a&gt; is also worth a look.&lt;/p&gt;
+
+&lt;p&gt;It was a really useful exercise to be able to work through the whole process for an aspect of research data management (my table focused on training &amp;amp; guidance provision), both because of the ideas that came up and also the experience of putting the framework into practice. It seems like a really valuable tool and I look forward to seeing how it might help us with our RDM service development.&lt;/p&gt;
+
+&lt;p&gt;Tomorrow the conference proper begins, with a range of keynotes, panel sessions and birds-of-a-feather meetings so hopefully more then!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

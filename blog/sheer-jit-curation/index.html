@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../old/assets/style/styles.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  (function() {
+    var s, scheme, wf;
+  
+    this.WebFontConfig = {
+      google: {
+        families: ['Amaranth:700,700italic:latin', 'Inconsolata::latin']
+      }
+    };
+  
+    wf = document.createElement('script');
+  
+    scheme = 'https:' === document.location.protocol ? 'https' : 'http';
+  
+    wf.src = scheme + "://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
+  
+    wf.type = 'text/javascript';
+  
+    wf.async = 'true';
+  
+    s = document.getElementsByTagName('script')[0];
+  
+    s.parentNode.insertBefore(wf, s);
+  
+  }).call(this);
+</script>
+
+<title>When to curate — sheer vs just-in-time | eRambler</title>
+<link href="http://erambler.co.uk/feed.xml" rel="alternate" type="application/rss+xml">
+</head>
+<body class="single-post">
+<div id="container">
+<header class="page-header">
+<hgroup>
+<div class="h1"><a href="../../">eRambler</a></div>
+<div class="lead">Jez Cope's blog on becoming a research technologist</div>
+</hgroup>
+<nav><ul>
+<li><a href="../../">Home</a></li>
+<li><a href="../../about/">About</a></li>
+<li><a href="../../blogroll/">Blogroll</a></li>
+</ul>
+</nav>
+</header>
+<section>
+<div class="row">
+<p class="archive-warning"><strong><em>Please note:</em></strong> this older content has been <strong>archived</strong> and is no longer fully linked into the site. Please go to the <a href="../../">current home page</a> for up-to-date content.</p>
+</div>
+<div id="content">
+<article class="h-entry">
+<div class="row">
+<h1 class="post-title p-name">When to curate — sheer vs just-in-time</h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/sheer-jit-curation/">Tuesday 19 May 2015</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Curation</span></li>
+<li class="p-category"><span class="tag">Research data management</span></li>
+<li class="p-category"><span class="tag">Musing</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content e-content">
+<h2 id="when-is-the-right-time-to-curate">When is the right time to curate?</h2>
+
+<p>One of the things that I’ve been thinking about quite a bit since IDCC 2015 is this: exactly when should curation take place in a digital workflow.</p>
+
+<p>There seem to be two main camps here, though of course it’s more of a spectrum than a simple dichotomy.  These two views can be described as “sheer curation” and “just-in-time curation”.</p>
+
+<h2 id="sheer-curation">Sheer curation</h2>
+
+<p>Sheer curation involves completely and seamlessly integrating curation of data into the workflow itself.  That’s “sheer” as in tights: it’s such a thin layer that you can barely tell it’s there.  The argument here is that the only way to properly capture the context of an artefact is to document it while that context still exists, and this makes a lot of sense.  If you wait until later, the danger is that you won’t remember exactly what the experimental conditions for that observation were.  Worse, if you wait long enough you’ll forget about the whole thing entirely until it comes time to make use of the data.  Then you run the danger of having to repeat the experiment entirely because you can’t remember enough about it for it to be useful.</p>
+
+<p>For this to work, though, you really need it to be as effortless as possible so that it doesn’t interrupt the research process.  You also need researchers to have some curation skills themselves, and to minimise the effort required those skills need to be at the stage of <a href="http://en.wikipedia.org/wiki/Four_stages_of_competence">unconscious competence</a>.  Finally you need a set of tools to support the process.  These do exist, but in most cases they’re just not ready for widespread use yet.</p>
+
+<h2 id="just-in-time-curation">Just-in-time curation</h2>
+
+<p>The other extreme is to just do the absolute minimum, and apply the majority of curation effort at the point where someone has requested access.  This is the just-in-time approach: literally making the effort just in time for the data to be delivered.  The major advantage is that there is no wasted effort curating things that don’t turn out to be useful.  The alternative is “just-in-case”, where you curate before you know what will or won’t be useful.</p>
+
+<p>The key downside is the high risk of vital context being lost.  If a dataset is valuable but its value doesn’t become apparent for a long time, the researchers who created it may well have forgotten or misplaced key details of how it was collected or processed.  You also need good, flexible tools that don’t complain if you leave big holes in your metadata for a long time.</p>
+
+<h2 id="comparison">Comparison</h2>
+
+<h3 id="when-might-each-be-useful">When might each be useful?</h3>
+
+<p>I can see sheer-mode curation being most useful where standards and procedures are well established, especially if value of data can easily be judged up front and disposal integrated into the process.  In particular, this would work well if data capture methods can be automated and instrumented, so that metadata about the context is recorded accurately, consistently and without intervention by the researcher.</p>
+
+<p>Right now this is the case in well-developed data-intensive fields, such as astrophysics and high-energy physics, and newer areas like bioinformatics are getting there too.  In the future, it would be great if this could also apply to any data coming out of shared research facilities (such as chemical characterisation and microscopy).  Electronic lab notebooks could play a big part for observational research, too.</p>
+
+<p>Just-in-time-mode curation seems to make sense where the overheads of curating are high and only a small fraction of collected data is ever reused, so that the return on investment for curation is very low.  It might sometimes be necessary also, if the resources needed for curation aren’t actually made available until someone wants to reuse the data.</p>
+
+<h3 id="could-they-be-combined">Could they be combined?</h3>
+
+<p>As I mentioned at the start, these are just two ends of a spectrum of possibilities, and for most situations the ideal solution will lie somewhere in between.  A pragmatic approach would be to capture as much context as is available transparently and up-front (sheer) and then defer any further curation until it is justified.  This would allow the existence of the data to be advertised up-front through its metadata (as required by e.g. the EPSRC expectations), while minimising the amount of effort required.  The clear downside is the potential for delays fulfilling the first request for the data, if such ever comes.</p>
+</div>
+<div id="disqus_thread"></div>
+<script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'erambler'; // required: replace example with your forum shortname
+  var disqus_identifier = 'tag:erambler.co.uk,2015-05-19:/blog/sheer-jit-curation/';
+  var disqus_title = 'When to curate — sheer vs just-in-time'
+  var disqus_url = 'http://erambler.co.uk/blog/sheer-jit-curation/';
+  var disqus_developer = 0;
+  if (window.location.hostname == 'localhost')
+    disqus_developer = 1;
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+</div>
+</div>
+</article>
+</div>
+<div id="sidebar">
+<div class="sidebar-box about-me h-card">
+<p>Hi, I’m <a href="http://erambler.co.uk" class="p-name u-url">Jez Cope</a> and this is my
+blog, where I talk about technology in research and higher
+education, including:</p>
+
+<ul>
+  <li>Research data management;</li>
+  <li>e-Research;</li>
+  <li>Learning;</li>
+  <li>Teaching;</li>
+  <li>Educational technology.</li>
+</ul>
+</div>
+<div class="sidebar-box links">
+<h2>Me elsewhere</h2>
+<ul>
+  <li><a href="https://twitter.com/jezcope" rel="me">Twitter</a></li>
+  <li><a href="https://github.com/jezcope" rel="me">github</a></li>
+  <li><a href="https://linkedin.com/in/jezcope">LinkedIn</a></li>
+  <li><a href="http://diigo.com/user/jezcope">Diigo</a></li>
+  <li><a href="https://www.zotero.org/jezcope">Zotero</a></li>
+  <li><a href="http://gplus.to/jezcope">Google+</a></li>
+</ul>
+</div>
+</div>
+<div class="row">
+<footer><a class="license" href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+<img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="border-width:0">
+</a>
+<span href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type" xmlns:dct="http://purl.org/dc/terms/">
+eRambler
+</span>
+by
+<a href="http://erambler.co.uk/" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+Jez Cope
+</a>
+is licensed under a
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+Creative Commons Attribution-ShareAlike 4.0 International license
+</a>
+</footer>
+</div>
+</section>
+</div>
+<script>
+  if (!/^http:\/\/localhost/.test(window.location)) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10201101-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+
+</body>
+</html>

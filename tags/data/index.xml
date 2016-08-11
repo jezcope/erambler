@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data on eRambler</title>
+    <link>http://erambler.co.uk/tags/data/</link>
+    <description>Recent content in Data on eRambler</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>(c) 2016 Jez Cope — [CC-BY-SA](/license/)</copyright>
+    <lastBuildDate>Thu, 31 Mar 2016 17:40:00 +0100</lastBuildDate>
+    <atom:link href="http://erambler.co.uk/tags/data/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Data is like water, and language is like clothing</title>
+      <link>http://erambler.co.uk/blog/language-is-like-clothing/</link>
+      <pubDate>Thu, 31 Mar 2016 17:40:00 +0100</pubDate>
+      
+      <guid>http://erambler.co.uk/blog/language-is-like-clothing/</guid>
+      <description>&lt;p&gt;I admit it: I&amp;rsquo;m a grammar nerd.  I know the difference between &amp;lsquo;who&amp;rsquo; and &amp;lsquo;whom&amp;rsquo;, and I&amp;rsquo;m proud.&lt;/p&gt;
+
+&lt;p&gt;I used to be pretty militant, but these days I&amp;rsquo;m more relaxed.  I still take joy in the mechanics of the language, but I also believe that English is defined by its usage, not by a set of arbitrary rules.  I&amp;rsquo;m just as happy to abuse it as to use it, although I still think it&amp;rsquo;s important to know what rules you&amp;rsquo;re breaking and why.&lt;/p&gt;
+
+&lt;p&gt;My approach now boils down to this: &lt;strong&gt;language is like clothing&lt;/strong&gt;.  You (probably) wouldn&amp;rsquo;t show up to a job interview in your pyjamas&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, but neither are you going to wear a tuxedo or ballgown to the pub.&lt;/p&gt;
+
+&lt;p&gt;Getting commas and semicolons in the right place is like getting your shirt buttons done up right.  Getting it wrong doesn&amp;rsquo;t mean you&amp;rsquo;re an idiot.  Everyone will know what you meant.  It will affect how you&amp;rsquo;re perceived, though, and that will affect how your &lt;em&gt;message&lt;/em&gt; is perceived.&lt;/p&gt;
+
+&lt;p&gt;And there are former rules&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; that some still enforce that are nonetheless dropping out of regular usage.  There was a time when everyone in an office job wore formal clothing.  Then it became acceptable just to have a blouse, or a shirt and tie.  Then the tie became optional and now there are many professions where perfectly well-respected and competent people are expected to show up wearing nothing smarter than jeans and a t-shirt.&lt;/p&gt;
+
+&lt;p&gt;One such rule IMHO is that &amp;lsquo;data&amp;rsquo; is a plural and should take pronouns like &amp;lsquo;they&amp;rsquo; and &amp;lsquo;these&amp;rsquo;.  The origin of the word &amp;lsquo;data&amp;rsquo; is in the Latin plural of &amp;lsquo;datum&amp;rsquo;, and that idea has clung on for a considerable period.  But we don&amp;rsquo;t speak Latin and the English language continues to evolve: &amp;lsquo;agenda&amp;rsquo; also began life as a Latin plural, but we don&amp;rsquo;t use the word &amp;lsquo;agendum&amp;rsquo; any more.  It&amp;rsquo;s common everyday usage to refer to data with singular pronouns like &amp;lsquo;it&amp;rsquo; and &amp;lsquo;this&amp;rsquo;, and it&amp;rsquo;s very rare to see someone referring to a single datum (as opposed to &amp;lsquo;data point&amp;rsquo; or something).&lt;/p&gt;
+
+&lt;p&gt;If you want to get technical, I tend to think of data as a mass noun, like &amp;lsquo;water&amp;rsquo; or &amp;lsquo;information&amp;rsquo;.  It&amp;rsquo;s uncountable: talking about &amp;lsquo;a water&amp;rsquo; or &amp;lsquo;an information&amp;rsquo; doesn&amp;rsquo;t make much sense, but it uses singular pronouns, as in &amp;lsquo;this information&amp;rsquo;.  If you&amp;rsquo;re interested, the Oxford English Dictionary also takes this position, while Chambers leaves the choice of singular or plural noun up to you.&lt;/p&gt;
+
+&lt;p&gt;There is absolutely nothing wrong, in my book, with referring to data in the plural as many people still do.  But it&amp;rsquo;s no longer a rule and for me it&amp;rsquo;s weakened further from guideline to preference.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s like wearing a bow-tie to work. There&amp;rsquo;s nothing wrong with it and some people really make it work, but it&amp;rsquo;s increasingly outdated and even a little eccentric.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:2&#34;&gt;or maybe you&amp;rsquo;d totally rock it.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34;&gt;Like not starting a sentence with a conjunction&amp;hellip;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

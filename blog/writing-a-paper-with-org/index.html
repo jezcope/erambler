@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../old/assets/style/styles.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  (function() {
+    var s, scheme, wf;
+  
+    this.WebFontConfig = {
+      google: {
+        families: ['Amaranth:700,700italic:latin', 'Inconsolata::latin']
+      }
+    };
+  
+    wf = document.createElement('script');
+  
+    scheme = 'https:' === document.location.protocol ? 'https' : 'http';
+  
+    wf.src = scheme + "://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
+  
+    wf.type = 'text/javascript';
+  
+    wf.async = 'true';
+  
+    s = document.getElementsByTagName('script')[0];
+  
+    s.parentNode.insertBefore(wf, s);
+  
+  }).call(this);
+</script>
+
+<title>Writing a paper with org-mode | eRambler</title>
+<link href="http://erambler.co.uk/feed.xml" rel="alternate" type="application/rss+xml">
+</head>
+<body class="single-post">
+<div id="container">
+<header class="page-header">
+<hgroup>
+<div class="h1"><a href="../../">eRambler</a></div>
+<div class="lead">Jez Cope's blog on becoming a research technologist</div>
+</hgroup>
+<nav><ul>
+<li><a href="../../">Home</a></li>
+<li><a href="../../about/">About</a></li>
+<li><a href="../../blogroll/">Blogroll</a></li>
+</ul>
+</nav>
+</header>
+<section>
+<div class="row">
+<p class="archive-warning"><strong><em>Please note:</em></strong> this older content has been <strong>archived</strong> and is no longer fully linked into the site. Please go to the <a href="../../">current home page</a> for up-to-date content.</p>
+</div>
+<div id="content">
+<article class="h-entry">
+<div class="row">
+<h1 class="post-title p-name">Writing a paper with org-mode</h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/writing-a-paper-with-org/">Thursday 28 May 2015</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Org-mode</span></li>
+<li class="p-category"><span class="tag">Emacs</span></li>
+<li class="p-category"><span class="tag">Ruby</span></li>
+<li class="p-category"><span class="tag">Zotero</span></li>
+<li class="p-category"><span class="tag">Writing</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content e-content">
+<p><a href="http://orgmode.org">Emacs org-mode</a> is a powerful tool, as I’ve <a href="../gtd-emacs-org-mode/">written about before</a>.  As well being good at project and task management, it also has features for writing documents:</p>
+
+<ul>
+  <li>Export in a variety of formats, including HTML, <a href="http://en.wikipedia.org/wiki/OpenDocument">OpenDocument</a> and <a href="http://en.wikipedia.org/wiki/LaTeX">LaTeX</a>
+</li>
+  <li>Embed snippets of code (in your favourite language), execute them and include the results (and optionally the code itself) in the exported document</li>
+</ul>
+
+<p>I’ll come back to why that’s useful in a moment.</p>
+
+<p>I’ve had a presentation (a position paper on preserving software) accepted for the LIBER conference next month.  I may choose to subsequently submit it as an article to LIBER Quarterly (this is a relatively common pattern) so I thought I’d try writing the article and the presentation together in a single document, and see how it worked.  If nothing else, writing the paper will help me structure my ideas for the presentation, even if it never gets published.</p>
+
+<p>There are probably other ways of doing it, but I’ve set it up so that exporting in different formats gives me the two different versions of the document:</p>
+
+<ul>
+  <li>
+<em>Export as LaTeX</em> produces a PDF version of the presentation slides, using the Beamer package.</li>
+  <li>
+<em>Export as OpenDocument text</em> produces the article, ready for submission.</li>
+</ul>
+
+<p>It took a little sleight of hand, but I’m putting my Beamer slides in <code class="highlighter-rouge">#+BEGIN_LaTeX</code> blocks, which org-mode will include in the LaTeX export but not any other format, and I’ve configured Beamer to ignore any text outside frames, which forms the body of the article.</p>
+
+<p>I don’t want the abstract and other metadata cluttering up the document itself, so I’ve pushed those out to a separate file and used an <code class="highlighter-rouge">#+INCLUDE</code> statement to pull it into the main document at export time.</p>
+
+<p>The one thing missing is a built-in way of integrating with Zotero, which I use as my bibliographic database, to format my references.  However, <a href="https://www.zotero.org/support/dev/web_api/v3/start">Zotero has a very functional API</a>, so I’ve put together a short Ruby script that grabs a Zotero collection and tweaks the formatting.  Whenever I export the document from org-mode, the code is run and the result (a formatting bibliography) is embedded in the finished version.</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code><span class="nb">require</span> <span class="s1">'open-uri'</span><span class="p">;</span> <span class="nb">require</span> <span class="s1">'rexml/document'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://api.zotero.org/groups/</span><span class="si">#{</span><span class="n">group_id</span><span class="si">}</span><span class="s2">/collections/</span><span class="si">#{</span><span class="n">coll_id</span><span class="si">}</span><span class="s2">/items/top?format=bib&amp;style=</span><span class="si">#{</span><span class="n">style</span><span class="si">}</span><span class="s2">"</span>
+<span class="no">REXML</span><span class="o">::</span><span class="no">Document</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">url</span><span class="p">)).</span><span class="nf">elements</span><span class="p">.</span><span class="nf">each</span><span class="p">(</span><span class="s1">'//div[@class="csl-entry"]'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">entry</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="s1">'- '</span> <span class="o">+</span> <span class="n">entry</span><span class="p">.</span><span class="nf">children</span>
+              <span class="p">.</span><span class="nf">collect</span><span class="p">{</span><span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="k">if</span> <span class="n">c</span><span class="p">.</span><span class="nf">instance_of?</span> <span class="no">REXML</span><span class="o">::</span><span class="no">Text</span> <span class="k">then</span> <span class="n">c</span><span class="p">.</span><span class="nf">value</span> <span class="k">else</span> <span class="n">c</span><span class="p">.</span><span class="nf">text</span> <span class="k">end</span><span class="p">}</span>
+              <span class="p">.</span><span class="nf">join</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">%r{&lt;/?i&gt;}</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">).</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">%r{/</span><span class="se">\(</span><span class="sr">}</span><span class="p">,</span> <span class="s1">'/ ('</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>This formats a Zotero collection, converting HTML <code class="highlighter-rouge">&lt;i&gt;</code> tags to the equivalent org-mode markup.  It requires three parameters, <code class="highlighter-rouge">group_id</code>, <code class="highlighter-rouge">coll_id</code> and <code class="highlighter-rouge">style</code>, which can be configured in the org-mode document and passed through when emacs executes the code.  The same snippet could thus be used in multiple documents, just varying the parameters to format a different set of references.</p>
+
+<p>Clearly, embedding executable source code in a document has a lot more potential than I’ve used here.  It allows data analysis and visualisation code to be embedded directly in a document, even with the option of processing data from tables that are also in the document.  You can also use it to write entire programs in the Literate Programming style, formatting them in the way that makes most narrative sense but exporting (“tangling”) pure executable source code.</p>
+
+<p>Once I’m sure it’s not a violation of the journal’s policy, I’ll push the source of the two documents up to github in case anyone wants to see how I’ve done it.</p>
+
+</div>
+<div id="disqus_thread"></div>
+<script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'erambler'; // required: replace example with your forum shortname
+  var disqus_identifier = 'tag:erambler.co.uk,2015-05-28:/blog/writing-a-paper-with-org/';
+  var disqus_title = 'Writing a paper with org-mode'
+  var disqus_url = 'http://erambler.co.uk/blog/writing-a-paper-with-org/';
+  var disqus_developer = 0;
+  if (window.location.hostname == 'localhost')
+    disqus_developer = 1;
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+</div>
+</div>
+</article>
+</div>
+<div id="sidebar">
+<div class="sidebar-box about-me h-card">
+<p>Hi, I’m <a href="http://erambler.co.uk" class="p-name u-url">Jez Cope</a> and this is my
+blog, where I talk about technology in research and higher
+education, including:</p>
+
+<ul>
+  <li>Research data management;</li>
+  <li>e-Research;</li>
+  <li>Learning;</li>
+  <li>Teaching;</li>
+  <li>Educational technology.</li>
+</ul>
+</div>
+<div class="sidebar-box links">
+<h2>Me elsewhere</h2>
+<ul>
+  <li><a href="https://twitter.com/jezcope" rel="me">Twitter</a></li>
+  <li><a href="https://github.com/jezcope" rel="me">github</a></li>
+  <li><a href="https://linkedin.com/in/jezcope">LinkedIn</a></li>
+  <li><a href="http://diigo.com/user/jezcope">Diigo</a></li>
+  <li><a href="https://www.zotero.org/jezcope">Zotero</a></li>
+  <li><a href="http://gplus.to/jezcope">Google+</a></li>
+</ul>
+</div>
+</div>
+<div class="row">
+<footer><a class="license" href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+<img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="border-width:0">
+</a>
+<span href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type" xmlns:dct="http://purl.org/dc/terms/">
+eRambler
+</span>
+by
+<a href="http://erambler.co.uk/" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+Jez Cope
+</a>
+is licensed under a
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+Creative Commons Attribution-ShareAlike 4.0 International license
+</a>
+</footer>
+</div>
+</section>
+</div>
+<script>
+  if (!/^http:\/\/localhost/.test(window.location)) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10201101-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+
+</body>
+</html>

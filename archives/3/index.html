@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../old/assets/style/styles.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  (function() {
+    var s, scheme, wf;
+  
+    this.WebFontConfig = {
+      google: {
+        families: ['Amaranth:700,700italic:latin', 'Inconsolata::latin']
+      }
+    };
+  
+    wf = document.createElement('script');
+  
+    scheme = 'https:' === document.location.protocol ? 'https' : 'http';
+  
+    wf.src = scheme + "://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
+  
+    wf.type = 'text/javascript';
+  
+    wf.async = 'true';
+  
+    s = document.getElementsByTagName('script')[0];
+  
+    s.parentNode.insertBefore(wf, s);
+  
+  }).call(this);
+</script>
+
+<title>Archive page 3 | eRambler</title>
+<link href="http://erambler.co.uk/feed.xml" rel="alternate" type="application/rss+xml">
+</head>
+<body class="index">
+<div id="container">
+<header class="page-header">
+<hgroup>
+<div class="h1"><a href="../../">eRambler</a></div>
+<div class="lead">Jez Cope's blog on becoming a research technologist</div>
+</hgroup>
+<nav><ul>
+<li><a href="../../">Home</a></li>
+<li><a href="../../about/">About</a></li>
+<li><a href="../../blogroll/">Blogroll</a></li>
+</ul>
+</nav>
+</header>
+<section>
+<div class="row">
+<p class="archive-warning"><strong><em>Please note:</em></strong> this older content has been <strong>archived</strong> and is no longer fully linked into the site. Please go to the <a href="../../">current home page</a> for up-to-date content.</p>
+</div>
+<div id="content">
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/data-scraping-olympics/">Scraping for gold at the Olympics</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/data-scraping-olympics/">Tuesday  7 August 2012</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Olympics</span></li>
+<li class="p-category"><span class="tag">London 2012</span></li>
+<li class="p-category"><span class="tag">Medals</span></li>
+<li class="p-category"><span class="tag">Open data</span></li>
+<li class="p-category"><span class="tag">Ruby</span></li>
+<li class="p-category"><span class="tag">Screen scraping</span></li>
+<li class="p-category"><span class="tag">Coding</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>What if it wasn’t all about the gold medals? The Olympic medal table is always ranked in order of gold medals first, then silver, then bronze.</p>
+
+<p>That seems reasonable, but if you looked at the table at the end of 6 August, for example, you’d have seen that Germany had an impressive 22 medals, including 5 golds, but ranked one place behind Kazakhstan, who had only 7 medals, but 6 of which were gold.</p>
+
+<p>So I thought it was time to do a few things I’ve wanted to try for a while: scrape some publicly available data, do something interesting with it, and write and deploy a Ruby webapp beyond my desktop.</p>
+
+<h2 id="finding-the-data">Finding the data</h2>
+
+<p>It just so happens that the <a href="http://www.bbc.co.uk/sport/olympics/2012/medals/countries">BBC’s medal table</a> is marked up with some nice semantic attributes:</p>
+
+<ul>
+  <li>Each <code class="highlighter-rouge">&lt;tr&gt;</code> tag has two attributes: <code class="highlighter-rouge">data-country-name</code> and <code class="highlighter-rouge">data-country-code</code>;</li>
+  <li>Each <code class="highlighter-rouge">&lt;td&gt;</code> tag uses the class <code class="highlighter-rouge">gold</code>, <code class="highlighter-rouge">silver</code> or <code class="highlighter-rouge">bronze</code> and contains <em>only</em> the number of medals of that type for that country.</li>
+</ul>
+
+<h2 id="just-scraping-by">Just scraping by</h2>
+
+<p>I could have just scraped that data from within the webapp, but I wanted a) to have a bit more robustness if the source page changed format or disappeared; and b) to make the data easily available to others.</p>
+
+<p>So I wrote this <a href="https://scraperwiki.com/scrapers/london_2012_medal_table/">London 2012 medal table scraper</a> in <a href="http://scraperwiki.com/">ScraperWiki</a>. ScraperWiki lets you write scrapers in Ruby, Python or PHP using their API and some standard parsing modules to scrape data and store it in an SQLite table. The data is then available as JSON via a REST API, and remains so even if the source page vanishes (it just sends you a notification so you can fix your scraper).</p>
+
+<h2 id="lets-go-camping">Let’s go Camping</h2>
+
+<p>I briefly thought about using <a href="http://rubyonrails.org/">Ruby on Rails</a>, but that’s a pretty heavy solution to a very small problem, so instead I turned to <a href="http://camping.rubyforge.org/">Camping</a>, a “web framework which consistently stays at less than 4kB of code.”</p>
+
+<p>Camping is very <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a>-based, but your whole app can live in a single file, like a simple CGI script.</p>
+
+<h2 id="putting-it-all-together">Putting it all together</h2>
+
+<p>So, <a href="http://altmedals2012.herokuapp.com/">here’s my alternative Olympic medal table app</a>, and <a href="http://github.com/jezcope/altmedals2012">here’s the code on GitHub</a>.</p>
+
+<p>What are the effects? Well, if you sort by total medals, there’s quite a big shake up. Russia with 41 medals (only 7 gold) shoot up from 6th to 3rd place, pushing Britain down to 4th. North Korea, on the other hand, drop down from 8th to 24th.</p>
+
+<p>Using a weighted sum of the medals (with a gold worth 3 points, silver 2 and bronze 1) yields a similar but less dramatic upheaval, with Russia still up and North Korea still down, but GB restored to 3rd place.</p>
+
+<p>Can you think of a different way to sort the medals? <a href="https://github.com/jezcope/altmedals2012/issues/new">Stick a feature request on the GitHub tracker</a>, or fork it and have a go yourself.</p>
+
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2012-08-07:/blog/data-scraping-olympics/" href="http://erambler.co.uk/blog/data-scraping-olympics/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/open-source/">Open Source #ioe12</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/open-source/">Monday 12 March 2012</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Copyright</span></li>
+<li class="p-category"><span class="tag">Licensing</span></li>
+<li class="p-category"><span class="tag">Open source</span></li>
+<li class="p-category"><span class="tag">IOE12</span></li>
+<li class="p-category"><span class="tag">Openness</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p><em>This blog post is part of my contribution to the open online course<br>
+<a href="http://openeducation.us/">Introduction to Openness in Education</a>.</em></p>
+
+<p>Ok, so the last post was a bit long. Like essay long. I started writing and<br>
+then I kept on writing til I’d got it all out. I’m pretty happy with the<br>
+content, but it took too long to write and it takes too long to read.</p>
+
+<p>So here’s my pithy(ish) introduction to Open Source.</p>
+
+<p>‘Open’, as you might expect, refers to the free sharing of stuff. The ‘Source’<br>
+part refers to <em>source code</em>: the human-readable form in which computer<br>
+software is written. So we’re talking about software distributed in<br>
+human-modifiable form, not the compiled, click-to-run executable most people<br>
+are used to.</p>
+
+<p>There are two key arguments in favour of Open Source: the moral one and the<br>
+economic one.</p>
+
+<p>The moral argument goes like this. In the beginning only a few dedicated<br>
+hackers had computers. They put their craft first, worked together well and<br>
+shared their developments with each other. They were able to learn from and<br>
+build on each other’s code, and everyone was happy.</p>
+
+<p>As the computer industry grew, the business types who started up companies to<br>
+exploit new developments realised that they could make money by keeping the<br>
+source code secret and only releasing the executable code to customers. So they<br>
+made non-free software the norm and the world a poorer place for it.</p>
+
+<p>But there are many people who feel this is naive and unrealistic. To convince<br>
+them, you also need the economic argument.</p>
+
+<p>Conventional wisdom has it that if you try to build software with a team that’s<br>
+too large, you get bogged down in communication between team-members and the<br>
+whole enterprise becomes unmanageable.</p>
+
+<p>This is fairly accurate for closed-source software: the nature of commercial<br>
+companies is that everything has to be managed in a certain way and everyone<br>
+has to be in communication with everyone else.</p>
+
+<p>Mathematicians may recognise this as a complete graph — in which every node in<br>
+connected to every other node — and the problem is that the number of links<br>
+grows much quicker than the number of people.</p>
+
+<p>Open source projects, like Linux, involve huge numbers of people, so on paper<br>
+they shouldn’t work. But on a large open source project, most people contribute<br>
+only to a small part of the whole, only communicating with a few others. Only a<br>
+small number, by dint of personality type or happenstance, coordinate with many<br>
+others to keep the whole thing together.</p>
+
+<p>And because these projects don’t suffer from the communication difficulties,<br>
+they can capitalise on the much larger group of minds working on a problem.</p>
+
+<p>Thanks to this effect, hobbyist programmers really can built high quality<br>
+software and that’s why OS projects Linux and Apache dominate the modern web<br>
+between them.</p>
+
+<p>But why should we use open source software?</p>
+
+<p>As Cory Doctorow points out in his recent talk “The coming war on general<br>
+computation”, the computer is fully general: there’s no program that they can’t<br>
+in theory run.</p>
+
+<p>That scares a lot of people: it means you can run whatever you like, even<br>
+software that (shock horror!) makes it possible to break the law. So should<br>
+governments or corporations be restricting what we can run?</p>
+
+<p>Cars can be used to commit crime, but only a police state would try to restrict<br>
+where you can drive to, or insist on low-jacking each one. Open source software<br>
+is controlled by the community, and so is naturally resistant this type of<br>
+centralised control — you may not agree but I think that’s worth defending.</p>
+
+<p>And as Benjamin Franklin once wrote, “Those who would give up Essential Liberty<br>
+to purchase a little Temporary Safety, deserve neither Liberty nor Safety.”</p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2012-03-12:/blog/open-source/" href="http://erambler.co.uk/blog/open-source/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/sharing-flaky-butter-buns/">Sharing and flaky butter buns</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/sharing-flaky-butter-buns/">Sunday  5 February 2012</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Copyright</span></li>
+<li class="p-category"><span class="tag">Recipes</span></li>
+<li class="p-category"><span class="tag">Openness</span></li>
+<li class="p-category"><span class="tag">Sharing</span></li>
+<li class="p-category"><span class="tag">IOE12</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>You know you’ve made it on the web when you’re asked to take something down.</p>
+
+<h2 id="the-story">The story</h2>
+
+<p>For Christmas I received, amongst other lovely presents, a copy of Dan Lepard’s<br>
+book <em>The Handmade Loaf</em>. I really enjoy breadmaking, with all of the processes<br>
+and the minor biological miracle that turns flour and water into a cohesive<br>
+loaf.</p>
+
+<p>Since then I’ve been trying out at least one, sometimes several, recipes from<br>
+the book each weekend. Two weeks ago I made flaky butter buns, posting a photo<br>
+of the result (delicious) on Twitter and Google+.</p>
+
+<p>I was asked for the recipe, but as a) I’m fairly conscientious and b) I’ve been<br>
+learning a lot about copyright recently this raised a question: is it a breach<br>
+of copyright to share someone else’s recipe.</p>
+
+<p>A couple of online conversations and one <a href="http://www.guardian.co.uk/lifeandstyle/2006/mar/24/foodanddrink.uk">Guardian<br>
+article</a><br>
+later, I had my answer: recipes are not protected by copyright under either UK<br>
+or US law. A recipe is an idea, not the expression of an idea, and is therefore<br>
+not copyrightable.</p>
+
+<p>A recipe may be covered by a patent or trade secret, but for a patent to be<br>
+granted it would have to differ significantly from any other previous recipe<br>
+and, having been published in a book, it clearly cannot be a trade secret.</p>
+
+<p>So conscience satisfied, I went ahead and posted the <a href="http://posterous.erambler.co.uk/flaky-butter-buns-recipe">recipe for flaky butter<br>
+buns</a> on my other blog.</p>
+
+<p>Rather than use Lepard’s own words, which would have infringed copyright, I<br>
+wrote it in my own style, which tends to skip over steps — you either need to<br>
+have some baking knowledge or take the hint and buy the book. I also raved (as<br>
+I have done before) about the book itself, including an Amazon link so that<br>
+readers could go ahead and buy it for themselves.</p>
+
+<p>I felt in doing so that I behaved appropriately both legally and morally, and<br>
+thought no more about it.</p>
+
+<p>Several days later, I got an email notifying my of a comment on the post (this<br>
+rarely happens). As it turns out, this comment was from a member of Lepard’s<br>
+team accusing me of infringing his copyright.</p>
+
+<p>Now as I’ve said, I don’t believe that I did infringe copyright (if you’re a<br>
+lawyer, I’d love to hear a legal opinion on this), but since I respect Lepard<br>
+as a professional and small businessman I chose to respect his wishes (or at<br>
+least those of his employee) and remove the recipe anyway.</p>
+
+<h2 id="the-point">The point</h2>
+
+<p>In the end this isn’t a question about the law. It’s about whether sharing (and<br>
+letting other people share) your stuff is a good idea or not.</p>
+
+<p>Even the most cursory Google search for recipe titles suggests that, should I<br>
+want to, I could recreate the entire collection for free. But one of the<br>
+reasons I like this book is that it’s more than a collection of recipes. It’s a<br>
+well crafted book <em>about bread</em>. In addition to the recipes it contains both<br>
+photographs (by the author) and descriptions of encounters with bakers around<br>
+the world.</p>
+
+<p>Yes, you can get most if not all of those recipes for free online and not have<br>
+to pay a penny, but anyone who’s going to do that was never going to buy the<br>
+book in the first place. In fact you could get the whole experience of the book<br>
+for free, <a href="http://nationallibrariesday.org.uk/">just by going down to your local<br>
+library</a>.</p>
+
+<p>On the other hand, I like to think that a few of my friends might have been<br>
+motivated to buy their own copy of the book on the basis of my recommendation —<br>
+word of mouth being the best form of advertising and free to boot.</p>
+
+<p>So now there is no recipe, and no endorsement, and no link to buy the book on<br>
+Amazon. I’ll probably think twice before recommending the book in the future<br>
+(wait, didn’t I just do that again three paragraphs ago?).</p>
+
+<p>I’d be kidding myself if I thought this will make the slightest difference to<br>
+the book’s sales, but you have to wonder: if you have a book to sell, is it<br>
+worth paying someone to spend time trawling the internet (which is a pretty big<br>
+place) just to ensure your book is the only place the contents can be found?</p>
+
+<p>People will still send recipes by email, or photocopy them, or pass them on by<br>
+word of mouth. They will clip them out of the paper, note them down in<br>
+notebooks and then post the clippings to loved ones.</p>
+
+<p>This has always happened and always will, and though some instances are covered<br>
+by copyright law, it’s completely unenforcible in such cases.</p>
+
+<p>The internet makes this sharing more visible, but it presents an opportunity<br>
+too. The classic example is YouTube: increasingly rights owners are taking the<br>
+option to place ads around potentially infringing videos rather than blindly<br>
+demand takedowns.</p>
+
+<p>By the way, Martin Weller’s made his whole book, <a href="http://www.bloomsburyacademic.com/view/DigitalScholar_9781849666275/book-ba-9781849666275.xml">The Digital<br>
+Scholar</a><br>
+available online for free, and some mugs (me included) still seem to be paying<br>
+for it. Perhaps we’re all just idiots.</p>
+
+<p>All I really want to say is this: if you have a book to sell (or any other<br>
+creative work), consider carefully the pros and cons of permitting parts to be<br>
+shared freely.</p>
+
+<p>Policing takes time and time is money, and even if the pros and cons balance<br>
+out all you’re doing is spending that money to achieve zero result. Perhaps<br>
+that time would be better spent engaging with your readers in positive ways.</p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2012-02-05:/blog/sharing-flaky-butter-buns/" href="http://erambler.co.uk/blog/sharing-flaky-butter-buns/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/open-licensing/">Open Licensing #ioe12</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/open-licensing/">Sunday 15 January 2012</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Copyright</span></li>
+<li class="p-category"><span class="tag">Licensing</span></li>
+<li class="p-category"><span class="tag">Creative Commons</span></li>
+<li class="p-category"><span class="tag">IOE12</span></li>
+<li class="p-category"><span class="tag">Openness</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p><a id="post-image" class="alignright" href="http://www.flickr.com/photos/biwook/145765624/" title="A copyright will protect you from PIRATES by Ioan Sameli, on Flickr"><img src="http://farm1.staticflickr.com/54/145765624_65d3eaf886_m.jpg" width="191" height="240" alt="A copyright will protect you from PIRATES"></a><br>
+<em>This blog post is part of my contribution to the open online course<br>
+<a href="http://openeducation.us/">Introduction to Openness in Education</a>.</em></p>
+
+<h2 id="copyright">Copyright</h2>
+
+<p>At the heart of the various forms of “open” lies the concept of intellectual<br>
+property: who owns it, who can use it and for what.</p>
+
+<p>A physical object, such as the computer I’m writing this blog post on, is in<br>
+one place at a time, and its ownership is pretty clear cut: I paid for it and<br>
+it’s in my house, and if you took it without my permission we’d call that<br>
+theft.</p>
+
+<p>Things get trickier when you start talking about creative works. If I write a<br>
+piece of music and you make a copy, I still have the piece of music, but so do<br>
+you. I can take a photograph of a painting by Degas, and it stays hanging in<br>
+the gallery, but in some sense I have a copy that I can enjoy independently of<br>
+the original work.</p>
+
+<p>If this situation goes unchecked, then there’s not a lot of incentive to become<br>
+an artist, or a composer, or a writer. Even if you charge for your work there’s<br>
+nothing to stop me buying one copy and then selling hundreds, for which you<br>
+would see no profit whatsoever.</p>
+
+<p>Under most modern legal systems, the concept of copyright exists to right this<br>
+imbalance. It does this by allowing the creator of a work the opportunity to<br>
+exploit that work in whatever way they see fit, effectively creating a<br>
+monopoly.</p>
+
+<p>As the creator of a work, it’s still possible to grant certain rights to third<br>
+parties, and this is done by the granting of licenses. This is the mechanism<br>
+which allows you to “sell” rights to a work in exchange for money or some other<br>
+consideration.</p>
+
+<h2 id="fair-usefair-dealing">Fair use/fair dealing</h2>
+
+<p>If you were to film an interview in the high street of your town, you might<br>
+think that it would be difficult to infringe copyright in any way. If you’re<br>
+not infringing copyright, you don’t need to pay anyone for a license. Yet if,<br>
+say, a TV set in the background was showing reruns of The Simpsons, then you<br>
+could well be in from a visit from lawyers representing the Fox Broadcasting<br>
+Company.</p>
+
+<p>Some jurisdictions include a concept of “fair use” (or fair dealing in the UK),<br>
+which permits such incidental reuses under a specific set of circumstances.<br>
+This can make documentary-making, for example, much easier.</p>
+
+<p>However, many organisations (Fox being a common example) are quite happy to<br>
+threaten legal action and demand that you pay tens or hundreds of thousands of<br>
+pounds(/dollars/euros/etc.) for a license, even if you may in fact be covered<br>
+by fair use rules. They are able to do this because most people are unaware of<br>
+their legal rights, or even if they are do not have the money to fight the<br>
+ensuing lawsuit.</p>
+
+<p>Even if the law gives you a fair use right to use some work or other, other<br>
+organisations to which you might sell your own work may not be so forgiving.<br>
+Because of the litigation culture surrounding copyright, a lot of organisations<br>
+take a very paranoid approach and insist on rights being cleared and licenses<br>
+purchased even if they’re not strictly necessary.</p>
+
+<h2 id="orphaned-works">Orphaned works</h2>
+
+<p>The situation becomes worse when the holder of the rights that must be cleared<br>
+cannot be found. This usually happens when no contact details can be found for<br>
+the creator of a work, or when those that can be found are out of date. In many<br>
+cases, it’s impossible even to know whether the rights holder is still alive,<br>
+and works like this are referred to as “orphaned works”.</p>
+
+<p>In the early days of copyright this would not have been a problem: for<br>
+copyright to exist it was necessary to the creator to explicitly assert their<br>
+rights, and to renew them periodically.</p>
+
+<p>However it is now the case in the US and the UK that copyright automatically<br>
+exists for the lifetime of the creator and for 70 years after their death. If<br>
+the creator has passed away, their estate still owns the copyright, but may be<br>
+impossible to trace until they discover the breach.</p>
+
+<p>For this reason, it is almost impossible to safely use orphaned works — if<br>
+you do, you do so at your own risk.</p>
+
+<h2 id="open-licensing">Open licensing</h2>
+
+<p>As you can see, copyright creates incentives to create, but the way it’s<br>
+currently implemented can also have a chilling effect on certain types of<br>
+creation, especially those that involve mashing up existing content.</p>
+
+<p>There’s not a lot most of us can do about the depredations of Fox and their<br>
+ilk, other than lobbying our MPs for a change in the law. But thankfully we can<br>
+make it easier for others to make use of our own works.</p>
+
+<p>Open licensing gives creators legal tools to relinquish some or all of their<br>
+rights over a piece of work, in the interests of supporting the creativity of<br>
+others.</p>
+
+<p><a href="http://creativecommons.org/">Creative Commons</a> was set up to provide a set of<br>
+open licenses which creators can use to make it very easy to understand what<br>
+can and can’t be done with their work.</p>
+
+<p>The key terms which can be applied by the standard Creative Commons licenses<br>
+are:</p>
+
+<ul>
+  <li>
+<strong>Attribution</strong>: the creator of the work must be acknowledged in any works<br>
+which incorporate it;</li>
+  <li>
+<strong>Share-alike</strong>: the work can only be used if the resulting work is<br>
+released under the same license;</li>
+  <li>
+<strong>Non-commercial</strong>: the work may only be used if the user doesn’t profit<br>
+financially from doing so;</li>
+  <li>
+<strong>No derivatives</strong>: the work may only be redistributed unchanged from its<br>
+original form.</li>
+</ul>
+
+<p>By combining these terms, it is possible to specify exactly what rights you<br>
+want to retain on each individual work.</p>
+
+<p>In higher education, we often find ourselves needing a photo or video to<br>
+illustrate a point in a class or at a conference, or increasingly in a blog<br>
+post (like this one). Thanks to Creative Commons, finding content to be used<br>
+legally in this way is as easy as doing a <a href="http://search.creativecommons.org/">simple web<br>
+search</a> — no more excuses!</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>This was intended to be a short blog post, and it’s already longer than I<br>
+intended! There are a whole raft of other important issues, such as the<br>
+creeping extension of copyright terms, which I haven’t had space to cover, but<br>
+hopefully I’ll come back to those some other time.</p>
+
+<p>For now, I hope you’ve got a good idea of why open licensing is necessary and<br>
+how you can apply it to your own creative works. It’s worth noting that this<br>
+whole blog is released under a CC license — just scroll to the bottom!</p>
+
+<p><em>In writing this post, I made heavy use of <a href="http://openeducation.us/open-licensing">this open licensing<br>
+material</a>, which I encourage you to<br>
+take a look at if you want to learn more.</em></p>
+
+<p><em>Photo credit: <a href="http://www.flickr.com/photos/biwook/145765624/">Ioan Sameli via<br>
+Flickr</a></em></p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2012-01-15:/blog/open-licensing/" href="http://erambler.co.uk/blog/open-licensing/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/the-research-technologist-research-focus/">The Research Technologist part 2: research focus</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/the-research-technologist-research-focus/">Tuesday 10 January 2012</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Research technologist</span></li>
+<li class="p-category"><span class="tag">Research</span></li>
+<li class="p-category"><span class="tag">Job description</span></li>
+<li class="p-category"><span class="tag">Reflection</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p><em>This is the second part in my exploration of what it means to be a research<br>
+technologist. If you haven’t already, check out <a href="../../blog/the-research-technologist-proactivity-innovation/">part 1: proactivity and<br>
+innovation</a>.</em></p>
+
+<h2 id="research-focus">Research focus</h2>
+
+<p>There’s another area where the role diverges from the typical member of IT<br>
+staff: a focus on the unique needs of researchers. Network infrastructure, file<br>
+storage, email are necessary but not sufficient to meet the needs of a modern<br>
+researcher.</p>
+
+<p>It’s vitally important to pay close attention to the unique needs of<br>
+researchers and to find appropriate tools and techniques to adapt to serve<br>
+those needs as well as possible. Research is after all the primary business of<br>
+a university, alongside teaching.</p>
+
+<p>So we need to find ways to fulfil the needs not just of an institution’s<br>
+researchers, but of a faculty’s researchers, or a department’s or even a single<br>
+research group’s.</p>
+
+<p>I actually think that once we start doing this well, there will be a lot more<br>
+commonality than there appears to be right now. But first we’ve got to get<br>
+there.</p>
+
+<h2 id="serving-the-long-tail">Serving the long tail</h2>
+
+<p>The much abused Pareto Principle holds that in many circumstances 80% of your<br>
+profit comes from 20% of the people/products/whatever. But we’re not looking to<br>
+profit from our users, we’re looking to serve them. Questions of how to fund<br>
+that not withstanding, taking this attitude means you’re ignoring of the<br>
+people!</p>
+
+<p>If there’s one thing we’ve learned from successes like eBay, Amazon and many<br>
+more, it’s that if we’re smart we can use modern technology to efficiently<br>
+provide large numbers of niche products and services <em>without</em> drowning in the<br>
+overhead traditionally associated with trying to do so.</p>
+
+<h2 id="research-attitude">Research attitude</h2>
+
+<p>Again, this can be a problem for centralised IT services, because it’s seen as<br>
+inefficient for them to put significant R&amp;D time into things which may only<br>
+ever be of use to a minority of their users.</p>
+
+<p>In an academic department, however, the culture is different. Success in<br>
+research demands innovation, which requires risk. Scientists and engineers, for<br>
+example, intrinsically understand the need to experiment, and no-one questions<br>
+the idea that many of those experiments will fail.</p>
+
+<p>Notice that word <em>fail</em>. In this context failure is not a loss, it’s merely a<br>
+failure to produce the anticipated results. Most researchers still don’t like<br>
+failure — they’re human after all. But they learn not to get so hung up on it,<br>
+because if you set up your experiment right (which is really the key to the<br>
+whole enterprise) then you learn as much or more from failing as you do from<br>
+succeeding.</p>
+
+<p>And that’s really the point. We want to help our researchers to do their jobs<br>
+even better than they already do, which means we need to learn, which in turn<br>
+means we need to make mistakes. There are no lectures and degree courses to<br>
+teach us about ideas which don’t exist yet.</p>
+
+<p>So to steal one of those trite little phrases life coaches and the like love so<br>
+much: fail early, fail often, fail <em>smart</em> and learn from it.</p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2012-01-10:/blog/the-research-technologist-research-focus/" href="http://erambler.co.uk/blog/the-research-technologist-research-focus/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/my-first-mooc-introduction-to-online-education/">My first MOOC — Introduction to Online Education</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/my-first-mooc-introduction-to-online-education/">Tuesday 10 January 2012</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">MOOC</span></li>
+<li class="p-category"><span class="tag">IOE12</span></li>
+<li class="p-category"><span class="tag">Meta</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>I’ve decided to sign up and join <a href="http://openeducation.us/">David Wiley’s MOOC, Introduction to Open<br>
+Education 2012</a>. A <a href="http://en.wikipedia.org/wiki/Mooc">MOOC (Massively Open Online<br>
+Course)</a> is an online course, typically run<br>
+by a lecturer at a university, which is freely accessible and built around the<br>
+ideas of connectivism and social learning.</p>
+
+<p>The content of the course, which is about the various ‘kinds’ of openness<br>
+currently practised in higher education, fits nicely with what I’m doing at the<br>
+moment so I thought I’d give it a try.</p>
+
+<p>Although I could theoretically find, study and blog about all of the content in<br>
+this course on my own, I think that the social aspect and the defined set of<br>
+objectives (in the form of “badges”) combined make it more likely that I will<br>
+follow through.</p>
+
+<p>Let’s see if that’s actually true…</p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2012-01-10:/blog/my-first-mooc-introduction-to-online-education/" href="http://erambler.co.uk/blog/my-first-mooc-introduction-to-online-education/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/kindle-12-months-on/">Amazon Kindle — 12 months on</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/kindle-12-months-on/">Monday  2 January 2012</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Amazon</span></li>
+<li class="p-category"><span class="tag">Kindle</span></li>
+<li class="p-category"><span class="tag">eBooks</span></li>
+<li class="p-category"><span class="tag">Gadgets</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p><a id="post-image" class="alignright" href="http://www.flickr.com/photos/43602175@N06/4070018686/" title="Amazon Kindle PDF by goXunuReviews, on Flickr"><img src="http://farm3.staticflickr.com/2605/4070018686_b8febdd20a_m.jpg" width="185" height="240" alt="Amazon Kindle PDF"></a><br>
+I’ve now had my <a href="http://amazon.com/kindle">Kindle</a> for just over 12 months — it<br>
+was last year’s Christmas gift from my wonderful wife — and I can quite<br>
+honestly say that it’s completely changed the way I read.</p>
+
+<p>I’ve always been a keen reader, but sometimes found it difficult to find time<br>
+to read while also having a book available. I also tended only to buy books one<br>
+at a time when I was in a physical bookshop. As a consequence, most of my<br>
+reading happened at home, either in bed or in the bath, and I would get through<br>
+books at around one a month.</p>
+
+<p>Since getting my Kindle (well, since first getting the Kindle app for iPhone 14<br>
+months ago) I have read 45 books. I never used to read non-fiction books, but<br>
+have just finished my third of the last few months. My decision on what to read<br>
+next would generally wait until I’d finished my last book, but now I have 14<br>
+books waiting to be read and about another 20 on an Amazon wishlist waiting to<br>
+be purchased.</p>
+
+<p>What’s caused this change? As you might guess, it’s a combination of several<br>
+things. Compared to a paper book, my Kindle weighs almost nothing, so I can<br>
+slip it in a bag or a pocket. I can hold it in one hand while drinking tea, or<br>
+lie on my back and read, both of which I found too tiring to do with paper<br>
+books.</p>
+
+<p>I also have iPhone and desktop Kindle apps, which are always in sync. I always<br>
+have my current book with me, so I have many more opportunities to read.</p>
+
+<p>When I finish a book, I can immediately start the next, whether I have one<br>
+already lined up or I need to go online and buy one. I’ve basically turned into<br>
+a chain-reader, going from book to book without pause.</p>
+
+<p>Irritatingly, the prices do not reflect the near-zero marginal cost of<br>
+distributing digital content — if you shift content in the volume that Amazon<br>
+can, your income is almost pure profit.</p>
+
+<p>However, digital books are still cheaper than the print editions. The<br>
+difference for popular fiction is pretty small, but I appreciate it<br>
+nonetheless. For specialist non-fiction, on the other hand, where low volumes<br>
+make print copies prohibitively expensive, digital editions come at a<br>
+significant discount — often half price or better in my experience.</p>
+
+<p>I actually wrote the entire first draft of this post without mentioning either<br>
+screen quality or battery life. Both are so good that it didn’t even occur to<br>
+me to mention them.</p>
+
+<p>There are downsides too. Because I’m locked into Amazon’s infrastructure, I<br>
+can’t lend books to friends or family (this feature <em>still</em> hasn’t been enabled<br>
+outside the US). I also can’t donate books to charity shops once I’ve finished<br>
+them.</p>
+
+<p>Both of these facts still make me uneasy, and I’m not sure that I want all my<br>
+books to be controlled by a single company for the rest of my life. And I<br>
+haven’t even started on the problem of how many books I need to read on Kindle<br>
+to break even on the carbon footprint, or even whether that’s possible.</p>
+
+<p>That said, my pragmatic side is winning at the moment. Reading on Kindle just<br>
+works, and it seems to suit my lifestyle much better than books made of dead<br>
+tree.</p>
+
+<p>I know a lot of people have been given Kindles this Christmas, so I’d love to<br>
+know if any of my readers have thoughts on this.</p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2012-01-02:/blog/kindle-12-months-on/" href="http://erambler.co.uk/blog/kindle-12-months-on/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/the-research-technologist-proactivity-innovation/">The Research Technologist part 1: proactivity and innovation</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/the-research-technologist-proactivity-innovation/">Thursday 15 December 2011</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Research technologist</span></li>
+<li class="p-category"><span class="tag">ICT</span></li>
+<li class="p-category"><span class="tag">Job description</span></li>
+<li class="p-category"><span class="tag">Reflection</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p><em>I began writing this a couple of months ago, shortly after <a href="http://www.alt.ac.uk/events/alt-c-2011">ALT-C</a>, the<br>
+Association of Learning Technology Conference. Then it turned into “one of<br>
+those posts” that I had to perfect before I could publish it. And that’s silly,<br>
+so I’m going to publish it now and continue it in further posts, because this<br>
+is a blog, not a thesis.</em></p>
+
+<p>Anyway, as is often the case at conferences when you meet a lot of people, I<br>
+kept having to answer the question “What do you do?”. My actual job title is<br>
+“ICT Project Manager”, which while impressive sounding doesn’t go any way to<br>
+explain what I do. In the end, I came up with the following stock response:</p>
+
+<blockquote>
+  <p>“I’m a research technologist: I have a very similar role to learning<br>
+technologists, except that I support academics as researchers instead of<br>
+as teachers.”</p>
+</blockquote>
+
+<p>There are a few roles out there which sound similar, or which have similar<br>
+names, so I thought I’d mention a few things that set this role apart from<br>
+other similar sounding jobs. This post is the first part of a series exploring<br>
+those aspects.</p>
+
+<h2 id="first-a-disclaimer">First, a disclaimer</h2>
+
+<p>I’m not foolish enough to think I’m the only person doing this type of job, or<br>
+to pick out these features as important, or even to come up with that name. I’m<br>
+quite certain there are people doing this in IT departments, in research<br>
+development departments, certainly in academic departments and quite possibly<br>
+in e-learning departments too. It’s more that there seems to be no standard<br>
+position for this role (except where institutions have dedicated e-research<br>
+teams) and I’m setting out to find other people in similar roles to share ideas<br>
+with.</p>
+
+<h2 id="proactivity-and-innovation">Proactivity and innovation</h2>
+
+<p>Although part of my role is to support existing systems and respond to queries<br>
+from users, that’s not the whole of it. I feel it’s important to keep abreast<br>
+of the latest technology innovations and explore how they can be used to<br>
+support research. This contrasts with the typical approach of central<br>
+university IT services, which generally have a core set of “supported” software<br>
+and services with rigorous procedures and checks in place to control changes to<br>
+that set.</p>
+
+<p>I don’t wish to suggest that this centralised model is inappropriate: on the<br>
+contrary it’s absolutely necessary. University IT services have the very<br>
+challenging job of providing an acceptable and consistent standard of service<br>
+to a huge and diverse user base. To do this efficiently it’s necessary to make<br>
+sure that all IT staff have a reasonable understanding of <em>every</em> supported<br>
+service, which just can’t happen if that set of services is too large.</p>
+
+<p>The trouble is that as well as providing users with a very stable, high level<br>
+of support for essential services (networking, email, payroll and so on), it<br>
+also tends to stifle innovation. If a new service is to be offered, a lot of<br>
+time and resources must be invested in doing so at the level of existing<br>
+services; quite a risk if there’s no guarantee that the new service will<br>
+succeed. That means that there’s no scope to start something small, with the<br>
+option of either growing it organically if it takes off or letting it die<br>
+peacefully if it’s not right.</p>
+
+<hr>
+
+<p>I’ll be exploring this further soon, but for now I’d be interested in your<br>
+take, especially if you disagree or recognise some of what I say in your own<br>
+role.</p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2011-12-15:/blog/the-research-technologist-proactivity-innovation/" href="http://erambler.co.uk/blog/the-research-technologist-proactivity-innovation/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/nose-to-the-blogstone/">Nose to the blogstone</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/nose-to-the-blogstone/">Saturday  3 December 2011</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Meta</span></li>
+<li class="p-category"><span class="tag">Blogging</span></li>
+<li class="p-category"><span class="tag">Web design</span></li>
+<li class="p-category"><span class="tag">Admin</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>Well, I’m just back from the launch meeting of the JISC Managing Research Data<br>
+programme, of which our <a href="http://blogs.bath.ac.uk/research360">Research360 project at Bath</a> is a part, and coming<br>
+to terms with the fact that blogging is now an inescapable part of my job.</p>
+
+<p>Looks like it’s time to get back into my blogging rhythm once more. Time to<br>
+make a few tweaks that I’ve been planning to the layout too. Let me know what<br>
+you think.</p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2011-12-03:/blog/nose-to-the-blogstone/" href="http://erambler.co.uk/blog/nose-to-the-blogstone/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../blog/eurosakai11-slides/">Slides for EuroSakai 2011</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/eurosakai11-slides/">Monday 26 September 2011</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">EuroSakai 2011</span></li>
+<li class="p-category"><span class="tag">VRE</span></li>
+<li class="p-category"><span class="tag">Sakai</span></li>
+<li class="p-category"><span class="tag">Presentations</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>On Wednesday 8 September I’ll be presenting at <a href="http://eurosakai.nl">EuroSakai<br>
+2011</a> in Amsterdam. For those who are interested, here are<br>
+     my slides.</p>
+
+<div style="width:425px" id="__ss_9421872"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/jezcope/isuslab-a-sakaibased-virtual-research-environment-for-scientists" title="iSusLab: a Sakai-based Virtual Research Environment for scientists" target="_blank">iSusLab: a Sakai-based Virtual Research Environment for scientists</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/9421872" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/jezcope" target="_blank">Jez Cope</a> </div> </div>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2011-09-26:/blog/eurosakai11-slides/" href="http://erambler.co.uk/blog/eurosakai11-slides/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<div id="page-nav">
+<div class="newer-posts">
+<a href="../2/">
+</a>
+</div>
+<div class="older-posts">
+<a href="../4/">Older posts &gt;&gt;</a>
+</div>
+</div>
+
+</div>
+<div id="sidebar">
+<div class="sidebar-box about-me h-card">
+<p>Hi, I’m <a href="http://erambler.co.uk" class="p-name u-url">Jez Cope</a> and this is my
+blog, where I talk about technology in research and higher
+education, including:</p>
+
+<ul>
+  <li>Research data management;</li>
+  <li>e-Research;</li>
+  <li>Learning;</li>
+  <li>Teaching;</li>
+  <li>Educational technology.</li>
+</ul>
+</div>
+<div class="sidebar-box links">
+<h2>Me elsewhere</h2>
+<ul>
+  <li><a href="https://twitter.com/jezcope" rel="me">Twitter</a></li>
+  <li><a href="https://github.com/jezcope" rel="me">github</a></li>
+  <li><a href="https://linkedin.com/in/jezcope">LinkedIn</a></li>
+  <li><a href="http://diigo.com/user/jezcope">Diigo</a></li>
+  <li><a href="https://www.zotero.org/jezcope">Zotero</a></li>
+  <li><a href="http://gplus.to/jezcope">Google+</a></li>
+</ul>
+</div>
+</div>
+<div class="row">
+<footer><a class="license" href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+<img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="border-width:0">
+</a>
+<span href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type" xmlns:dct="http://purl.org/dc/terms/">
+eRambler
+</span>
+by
+<a href="http://erambler.co.uk/" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+Jez Cope
+</a>
+is licensed under a
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+Creative Commons Attribution-ShareAlike 4.0 International license
+</a>
+</footer>
+</div>
+</section>
+</div>
+<script>
+  if (!/^http:\/\/localhost/.test(window.location)) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10201101-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+
+</body>
+</html>

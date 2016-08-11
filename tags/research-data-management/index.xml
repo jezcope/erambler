@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research Data Management on eRambler</title>
+    <link>http://erambler.co.uk/tags/research-data-management/</link>
+    <description>Recent content in Research Data Management on eRambler</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>(c) 2016 Jez Cope — [CC-BY-SA](/license/)</copyright>
+    <lastBuildDate>Wed, 16 Mar 2016 07:44:14 +0100</lastBuildDate>
+    <atom:link href="http://erambler.co.uk/tags/research-data-management/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>#IDCC16 day 2: new ideas</title>
+      <link>http://erambler.co.uk/blog/idcc16-day-2/</link>
+      <pubDate>Wed, 16 Mar 2016 07:44:14 +0100</pubDate>
+      
+      <guid>http://erambler.co.uk/blog/idcc16-day-2/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;Well, I did a great job of blogging the conference for a couple of days, but then I was hit by the bug that&amp;rsquo;s been going round and didn&amp;rsquo;t have a lot of energy for anything other than paying attention and making notes during the day!  I&amp;rsquo;ve now got round to reviewing my notes so here are a few reflections on day 2.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Day 2 was the day of many parallel talks!  So many great and inspiring ideas to take in!  Here are a few of my take-home points.&lt;/p&gt;
+
+&lt;h2 id=&#34;big-science-and-the-long-tail&#34;&gt;Big science and the long tail&lt;/h2&gt;
+
+&lt;p&gt;The first parallel session had examples of practical data management in the real world.  Jian Qin &amp;amp; Brian Dobreski (School of Information Studies, Syracuse University) worked on reproducibility with one of the research groups involved with the recent gravitational wave discovery.  &amp;ldquo;Reproducibility&amp;rdquo; for this work (as with much of physics) mostly equates to computational reproducibility: tracking the provenance of the code and its input and output is key.  They also found that in practice the scientists&amp;rsquo; focus was on making the big discovery, and ensuring reproducibility was seen as secondary.  This goes some way to explaining why current workflows and tools don&amp;rsquo;t really capture enough metadata.&lt;/p&gt;
+
+&lt;p&gt;Milena Golshan &amp;amp; Ashley Sands (Center for Knowledge Infrastructures, UCLA) investigated the use of Software-as-a-Service (SaaS, such as Google Drive, Dropbox or more specialised tools) as a way of meeting the needs of long-tail science research such as ocean science.  This research is characterised by small teams, diverse data, dynamic local development of tools, local practices and difficulty disseminating data.  This results in a need for researchers to be generalists, as opposed to &amp;ldquo;big science&amp;rdquo; research areas, where they can afford to specialise much more deeply.  Such generalists tend to develop their own isolated workflows, which can differ greatly even within a single lab.  Long-tail research also often struggles from a lack of dedicated IT support.  They found that use of SaaS could help to meet these challenges, but with a high cost required to cover the needed guarantees of security and stability.&lt;/p&gt;
+
+&lt;h2 id=&#34;education-training&#34;&gt;Education &amp;amp; training&lt;/h2&gt;
+
+&lt;p&gt;This session focussed on the professional development of library staff.  Eleanor Mattern (University of Pittsburgh) described the immersive training introduced to improve librarians&amp;rsquo; understanding of the data needs of their subject areas in delivering their &lt;a href=&#34;http://d-scholarship.pitt.edu/26738/&#34;&gt;RDM service delivery model&lt;/a&gt;.  The participants each conducted a &amp;ldquo;disciplinary deep dive&amp;rdquo;, shadowing researchers and then reporting back to the group on their discoveries with a presentation and discussion.&lt;/p&gt;
+
+&lt;p&gt;Liz Lyon (also University of Pittsburgh, formerly UKOLN/DCC) gave a systematic breakdown of the skills, knowledge and experience required in different data-related roles, obtained from an analysis of job adverts.  She identified distinct roles of data analyst, data engineer and data journalist, and as well as each role&amp;rsquo;s distinctive skills, pinpointed common requirements of all three: Python, R, SQL and Excel.  This work follows on from an earlier phase which identified an allied set of roles: data archivist, data librarian and data steward.&lt;/p&gt;
+
+&lt;h2 id=&#34;data-sharing-and-reuse&#34;&gt;Data sharing and reuse&lt;/h2&gt;
+
+&lt;p&gt;This session gave an overview of several specific workflow tools designed for researchers. Marisa Strong (University of California Curation Centre/California Digital Libraries) presented &lt;em&gt;&lt;a href=&#34;https://dash.cdlib.org/&#34;&gt;Dash&lt;/a&gt;&lt;/em&gt;, a highly modular tool for manual data curation and deposit by researchers. It&amp;rsquo;s built on their flexible backend, &lt;em&gt;Stash&lt;/em&gt;, and though it&amp;rsquo;s currently optimised to deposit in their Merritt data repository it could easily be hooked up to other repositories. It captures DataCite metadata and a few other fields, and is integrated with ORCID to uniquely identify people.&lt;/p&gt;
+
+&lt;p&gt;In a different vein, Eleni Castro (Institute for Quantitative Social Science, Harvard University) discussed some of the ways that &lt;a href=&#34;http://dataverse.org/&#34;&gt;Harvard&amp;rsquo;s Dataverse&lt;/a&gt; repository is streamlining deposit by enabling automation. It provides a number of standardised endpoints such as &lt;a href=&#34;https://www.openarchives.org/pmh/&#34;&gt;OAI-PMH&lt;/a&gt; for metadata harvest and &lt;a href=&#34;http://swordapp.org/&#34;&gt;SWORD&lt;/a&gt; for deposit, as well as custom APIs for discovery and deposit. Interesting use cases include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;An addon for the &lt;a href=&#34;https://osf.io/&#34;&gt;Open Science Framework&lt;/a&gt; to deposit in Dataverse via SWORD&lt;/li&gt;
+&lt;li&gt;An &lt;a href=&#34;https://cran.r-project.org/web/packages/dvn/README.html&#34;&gt;R package&lt;/a&gt; to enable automatic deposit of simulation and analysis results&lt;/li&gt;
+&lt;li&gt;Integration with publisher workflows Open Journal Systems&lt;/li&gt;
+&lt;li&gt;A growing set of visualisations for deposited data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In the future they&amp;rsquo;re also looking to integrate with &lt;a href=&#34;https://dmptool.org/&#34;&gt;DMPtool&lt;/a&gt; to capture data management plans and with Archivematica for digital preservation.&lt;/p&gt;
+
+&lt;p&gt;Andrew Treloar (&lt;a href=&#34;http://ands.org.au/&#34;&gt;Australian National Data Service&lt;/a&gt;) gave us some reflections on the ANDS &amp;ldquo;applications programme&amp;rdquo;, a series of 25 small funded projects intended to address the fourth of their strategic transformations, &lt;em&gt;single use&lt;/em&gt; → &lt;em&gt;reusable&lt;/em&gt;. He observed that essentially these projects worked because they were able to throw money at a problem until they found a solution: not very sustainable. Some of them stuck to a &lt;a href=&#34;https://en.m.wikipedia.org/wiki/Waterfall_model&#34;&gt;traditional &amp;ldquo;waterfall&amp;rdquo; approach to project management&lt;/a&gt;, resulting in &amp;ldquo;the right solution 2 years late&amp;rdquo;. Every researcher&amp;rsquo;s needs are &amp;ldquo;special&amp;rdquo; and communities are still constrained by old ways of working. The conclusions from this programme were that:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;Good enough&amp;rdquo; is fine most of the time&lt;/li&gt;
+&lt;li&gt;Adopt/Adapt/Augment is better than Build&lt;/li&gt;
+&lt;li&gt;Existing toolkits let you focus on the 10% functionality that&amp;rsquo;s missing&lt;/li&gt;
+&lt;li&gt;Succussful projects involved research champions who can: 1) articulate their community&amp;rsquo;s requirements; and 2) promote project outcomes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;All in all, it was a really exciting conference, and I&amp;rsquo;ve come home with loads of new ideas and plans to develop our services at Sheffield. I noticed a continuation of some of the trends I spotted at last year&amp;rsquo;s IDCC, especially an increasing focus on &amp;ldquo;second-order&amp;rdquo; problems: we&amp;rsquo;re no longer spending most of our energy just convincing researchers to take data management seriously and are able to spend more time helping them to do it &lt;em&gt;better&lt;/em&gt; and get value out of it. There&amp;rsquo;s also a shift in emphasis (identified by closing speaker Cliff Lynch) from sharing to reuse, and making sure that data is not just available but valuable.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>#IDCC16 Day 1: Open Data</title>
+      <link>http://erambler.co.uk/blog/idcc16-day-1/</link>
+      <pubDate>Tue, 23 Feb 2016 19:43:57 +0100</pubDate>
+      
+      <guid>http://erambler.co.uk/blog/idcc16-day-1/</guid>
+      <description>&lt;p&gt;The main conference opened today with an inspiring keynote by Barend Mons, Professor in Biosemantics, Leiden University Medical Center. The talk had plenty of great stuff, but two points stood out for me.&lt;/p&gt;
+
+&lt;p&gt;First, Prof Mons described a newly discovered link between Huntingdon&amp;rsquo;s Disease and a previously unconsidered gene. No-one had previously recognised this link, but on mining the literature, an indirect link was identified in more than 10% of the roughly 1 million scientific claims analysed. This is knowledge for which we already had more than enough evidence, but &lt;strong&gt;which could never have been discovered without such a wide-ranging computational study&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Second, he described a number of behaviours which &lt;strong&gt;should be considered &amp;ldquo;malpractice&amp;rdquo; in science&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Relying on supplementary data in articles for data sharing: the majority of this is trash (paywalled, embedded in bitmap images, missing)&lt;/li&gt;
+&lt;li&gt;Using the Journal Impact Factor to evaluate science and ignoring altmetrics&lt;/li&gt;
+&lt;li&gt;Not writing data stewardship plans for projects (he prefers this term to &amp;ldquo;data management plan&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;Obstructing tenure for data experts by assuming that all highly-skilled scientists must have a long publication record&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A second plenary talk from Andrew Sallons of the &lt;a href=&#34;http://cos.io&#34;&gt;Centre for Open Science&lt;/a&gt; introduced a number of interesting-looking bits and bobs, including the &lt;a href=&#34;https://osf.io/9f6gx/wiki/Guidelines/&#34;&gt;Transparency &amp;amp; Openness Promotion (TOP) Guidelines&lt;/a&gt; which set out a pathway to help funders, publishers and institutions move towards more open science.&lt;/p&gt;
+
+&lt;p&gt;The rest of the day was taken up with a panel on open data, a poster session, some demos and a birds-of-a-feather session on sharing sensitive/confidential data. There was a great range of posters, but a few that stood out to me were:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lessons learned about ISO 16363 (&amp;ldquo;Audit and certification of trustworthy digital repositories&amp;rdquo;) certification from the British Library&lt;/li&gt;
+&lt;li&gt;Two separate posters (from the Universities of Toronto and Colorado) about disciplinary RDM information &amp;amp; training for liaison librarians&lt;/li&gt;
+&lt;li&gt;A template for sharing psychology data developed by a psychologist-turned-information researcher from Carnegie Mellon University&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;More to follow, but for now it&amp;rsquo;s time for the conference dinner!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>#IDCC16 Day 0: business models for research data management</title>
+      <link>http://erambler.co.uk/blog/idcc16-day-0/</link>
+      <pubDate>Mon, 22 Feb 2016 18:20:55 +0100</pubDate>
+      
+      <guid>http://erambler.co.uk/blog/idcc16-day-0/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m at the &lt;a href=&#34;http://www.dcc.ac.uk/events/idcc16&#34;&gt;International Digital Curation Conference 2016&lt;/a&gt; (#IDCC16) in Amsterdam this week. It&amp;rsquo;s always a good opportunity to pick up some new ideas and catch up with colleagues from around the world, and I always come back full of new possibilities. I&amp;rsquo;ll try and do some more reflective posts after the conference but I thought I&amp;rsquo;d do some quick reactions while everything is still fresh.&lt;/p&gt;
+
+&lt;p&gt;Monday and Thursday are pre- and post-conference workshop days, and today I attended &lt;a href=&#34;http://www.dcc.ac.uk/events/idcc16/workshops#Workshop%201&#34;&gt;&lt;em&gt;Developing Research Data Management Services&lt;/em&gt;&lt;/a&gt;. Joy Davidson and Jonathan Rans from the &lt;a href=&#34;http://www.dcc.ac.uk/&#34;&gt;Digital Curation Centre (DCC)&lt;/a&gt; introduced us to the &lt;a href=&#34;http://www.businessmodelgeneration.com/canvas/bmc&#34;&gt;Business Model Canvas&lt;/a&gt;, a template for designing a business model on a single sheet of paper. The model prompts you to think about all of the key facets of a sustainable, profitable business, and can easily be adapted to the task of building a service model within a larger institution. The DCC used it as part of the &lt;a href=&#34;http://www.curationexchange.org/about#4cproject&#34;&gt;Collaboration to Clarify Curation Costs (4C) project&lt;/a&gt;, whose output the &lt;a href=&#34;http://www.curationexchange.org/&#34;&gt;Curation Costs Exchange&lt;/a&gt; is also worth a look.&lt;/p&gt;
+
+&lt;p&gt;It was a really useful exercise to be able to work through the whole process for an aspect of research data management (my table focused on training &amp;amp; guidance provision), both because of the ideas that came up and also the experience of putting the framework into practice. It seems like a really valuable tool and I look forward to seeing how it might help us with our RDM service development.&lt;/p&gt;
+
+&lt;p&gt;Tomorrow the conference proper begins, with a range of keynotes, panel sessions and birds-of-a-feather meetings so hopefully more then!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

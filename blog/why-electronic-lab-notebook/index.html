@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../old/assets/style/styles.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  (function() {
+    var s, scheme, wf;
+  
+    this.WebFontConfig = {
+      google: {
+        families: ['Amaranth:700,700italic:latin', 'Inconsolata::latin']
+      }
+    };
+  
+    wf = document.createElement('script');
+  
+    scheme = 'https:' === document.location.protocol ? 'https' : 'http';
+  
+    wf.src = scheme + "://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
+  
+    wf.type = 'text/javascript';
+  
+    wf.async = 'true';
+  
+    s = document.getElementsByTagName('script')[0];
+  
+    s.parentNode.insertBefore(wf, s);
+  
+  }).call(this);
+</script>
+
+<title>Why use an electronic lab notebook? | eRambler</title>
+<link href="http://erambler.co.uk/feed.xml" rel="alternate" type="application/rss+xml">
+</head>
+<body class="single-post">
+<div id="container">
+<header class="page-header">
+<hgroup>
+<div class="h1"><a href="../../">eRambler</a></div>
+<div class="lead">Jez Cope's blog on becoming a research technologist</div>
+</hgroup>
+<nav><ul>
+<li><a href="../../">Home</a></li>
+<li><a href="../../about/">About</a></li>
+<li><a href="../../blogroll/">Blogroll</a></li>
+</ul>
+</nav>
+</header>
+<section>
+<div class="row">
+<p class="archive-warning"><strong><em>Please note:</em></strong> this older content has been <strong>archived</strong> and is no longer fully linked into the site. Please go to the <a href="../../">current home page</a> for up-to-date content.</p>
+</div>
+<div id="content">
+<article class="h-entry">
+<div class="row">
+<h1 class="post-title p-name">Why use an electronic lab notebook?</h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/why-electronic-lab-notebook/">Wednesday 13 May 2015</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">eScience</span></li>
+<li class="p-category"><span class="tag">Electronic lab notebook</span></li>
+<li class="p-category"><span class="tag">Research data management</span></li>
+<li class="p-category"><span class="tag">eResearch</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content e-content">
+<p><em>The sharp-eyed amongst you will have noticed I’ve recently ended a bit of a break in service on this blog.  I’ve been doing that thing of half-writing posts and then never finishing them, so I’ve decided to clear out the pipeline and see what’s still worth publishing.  This is a slightly-longer-than-usual piece I started writing about 9 months ago, still in my previous job.  It still seems relevant, so here you go.  You’re welcome.</em></p>
+
+<h2 id="what-is-an-electronic-lab-notebook">What is an electronic lab notebook?</h2>
+
+<p>For the last little while at work, I’ve been investigating the possibility of implementing an electronic lab notebook (ELN) system, so here are a few of my thoughts on what an ELN actually is.</p>
+
+<h3 id="what-is-a-lab-notebook">What is a lab notebook?</h3>
+
+<p>All science is built on <em>data</em><sup id="fnref:theoretical"><a href="#fn:theoretical" class="footnote">1</a></sup>. Definitions of “data” vary, but they mostly boil down to this: data is evidence gathered through observation (direct or via instruments) of real-world phenomena.</p>
+
+<p>A lab notebook is the traditional device for recording scientific data before it can be processed, analysed and turned into conclusions. It is typically a hardback notebook, A4 size (in the UK at least) with sequentially numbered pages recording the method and conditions of each experiment along with any measurements and observations taken during that experiment.</p>
+
+<p>In industrial contexts, where patent law is king, all entries must be in indelible ink and various arcane procedures followed, such as the daily signing of pages by researcher and supervisor; even in academia some of these precautions can be sensible.</p>
+
+<p>But the most important think about a lab notebook is that it records <em>absolutely everything</em> about your research project for future reference. If any item of data is missing, the scientific record is incomplete and may be called into question. At best this is frustrating, as time-consuming and costly work must be repeated; at worst, it leaves you open to accusations of scientific misconduct of the type perpetrated by <a href="http://en.m.wikipedia.org/wiki/Diederik_Stapel">Diederik Stapel</a>.</p>
+
+<h3 id="so-whats-an-electronic-lab-notebook">So what’s an <em>electronic</em> lab notebook?</h3>
+
+<p>An ELN, then, is some (any?) system that gives you the affordances I’ve described above while being digital in nature.  In practice, this means a notebook that’s accessed via a computer (or, increasingly, a mobile device such as a tablet or smartphone), and stores information in digital form.</p>
+
+<p>This might be a dedicated native app (this is the route taken by most industrial ELN options), giving you a lot of functionality right on your own desktop.  Alternatively, it might be web-based, accessed using your choice of browser without any new software to be installed at all.</p>
+
+<p>It might be standalone, existing entirely on a single computer/device with no need for network access.  Alternatively it might operate in a client-server configuration, with a central database providing all the storage and processing power, and your own device just providing a window onto that.</p>
+
+<p>These are all implementation details though.  The important thing is that you can record your research using it.  By why? What’s the point?</p>
+
+<h3 id="whats-wrong-with-paper">What’s wrong with paper?</h3>
+
+<p>Paper lab notebooks work perfectly well already, don’t they? We’ve been using them for hundreds of years.</p>
+
+<p>While paper has a lot going for it (it’s cheap and requires no electricity or special training to use), it has its disadvantages too. It’s all too easy to lose it (maybe on a train) or accidentally destroy it (by spilling nasty organic solvents on it, or just getting caught out in the rain).</p>
+
+<p>At the same time, it’s very difficult to safeguard in any meaningful sense, short of scanning or photocopying each individual page.</p>
+
+<p>It’s hard to share: an increasingly important factor when collaborative, multidisciplinary research is on the rise. If I want to share my notes with you, I either have to post you the original (risky) or make a physical or digital copy and send that.</p>
+
+<p>Of more immediate relevance to most researchers, it’s also difficult to interrogate unless you’re some kind of an indexing ninja.  When you can’t remember exactly what page recorded that experiment nine months ago, you’re in for a dull few hours searching through page-by-page.</p>
+
+<h3 id="what-can-a-good-eln-give-us">What can a good ELN give us?</h3>
+
+<p>The most obvious benefit is that all of your data is now digital, and can therefore be backed up to your heart’s content.  Ideally, all data is stored on a safe, remote server and accessed remotely, but even if it’s stored directly on your laptop/tablet you now have the option of backing it up.  Of course, the corollary is that you have to make sure you <em>are</em> backing up, otherwise you’ll look a bit silly when you drop your laptop in a puddle.</p>
+
+<p>The next benefit of digital is that it can be indexed, categorised and searched in potentially dozens of different dimensions, making it much easier to find what you were looking for and collect together sets of related information.</p>
+
+<p>A good electronic system can do some useful things to support the integrity of the scientific record.  Many systems can track all the old versions of an entry.  As well as giving you an important safety net in case of mistakes, this also demonstrates the evolution of your ideas.  Coupled with some cryptographic magic and digital signatures, it’s even possible to freeze each version to use as evidence in a court of law that you had a given idea on a given day.</p>
+
+<p>Finally, moving notes and data to a digital platform can set them free.  Suddenly it becomes trivial to share them with collaborators, whether in the next room or the next continent.  While some researchers advocate fully “open notebook science” — where all notes and data are made public as soon as possible after they’re recorded — not everyone is comfortable with that, so some control over exactly <em>who</em> the notebook is shared with is useful too.</p>
+
+<h3 id="what-are-the-potential-disadvantages">What are the potential disadvantages?</h3>
+
+<p>The first thing to note is that a poorly implemented ELN will just serve to make life more awkward, adding extra work for no gain.  This is to be avoided at all costs — great care must be taken to ensure that the system is appropriate to the people who want to use it.</p>
+
+<p>It’s also true that going digital introduces some potential new risks.  We’ve all seen the…  My own opinion is that there will always be risks, whether data is stored in the cloud or on dead trees in a filing cabinet.  As long as those risks are understood and appropriate measures taken to mitigate them, digital data can be much safer than the average paper notebook.</p>
+
+<p>One big stumbling block that still affects a lot of the ELN options currently available is that they assume that the users will have network access.  In the lab, this is unlikely to be a problem, but how about on the train?  On a plane or in a foreign country?  A lot of researchers will need to get work done in a lot of those places.  This isn’t an easy problem to solve fully, though it’s often possible with some forethought to export and save individual entries to support remote working, or to make secure use of mobile data or public wireless networks.</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>So there you have it.  In my humble opinion, a well-implemented ELN provides so many advantages over the paper alternative that it’s a no-brainer, but that’s certainly not true for everyone.  Some activities, by their very nature, work better with paper, and either way most people are very comfortable with their current ways of working.</p>
+
+<p>What’s your experience of note-taking, within research or elsewhere?  What works for you?  Do you prefer paper or bits, or a mixture of the two?</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:theoretical">
+      <p>Yes, even theoretical science, in my humble opinion. I know, I know. The comment section is open for debate. <a href="#fnref:theoretical" class="reversefootnote">↩</a></p>
+    </li>
+  </ol>
+</div>
+</div>
+<div id="disqus_thread"></div>
+<script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'erambler'; // required: replace example with your forum shortname
+  var disqus_identifier = 'tag:erambler.co.uk,2015-05-13:/blog/why-electronic-lab-notebook/';
+  var disqus_title = 'Why use an electronic lab notebook?'
+  var disqus_url = 'http://erambler.co.uk/blog/why-electronic-lab-notebook/';
+  var disqus_developer = 0;
+  if (window.location.hostname == 'localhost')
+    disqus_developer = 1;
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+</div>
+</div>
+</article>
+</div>
+<div id="sidebar">
+<div class="sidebar-box about-me h-card">
+<p>Hi, I’m <a href="http://erambler.co.uk" class="p-name u-url">Jez Cope</a> and this is my
+blog, where I talk about technology in research and higher
+education, including:</p>
+
+<ul>
+  <li>Research data management;</li>
+  <li>e-Research;</li>
+  <li>Learning;</li>
+  <li>Teaching;</li>
+  <li>Educational technology.</li>
+</ul>
+</div>
+<div class="sidebar-box links">
+<h2>Me elsewhere</h2>
+<ul>
+  <li><a href="https://twitter.com/jezcope" rel="me">Twitter</a></li>
+  <li><a href="https://github.com/jezcope" rel="me">github</a></li>
+  <li><a href="https://linkedin.com/in/jezcope">LinkedIn</a></li>
+  <li><a href="http://diigo.com/user/jezcope">Diigo</a></li>
+  <li><a href="https://www.zotero.org/jezcope">Zotero</a></li>
+  <li><a href="http://gplus.to/jezcope">Google+</a></li>
+</ul>
+</div>
+</div>
+<div class="row">
+<footer><a class="license" href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+<img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="border-width:0">
+</a>
+<span href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type" xmlns:dct="http://purl.org/dc/terms/">
+eRambler
+</span>
+by
+<a href="http://erambler.co.uk/" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+Jez Cope
+</a>
+is licensed under a
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+Creative Commons Attribution-ShareAlike 4.0 International license
+</a>
+</footer>
+</div>
+</section>
+</div>
+<script>
+  if (!/^http:\/\/localhost/.test(window.location)) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10201101-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+
+</body>
+</html>

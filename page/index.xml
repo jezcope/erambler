@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on eRambler</title>
+    <link>http://erambler.co.uk/page/</link>
+    <description>Recent content in Pages on eRambler</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>(c) 2016 Jez Cope — [CC-BY-SA](/license/)</copyright>
+    <lastBuildDate>Wed, 10 Aug 2016 08:37:18 +0100</lastBuildDate>
+    <atom:link href="http://erambler.co.uk/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>License</title>
+      <link>http://erambler.co.uk/license/</link>
+      <pubDate>Wed, 10 Aug 2016 08:37:18 +0100</pubDate>
+      
+      <guid>http://erambler.co.uk/license/</guid>
+      <description>&lt;p&gt;&lt;a class=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34; rel=&#34;license&#34;&gt;
+  &lt;img alt=&#34;Creative Commons License&#34; src=&#34;http://i.creativecommons.org/l/by-sa/4.0/88x31.png&#34; style=&#34;border-width:0&#34;&gt;
+&lt;/a&gt;
+Except where otherwise stated, all content on &lt;span href=&#34;http://purl.org/dc/dcmitype/Text&#34; property=&#34;dct:title&#34; rel=&#34;dct:type&#34; xmlns:dct=&#34;http://purl.org/dc/terms/&#34;&gt;eRambler&lt;/span&gt; by &lt;a href=&#34;http://erambler.co.uk/&#34; property=&#34;cc:attributionName&#34; rel=&#34;cc:attributionURL&#34; xmlns:cc=&#34;http://creativecommons.org/ns#&#34;&gt;Jez Cope&lt;/a&gt; is licensed under a &lt;a href=&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34; rel=&#34;license&#34;&gt;Creative Commons Attribution-ShareAlike 4.0 International license&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>RDM Resources</title>
+      <link>http://erambler.co.uk/rdm-resources/</link>
+      <pubDate>Tue, 19 Jul 2016 07:42:33 +0100</pubDate>
+      
+      <guid>http://erambler.co.uk/rdm-resources/</guid>
+      <description>
+
+&lt;p&gt;I occasionally get asked for resources to help someone learn more about research data management (RDM) as a discipline (i.e. for those providing RDM support rather than simply wanting to manage their own data).  I&amp;rsquo;ve therefore collected a few resources together on this page.  If you&amp;rsquo;re lucky I might even update it from time to time!&lt;/p&gt;
+
+&lt;p&gt;First, a caveat: this is very focussed on UK Higher Education, though much of it will still be relevant for people outside that narrow demographic.&lt;/p&gt;
+
+&lt;p&gt;My general recommendation would be to start with the &lt;a href=&#34;http://www.dcc.ac.uk/&#34;&gt;Digital Curation Centre (DCC)&lt;/a&gt; website and follow links out from there. I also have a slowly growing &lt;a href=&#34;https://www.diigo.com/outliner/11flkb/Research-data-management?key=mzirvjs7rt&#34;&gt;list of RDM links on Diigo&lt;/a&gt;, and there&amp;rsquo;s an RDM section in my &lt;a href=&#34;http://erambler.co.uk/blogroll/&#34;&gt;list of blogs and feeds&lt;/a&gt; too.&lt;/p&gt;
+
+&lt;h2 id=&#34;mailing-lists&#34;&gt;Mailing lists&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.jiscmail.ac.uk/&#34;&gt;Jiscmail&lt;/a&gt; is a popular list server run for the benefit of further and higher education in the UK; the following lists are particularly relevant:
+
+&lt;ul&gt;
+&lt;li&gt;RESEARCH-DATAMAN&lt;/li&gt;
+&lt;li&gt;DATA-PUBLICATION&lt;/li&gt;
+&lt;li&gt;DIGITAL-PRESERVATION&lt;/li&gt;
+&lt;li&gt;LIS-RESEARCHSUPPORT&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&#34;https://rd-alliance.org/groups&#34;&gt;Research Data Alliance&lt;/a&gt; have a number of Interest Groups and Working Groups that discuss issues by email&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;events&#34;&gt;Events&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.dcc.ac.uk/events/international-digital-curation-conference-idcc&#34;&gt;International Digital Curation Conference&lt;/a&gt; — major annual conference&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.dcc.ac.uk/events/research-data-management-forum-rdmf&#34;&gt;Research Data Management Forum&lt;/a&gt; — roughly every six months, places are limited!&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rd-alliance.org/plenary-meetings.html&#34;&gt;RDA Plenary&lt;/a&gt; — also every 6 months, but only about 1 in every 3 in Europe&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;
+
+&lt;p&gt;In no particular order:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Martin, Victoria. Demystifying eResearch: A Primer for Librarians. Libraries Unlimited, 2014.&lt;/li&gt;
+&lt;li&gt;Borgman, Christine L. Big Data, Little Data, No Data: Scholarship in the Networked World. Cambridge, Massachusetts: The MIT Press, 2015.&lt;/li&gt;
+&lt;li&gt;Corti, Louise, Veerle Van den Eynden, and Libby Bishop. Managing and Sharing Research Data. Thousand Oaks, CA: SAGE Publications Ltd, 2014.&lt;/li&gt;
+&lt;li&gt;Pryor, Graham, ed. Managing Research Data. Facet Publishing, 2012.&lt;/li&gt;
+&lt;li&gt;Pryor, Graham, Sarah Jones, and Angus Whyte, eds. Delivering Research Data Management Services: Fundamentals of Good Practice. Facet Publishing, 2013.&lt;/li&gt;
+&lt;li&gt;Ray, Joyce M., ed. Research Data Management: Practical Strategies for Information Professionals. West Lafayette, Indiana: Purdue University Press, 2014.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;reports&#34;&gt;Reports&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;‘Ten Recommendations for Libraries to Get Started with Research Data Management’. LIBER, 24 August 2012. &lt;a href=&#34;http://libereurope.eu/news/ten-recommendations-for-libraries-to-get-started-with-research-data-management/&#34;&gt;http://libereurope.eu/news/ten-recommendations-for-libraries-to-get-started-with-research-data-management/&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;‘Science as an Open Enterprise’. Royal Society, 2 June 2012. &lt;a href=&#34;https://royalsociety.org/policy/projects/science-public-enterprise/Report/&#34;&gt;https://royalsociety.org/policy/projects/science-public-enterprise/Report/&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Mary Auckland. ‘Re-Skilling for Research’. RLUK, January 2012. &lt;a href=&#34;http://www.rluk.ac.uk/wp-content/uploads/2014/02/RLUK-Re-skilling.pdf&#34;&gt;http://www.rluk.ac.uk/wp-content/uploads/2014/02/RLUK-Re-skilling.pdf&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;journals&#34;&gt;Journals&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ijdc.net/&#34;&gt;International Journal of Digital Curation&lt;/a&gt; (IJDC)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://escholarship.umassmed.edu/jeslib/&#34;&gt;Journal of eScience Librarianship&lt;/a&gt; (JeSLib)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>http://erambler.co.uk/about/</link>
+      <pubDate>Tue, 19 Jul 2016 07:33:41 +0100</pubDate>
+      
+      <guid>http://erambler.co.uk/about/</guid>
+      <description>&lt;p&gt;I help people in Higher Education communicate and collaborate more effectively using technology.  I currently work at the &lt;a href=&#34;http://www.sheffield.ac.uk/&#34;&gt;University of Sheffield&lt;/a&gt; focusing on &lt;a href=&#34;https://www.sheffield.ac.uk/library/rdm&#34;&gt;research data management&lt;/a&gt; policy, practice, training and advocacy.&lt;/p&gt;
+
+&lt;p&gt;In my free time, I like to: run; play the accordion; &lt;a href=&#34;http://www.fiveriversmorris.org.uk/&#34;&gt;morris dance&lt;/a&gt;; climb; cook; read (fiction and non-fiction); write.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

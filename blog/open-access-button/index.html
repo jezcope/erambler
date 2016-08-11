@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../old/assets/style/styles.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  (function() {
+    var s, scheme, wf;
+  
+    this.WebFontConfig = {
+      google: {
+        families: ['Amaranth:700,700italic:latin', 'Inconsolata::latin']
+      }
+    };
+  
+    wf = document.createElement('script');
+  
+    scheme = 'https:' === document.location.protocol ? 'https' : 'http';
+  
+    wf.src = scheme + "://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
+  
+    wf.type = 'text/javascript';
+  
+    wf.async = 'true';
+  
+    s = document.getElementsByTagName('script')[0];
+  
+    s.parentNode.insertBefore(wf, s);
+  
+  }).call(this);
+</script>
+
+<title>Open Access Button: getting research to the people who need it | eRambler</title>
+<link href="http://erambler.co.uk/feed.xml" rel="alternate" type="application/rss+xml">
+</head>
+<body class="single-post">
+<div id="container">
+<header class="page-header">
+<hgroup>
+<div class="h1"><a href="../../">eRambler</a></div>
+<div class="lead">Jez Cope's blog on becoming a research technologist</div>
+</hgroup>
+<nav><ul>
+<li><a href="../../">Home</a></li>
+<li><a href="../../about/">About</a></li>
+<li><a href="../../blogroll/">Blogroll</a></li>
+</ul>
+</nav>
+</header>
+<section>
+<div class="row">
+<p class="archive-warning"><strong><em>Please note:</em></strong> this older content has been <strong>archived</strong> and is no longer fully linked into the site. Please go to the <a href="../../">current home page</a> for up-to-date content.</p>
+</div>
+<div id="content">
+<article class="h-entry">
+<div class="row">
+<h1 class="post-title p-name">Open Access Button: getting research to the people who need it</h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/open-access-button/">Tuesday 25 February 2014</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Open access</span></li>
+<li class="p-category"><span class="tag">Open scholarship</span></li>
+<li class="p-category"><span class="tag">Hacktivism</span></li>
+<li class="p-category"><span class="tag">OA Button</span></li>
+<li class="p-category"><span class="tag">Things I made</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content e-content">
+<blockquote>
+  <p><img src="https://raw.github.com/OAButton/OAButton/ab5539194f18bd8ed099fe0f93646cf46a4b62b9/oabutton/static/public/img/oabutton_logo_final200.png" alt="Open Access Button" class="main-illustration-s"><br>
+Every day people around the world such as doctors, scientists, students and patients are denied access to the research they need. With the power of the internet, the results of academic research should be available to all.  It’s time to showcase the impact of paywalls and help people get the research they need. That’s where Open Access Button comes in.</p>
+
+  <p>The Open Access Button is a browser plugin that allows people to report when they hit a paywall and cannot access a research article. Head to <a href="http://www.openaccessbutton.org/">openaccessbutton.org</a> to sign up for your very own Button and start using it.</p>
+</blockquote>
+
+<p>I just want to flag up this cool project that’s trying to improve access to scholarly literature for everyone. I’ve been involved with the project from the start, helping to figure out how to tie it in with open access repositories, but it’s medical students David Carroll and Joe McArthur who deserve the credit for coming up with the idea and driving it forward.</p>
+
+<p>To date, <a href="https://www.openaccessbutton.org/#world">more than 5,000 blocked articles have already been logged</a>.  <a href="http://www.theguardian.com/science/2013/nov/18/open-access-button-push">It even got mentioned in the Guardian</a>!  Take a look, give it a try or even get involved:</p>
+
+<ul>
+  <li><a href="http://www.openaccessbutton.org/">Open Access Button</a></li>
+  <li><a href="http://blog.openaccessbutton.org/">OA Button blog</a></li>
+  <li><a href="https://twitter.com/OA_Button">OA Button twitter</a></li>
+  <li><a href="https://github.com/OAButton/OAButton">Source code on github</a></li>
+</ul>
+
+<hr>
+
+<h2 id="how-did-i-get-involved">How did I get involved?</h2>
+
+<p>Last year, I spent some free time creating an experimental web tool to look up Open Access<sup id="fnref:OA"><a href="#fn:OA" class="footnote">1</a></sup> versions of scholarly articles from their DOIs<sup id="fnref:DOI"><a href="#fn:DOI" class="footnote">2</a></sup>. There is already a system for getting the official version of record for any DOI, but it struck me that where that version is hidden behind a paywall and a free version is available elsewhere, it should be just as easy to find that.</p>
+
+<p>This work got noticed by a group of people at a hack day<sup id="fnref:hd"><a href="#fn:hd" class="footnote">3</a></sup>, which resulted in my contributing to their project, the Open Access Button. The primary purpose of the OA Button is to allow people to report whenever they hit a paywall while trying to read an article (so that the scale of the problem can be visualised), and as an added bonus, we’re adding functionality to help gain access through other channels, including finding green open access versions and contacting the corresponding author.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:OA">
+      <p>“Open Access” refers to content which is freely available for all to read and use (usually referring to scholarly articles that publish the results of academic research), as distinct from that which is only accessible by paying a fee (either per-article or a as subscription to a journal). <a href="#fnref:OA" class="reversefootnote">↩</a></p>
+    </li>
+    <li id="fn:DOI">
+      <p>A <a href="http://en.wikipedia.org/wiki/Digital_object_identifier">Digital Object Identifier (DOI)</a> is a unique string of characters that identifies a published object, such as an article, book or dataset. They look something like this: <code class="highlighter-rouge">10.1000/182</code>. <a href="#fnref:DOI" class="reversefootnote">↩</a></p>
+    </li>
+    <li id="fn:hd">
+      <p>A hack day is an opportunity for developers and non-developers to get together and prototype projects without any risk of loss or ridicule if things don’t work out — great for getting the creative juices flowing! <a href="#fnref:hd" class="reversefootnote">↩</a></p>
+    </li>
+  </ol>
+</div>
+</div>
+<div id="disqus_thread"></div>
+<script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'erambler'; // required: replace example with your forum shortname
+  var disqus_identifier = 'tag:erambler.co.uk,2014-02-25:/blog/open-access-button/';
+  var disqus_title = 'Open Access Button: getting research to the people who need it'
+  var disqus_url = 'http://erambler.co.uk/blog/open-access-button/';
+  var disqus_developer = 0;
+  if (window.location.hostname == 'localhost')
+    disqus_developer = 1;
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+</div>
+</div>
+</article>
+</div>
+<div id="sidebar">
+<div class="sidebar-box about-me h-card">
+<p>Hi, I’m <a href="http://erambler.co.uk" class="p-name u-url">Jez Cope</a> and this is my
+blog, where I talk about technology in research and higher
+education, including:</p>
+
+<ul>
+  <li>Research data management;</li>
+  <li>e-Research;</li>
+  <li>Learning;</li>
+  <li>Teaching;</li>
+  <li>Educational technology.</li>
+</ul>
+</div>
+<div class="sidebar-box links">
+<h2>Me elsewhere</h2>
+<ul>
+  <li><a href="https://twitter.com/jezcope" rel="me">Twitter</a></li>
+  <li><a href="https://github.com/jezcope" rel="me">github</a></li>
+  <li><a href="https://linkedin.com/in/jezcope">LinkedIn</a></li>
+  <li><a href="http://diigo.com/user/jezcope">Diigo</a></li>
+  <li><a href="https://www.zotero.org/jezcope">Zotero</a></li>
+  <li><a href="http://gplus.to/jezcope">Google+</a></li>
+</ul>
+</div>
+</div>
+<div class="row">
+<footer><a class="license" href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+<img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="border-width:0">
+</a>
+<span href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type" xmlns:dct="http://purl.org/dc/terms/">
+eRambler
+</span>
+by
+<a href="http://erambler.co.uk/" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+Jez Cope
+</a>
+is licensed under a
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+Creative Commons Attribution-ShareAlike 4.0 International license
+</a>
+</footer>
+</div>
+</section>
+</div>
+<script>
+  if (!/^http:\/\/localhost/.test(window.location)) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10201101-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+
+</body>
+</html>

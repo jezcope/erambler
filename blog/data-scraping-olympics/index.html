@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../old/assets/style/styles.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  (function() {
+    var s, scheme, wf;
+  
+    this.WebFontConfig = {
+      google: {
+        families: ['Amaranth:700,700italic:latin', 'Inconsolata::latin']
+      }
+    };
+  
+    wf = document.createElement('script');
+  
+    scheme = 'https:' === document.location.protocol ? 'https' : 'http';
+  
+    wf.src = scheme + "://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
+  
+    wf.type = 'text/javascript';
+  
+    wf.async = 'true';
+  
+    s = document.getElementsByTagName('script')[0];
+  
+    s.parentNode.insertBefore(wf, s);
+  
+  }).call(this);
+</script>
+
+<title>Scraping for gold at the Olympics | eRambler</title>
+<link href="http://erambler.co.uk/feed.xml" rel="alternate" type="application/rss+xml">
+</head>
+<body class="single-post">
+<div id="container">
+<header class="page-header">
+<hgroup>
+<div class="h1"><a href="../../">eRambler</a></div>
+<div class="lead">Jez Cope's blog on becoming a research technologist</div>
+</hgroup>
+<nav><ul>
+<li><a href="../../">Home</a></li>
+<li><a href="../../about/">About</a></li>
+<li><a href="../../blogroll/">Blogroll</a></li>
+</ul>
+</nav>
+</header>
+<section>
+<div class="row">
+<p class="archive-warning"><strong><em>Please note:</em></strong> this older content has been <strong>archived</strong> and is no longer fully linked into the site. Please go to the <a href="../../">current home page</a> for up-to-date content.</p>
+</div>
+<div id="content">
+<article class="h-entry">
+<div class="row">
+<h1 class="post-title p-name">Scraping for gold at the Olympics</h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/data-scraping-olympics/">Tuesday  7 August 2012</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Olympics</span></li>
+<li class="p-category"><span class="tag">London 2012</span></li>
+<li class="p-category"><span class="tag">Medals</span></li>
+<li class="p-category"><span class="tag">Open data</span></li>
+<li class="p-category"><span class="tag">Ruby</span></li>
+<li class="p-category"><span class="tag">Screen scraping</span></li>
+<li class="p-category"><span class="tag">Coding</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content e-content">
+<p>What if it wasn’t all about the gold medals? The Olympic medal table is always ranked in order of gold medals first, then silver, then bronze.</p>
+
+<p>That seems reasonable, but if you looked at the table at the end of 6 August, for example, you’d have seen that Germany had an impressive 22 medals, including 5 golds, but ranked one place behind Kazakhstan, who had only 7 medals, but 6 of which were gold.</p>
+
+<p>So I thought it was time to do a few things I’ve wanted to try for a while: scrape some publicly available data, do something interesting with it, and write and deploy a Ruby webapp beyond my desktop.</p>
+
+<h2 id="finding-the-data">Finding the data</h2>
+
+<p>It just so happens that the <a href="http://www.bbc.co.uk/sport/olympics/2012/medals/countries">BBC’s medal table</a> is marked up with some nice semantic attributes:</p>
+
+<ul>
+  <li>Each <code class="highlighter-rouge">&lt;tr&gt;</code> tag has two attributes: <code class="highlighter-rouge">data-country-name</code> and <code class="highlighter-rouge">data-country-code</code>;</li>
+  <li>Each <code class="highlighter-rouge">&lt;td&gt;</code> tag uses the class <code class="highlighter-rouge">gold</code>, <code class="highlighter-rouge">silver</code> or <code class="highlighter-rouge">bronze</code> and contains <em>only</em> the number of medals of that type for that country.</li>
+</ul>
+
+<h2 id="just-scraping-by">Just scraping by</h2>
+
+<p>I could have just scraped that data from within the webapp, but I wanted a) to have a bit more robustness if the source page changed format or disappeared; and b) to make the data easily available to others.</p>
+
+<p>So I wrote this <a href="https://scraperwiki.com/scrapers/london_2012_medal_table/">London 2012 medal table scraper</a> in <a href="http://scraperwiki.com/">ScraperWiki</a>. ScraperWiki lets you write scrapers in Ruby, Python or PHP using their API and some standard parsing modules to scrape data and store it in an SQLite table. The data is then available as JSON via a REST API, and remains so even if the source page vanishes (it just sends you a notification so you can fix your scraper).</p>
+
+<h2 id="lets-go-camping">Let’s go Camping</h2>
+
+<p>I briefly thought about using <a href="http://rubyonrails.org/">Ruby on Rails</a>, but that’s a pretty heavy solution to a very small problem, so instead I turned to <a href="http://camping.rubyforge.org/">Camping</a>, a “web framework which consistently stays at less than 4kB of code.”</p>
+
+<p>Camping is very <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a>-based, but your whole app can live in a single file, like a simple CGI script.</p>
+
+<h2 id="putting-it-all-together">Putting it all together</h2>
+
+<p>So, <a href="http://altmedals2012.herokuapp.com/">here’s my alternative Olympic medal table app</a>, and <a href="http://github.com/jezcope/altmedals2012">here’s the code on GitHub</a>.</p>
+
+<p>What are the effects? Well, if you sort by total medals, there’s quite a big shake up. Russia with 41 medals (only 7 gold) shoot up from 6th to 3rd place, pushing Britain down to 4th. North Korea, on the other hand, drop down from 8th to 24th.</p>
+
+<p>Using a weighted sum of the medals (with a gold worth 3 points, silver 2 and bronze 1) yields a similar but less dramatic upheaval, with Russia still up and North Korea still down, but GB restored to 3rd place.</p>
+
+<p>Can you think of a different way to sort the medals? <a href="https://github.com/jezcope/altmedals2012/issues/new">Stick a feature request on the GitHub tracker</a>, or fork it and have a go yourself.</p>
+
+</div>
+<div id="disqus_thread"></div>
+<script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'erambler'; // required: replace example with your forum shortname
+  var disqus_identifier = 'tag:erambler.co.uk,2012-08-07:/blog/data-scraping-olympics/';
+  var disqus_title = 'Scraping for gold at the Olympics'
+  var disqus_url = 'http://erambler.co.uk/blog/data-scraping-olympics/';
+  var disqus_developer = 0;
+  if (window.location.hostname == 'localhost')
+    disqus_developer = 1;
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+</div>
+</div>
+</article>
+</div>
+<div id="sidebar">
+<div class="sidebar-box about-me h-card">
+<p>Hi, I’m <a href="http://erambler.co.uk" class="p-name u-url">Jez Cope</a> and this is my
+blog, where I talk about technology in research and higher
+education, including:</p>
+
+<ul>
+  <li>Research data management;</li>
+  <li>e-Research;</li>
+  <li>Learning;</li>
+  <li>Teaching;</li>
+  <li>Educational technology.</li>
+</ul>
+</div>
+<div class="sidebar-box links">
+<h2>Me elsewhere</h2>
+<ul>
+  <li><a href="https://twitter.com/jezcope" rel="me">Twitter</a></li>
+  <li><a href="https://github.com/jezcope" rel="me">github</a></li>
+  <li><a href="https://linkedin.com/in/jezcope">LinkedIn</a></li>
+  <li><a href="http://diigo.com/user/jezcope">Diigo</a></li>
+  <li><a href="https://www.zotero.org/jezcope">Zotero</a></li>
+  <li><a href="http://gplus.to/jezcope">Google+</a></li>
+</ul>
+</div>
+</div>
+<div class="row">
+<footer><a class="license" href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+<img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="border-width:0">
+</a>
+<span href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type" xmlns:dct="http://purl.org/dc/terms/">
+eRambler
+</span>
+by
+<a href="http://erambler.co.uk/" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+Jez Cope
+</a>
+is licensed under a
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+Creative Commons Attribution-ShareAlike 4.0 International license
+</a>
+</footer>
+</div>
+</section>
+</div>
+<script>
+  if (!/^http:\/\/localhost/.test(window.location)) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10201101-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+
+</body>
+</html>

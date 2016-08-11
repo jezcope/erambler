@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../old/assets/style/styles.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  (function() {
+    var s, scheme, wf;
+  
+    this.WebFontConfig = {
+      google: {
+        families: ['Amaranth:700,700italic:latin', 'Inconsolata::latin']
+      }
+    };
+  
+    wf = document.createElement('script');
+  
+    scheme = 'https:' === document.location.protocol ? 'https' : 'http';
+  
+    wf.src = scheme + "://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
+  
+    wf.type = 'text/javascript';
+  
+    wf.async = 'true';
+  
+    s = document.getElementsByTagName('script')[0];
+  
+    s.parentNode.insertBefore(wf, s);
+  
+  }).call(this);
+</script>
+
+<title>Converting OpenRefine JSON to Python code | eRambler</title>
+<link href="http://erambler.co.uk/feed.xml" rel="alternate" type="application/rss+xml">
+</head>
+<body class="single-post">
+<div id="container">
+<header class="page-header">
+<hgroup>
+<div class="h1"><a href="../../">eRambler</a></div>
+<div class="lead">Jez Cope's blog on becoming a research technologist</div>
+</hgroup>
+<nav><ul>
+<li><a href="../../">Home</a></li>
+<li><a href="../../about/">About</a></li>
+<li><a href="../../blogroll/">Blogroll</a></li>
+</ul>
+</nav>
+</header>
+<section>
+<div class="row">
+<p class="archive-warning"><strong><em>Please note:</em></strong> this older content has been <strong>archived</strong> and is no longer fully linked into the site. Please go to the <a href="../../">current home page</a> for up-to-date content.</p>
+</div>
+<div id="content">
+<article class="h-entry">
+<div class="row">
+<h1 class="post-title p-name">Converting OpenRefine JSON to Python code</h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/convert-openrefine-json-to-python/">Wednesday 15 April 2015</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Python</span></li>
+<li class="p-category"><span class="tag">OpenRefine</span></li>
+<li class="p-category"><span class="tag">Data</span></li>
+<li class="p-category"><span class="tag">Data wrangling</span></li>
+<li class="p-category"><span class="tag">Ideas</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content e-content">
+<p><a href="http://openrefine.org/">OpenRefine</a> has a pretty cool feature.  You can export a project’s entire edit history in <a href="http://en.wikipedia.org/w/index.php?title=Special:Search&amp;search=JSON">JSON</a> format, and subsequently paste it back to exactly repeat what you did.  This is great for transparency: if someone asks what you did in cleaning up your data, you can tell them exactly instead of giving them a vague, general description of what you think you remember you did.  It also means that if you get a new, slightly-updated version of the raw data, you can clean it up in exactly the same way very quickly.</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">"op"</span><span class="p">:</span> <span class="s2">"core/column-rename"</span><span class="p">,</span>
+    <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Rename column Column to Funder"</span><span class="p">,</span>
+    <span class="s2">"oldColumnName"</span><span class="p">:</span> <span class="s2">"Column"</span><span class="p">,</span>
+    <span class="s2">"newColumnName"</span><span class="p">:</span> <span class="s2">"Funder"</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">"op"</span><span class="p">:</span> <span class="s2">"core/row-removal"</span><span class="p">,</span>
+    <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Remove rows"</span><span class="p">,</span>
+    <span class="s2">"engineConfig"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"mode"</span><span class="p">:</span> <span class="s2">"row-based"</span><span class="p">,</span>
+<span class="c1">// etc…</span>
+</code></pre>
+</div>
+
+<p>Now this is great, but it could be better.  I’ve been playing with <a href="http://python.org/">Python</a> for data wrangling, and it would be amazing if you could load up an OpenRefine history script in Python and execute it over an arbitrary dataset.  You’d be able to reproduce the analysis without having to load up a whole Java stack and muck around with a web browser, and you could integrate it much more tightly with any pre- or post-processing.</p>
+
+<p>Going a stage further, it would be even better to be able to convert the OpenRefine history JSON to an actual Python script.  That would be a great learning tool for anyone wanting to go from OpenRefine to writing their own code.</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"funder_info.csv"</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Column"</span><span class="p">:</span> <span class="s">"Funder"</span><span class="p">})</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span>
+</code></pre>
+</div>
+
+<p>This seems like it could be fairly straightforward to implement: it just requires a bit of digging to understand the semantics of the JSON thot OpenRefine produces, and then the implementation of each operation in Python.  The latter part shouldn’t be much of a stretch with so many existing tools like <a href="http://pandas.pydata.org/">pandas</a>.</p>
+
+<p>It’s just an idea right now, but I’d be willing to have a crack at implementing something if there was any interest — let me know in the comments or <a href="https://twitter.com/jezcope" title="Twitter: @jezcope">on Twitter</a> if you think it’s worth doing, or if you fancy contributing.</p>
+
+<!-- Local Variables:
+mode: gfm
+End: -->
+</div>
+<div id="disqus_thread"></div>
+<script>
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'erambler'; // required: replace example with your forum shortname
+  var disqus_identifier = 'tag:erambler.co.uk,2015-04-15:/blog/convert-openrefine-json-to-python/';
+  var disqus_title = 'Converting OpenRefine JSON to Python code'
+  var disqus_url = 'http://erambler.co.uk/blog/convert-openrefine-json-to-python/';
+  var disqus_developer = 0;
+  if (window.location.hostname == 'localhost')
+    disqus_developer = 1;
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+</div>
+</div>
+</article>
+</div>
+<div id="sidebar">
+<div class="sidebar-box about-me h-card">
+<p>Hi, I’m <a href="http://erambler.co.uk" class="p-name u-url">Jez Cope</a> and this is my
+blog, where I talk about technology in research and higher
+education, including:</p>
+
+<ul>
+  <li>Research data management;</li>
+  <li>e-Research;</li>
+  <li>Learning;</li>
+  <li>Teaching;</li>
+  <li>Educational technology.</li>
+</ul>
+</div>
+<div class="sidebar-box links">
+<h2>Me elsewhere</h2>
+<ul>
+  <li><a href="https://twitter.com/jezcope" rel="me">Twitter</a></li>
+  <li><a href="https://github.com/jezcope" rel="me">github</a></li>
+  <li><a href="https://linkedin.com/in/jezcope">LinkedIn</a></li>
+  <li><a href="http://diigo.com/user/jezcope">Diigo</a></li>
+  <li><a href="https://www.zotero.org/jezcope">Zotero</a></li>
+  <li><a href="http://gplus.to/jezcope">Google+</a></li>
+</ul>
+</div>
+</div>
+<div class="row">
+<footer><a class="license" href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+<img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="border-width:0">
+</a>
+<span href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type" xmlns:dct="http://purl.org/dc/terms/">
+eRambler
+</span>
+by
+<a href="http://erambler.co.uk/" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+Jez Cope
+</a>
+is licensed under a
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+Creative Commons Attribution-ShareAlike 4.0 International license
+</a>
+</footer>
+</div>
+</section>
+</div>
+<script>
+  if (!/^http:\/\/localhost/.test(window.location)) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10201101-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+
+</body>
+</html>

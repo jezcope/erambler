@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../assets/style/styles.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+  (function() {
+    var s, scheme, wf;
+  
+    this.WebFontConfig = {
+      google: {
+        families: ['Amaranth:700,700italic:latin', 'Inconsolata::latin']
+      }
+    };
+  
+    wf = document.createElement('script');
+  
+    scheme = 'https:' === document.location.protocol ? 'https' : 'http';
+  
+    wf.src = scheme + "://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
+  
+    wf.type = 'text/javascript';
+  
+    wf.async = 'true';
+  
+    s = document.getElementsByTagName('script')[0];
+  
+    s.parentNode.insertBefore(wf, s);
+  
+  }).call(this);
+</script>
+
+<title>Archive page 1 | eRambler</title>
+<link href="http://erambler.co.uk/feed.xml" rel="alternate" type="application/rss+xml">
+</head>
+<body class="index">
+<div id="container">
+<header class="page-header">
+<hgroup>
+<div class="h1"><a href="../../../">eRambler</a></div>
+<div class="lead">Jez Cope's blog on becoming a research technologist</div>
+</hgroup>
+<nav><ul>
+<li><a href="../../../">Home</a></li>
+<li><a href="../../../about/">About</a></li>
+<li><a href="../../../blogroll/">Blogroll</a></li>
+</ul>
+</nav>
+</header>
+<section>
+<div class="row">
+<p class="archive-warning"><strong><em>Please note:</em></strong> this older content has been <strong>archived</strong> and is no longer fully linked into the site. Please go to the <a href="../../../">current home page</a> for up-to-date content.</p>
+</div>
+<div id="content">
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../../blog/runkeeper-data/">Investigating my RunKeeper data with Python</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/runkeeper-data/">Sunday  5 April 2015</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Fitness</span></li>
+<li class="p-category"><span class="tag">Python</span></li>
+<li class="p-category"><span class="tag">Data Science</span></li>
+<li class="p-category"><span class="tag">pandas</span></li>
+<li class="p-category"><span class="tag">matplotlib</span></li>
+<li class="p-category"><span class="tag">Data</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This post is a little bit of an experiment, in two areas:</p>
+<ol>
+<li>Playing with some of my own data, using a language that I'm quite familiar with (Python) and a mixture of tools which are old and new to me; and</li>
+<li>Publishing that investigation directly on my blog, as a static IPython Notebook export.</li>
+</ol>
+<p>The data I'll be using is information about my exercise that I've been tracking over the last few years using <a href="https://runkeeper.com/">RunKeeper</a>.  RunKeeper allows you to <a href="https://support.runkeeper.com/hc/en-us/articles/201109886-How-to-Export-your-RunKeeper-data">export and download your full exercise history</a>, including GPX files showing where you went on each activity, and a couple of summary files in CSV format.  It's this latter that I'm going to take a look at; just an initial survey to see if there's anything interesting that jumps out.</p>
+<p>I'm not expecting any massive insights just yet, but I hope you find this a useful introduction to some very valuable data wrangling and analysis tools.</p>
+<h2 id="Looking-at-the-data">Looking at the data<a class="anchor-link" href="#Looking-at-the-data">¶</a>
+</h2>
+<p>First up, we need to do some basic setup:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This imports some Python packages that we'll need:</p>
+<ul>
+<li>
+<a href="http://matplotlib.org">matplotlib</a>: makes pretty plots (the <code>%matplotlib inline</code> bit is some IPython Notebook magic to make plots appear inline)</li>
+<li>
+<a href="http://numpy.org">numpy</a>: allows some maths and stats functions</li>
+<li>
+<a href="http://pandas.pydata.org">pandas</a>: loads and manipulates tabular data</li>
+</ul>
+<p>Next, let's check what files we have to work with:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">ls</span> data/*.csv
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>data/cardioActivities.csv  data/measurements.csv
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I'm interested in <code>cardioActivities.csv</code>, which contains a summary of each activity in my RunKeeper history.  Loading it up gives us this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">cardio</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/cardioActivities.csv'</span><span class="p">,</span>
+                     <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+                     <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">cardio</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Type</th>
+      <th>Route Name</th>
+      <th>Distance (mi)</th>
+      <th>Duration</th>
+      <th>Average Pace</th>
+      <th>Average Speed (mph)</th>
+      <th>Calories Burned</th>
+      <th>Climb (ft)</th>
+      <th>Average Heart Rate (bpm)</th>
+      <th>Notes</th>
+      <th>GPX File</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015-03-27 12:26:34</th>
+      <td>Running</td>
+      <td>NaN</td>
+      <td>3.31</td>
+      <td>29:57</td>
+      <td>9:03</td>
+      <td>6.63</td>
+      <td>297</td>
+      <td>48.45</td>
+      <td>157</td>
+      <td>NaN</td>
+      <td>2015-03-27-1226.gpx</td>
+    </tr>
+    <tr>
+      <th>2015-03-21 09:44:25</th>
+      <td>Running</td>
+      <td>NaN</td>
+      <td>11.31</td>
+      <td>2:12:01</td>
+      <td>11:40</td>
+      <td>5.14</td>
+      <td>986</td>
+      <td>283.41</td>
+      <td>146</td>
+      <td>NaN</td>
+      <td>2015-03-21-0944.gpx</td>
+    </tr>
+    <tr>
+      <th>2015-03-19 07:21:36</th>
+      <td>Running</td>
+      <td>NaN</td>
+      <td>5.17</td>
+      <td>52:45</td>
+      <td>10:12</td>
+      <td>5.88</td>
+      <td>423</td>
+      <td>75.23</td>
+      <td>150</td>
+      <td>NaN</td>
+      <td>2015-03-19-0721.gpx</td>
+    </tr>
+    <tr>
+      <th>2015-03-17 06:51:42</th>
+      <td>Running</td>
+      <td>NaN</td>
+      <td>1.81</td>
+      <td>17:10</td>
+      <td>9:29</td>
+      <td>6.32</td>
+      <td>144</td>
+      <td>23.27</td>
+      <td>137</td>
+      <td>NaN</td>
+      <td>2015-03-17-0651.gpx</td>
+    </tr>
+    <tr>
+      <th>2015-03-17 06:21:51</th>
+      <td>Running</td>
+      <td>NaN</td>
+      <td>0.94</td>
+      <td>7:25</td>
+      <td>7:52</td>
+      <td>7.64</td>
+      <td>17</td>
+      <td>3.65</td>
+      <td>136</td>
+      <td>NaN</td>
+      <td>2015-03-17-0621.gpx</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Although my last few activities are runs, there are actually several different possible values for the "Type" column. We can take a look like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">cardio</span><span class="p">[</span><span class="s">'Type'</span><span class="p">]</span> <span class="o">=</span> <span class="n">cardio</span><span class="p">[</span><span class="s">'Type'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">'category'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cardio</span><span class="p">[</span><span class="s">'Type'</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">categories</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Index(['Cycling', 'Hiking', 'Running', 'Walking'], dtype='object')
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From this you can see there are four types: Cycling, Hiking, Running and Walking. Right now, I'm only interested in my runs, so let's select those and do an initial plot.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">runs</span> <span class="o">=</span> <span class="n">cardio</span><span class="p">[</span><span class="n">cardio</span><span class="p">[</span><span class="s">'Type'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'Running'</span><span class="p">]</span>
+<span class="n">runs</span><span class="p">[</span><span class="s">'Distance (mi)'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f716d914ac8&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYUAAAEQCAYAAABfiGi4AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz%0AAAALEgAACxIB0t1+/AAAIABJREFUeJztnXe4XFX1v9+VmwKEElJoISHUhCZNQIlCIk16MXQEBFRE%0AqaKCiiKiIvBDREERRBTpShU0XyCGYkBAepGeUIO0FHrJ+v2x9rn3TLlzp5yZs+/Mep9nnjunzufu%0Afc5ZZ621i6gqjuM4jgMwIG8BjuM4Tjy4UXAcx3G6caPgOI7jdONGwXEcx+nGjYLjOI7TjRsFx3Ec%0Ap5vcjYIYt4nIfBF5TUTODOsWF5EbROTdsH3pvLU6juO0O7kbBbWOEocBI4G1gInA9sAxwGvAssAd%0AwIl5aXQcx+kUcjcKAKp6v6q+DywAPgReBXYETlPVOcDJwC45SnQcx+kIojAKACLyETAb+I+q3gmM%0ABmYBqOobwGARGZSjRMdxnLZnYN4CElR1oIiMBa4QkZ172U1KVoj4OB2O4zg1oqolz1OIyCgAqOpz%0AInIl8EngRWAc8ICIjAA+UNUPejlOROQCVT2gZWJ7IRYdEI8W1xGnDohDSwwaEmLR0mwdlV6mcw8f%0AichyIrKRiCwkIqsAuwP3AtcCx4jIcOBY4Oo8dTqO43QCMXgKCwNnAWsCrwPnquqVInITcCnwEnA3%0AsFsf55nZTJE1MDNvASlm5i0gMDNvAYGZeQsIzMxbQIqZeQsgDg0JM/MWEJiZ1w/nbhRU9WlgwzLr%0A5wHb1nCq6VlpapDpeQtIMT1vAYHpeQsITM9bQGB63gJSTM9bAHFoSJiet4DA9Lx+OPfwkeM4jhMP%0AbhQcx3GcbqS/z7wmItpb0yrHcRynlErPTfcUHMdxnG7axiiIyKS8NUA8OiAeLa6jkFh0QBxaYtCQ%0AEIuWPHW0jVFwHMdxGsdzCo7jOB2G5xQcx3Gcqmgbo+CxwFJi0eI6ColFB8ShJQYNCbFo8ZyC4ziO%0AEwWeU3Acx+kwPKfgOI7jVEXbGAWPBZYSixbXUUgsOiAOLTFoSIhFi+cUHMdxnCjwnILjOE6H4TkF%0Ax3Ecpyraxih4LLCUWLS4jkJi0QFxaIlBQ0IsWjyn4DiO40SB5xQcx3E6DM8pOI7jOFXRNkbBY4Gl%0AxKLFdRQSiw6IQ0sMGhJi0eI5BcdxHCcKPKfgOI7TYXhOwXGcjkGElUUYmreO/krbGAWPBZYSixbX%0AUUgsOiAOLU3QcCqwdT0HxlAe4DkFRGQ5EfmbiMwVkRdF5PCw/jQRWZD67Jq3VsdxomcQMDhvEf2V%0AKHIKIrIisBHwD2AMMA2YDBwA3KeqF1c41nMKjuN0I8LfgYtU+XPeWmKl0nNzYKvFlENVnwWeDYtz%0AReR+YOmw7A98x3FqoQvzFpw6iCJ8lEZEVgbGATPCqrNFZJ6IXC0ioyocN6kF8vokFh0QjxbXUUgs%0AOiAOLU3Q0EWdL7wxlAfkqyMKTyFBREYAlwMHqup7InI2cCJWyadgCaQDyhx3Qfg7CZgD3K+q01Pr%0AaNUysK6ItOz3+snyukBMevJejqY8iON6zbg8rh4BOw3qx+XRTcbnm4S9cFckipwCgIgsDkwFTlbV%0Aa8psXxv4k6quV7TecwqO43Qjwu3A5aqcmbeWWIm+n4KILAxcB5ybNggisqmILCEiSwKHAffnpdFx%0AnH6D5xQaIAqjAEwEPgucl2p+ug/wZWAW8AwwHPhWbyfwWGApsWhxHYXEogPi0NIEDQPxnELdRJFT%0AUNWbKG+gLmq1Fsdx+j3uKTRANDmFevGcguM4aUR4ALhKlRPy1hIr0ecUHMdxMmQg7inUTdsYBY8F%0AlhKLFtdRSCw6IA4t3k+hlDx1tI1RcBzHCXhOoQE8p+A4TlshwjPA9aoclreWWPGcguM4nUTdTVKd%0ANjIKHgssJRYtrqOQWHRAHFqalFOoK3wUQ3mA5xQcx3GypO5Es+M5Bcdx2gwRXgOmqrJP3lpixXMK%0AjuN0Eu4pNEDbGAWPBZYSixbXUUgsOiAOLZ5TKMVzCo7jONnhrY8awHMKjuO0FSK8D0xTZZu8tcSK%0A5xQcx+kkPKfQAG1jFDwWWEosWlxHIbHogDi0ZKlBBMFzCg3RNkbBcRyHnmeaewp14jkFx3HaBhEG%0AA+8Dd6mycd56YsVzCo7jdAoDi/46NdI2RsFjgaXEosV1FBKLDohDS8YausJfzynUSdsYBcdxHHqM%0AgnsKdeI5Bcdx2gYRRgKvAk+psmreemLFcwqO43QK7ik0SNsYBY8FlhKLFtdRSCw6IA4tnlMoxXMK%0AjuM42TAQ+Aj3FOom95yCiCwH/A74LPAW8HNVPVNEFgcuBSYD9wBTVPWVMsd7TsFxHABEWBF4EPhA%0AlRF564mV2HMKQ4ALgbHA1sD3RWRN4BjgNWBZ4A7gxNwUOo7TX+gC3sM9hbrJ3Sio6rOqepmqzlXV%0Ah4H7gaWBHYHTVHUOcDKwS6XzeCywlFi0uI5CYtEBcWjJWMNArEez5xTqJHejkEZEVgZWwDyD0cAs%0AAFV9AxgsInVVtOM4HYN7Cg0STcGJyAjgcuAgVX1XpGy4q/xKkQuAmcG6zgHuV9XpYdskgFYtJ+vy%0A+v30sqpOz/P308vpsvHyiKM80hrapTxg741h3y7YdpCNmCqb9cfyaFL5TgLG0Qe5J5oBQlJ5KnCy%0Aql4T1t0P7K+qDwSD8ZiqLlXmWE80O44DgAjrA+cDawODVfk4Z0lREnWiWUQWBq4Dzk0MQuBa4BgR%0AGQ4cC1zdx3kmNU1kDcSiA+LR4joKiUUHxKGlCf0UPgI+pI68QgzlAZ5TmIg1Rz1PRBaEz97AacAI%0A4CXgU8APctToOE7/oAv4GO+rUDdRhI8awcNHjuMkiPAZ4BRgdWAlVd7MWVKURB0+chzHyZAkfOSe%0AQp20jVHwWGApsWhxHYXEogPi0NKEnMLHeE6hbtrGKDiO4+A5hYbxnILjOG2DCNsARwCrAlup8nTO%0AkqLEcwqO43QK7ik0SNsYBY8FlhKLFtdRSCw6IA4tnlMoxXMKjuM42ZDMp/ARdQ6K1+l4TsFxnLZB%0AhN2B3bAxfg5V5e58FcWJ5xQcx+kU0jkF9xTqoG2MgscCS4lFi+soJBYdEIeWjDUk4aMPqSPRHEN5%0AgOcUHMdxssI9hQbxnILjOG2DCAdhg2yOBk5XZWrOkqLEcwqO43QK3vqoQdrGKHgssJRYtLiOQmLR%0AAXFoaWI/Bc8p1EHbGAXHcRw8p9AwnlNwHKdtEOEoYAVgaeBaVS7JWVKUeE7BcZxOwT2FBmkbo+Cx%0AwFJi0eI6ColFB8ShxXMKpXhOwXEcJxu89VGDeE7BcZy2QYQfYMZgOPCoKmflLClKPKfgOE6n4DmF%0ABmkbo+CxwFJi0eI6ColFB8Shxcc+KsVzCo7jONngnkKDeE7BcZy2QYRTgVeBxYAPVPlxzpKixHMK%0AjuN0Ct76qEGiMAoicomI/E9EHkqtO01EFqQ+u/ZxjklNF1oFseiAeLS4jkJi0QFxaPF+CqV4TgF+%0ABWxdtE6BfVV1QPhcmYMux3H6F55TaJBocgoisgpwlaquHZZPBe5X1Yv6OM5zCo7jACDCOcB9wMLA%0AWFWOyllSlPTnnMLZIjJPRK4WkVF5i3EcJ3rcU2iQmmNuLeRs4ESskk8BTgUOKLejiFwQvs4E5mAe%0AxvSwbRJAC5ePzPn3u5fTccmc9ayrqmd4ecRVHmE5hus1s/KAi0fD86vAd54FBvbT8iBZl+X5gEnA%0AOPogpvDRysDVSfioaNvawJ9Udb0y21RVRUQm9VwY+RGLDohHi+uIUwfEoSVLDSJcCNwIDAY+rcpB%0AeWlphGbrqBQ+iskoFOcUNgUewEJcPwcGqeqXyhznOQXHcQAQ4WLgeiwK8jlV9s9ZUpRUem5GET4S%0AkduBTcL3BcBRwCeBHbBWSDcDh+Qm0HGc/kKSUwDPKdRFFIlmVf1MqunpAFX9pap+UVWHqeqSqjpF%0AVV+rdA5vX1xKLFpcRyGx6IA4tGSswcc+apAoPAXHcZyMSDyFBbinUBfR5BTqxXMKjuMkiHAdcC4W%0Adv6KKjvkLClKos8pOI7jZEQXFj5S3FOoiyhyClngscBSYtHiOgqJRQfEoaUJOQUf+6gB2sYoOI7j%0A4D2aG8ZzCo7jtA0iTAdOwDyFU1SZmKugSKn03HRPwXGcdiIJH7mnUCdtYxQ8FlhKLFpcRyGx6IA4%0AtGSsIT2fQs1GIYbyAM8pOI7jZEVDk+w4nlNwHKeNEOFe4MvAO8BVqkzIWVKUeE7BcZxOwT2FBmkb%0Ao+CxwFJi0eI6ColFB8ShpUk5hboSzTGUB3hOwXEcJysaGhDP8ZyC4zhthAhPAtsBc4GHVFkqZ0lR%0A4jkFx3E6Bc8pNEjbGAWPBZYSixbXUUgsOiAOLU2aT8FzCnXSNkbBcRwH9xQaxnMKjuO0DSLMBtYD%0AXgPeVXXDUA7PKTiO0ymkw0ddIvgLY420jVHwWGApsWhxHYXEogPi0NKMfgqqKBZGqslTiKE8oHk6%0ARDhahKUr7dM2RsFxHIeenAJ4XqEcewGrVdrBcwqO47QNIrwDjFLlbRHmA6NVmZe3rlgQ4T7gOyBT%0APafgOE4n4J5CZQYCC1XaoW2MQrvHAushFi2uo5BYdEAcWpo09hHU0VchhvKApuroolOMguM4nU1o%0AaeSeQmX69BSiyCmIyCXA5sArqrp2WLc4cCkwGbgHmKKqr5Q51nMKjuMgQhfwoaq97IowC9hMlZm5%0ACosIEZ4BTgY5J/acwq+ArYvWHYN1QFkWuAM4sdWiHMfpV6S9BHBPoRsRlgtGs3+Ej1R1BjC/aPWO%0AwGmqOgc4Gdil0jk6IBZYM7FocR2FxKID4tCSoYak41qC5xR6+CvwaayMFq60YxRGoRdGA7MAVPUN%0AYLCI1DzAleM4HYN7Cr2zCjCENmx9VDYGJiIXAJNE5AQROTJtZUVkUiuXk3V5/X56WVWn5/n7xWXh%0A5RFXeZTT1M/LowtuTp/zI9j/U/2tPERkkqpOz+5847aB6SNh4wNgnyVg0y9QgSgSzQAisjJwdSrR%0AfD+wv6o+ICIjgMdUtWTCDPFEs+M4gAgjgcdVGRGW7wK+ocpd+SrLFxHWBB7GJh+6GPgDyJGxJ5qh%0A1Au4FjhGRIYDxwJXVzy4yNrnRSw6IB4trqOQWHRAHFoy1FAcPur4nIIIXwKSc3VRRfgoinibiNwO%0AbBK+LwCOBE7DmqS+BNwN7JabQMdx+gOeUyjl/NT3qlofRRM+qhcPHzmOAyDCGGCGKmPC8s3Az1S5%0AKV9l+SFC+gG/G3AJ8FeQPfpD+MhxHKcRBlLoKbxHH80vO4iPqTJ81DZGod1igVkQixbXUUgsOiAO%0ALU3MKbwClecOaKKWhshQx9Ph73P05Fc6wyg4jtPxdFHYeW02sExOWmLhpfD3v1g/BegUo5C0682b%0AWHRAPFpcRyGx6IA4tGSooTh89DI2TE4eWhoiQx0CbAb8jx5j0BlGwXGcjqc4fOSeghmFBVi5DA7r%0A+u0wFzXRhrHAholFi+soJBYdEIeWjHMK6fBRzZ5CDOUBmeoYAChWLp0VPnIcp+MpFz5yT6HHU6gq%0AfOT9FBzHaQtE+BTwS1U2DstDseH3F1Glfz/o6kSEfwNHAPtgI1EfC7wKspT3U3Acp90pCB+p8jbW%0Aq3nx3BTlT+IpJOGjt+mU8FEbxgIbJhYtrqOQWHRAHFoy1FAcPgJLNledV4ihPKApOYUkfPQWnWIU%0AHMfpeIpbH4HnFYpbH71DTyuksrSNUWjD9sUNE4sW11FILDogDi0ZaihufQQ1egoxlAdkqqO49dFH%0A2PAfFQ9wHMdpB8qFj9xTKGx91DlGoQ1jgQ0TixbXUUgsOiAOLU0c+wg8p5DOKQymk4yC4zgdT7nw%0AkXsKPUZhSPj7bqUD2sYotGEssGFi0eI6ColFB8ShpYljH0GNQ13EUB5QvQ4RxotUHAl2AIVNUt1T%0AcBynY+it9VFNQ130M47FOqf1RrGn0DlGoQ1jgQ0TixbXUUgsOiAOLU0c+whq9BRiKA8o1CHCkhV2%0AXRTYsvR4NhJhNwoTzUn4qDOMQisRYULoQu84TjyUCx+9BiwhUrltfqyIsDZwc4VdFgE2EGF40fqN%0AMWPRuU1SWxwLvAKYJcL3RejKUUdFYtHiOgqJRQfEoSXjfgoFRkGVBcCrwFK9HSTC7mHcpCjKAwp0%0ALEsq/CWCiDAwtetQbEyjzxWdYhBmJMs1Se2MRHOLWQg4ANgPmJivFMdxAuXCR9B3XuHbwKZNUdQ4%0Aw4ERIiSD130GuDa1fShwA6UhpEFYeRQ3Se2c8FGLY4GDgYeAqcCGOeqoSF9air2cvHS0CtdRSgxa%0Amjz2EVTIK4iwFLABMCxjLQ2R0jEce8AvGpZXpdDADQWuBrYoOkWxp9B54aMWMxj4ALgb2ChnLY1w%0AsQgH5i3CcTKiXOsjqOwpJG/Yw5qiqHGSXMGI8HcMsERq+1DgLmCoCCul1g+m1FPorB7NLY4FJkbh%0ALoo8hVhiklBZiwgjgV2wMFhuOlqJ6yglBi1NHvsIzFNYQYTJZbZtDfyLYBRiKA8o0JEYg5Hh7/KU%0AGoW3gJsoDCGVyym0R/hIRF4TkQXhMy9vPYHEKDyBxftG5aynHnYD/gasJcLovMU4Tgb0Fj56GWvP%0Af7NIz9wKIgwAtgIuo/BBGxNlPYVUjmEoNkfCjRSGkIpzCunwUb9PNH+oqgPCp9fJMnLIKXwQWjbc%0AA3yyLx0inCxSecLsrOmjTPYBzseSVrvlqKNluI5SYtDS5LGPAK7HrvcZFHr2n8Ba7txL3DmFdyg0%0ACl1YuKgLe9C/i3kKn0vlCROjkPYUBtBJ4aNWESz0YGxGJ6girxCMwbeBlZurrjpEWBFYDUuUXwbs%0Aka8ix8mEsuEjVWapcilwB1jT08DW2D0wh7hzCk/SYxSWx4zEElgfhXdUUVVexMJk64f9kvBROqcA%0A7RA+ArpEZI6IvCAi3+ptp2bFAkX4ukiBazkQ+Ch4CVCUV+hFx6qYxR7bDI29UaFM9gKuUOVD7A1j%0AVRFWyEFHS3EdpcSgpcljH6W5kz6MQgzlAQU6uo1CCH11Ac9jRiEJHSWk8wpJojk9zAW0iaewGTAK%0A+Dzw1XLunYhcICInhM+RhV3EZVIjy3Djj+HQ/XqWx24O01JvI5O64MaJSYyv3PnghF3D4phG9WSx%0ADBdNBO4PaybCRXcAu+elx5d9OaPlLjh3+Qrb74SbPivSNUmERYENYdxHMHZtUuGjiP4f4MZl4Lz3%0AME9hefj7G3DdgqB3KEz9OLX/jXD1lLAcPIUbF4JNNobjJsAJwOabwCenUAkNvkd/+ACnAUcUrdPw%0Ad1L2v6cLgSrolNS6JUHfTC0L6Mug43rTAXo86AegJ7W4vMqWCeh5oAenljcHvafVOnK4flxHhFp6%0AuWdGgX6+tvPoj0B/2Mc+z4OuDLoD6LSwTkA/BB0UQ3kkZZLSdQDoxaBbg94IOhV0G9BPgD6U+t8W%0AA50PukjYfzroK6DLgG4bnmVngB6UPDfLfaL2FERkKRFZR0QWEpG1gZ3pfsNtCWPC33THl6TlEQCq%0AKGWaphYxAWv2NqbCPpkRusIXd3uvxC3A8iKs0ixNjlMt4S3+BuBKkZrumd4SzWmSEFISOkru4bnE%0A1wJpMSzUM5tuT4EXsHBXSfhIlfnAfVjv7HJNUsGeXf06fDQM+DPwJtZ88mxVvaXcjtqcWGCSA0gb%0AhUGkjEKgO9nci47xWJOxphgFEXYRIZ1vWRq4GfSZao5X5SPgr4QQUtY0qW5qxnWUEoOWtAYRBgF/%0AwV7+zgSOr+FUfeUUoIxRCMwBhsVQHtBdJsOBN4DXMaMwBssnJAasOKcAllfYgp7WR0mZJCHv9+nP%0ARkFVn1DVtVV1YVVdQVVPb7GEFbAC7dVTCPTqKYRcw3hspMNmJZoPAY4TYaGwvHz4u3MN5/BWSE6u%0AhHvlPKxl39eAU4BdRVhFhMEirCzCZBH2F+F4Ec4VYaoI3wmn6K3zWpo7gS9gb+EPptbH2AIpbRRG%0A0uMpzKU7p1BiFP6LPbcGYwZhUaxzW9t4ClVTmJzJjLHYGEfFRuHDov3uwYav7SqjYzms4h7CQjRC%0AhogwDPg08Ch2sYNdPG/BNV+q4VS3AyNFmJClPoiy7XeuxKID4tCS0vBT7AVqT1U+UuUN4BfAA9iD%0A7WYsW7oFNmTDPcAfgWPCyKHVhI/uxRquTNWeFoQQjEIM5QHdZTKC2j2F+ZjBGwQsjIWPPqCnXPq3%0ApxABYzEvoKKnEC7e2VD2gToeeFyVd7ALO+vez9sAt2I3z5fDuuWBv8Ciq1bb2zrcIFfg3oLTJEQY%0ALsLevWz7BrArsL1qwYPup8AqwMKqjFNlM1W+qMr3VDlHlYuBZ4DJVBE+UuVdzDD8o2hTjJ7C1lgY%0AbR5mBFeiQk4hMB9YHDMKw4D5IWeSeFAf0AY9mquiSbHAFYB/Q8EcqOXCR2DGY6MyOiZgLh2Ylc86%0Ar7ATNkridcAEEcZjRuFJ2PwfwA41nOsyYI+svZnI4rS5E4sOaLmWTwE/KKNiJHAc8HlVXivYYg1i%0AXlat+LC/HMuHVRM+ArtnLi9aF1VOAfRB4EDgjPBQfwPr/NqXpzCPHk9hScxIQCeGj5rEWMxFXVqE%0AzUU4it6Nwt2UzyuMBx4P3zM1CiIMwfpvXKfKB1hSfi9gNPZGcSX29lUtd2IX2lpZaXScFKOBsemX%0ADhHWAn4DbKfKs3We9y/Y4I4L0Xf4CFVmlzEymbY+EmHLMHJAvRwGXKXK82H5dawn81wq5xSS8NFg%0ArMfzW2F954WPGokFhiacJ6Wn2AyDZY0BnsIKdivgYPrwFMromEChUdg4wzfxycDDqrwSlu+Dbk/h%0ABRg/F9hUhMWqOVl4I7kc2DMjfUAccWtwHeVosZblsDj3SPttBDgLTv+zav1NzVWZhfX63ZIqjEIv%0AZJ1TOBH4XT33ujXJvekoLNGe8DrwfFHz2b5yCskyFIaPOsMo1EKZiloR+B4Wv0xYCpgXcgGzgTWB%0ANTBDUc4o3G/bRxXPBTuenvDRb7Fwzj9EWK2hf8LYGbgmtfwM5mIGo/DE21j/iG1qOGdTQkiOA92j%0A8SZDquwFLAbfuy6Dc1+O3ZvVhI/KkVlOIbxQroU9V2oJ3yZ8Bd64T7X7ZRLMKLwQvlebU0iWoRM9%0AhWpjgSJsAjwjwldSq9cHbgN2E+EzYd0KwHPhe2IUFEv+lBiFYDweh//NTf3WaCyxPDPs8xCwHtY+%0AeoYIP017J7UQLrwkn5DwND1G4cVQJrWGkP6DtVhYv68dqyWWOK3rKKXFWpbDHkpjwzg+pwJfV313%0AWgbn/kv4W6+n8D9gtYzKYywW2/8acHoI8/ZJaHa7GXA07H500ea0UejVU1DlfayzWjJTW7mcQmck%0AmvsihIgOwR6iPwOOF+kOk6wHTAMOBc4XYRGsYmeF7bOBcVizzS0p7ylA6YippwK/SMcvVflQldOx%0AYXtXAB4T4Qt1vJlvCLyhypOpda9ibZuHpFpwXAt8PtWHoSLBPa25z4J7Fk4VjMZydCsARwM3qnJH%0AFicOsfcZ9H5v9sW1wGgRbhDhEw3KWRt4SJUbsabih5fbKTyTxotwmAjXYffvqcBpqtxXtPts6M65%0AVMopgBmCZFTVJKeQ7rw2p5L4tjEKlWKB4YF4Hpa8majK74B9ge+HXSYDd6hyNfamfCKlngLY28hS%0A9H7h3QWXbh9+czIwkcKQVDeqvKTKPsAXgR8BU0PLoWrZmUIvIXmgg71VICKTQr7hofA/VstlwO7V%0APuiD7hdEWK/89jhi6K6jlBxyCndgTSu/jI1llqWGKRSGU6smNFVdH854Evg/Ef7UwMjBa2P3HMA3%0Age+IWAvG0Cx3igjnYhGEm4B1gQuBlVTZSJUzypTJzwjlhXkhi2K5g96MwtDUd0h5CqnnRFnaxij0%0ARhg75VYszrZx6s36NmCYCJsDqwP/DOsPwybk2JVCTwFgOvbAreApLLF66Kr/a+CoEFbqFVVuwTyV%0AvwP/EuFnVYaU1oWyb1nbh/OlmQbdYbFqeBCLO25c5f4TsIvuHyIFQxM7DmChEayJ5D3Y/TVTlYez%0A/I3QdLViaKSP4z+Ao67C5hqZCdwrwv8T6X7rrpZuoxCeN3/AxnG6E3umHAg8grUcHKvKQapcrmov%0Ac71oeyt5loTIw9tYU/nejELx93T4qCJtYxTKxQJDfO4uwrg+qt2uVLqz1u/padJJaCd9ONZLuNhT%0A+B82eFxvBfsIbDMcG6/lBeCq6rTzoSq/wC6mMVhIaUofb+qjgRfLnOt6VYs9psrkDmCTarSEc9Qa%0AQhqDjU31JeBaESYVni+OGLrrKKWFWpbB7p9nMeNwTg4a+kRVp6syT5UfYHnEhYHHRTguhJWrIe0p%0AAPwYe+n7LjBSlW1VOUOVx3p7a6+iTOZiz4ByRiE9bXG5JqkVaRujkCbE6g7HWiTsr8rPeyn8K7Aw%0A0RXplapcgbVGmhFWJU0+38BCNrMoQxhY7j5slrXD+nLTyhz/sir7YiGlH2JubG/DTixHGaPQC3cC%0AnwweTLVchiXeq7lGxmLN5W7AmrNeLsLna/gtp/1JrtensfvnL5V3z5/Qn+FQ7IVqfeAJEQ4OQ2qU%0AJXhEK9PT4pBgZE5SZVpIBGfBXGrzFNJNUivSNkYhicEFa/4nzEX7tCr/V+GwO7GYf8k+qvxUtdtD%0AmI11F/9AlQtV+XHvpzz7MeBEVZ6o5/8Iv30LdhFeD9wuNr9z0pogyZEsBoW9P4tJykSVOdiNWHUC%0ATZVHsdFpJ1ax+xiCV6XKNCzf8UcRdknryBvXUUoztISXsj1EGCvCXiJMBS4GZoUQyYrpsGrs5aHK%0AE6rsho0tti/woAg79eLJj8f+z7rDWL3pKGIO9vyuNXzUWZ6CSHcLoQHAJqpUHDpalQVhDJW+Cuop%0AbBjfKvj6xarlk8u1EEJKZ2Cu6GjgURF2CxficsDsogG9+mIGNYSQAhVDSKmbYix097xElRlY34jf%0A9DbWjdOeBG/0IszTfQQ4FuufszNwABQ0iOhXqPJvrMHGN7GQ0O0iJS9NxaGjZpE0ffecQu/oQOzN%0A/0Jg377U0JG/AAAXCUlEQVQSvDWdWXlbtbulUh/7ZhsfDSGlL2JvKD/AvJrPUUXoqEjLDCxPUguX%0AAVNE6CreIMJxwMlhsdtTSOm+FxvN8lTQKCbviSV2HYsOyE6LCGuJ8AD2sNoY2AB7WdhAlatUebC3%0Ae7I/lUcYi+nvWGOOc4CLRbhGhDXCLpkYhSpzCtC7UUgMb3GT1M4wCmITzFwI7KXKL/rrm0glVLmV%0AnpDS6VSfT0io2VMILSdexObJ7iaEso4GvizCElgSsVzS+2FgEtYn5Iga9Tr9i2eB/bBWceup8q4q%0Ab4Y8W9uhyseq/AkLF90CTA/NTDegtZ5COUM7j56Hf2I0Oi58tAdsfoRqd7PS3GhmfDQVUloNCmZa%0Aq0bLk8CioZd1LZQLIR2MNeG9DTMOr6qWzDGRaH4Stvg2cFjwLnIjlth1LDogOy3Bm34gxN/n9X1E%0A9hqyoFYtqrwXOqOuhnkPW5KBUagyp/Celh89dj49RiExGsl+Ze/TNL1m0fsZn4Vp1bap7/ekEuC1%0AHKMidYWQLgfuFuEbqnwYYsZHYR2FRmGey52VT3HzK9i8sTcFL+P77ejNOZ2LKnNEuAIbH63e0V5r%0AYS7lQ0dgRiF5+CcJ78Rj63MYkLYwCpbpjyMuGXl8tJ4Q0kwRnsbyGFOxceufUeXuVK6h4kQ+iY7Q%0Ab+T/gKEiHNVqwxBL3cSiA+LQEoOGhAa1XAWs1cvbe9Y6qjUKSWOURFOfoxS0S/jIqY56WiBBYQjp%0ACEJ3+3Dx30EfTWMTVHkVa72xMXBOuQS24/RXQujsiy36uTn0bhTm0WMUBkJBi6/OMQqxxCVj0QFl%0AtdyDtY5YuMZTXQHsJMKaWIuS9FSGk+ljXKW0jtBnYitgVawvQ8u81VjqJhYdEIeWGDQkxKKlCh19%0AeQpJTqH4xavPF7G2MQpO34QmgY9gLSRqOe4FbLTHc4ErtHDU1/dr7aijynxgW2wkx8urHVq4vyNC%0AlwjLwBdXEWE7Ef4gwmwRbhPhdyIcKcLWIozxUWedPngUm4K3HOnwUfFLV58vYaLav/N9IqKq6jdQ%0AlYjwS2xspy+rcl4Nx30D+BU2yuyMvvav8pxDgEswz2XXRnuB5kXwdpbGOhUuGz7p78nyKKyX+EvA%0Ay9j833/ChlpZAxuYMfm7KDZUwqPAY+HzVPjJIeEzuOhvb9+r3X5aaIPv9GPCgJq7YQPxfSp0ukME%0ABRZXZX6l56YbhQ5DhD2AS6ndKCyFGYW9auxJ3dd5BwIXYL22dwxeRBQEo7UMlR/0y2JzWLxGz8P+%0A5aLvyfIrvTXdLfPbS2LGIfmsgQ05/TEWGng/fMp9r3fdI6q8XGMxOZEiwt+x+7Vk/oSOMAo2d0D+%0ArRhi0QHltYShxJ+jRqOQtY4iTV3Y5O2fxx6gH2OtJj4u+jS47vzl4MCZvey3BKUP/sWxkT37eti/%0AWksnrdivkU7UkBCLlmbrqGQUom+SKiKTgfOx+POZqtrbcBPrYvMd5E0sOqCMFlWeF+me1i83HWlU%0A+ViEr2ID9i2EJcOSz4Ci5Urr+9j31vFw4NupdYNSvzcfm3cj/bB/LUuvKEXU10iHakiIRUtuOqI2%0ACiIimEE4HJsR7WYRuV5Vy00uk8mk2xkQiw7oXcut9DF5d4t0dBOazD3QTBEifxyqesFPmvkbVdIf%0ArpFWEoOGhFi05KYjaqOAWcs5qnodgIici82Ilsm8rh3MwVTR3d1xnM4j9iapoymc0ObZsK4c45qu%0ApjrG5S0gxbhyK8NgZa0cqKysjhwYl7eAwLi8BaQYl7cA4tCQMC5vAYFxef1w1IlmEdkeOFhVdw7L%0AuwJTVHXv1D7x/gOO4ziR0l8TzS9gbbgTVgzruvHmqI7jONkRe/joQWCYiOwoIqOxWPjVOWtyHMdp%0AW6L2FFR1gYgcBPweGAn8SlUz6U3rOI7jlBJ1TsFxnOwQkQGq2ox+F04DxFYvsYePuhGRSSKyuogM%0ADsu55RJEpNZRRpuCiCwqIotGoGMbEdlaRJaIQMvIPK+NlI5hIrJsBDp2EZHDRGRI8LxzKRsRWVFE%0AFsnjt4t0jBCR9cP33J5/InKAiPxZRBaKySBA5OEjABFZFbgIG3bgWWyMmV1z0rI08FvgIxF5UlW/%0Am4eOoOUUYAfgaRE5C7hZVfuclDtjDasDf8ZCe09gLxmbt1JDSssywHnYcBUPiMjxqvpmTlpOBfYG%0A7hWRqcDvVTWvwf6OxXprzwKuzUOAiOwHnAkcj42flQsiMgq4CVgSGJvHw1hE1sKGoh8OfFVVW9mJ%0AtCqi9hTCm8WewAxVHYON/LepiGysLY57icgnsHmJ52Hj9BwYLvaWei0ispCI/BaYiJXHI8AXKGyl%0A1Qodg4DtgOmqugKwI7BsMJwtRUTWweaKeANrjLAzNo5Sq3UMFpELsClPt8BmmZsIDMnjDV1EhmGj%0Ast4GTBSRMWGgsJZMbpR6E38Pm7Z1IxFZM2zLw2N5A7gFeF1ETirS2HTC/3wgsJiqLq2qV6frIgYP%0AFyI1CuGBA3Yx3Q6cEuJur2BDDecRpvgIOF1V91fVadg8xQcAtNJAhTeLW4CjVPVh4CTgk7SoLpO6%0AUdUPgfNV9Zth0+nY4HE7i0irPdCngX1UdT9VfRx7I255qCR4ar8CtlLVx7Dxk4YCi0Dz54xI3TeJ%0AnjmYsXwKWAyb8Q5VbXi6yGpIvYmPA2ZjrQkPCNtads+kroMVsSHJ9wAOEJFhrfAWUveMAmcBt4rI%0ARiJyFPAbETk6tT13ojIKITb9FDBFRLpChd2uqi+FeOggbAL4pg/oJiLriMieqTj5S5jbl1xk72AG%0Aq6lvGyFvcLyI7JBafaWq3iUig1V1PvAkTR62oqhukv/3zbBtV2AScA7wZeAHIrJ4E7UU1807wG0i%0AsoiIPAYcBBwKnCEiE5qoI6mb7ZN1qvofVX1HRI7Frpcu4HfAd5qoI103klo/FthAVS/CpmL9iojc%0AICJrN0lHUi+Lh+Xk5WA2MA34FzBcRA4WkS2aoSH8bnG9JGUyE3vmPYXN4/EHETmuiTrK3TMzsbHH%0A7gS+iBntr4nI95qlo1aiMQoh1rYX9oDbERvHHlX9UALYEBevq+qj4ZimvJGKyIHAfcCRwHpBxxxV%0AnStiY85iY9zPCdua8rYhIisDdwO7A9tLT+Lyw/C7H4Q46ZLAq83QEHQU182y4feTN5u/q+rqqnoJ%0A8BVgX2wE0mZoSdfNukHHgvB5BzhSVYcAX8Lejtdpko503eyQ1E3qbf1yYFFV3Q7zHtYUkfFN0FFc%0AN8ulNr8IzBCRTwHfwqZNfU1VH2qCjnL3TDKUygbY9fk0Flo7G5uUKHPK1Uvq/lwHeDUsd2E5uR3C%0AcZk+SyrcMx9j18buqrq+qv4O2B84VCJpwJKrURCRASIyPCw+B/xIVbfBbuaCMER4AI0CbhGRQSLy%0AN+DUJmgaAjyPPXCmApuJdZwjZRAAdsImtEdE9hKRkVlrwbyTw4D9sDlZd4MSI7QjlnOZLyJfEJGD%0As/jhGusmnUSdhyWdMzcKZepmUrpugpap4e8z2HwIK2WtI9Bb3SQG+5lgpMDm0l2cjDzcPupmp5Rh%0AWg1LeN+Oldd+wLsislkWOlJ6+qqXp4CT6RmS/DJ65hDOmrL1EpgFbC4iC4DPYSHPhaDAgNVNFfdM%0AUi9zVPUvqUPfw0YIzr11FgCqmssHOAKrpKnYfL1DU9u2xNzN1YGu1PqTMVd0LnAjsFRGWnYCfoxN%0Aaj8QGBjWr4vNUrZTogN7wxgFXIxZ+NexKROXzEDH6uH3DgHWTf2eYK7mecAnwvrB4e93sDjlDGwG%0ArS1aXTfYA288cEKom5OAAa2um7B+UNhvNyyGPTkjHbXUzYDwWQZ7S749bB9C6BvU5LpZI1VOuwKj%0AwvdRWKOEhVtUL8m6Q7BQ2lph+WDguGR7C+plnbB+2XCN7pY6/ios19CKeknfM4uE303umRMa1ZDV%0AJ58ftTDQHcDWwNex6Ri/X7TP+cDJRet+Egp3YmpdV4NavhMq5fxQocU6jgV+mVzQYd1K2KxdrwP7%0AZlQmE7C3i3OxcMMDwCqp7atgD9uTio77W9Dy47zqJtyEe2BDkEzMQkc9dYMZhE+EG/1lYM+86iZo%0AORILm5yckY667puwfnDRct0PoBrqJXkYDynavkSL6+UnZY5t6LnRaL1gLw37AjcAn8lKSyb/T8t+%0AqPBtbkvg8fBdgK0wa79lap+x4YLbE7gu3OzDigq17ooNvzsIa176hbDus8A1wP6p/ZbH2uJvh7Ut%0AXhtrUbJL0fkaeusBNgKuTy3/DLi1aJ8dgV9gcdntg44JwPDUPoNaXDfXYq2fJLV9AA14CnXWzQhg%0A7bB+YvH5Wlw322JvgqNIPQDruV4brJtrgE+XK98W3zMbhPXFhqkhb7LOelmi+P/PoV6uxTzI9Dka%0Aumey/LTmR+AUzJp/NSlQLPu+RVgeBXwTC4MMSB33DJZU/U3R+ep+AIcKXC21fCtwdHLRYmGHW4FF%0AUvvsivUHWACcU3S+mh/C4bhNwwWyUljeAWvLPTC1zyxsqPD0cRcGHc+TCp9hLnzNN3sT6qYRQ91o%0A3fwui+skg7p5LpK6ObveumhmvTSgI9N6aUBHNPdMMz7NPTmsijW5moa50g8Dx4Vtx2Lt3JN9t8Pi%0AfyOwt6wTsFjs6NQ+jbi8GwOPA/8Nmn4d1u+OtZoYEpaXwly9vcPyMlge415gowzKZBgWX30Te2N4%0AFFgjbHsK2Dm1777AfanlC8LFvY/XjddNs+vG6yXOemn2p7knh02wTlbJ8lahcgdg7tNlwKFh2+pY%0ATHDR5EJIHTeQxsIRS2Au5PFheZ1wgY3G3nQuA04I2xbGXN89w/LywHapczUattoccy0XS1203w3f%0AD8HerpKbbQ0sTj86LK9VdK5GPCavG68br5d+Vi+t+DSrnX/SdPMhLMyRsAzwnFpHtIext4s/i8hi%0AmIv6bChg1HpjEjqxNdpcLOlm/59wvgdE5BpghKq+KCKnAX8XkXux3sLjsB7MqOoLhKaEIjIwAy0P%0AAz/FmimCxWN3CL/1WxHZEfiliFyKlQmq+mLY95GgY5CqfliPFq+binjd9OD1EoisXppOZv0U0j0p%0AQwGiqvNV9fnUtoUJvWBV9X21NuUHYwnTp7AOHfPS59U6uuRLUQ9jVX0f+KeqvqmqH4c+BRtgbZpR%0A1buBH2JN2J7C2trfWHzejCrzf6r6oPb0Ndgc62yTcGjQ8DNgCqm+GKlyran3stdN1XRs3Xi9FBJL%0AveRCo64Glm3vKl5XbhlrPpm0RNim3P7F52pQ24BedGwIXF5m/0UoTKg1Eiev6KbS08/gCmD18H0o%0AIXENLNeoDq8brxuvl/aol1Z+GvIUgiukam8S64rI4SKyjCYl09PLVEVkBDaE7wARuQ/4m4iMTlwz%0AMQZonZY0edORHr6NXcjd2xJdWMzzerGx9++QngGp3lHVJ8LxXan9a9ah4Q1JRFaS0H09/TamPcNc%0AzwX+JyK/AKZjbjiq+lI4ZmCdOrxuetHhdVNYHl4v3TqiqJfcadSqYC7UFlis7V9YEmiHsC3dHGs1%0ArBXAx2TU0aoPXX8EfprUZ9G2S7Gma+9gbx2Dm/D7mwKvYMMW/5MyHXYwN/g97CL/D0VJMa8br5tW%0A1o3XS5z10upPrQXWVeZiuRAb6GrjsLwf1oZ3ZHJM+Dse6wm5aOrYutr4JxWUVBLm8q2DNfsaH9bt%0AinXDH1R03KCg7xqCC1pc4TXqEHq68w8IF9URoVwOCGV2KRZ/Xbro2LWwST/STerqcje9brxuvF76%0AZ73E9qnvIFgTGBO+r4xZ7aRLe9K1/PDkAihzfF2dedLHp74vFf4uCfwce4vZEBuh8PxyFy+wTNGF%0AUe/FnX5zWJjQeQf4NtbqIenMsjzWnX2N9HGk3rbSN0pDFep143Xj9dJv6iXGTzUF9kvgh+H7atgY%0AH/cDV6Yq8NfAX8L3QdgYIFcBq5Y5X70X9UKEnoxheVFsCNoHsTeKiWH9/uEiPwLr5DKiwjnrfcNY%0AqGj5+1hnnZOxIYoHYK749qmLfirwtYx1eN143Xi99LN6if1TTSF+DrOcg7EmX98L6x/BeiyODhX6%0ABDApbFuODHoypjSMwZI6V4YLfTDwe2ze12WBf2BTHw5Iaf4T1k64pCIb0LFj+J1dCCNNYu2R/4qN%0AbXI4FmcchU30cmm4+HfBeoaun2nled143Xi99Kt66Q+fvgow3fTqrPB9BywJcx02e9EJYf03gP82%0ARaRV0jSspcFBYd0EzOV9CGuzfANwYuqYJbC3ng3S/0udvz8EGwTsVSyOuCY9PRWPA34QLvy5hIHB%0AMNf419ib2Q1k0M3e68brxuulf9dLf/hUW5jLYK0OVsA6ipwd1n8JGz7602E5aTvc6KiUY4DTUudd%0ABkv2HI69SawY1p8KnBa+H41NdbdC6jyXYB1IGr2YVgT+TZnBtLDE2ALg26l122NvY5OxN7ONiy/M%0AzCrQ68brxusl2nrpj58++ymEtrazMQt+BTY5+0gRWR8bNvdv9PTqeyzsr32dtw8mYRfsT0Rk9fD7%0A72EX/j1Yr0GwC+8eERmGXVC3YUNbJ/MGb4sN5tUob2Mu+IYisomITBGRI0Rkc1W9AHvzek9EVhWR%0Ab2Fd8ldT1X9iSbnJIrIkZDs5t9cN4HWTMAmvlz7J6Z7pV0gt/6+IPIclg14DfgScq6rfaoowkWux%0ATilnYr0Wp2ETucwADsRc0g0x9+8L2Exoh2jo4CIiq2LzOb+RgZaB2LSGh2Hz3v4Du4CGYO2pb8bi%0AoOMwF/hIVb0tHDsBeFdVZzWqow+NXjcdXjdeLzVrbNk906+o0t1KklF7Ak+F74untmfelRu7eF/H%0Amohdhw3OdQJ2AX0XOC/sN5zQbK1ZWlLnTsZxT9pYfxsbBCsxrsuny4wWuJ1eN143Xi9x10t/+1Q1%0AzIXaKIADVPVS4E0RmaKq80RkYLO6cqsNuHUL1iJhb6yn4wTMJZ6OuZ5jVfUNVX1UbNLsrmZoSWl6%0AJvxNBvnaEnhEw5WkNjpk0s1+QbK+mXjddGvq+LrxeqlaU8vvmX5FLRYE61Dyb2DDVlgsrJnam4QB%0At4CVw98hrfj9MnoGApthCb1XsBYSo/LQ4nXjdeP10n/qpT99ah0Q79NYYureGo+rC1V9FZuQ+/Kw%0A/HT4+z4UDpbVIj0fYRPCvw/sparbquqryUBZOeN143Xj9VIbLb1n+gu1JpqTySZaiojcgI3b/qb2%0AjKmeO+HCjsLd9LoppNPrxuulOi153DOxU5NRcHoIscdobjanB6+bOPF66R+01JVsBBHpyltDGr+4%0Ae/C6iROvF6ce3FNwHMdxuuk3noLjOI7TfNwoOI7jON24UXAcx3G6caPgOI7jdONGwXFqIAyFsCB8%0A3hWRh8Lon712xhKRZUVkr1bqdJx6caPgOLXzvqoOAEZio4B+Bfhehf1HY2MROU70uFFwnDpR1bdV%0AdTo2OcthIrKSiNwpIm+LyIMi8smw66XAdsG7OB1ARE4SkZfD54ic/gXHKcGNguM0zj3AMGwguj3C%0A969ig8AR1l2vqgNU9WgR2Rsbvno8sA6wa5hDwHFyZ2DeAhynjVgY+D3wKWARYE5YX5xv2ArYDzgk%0ALCtmHLKY8cxxGsI9BcdpnA0wA3A4NsvZ0tiUkpXYPXgOA1S1S1Uva7ZIx6kGNwqOUycisqiIbIbN%0AJHYm5im8hb35HwsMDru+DSwnIoPC8lTgOBFZWUQWEZHJIjK8xfIdpyxuFByndoaIyALgVWwC+POw%0AiefPAvYHZmP3VjLX8eNh37dE5HRVvQS4CpsN7WXgmJaqd5wK+IB4juM4TjfuKTiO4zjduFFwHMdx%0AunGj4DiO43TjRsFxHMfpxo2C4ziO040bBcdxHKcbNwqO4zhON/8f+K4qFsORadcAAAAASUVORK5C%0AYII=%0A">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can notice two things straight away:</p>
+<ul>
+<li>There's a gap at the start of 2014: this is probably where RunKeeper hasn't got information about the distance because my GPS watch didn't work right or something, and I don't want to include these in my analysis.</li>
+<li>There's a big spike from where I did the <a href="http://beyondmarathon.com/12-labours-of-hercules/">12 Labours of Hercules ultramarathon</a>, which isn't really an ordinary run so I don't want to include that either.</li>
+</ul>
+<p>Let's do some filtering (excluding those, and some runs with "unreasonable" speeds that might be mislabelled runs or cycles) and try again.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">runs</span> <span class="o">=</span> <span class="n">runs</span><span class="p">[(</span><span class="n">runs</span><span class="p">[</span><span class="s">'Distance (mi)'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">15</span><span class="p">)</span>
+            <span class="o">&amp;</span> <span class="n">runs</span><span class="p">[</span><span class="s">'Average Speed (mph)'</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+<span class="n">runs</span><span class="p">[</span><span class="s">'Distance (mi)'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f716d5f4fd0&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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%0ArkJggg==%0A">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That looks much better.  Now we can clearly see the break I took between late 2012 and early 2014 (problems with my <a href="http://en.wikipedia.org/wiki/Iliotibial_band_syndrome">iliotibial band</a>), followed by a gradual return to training and an increase in distance leading up to my recent half-marathon.</p>
+<p>There are other types of plot we can look at too.  How about a histogram of my run distances?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">runs</span><span class="p">[</span><span class="s">'Distance (mi)'</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f716d56fc50&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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%0Ac4hL0oT9P7ITKtAl+o5ZAAAAAElFTkSuQmCC%0A">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can clearly see here the divide between my usual weekday runs (usually around 3–5 miles) and my longer weekend runs.  I've only been running &gt;7 miles very recently, but I suspect as time goes on this graph will start to show two distinct peaks.  There also seem to be peaks around whole numbers of miles: it looks like I have a tendency to finish my runs shortly after the distance readout on my watch ticks over!  The smaller peak around 1 mile is where I run to the gym as a warmup before a strength workout.</p>
+<p>How fast do I run? Let's take a look.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">runs</span><span class="p">[</span><span class="s">'Average Speed (mph)'</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f716d4dd518&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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%0A/B+7RvXu6ZuSaAAAAABJRU5ErkJggg==%0A">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Looks like another <a href="http://en.wikipedia.org/wiki/Multimodal_distribution">bimodal distribution</a>.  There's not really enough data here to be sure, but this could well be a distinction between longer, slower runs and shorter, faster ones.  Let's try plotting distance against speed to get a better idea.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">runs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'scatter'</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s">'Distance (mi)'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'Average Speed (mph)'</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f716d43ac18&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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%0A4zgOAP8feamO1YCnE6wAAAAASUVORK5CYII=%0A">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Hmm, no clear trend here.  Maybe that's because when I first started running I was nowhere near so fit as I am now, so those early runs were both short <em>and</em> slow!  What if we restrict it just to this year?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">runs</span> <span class="o">=</span> <span class="n">runs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">runs</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;</span> <span class="s">'2015-01-01'</span><span class="p">]</span>
+<span class="n">runs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'scatter'</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s">'Distance (mi)'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'Average Speed (mph)'</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[10]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f716d35e128&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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%0A">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That's better: now it's clear to see that, in general, the further I go, the slower I run!</p>
+<p>So, as expected, no major insights.  Now that I'm over my knee injury and back to training regularly, I'm hoping that I'll be able to collect more data and learn a bit more about how I exercise and maybe even make some improvements.</p>
+<p>How about you? What data do you have that might be worth exploring?  If you haven't anything of your own, try browsing through one of these:</p>
+<ul>
+<li><a href="http://data.gov.uk">data.gov.uk</a></li>
+<li><a href="http://datahub.io">datahub</a></li>
+<li><a href="http://figshare.com">figshare</a></li>
+<li><a href="http://zenodo.org">Zenodo</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2015-04-05:/blog/runkeeper-data/" href="http://erambler.co.uk/blog/runkeeper-data/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../../blog/bodleian-sherardian-research-data/">Managing botanical data in the 18th Century: Sibthorp's Flora Graeca</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/bodleian-sherardian-research-data/">Wednesday 18 March 2015</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Research data management</span></li>
+<li class="p-category"><span class="tag">Botany</span></li>
+<li class="p-category"><span class="tag">Libraries</span></li>
+<li class="p-category"><span class="tag">Reflection</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>In a classic example of the human tendency to weave everything we see into our own narrative, I recently found myself looking at the 18th century research data of botanist John Sibthorp, embodied in his <em><a href="http://en.wikipedia.org/wiki/Flora_Graeca">Flora Graeca</a></em>.</p>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Hellebores_officinalis_%28Bauer%29.jpg/362px-Hellebores_officinalis_%28Bauer%29.jpg" alt="Hellebores officinalis" class="main-illustration"></p>
+
+<p>It all came about through a visit to Oxford, organised as part of the CPD programme organised by the M25 group of libraries.  We first had a tour of the famous <a href="http://www.bodleian.ox.ac.uk/">Bodleian Library</a>’s reading rooms — quite a revelation for a very STEM-focussed non-librarian like me!</p>
+
+<p>After finishing at the Bodleian, we dutifully trooped up Parks Road to the Department of Botany and its pride and joy the <a href="http://www.bodleian.ox.ac.uk/science/resources/sherardian-library">Sherardian Library and Herbaria</a>.  The Sherardian includes, alongside many classic botanical reference books, an impressive collection of original botanical sketches and specimens dating back centuries (and still used by researchers today).</p>
+
+<p><a href="http://en.wikipedia.org/wiki/John_Sibthorp" title="John Sibthorp --- Wikipedia">John Sibthorp</a> was a English botanist, and was Sherardian Professor of Botany at the University of Oxford, a chair he inherited from his father Dr Humphry Sibthorp in 1784.  In the late 1780’s he took a botanical tour of Greece and Cyprus to collect material for a flora of the region, eventually published as the <em>Flora Graeca Sibthorpiana</em>.</p>
+
+<p>The lovely staff at the Sherardian had laid out several original volumes of Sibthorp’s <em>Flora Graeca</em> to inspect, alongside the various source materials:</p>
+
+<ul>
+  <li>Sibthorp’s diary of his trip to the Mediterranean</li>
+  <li>Original pencil sketches of the flora, painstakingly labelled by Sibthorp’s artist, Ferdinand Bauer, to indicate the precise shade of each part (he used only graphite pencil in the field)</li>
+  <li>The actual specimens collected by Sibthorp, carefully pressed and preserved with mercury</li>
+  <li>The watercolours developed by Bauer on their return to Oxford, based only on the sketches, the fast-fading specimens and his memory (he produced around 900 of these at a rate of roughly one every 1 1/4 days!)</li>
+</ul>
+
+<p>What’s interesting about all this is that Sibthorp was, in reality, a lousy field biologist.  His diary, while beginning fairly well, became less and less legible as the trip went on.  Most of the specimens, along with Bauer’s sketches, were unlabelled. In fact, the vast majority of the material collected by Sibthorp remained only in his head.</p>
+
+<p>Before publishing, Sibthorp felt he had to return to the Mediterranean for a second time to collect more material, which he duly did.  He never returned to Oxford: instead he died of consumption in Bath in 1796, and his work was published posthumously by the University of Oxford only because of some clever manoeuvring by his lawyer and a close friend.</p>
+
+<p>Of course, all of that knowledge, much of his “research data” died with him.  The <em>Flora Graeca Sibthorpiana</em> was eventually published, but only after a lot of work to decode his diary and figure out which specimens, sketches and watercolours went together.</p>
+
+<p>There are a number of errors in the final version which would easily have been caught had Sibthorp been alive to edit it.  A spider’s web on one of the specimens, lovingly reproduced by Bauer in his watercolour, was misinterpreted by one of the artists producing the plates for printing, and was rendered as fine, downy hairs on the leaf; of course, the actual plant has no such hairs.  Reading between the lines, I suspect that the final published work is much poorer for the loss of the information locked up in Sibthorp’s brain.</p>
+
+<p>Would he have been allowed to get away with this in the modern world?  Today his trip would have been funded not by the university at the insistence of his professor father, but probably by the BBSRC.  That funding would come with a number of conditions, including an expectation that the work be documented, preserved and made available to other researchers to study.  Now, though, we’ll never know what we lost when John Sibthorp died.</p>
+
+<p>The <em>Flora Graeca</em> and its associated material still provide valuable information to this day.  New analytical techniques allow us to obtain new data from the specimens, many of which are type specimens for their species.  All of the associated artwork has been digitised, and low-resolution versions of the watercolours and colour plates are available to use under a Creative Commons license.  Although the physical books are no longer routinely used for reference, the high-resolution scans are consulted quite regularly by modern researchers, and work is currently in progress to link together all of the digitised material so it can be searched by species, family, geographical area or a number of other aspects.</p>
+
+<p>It was fascinating to see such rare materials first-hand, and to have them brought to life by such a knowledgeable speaker, and I feel privileged to have had the chance.  For anyone interested, you can <a href="http://www.bodleian.ox.ac.uk/science/resources/sherardian-library/flora_graeca" title="Digital Flora Graeca --- Bodleian Libraries">browse a digital version of the <em>Flora Graeca</em> online</a>.</p>
+
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2015-03-18:/blog/bodleian-sherardian-research-data/" href="http://erambler.co.uk/blog/bodleian-sherardian-research-data/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../../blog/research-data-management/">What I'm doing these days: research data management</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/research-data-management/">Sunday 15 March 2015</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Research data management</span></li>
+<li class="p-category"><span class="tag">Work</span></li>
+<li class="p-category"><span class="tag">Meta</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>So, it’s been a while since I’ve properly updated this blog, and since I seem to be having another try, I thought it would be useful to give a brief overview of what I’m doing these days, so that some of the other stuff I have in the pipeline makes a bit more sense.</p>
+
+<p>My current work focus is research data management: helping university researchers to look after their data in ways that let them and the community get the most out of it.  Data is the bedrock of most (all?) research: the evidence on which all the arguments and conclusions and new ideas are based.  In the past, this data has been managed well (generally speaking) by and for the researchers collecting and using it, and this situation could have continued indefinitely.</p>
+
+<p>Technology, however, has caused two fundamental changes to this position.  First, we’re able to measure more and more about more and more, creating <a href="http://eprints.soton.ac.uk/257648/">what has been termed a “data deluge”</a>.  It’s now possible for on researcher to generate, in the normal course of their work, far more data than they could possibly analyse themselves in a lifetime.  For example, the development of polymerase chain reaction (PCR) techniques have enabled the fast, cheap sequencing of entire genomes: for some conditions, patients’ genomes are now routinely sequenced for future study.  A typical human genome sequence occupies 8TB (about 1700 DVDs), and after processing and compression, this shrinks to around 100GB (21 DVDs).  This covers approximately 23,000 genes, of which any one researcher may only be interested in a handful.</p>
+
+<p>Second, the combination of the internet and cheap availability of computing power means that it has never been easier to share, combine and process this data on a huge scale.  To continue our example, it’s possible to study genetic variations across hundreds or thousands of individuals to get new insights into how the body works.  The <a href="http://www.genomicsengland.co.uk/the-100000-genomes-project/">100,000 Genomes Project (“100KGP”)</a> is an ambitious endeavour to establish a database of such genomes and, crucially, develop the infrastructure to allow researchers to access and analyse it at scale.</p>
+
+<p>In order to make this work, there are plenty of barriers to overcome.  The practices that kept data in line long enough to publish the next paper are no longer good enough: the organisation and documentation must be made explicit and consistent so that others can make sense of it.  It also needs to be protected better from loss and corruption.  Obviously, this takes more work than just dumping it on a laptop, so most people want some reassurance that this extra work will pay off.</p>
+
+<p>Sharing has risks too.  Identifiable patient data cannot be shared without the patients consent; indeed doing so would be a criminal offence in Europe.  Similar rules apply to sensitive commercial information.  Even if there aren’t legal restrictions, most researchers have a reasonable expectation (albeit developed before the “data deluge”) that they be able to reap the reputational rewards of their own hard work by publishing papers based on it.</p>
+
+<p>There is therefore a great deal of resistance to these changes.  But there can be benefits too.  For society, there is the possibility of making advancing knowledge in directions that would never have been possible even ten years ago.  But there are practical benefits to the individuals too: every PhD supervisor and most PhD students know the frustration of trying to continue a student’s poorly-documented work after they’ve graduated.</p>
+
+<p>For funders the need for change is particularly acute.  Budgets are being squeezed, and with the best will in the world there is less money to go around, so there is pressure to ensure the best possible return on investment.  This means that it’s no longer acceptable, for example, for several labs in the country to be running identical experiments to do different things with the results.  It’s more important than ever to make more data available to and reusable by more people.</p>
+
+<p>So the funders (in the UK, particularly the <a href="http://www.rcuk.ac.uk">government-funded research councils</a>), are introducing requirements on the researchers they fund to move along this path quicker than they might feel comfortable with.  It therefore seems reasonable to offer these hard-working people some support, and that’s where I come in.</p>
+
+<p>I’m currently spending my time providing training and advice, bringing people together to solve problems and trying to convince a lot of researchers to fix what, in many cases, they didn’t think was broken!  They are subject to conflicting expectations and need help navigating this maze so that they can do what they do best: discover amazing new stuff and change the world.</p>
+
+<p>For the last 6ish months I’ve been doing this at <a href="http://imperial.ac.uk/">Imperial College</a> (my <em>alma mater</em>, no less) and loving it.  It’s a fascinating area for me, and I’m really excited to see where it will lead me next!</p>
+
+<p>If you have time, here’s a (slightly tongue-in-cheek) take on the problem from the perspective of a researcher trying to reuse someone else’s data:</p>
+
+<div class="video-container"><iframe width="487" height="274" src="https://www.youtube.com/embed/N2zK3sAtr-4" frameborder="0" allowfullscreen=""></iframe></div>
+
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2015-03-15:/blog/research-data-management/" href="http://erambler.co.uk/blog/research-data-management/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../../blog/rdm-wicked-problem/">Research data management as a "wicked" problem</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/rdm-wicked-problem/">Wednesday 11 March 2015</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Research data management</span></li>
+<li class="p-category"><span class="tag">Wicked problems</span></li>
+<li class="p-category"><span class="tag">Culture change</span></li>
+<li class="p-category"><span class="tag">Readings</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>I recently read an article, by Cox, Pinfield and Smith<sup id="fnref:citation"><a href="#fn:citation" class="footnote">1</a></sup>, which attempted to analyse research data management (RDM) as a “wicked problem”.  The concept of a wicked problem has been around for a little while in the context of social policy, but this is the first I’ve heard of it.</p>
+
+<p>What, then, is a “wicked” problem?</p>
+
+<p>Cox <em>et al</em> invoke a full 16 properties of wicked problems (drawing on the work of earlier authors), but put simply a problem is wicked if it is so difficult to define that they can only ever admit of an imperfect, compromise solution.  Many different, often contradictory, perspectives on such a problem exist, each suggesting its own solution, and any intervention “changes the problem in an irreversible way”, so that gradual learning by trial and error is impossible.</p>
+
+<p>Many truly wicked problems affecting society as a whole, such as child poverty or gender inequality, are unlikely to be satisfactorily solved in our lifetimes (though we should, of course, keep trying).  For RDM though, I feel that there is some hope.  It does display many aspects of wickedness, but it seems unlikely that it will stay this way forever.  Technology is evolving, cultures and attitudes are shifting and the disparate perspectives on research data are gradually coming into alignment.</p>
+
+<p>In the meantime, “wickedness” provides a useful lens through which to view the challenge of RDM.  Knowing that it shows many wicked features, we can be more intelligent about the way we go about solving it.  For example, Cox <em>et al</em> draw on the literature on wicked problems to suggest some leadership principles that are appropriate, such as:</p>
+
+<blockquote>
+  <p>“Collective intelligence not individual genius – turning to individuals to solve problems through their individual creativity is less successful than people working together to develop ideas.”</p>
+</blockquote>
+
+<p>Far from getting disheartened about the difficulty of the task ahead, we can accept that it is necessarily complex and act accordingly.  I look forward to following up some of the references on strategies for dealing with wickedness — hopefully I’ll be able to share more of what I learn as I go along.</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:citation">
+      <p>Cox, Andrew M., Stephen Pinfield, and Jennifer Smith. 2014. <a href="http://dx.doi.org/10.1177/0961000614533717">“Moving a Brick Building: UK Libraries Coping with Research Data Management as a ‘wicked’ Problem.”</a> Journal of Librarianship and Information Science, May, 0961000614533717. doi:10.1177/0961000614533717. <a href="#fnref:citation" class="reversefootnote">↩</a></p>
+    </li>
+  </ol>
+</div>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2015-03-11:/blog/rdm-wicked-problem/" href="http://erambler.co.uk/blog/rdm-wicked-problem/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../../blog/dealing-with-rsi/">A pain in the hand: dealing with computer-related injuries</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/dealing-with-rsi/">Tuesday  6 May 2014</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">RSI</span></li>
+<li class="p-category"><span class="tag">Emacs</span></li>
+<li class="p-category"><span class="tag">Input</span></li>
+<li class="p-category"><span class="tag">Process</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>You might have noticed that my latest spurt of blogging has been interrupted again.  This time, it’s due to a recurrence of an old enemy of mine, repetitive strain injury (RSI).  It’s coming back under control now and I thought I’d share what’s worked for me, but before we go any further, heed my warning:</p>
+
+<p><strong>If you have any sort of pain or numbness <em>at all</em> when using a computer, even if it’s momentary, take the time to evaluate your setup and see if there is anything you can change</strong>.</p>
+
+<p>I can’t over-stress how important this is — RSI is a serious medical problem if allowed to get out of hand (potentially as career-ending as a sports injury can be for a professional athlete), and it can be prevented entirely by ensuring your workspace is appropriate to the way you do your work.  If in doubt, seek expert and/or medical advice: many larger employers have occupational health advisors, and your GP will be able to advise or refer you to an appropriate specialist.</p>
+
+<p>As <a href="http://ergoemacs.org/emacs/emacs_hand_pain_celebrity.html">a lot of intensive computer-users do</a>, I’ve had numerous bouts of computer-related pain over the years, and at one point even had to switch to voice recognition software for several months.  If you’ve ever tried to use voice recognition, especially to do any programming, you’ll understand how frustrating that can be.</p>
+
+<p>Previously, I’ve had pain associated with using the mouse, so these days I tend to drive my computer primarily by keyboard.  I use apps (like Emacs) that are very keyboard-friendly, and when on Linux I even use a <a href="http://awesome.naquadah.org/">keyboard friendly window manager</a> to minimise my need to use the mouse at all. I also have a regular mouse at work and a trackball at home, so I’m varying the set of muscles I use to mouse with.</p>
+
+<p>As a result, I use a lot of key combinations involving the Control, Alt and Windows/Command keys, and recently I’ve started having pain in my thumbs (particularly the left) from curling them under to hit the Alt and Win keys.  Note: emacs users more commonly suffer from the problem known as “<a href="http://ergoemacs.org/emacs/emacs_pinky.html">Emacs pinky</a>”, but I headed that one off at the pass early on by <a href="http://www.emacswiki.org/emacs/MovingTheCtrlKey">remapping my caps-lock key as another Control key</a>.</p>
+
+<p>I’m very lucky: my workplace has a dedicated assistive technologies advisor, who has a collection of alternative keyboards, mice and other input devices, so I was able to have a chat with him, get some expert advice and try out several possible options before committing to buying anything.</p>
+
+<p>Here’s what I’ve ended up with:</p>
+
+<ul>
+  <li>
+<a href="http://www.kinesis-ergo.com/shop/freestyle2-for-pc-us/">Kinesis Freestyle II USB keyboard</a>: This keyboard is split down the middle, and allows the halves to be positioned and tilted independently to reduce the unnatural bend in my wrist, as well as putting less strain on my shoulders.  Through some experimentation with this and similar keyboards, I’ve found that having the two halves parallel but about 15–20cm apart is more comfortable for me than having them close together and angled (like the <a href="http://goldtouch.com/ergonomic-keyboards/">keyboards made by Goldtouch</a>).</li>
+  <li>
+<a href="http://www.amazon.co.uk/FS3-M-Triple-Switch-Control-Keyboard/dp/B00G3TMCRG/">Programmable USB foot pedals</a>: These are such simple devices they can be picked up for cheap almost anywhere on the net, or even <a href="http://gizmodo.com/5670747/introduce-a-foot-pedal-into-your-computing-setup">hacked together using the controller from an old USB keyboard</a>.  I have three pedals set up, with Control under my left foot, Alt under my right and Windows/Command inside Alt so I can reach it with my right foot easily.  Initially, I found that I was getting some back pain after starting to use the pedals, but I’ve since realised that this was because I had them positioned awkwardly — I started over by looking at where my feet fell naturally while working and then moving the pedals into position accordingly.</li>
+  <li>
+<a href="http://www.posturite.co.uk/mice-keyboard-devices/vertical-mice/penguin-mouse.html">Posturite Penguin mouse</a>: This also helps to reduce the unnatural bend in my wrist, as well as dealing with my tendency to “anchor” or rest my forearm on the desk while moving the mouse only with my fingers and wrist.  It comes in three sizes to fit your hand, and has a switch to swap the scroll wheel direction so you can swap it to your other hand from time to time.  Plus it’s made by a British company!</li>
+</ul>
+
+<p>This combination straightens my wrists out completely while typing, and is slowly eliminating (as I train myself to use the pedals) my use of the left thumb for anything other than the space bar.</p>
+
+<p>I hope this is of some use to a few people out there suffering needlessly from similar problems.</p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2014-05-06:/blog/dealing-with-rsi/" href="http://erambler.co.uk/blog/dealing-with-rsi/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../../blog/kanban-gtd/">Staying on top of things: Personal kanban and Getting Things Done</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/kanban-gtd/">Thursday 20 March 2014</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Productivity</span></li>
+<li class="p-category"><span class="tag">Kanban</span></li>
+<li class="p-category"><span class="tag">Task management</span></li>
+<li class="p-category"><span class="tag">GTD</span></li>
+<li class="p-category"><span class="tag">Process</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>I use a lot of the ideas of David Allen’s <a href="http://en.wikipedia.org/wiki/Getting_things_done">Getting Things Done</a> as the basis for my system of capturing, organising and checking off projects and tasks.  I like it; it helps make sure that I’m not missing anything.</p>
+
+<p>I do, however, find it somewhat lacking in the area of giving me a day-to-day tactical feel of what I need to get done.  Recently I’ve been trying to fill that gap with a simple tool called <em>personal kanban</em>.</p>
+
+<h2 id="what-is-personal-kanban">What is personal kanban?</h2>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Simple-kanban-board-.jpg/640px-Simple-kanban-board-.jpg" alt="Kanban board" class="main-illustration"><br>
+<a href="http://en.m.wikipedia.org/wiki/Kanban">Kanban</a> (看板 — literally “billboard”) is a scheduling system developed by Taiichi Ohno at Toyota to direct the manufacture of vehicles to minimise work-in-progress. <a href="http://www.personalkanban.com/pk/">Personal Kanban (PK)</a> is an adaptation of the ideas behind the original kanban system for the type of knowledge work done by the majority of typical office workers.</p>
+
+<p>PK has two key principles:</p>
+
+<ol>
+  <li>Visualise your work</li>
+  <li>Limit your work in progress</li>
+</ol>
+
+<p>The idea is that if you can see what you’re doing (and not doing <em>yet</em>) you’ll feel more in control, which will give you the confidence to make a conscious decision to focus on just a small number of things at once.  That in turn helps to alleviate that nagging feeling of being overloaded, while still letting you get work done.</p>
+
+<p>The implementation involves moving cards or sticky notes between columns on a wall or whiteboard, a concept which is probably easier to understand with an example.</p>
+
+<h2 id="pk-and-web-publishing">PK and web publishing</h2>
+
+<p>A piece of content (blog post, news article, whatever) typically moves through a fairly fixed workflow. It starts life as an <strong>idea</strong>, then the time comes when it’s <strong>ready</strong> to write, after which you might <strong>outline</strong> it, <strong>draft</strong> it, send it round for <strong>review</strong> and finally <strong>publish</strong> it.</p>
+
+<p>On your whiteboard, draw up a column for each of the stages highlighted in bold in the previous paragraph, and assign each article its own sticky note. Then simply move the sticky notes from column to column as you work and experience the satisfaction of watching the system flow and <em>seeing</em> work get done.</p>
+
+<p>It’s a great way to ensure a sensible flow of content without either working yourself to death or running out of things to publish. I’ve used a variation of this system at work for a while now to get news items and blog posts published, and I’m just starting to implement it for this blog too.</p>
+
+<p>It works very well with teams too, as everyone can see the whole team’s workload. I use this to assist in coordinating a small team of PhD students who contribute stuff to our website, using the excellent <a href="https://trello.com/">Trello</a> in place of a physical board.</p>
+
+<h2 id="pk-and-generic-tasks">PK and generic tasks</h2>
+
+<p>Once you’ve understood the basic concept, you can basically use it however works for you. You’re encouraged to experiment and adapt the basic idea in whatever way seems to make sense, in a <a href="http://en.m.wikipedia.org/wiki/Kaizen">kaizen</a>-like continual improvement fashion.</p>
+
+<p>While it’s useful for sets of similar tasks like blog posts, you can also adapt it to a generic task workflow. I use the following:</p>
+
+<dl>
+  <dt>Ready</dt>
+  <dd>Tasks which could potentially be done now<br>
+Doing</dd>
+  <dd>Tasks actually in progress<br>
+Waiting</dd>
+  <dd>Tasks which can’t be acted on yet because they’re waiting for input from someone else<br>
+Done</dd>
+  <dd>Completed tasks</dd>
+</dl>
+
+<p>I have this up on a whiteboard in my office, with each task on a post-it note, which allows me to see at a glance everything that I’ve got going on at the moment, and thus make sure that I’m balancing my priorities correctly — in accordance with PK principle 1 (“Visualise your work”).  I also have a limit on the number of tasks that can be in “Doing” and “Waiting” at any one time (PK principle 2: “Limit your work in progress”), which helps me to make sure I’m not feeling overloaded.</p>
+
+<p>I try to keep this as simple as possible, but occasionally introduce little codes like coloured stickers to help with visualising the balance when I need to. The whole point is to use the basic ideas to make a system that works for you, rather than anything that’s too prescriptive.</p>
+
+<p>Of course, I can’t carry a whiteboard around with me, so when I’m out of the office for a while I’ll transfer everything to <a href="https://trello.com/">Trello</a>, which I can access via the web and on my phone and iPad, or even just take a photo of the board.</p>
+
+<h2 id="combining-pk-with-gtd">Combining PK with GTD</h2>
+
+<p>GTD is a great system for making sure you’re capturing all the work that needs to be done, but I’ve always been dissatisfied with its ideas about prioritising, which are based on:</p>
+
+<ol>
+  <li>Context (where you are/what facilities you have access to)</li>
+  <li>Time available</li>
+  <li>Energy (how tired/refreshed you are)</li>
+</ol>
+
+<p>Organising tasks by context has always felt like unnecessary detail, while worrying too much about time and energy on a task-by-task basis seems like a recipe for procrastination (though managing time/energy on a more general level can be useful).</p>
+
+<p>I’ve ended up with a two-level system.  GTD is for strategic purposes: tracking projects, balancing long-term priorities and making sure nothing slips through the cracks.  Kanban is a much more tactical tool, to help see what needs to be done right now, this week, or later on.</p>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2014-03-20:/blog/kanban-gtd/" href="http://erambler.co.uk/blog/kanban-gtd/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../../blog/reading-the-hugo-winners-list/">Reading the Hugo winners list</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/reading-the-hugo-winners-list/">Tuesday 11 March 2014</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Reading</span></li>
+<li class="p-category"><span class="tag">Science fiction</span></li>
+<li class="p-category"><span class="tag">Something Different</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>This year, I’ve decided to make a project of working through the winners of the <a href="http://en.wikipedia.org/wiki/Hugo_award_for_best_novel">Hugo Award for Best Novel</a>.  The Hugos are one of the biggest English-language science fiction and fantasy awards going.  Late last year, I came across the list looking to broaden my reading (I tend to fixate on individual authors and devour entire canons of work before moving on) and realised I’d already read quite a few, and there were quite a few more that I had my eye on to read soon.</p>
+
+<p>I’ve already been distracted by the epic <a href="http://en.wikipedia.org/wiki/The_Chronicles_of_Amber_%28omnibus%29">Great Book of Amber</a> (all 10 of Robert Zelazny’s Amber novels in a single mighty volume — I’ve wanted to read it for ages and I got it for Christmas), but I’m enjoying the variety.  So far, I’ve read Kim Stanley Robinson’s Green Mars and Blue Mars, having started the <a href="http://en.wikipedia.org/wiki/Mars_trilogy">Mars trilogy</a> before Christmas, and Zelazny’s classic <a href="http://en.wikipedia.org/wiki/Lord_of_light">Lord of Light</a> (watch out for The Pun!), and I’m currently enjoying <a href="http://en.wikipedia.org/wiki/Left_hand_of_darkness">The Left Hand of Darkness</a> by Ursula K. Le Guin.</p>
+
+<hr>
+
+<p>Winners I’d already read:</p>
+
+<ul>
+  <li>Starship Troopers, Robert Heinlein</li>
+  <li>Dune, Frank Herbert</li>
+  <li>Ringworld, Larry Niven</li>
+  <li>Rendezvous with Rama, Arthur C. Clarke</li>
+  <li>The Fountains of Paradise, Arthur C. Clarke</li>
+  <li>Foundation’s Edge, Isaac Asimov</li>
+  <li>Neuromancer, William Gibson</li>
+  <li>Hyperion, Dan Simmons</li>
+  <li>Harry Potter and the Goblet of Fire, J. K. Rowling</li>
+  <li>The Graveyard Book, Neil Gaiman</li>
+  <li>Redshirts, John Scalzi</li>
+</ul>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2014-03-11:/blog/reading-the-hugo-winners-list/" href="http://erambler.co.uk/blog/reading-the-hugo-winners-list/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../../blog/open-access-button/">Open Access Button: getting research to the people who need it</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/open-access-button/">Tuesday 25 February 2014</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Open access</span></li>
+<li class="p-category"><span class="tag">Open scholarship</span></li>
+<li class="p-category"><span class="tag">Hacktivism</span></li>
+<li class="p-category"><span class="tag">OA Button</span></li>
+<li class="p-category"><span class="tag">Things I made</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<blockquote>
+  <p><img src="https://raw.github.com/OAButton/OAButton/ab5539194f18bd8ed099fe0f93646cf46a4b62b9/oabutton/static/public/img/oabutton_logo_final200.png" alt="Open Access Button" class="main-illustration-s"><br>
+Every day people around the world such as doctors, scientists, students and patients are denied access to the research they need. With the power of the internet, the results of academic research should be available to all.  It’s time to showcase the impact of paywalls and help people get the research they need. That’s where Open Access Button comes in.</p>
+
+  <p>The Open Access Button is a browser plugin that allows people to report when they hit a paywall and cannot access a research article. Head to <a href="http://www.openaccessbutton.org/">openaccessbutton.org</a> to sign up for your very own Button and start using it.</p>
+</blockquote>
+
+<p>I just want to flag up this cool project that’s trying to improve access to scholarly literature for everyone. I’ve been involved with the project from the start, helping to figure out how to tie it in with open access repositories, but it’s medical students David Carroll and Joe McArthur who deserve the credit for coming up with the idea and driving it forward.</p>
+
+<p>To date, <a href="https://www.openaccessbutton.org/#world">more than 5,000 blocked articles have already been logged</a>.  <a href="http://www.theguardian.com/science/2013/nov/18/open-access-button-push">It even got mentioned in the Guardian</a>!  Take a look, give it a try or even get involved:</p>
+
+<ul>
+  <li><a href="http://www.openaccessbutton.org/">Open Access Button</a></li>
+  <li><a href="http://blog.openaccessbutton.org/">OA Button blog</a></li>
+  <li><a href="https://twitter.com/OA_Button">OA Button twitter</a></li>
+  <li><a href="https://github.com/OAButton/OAButton">Source code on github</a></li>
+</ul>
+
+<hr>
+
+<h2 id="how-did-i-get-involved">How did I get involved?</h2>
+
+<p>Last year, I spent some free time creating an experimental web tool to look up Open Access<sup id="fnref:OA"><a href="#fn:OA" class="footnote">1</a></sup> versions of scholarly articles from their DOIs<sup id="fnref:DOI"><a href="#fn:DOI" class="footnote">2</a></sup>. There is already a system for getting the official version of record for any DOI, but it struck me that where that version is hidden behind a paywall and a free version is available elsewhere, it should be just as easy to find that.</p>
+
+<p>This work got noticed by a group of people at a hack day<sup id="fnref:hd"><a href="#fn:hd" class="footnote">3</a></sup>, which resulted in my contributing to their project, the Open Access Button. The primary purpose of the OA Button is to allow people to report whenever they hit a paywall while trying to read an article (so that the scale of the problem can be visualised), and as an added bonus, we’re adding functionality to help gain access through other channels, including finding green open access versions and contacting the corresponding author.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:OA">
+      <p>“Open Access” refers to content which is freely available for all to read and use (usually referring to scholarly articles that publish the results of academic research), as distinct from that which is only accessible by paying a fee (either per-article or a as subscription to a journal). <a href="#fnref:OA" class="reversefootnote">↩</a></p>
+    </li>
+    <li id="fn:DOI">
+      <p>A <a href="http://en.wikipedia.org/wiki/Digital_object_identifier">Digital Object Identifier (DOI)</a> is a unique string of characters that identifies a published object, such as an article, book or dataset. They look something like this: <code class="highlighter-rouge">10.1000/182</code>. <a href="#fnref:DOI" class="reversefootnote">↩</a></p>
+    </li>
+    <li id="fn:hd">
+      <p>A hack day is an opportunity for developers and non-developers to get together and prototype projects without any risk of loss or ridicule if things don’t work out — great for getting the creative juices flowing! <a href="#fnref:hd" class="reversefootnote">↩</a></p>
+    </li>
+  </ol>
+</div>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2014-02-25:/blog/open-access-button/" href="http://erambler.co.uk/blog/open-access-button/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../../blog/gtd-emacs-org-mode/">Getting Things Done with Emacs and org-mode</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/gtd-emacs-org-mode/">Saturday 22 February 2014</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">Productivity</span></li>
+<li class="p-category"><span class="tag">GTD</span></li>
+<li class="p-category"><span class="tag">Emacs</span></li>
+<li class="p-category"><span class="tag">Org-mode</span></li>
+<li class="p-category"><span class="tag">Task management</span></li>
+<li class="p-category"><span class="tag">Free software</span></li>
+<li class="p-category"><span class="tag">Process</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p><img src="http://farm3.staticflickr.com/2588/3872158703_cdb8e3aacf.jpg" alt="Gnu" class="main-illustration"></p>
+
+<p>As I’ve <a href="../../../blog/gtd-things-vs-omnifocus">mentioned previously</a>, I periodically try out new task management software.  The latest in that story is Emacs and Org-mode.</p>
+
+<h2 id="what-is-org">What is Org?</h2>
+
+<p>In its creator’s own words, <a href="http://orgmode.org">Org</a> is:</p>
+
+<blockquote>
+  <p>“for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective plain-text system”</p>
+</blockquote>
+
+<p>It started as an Emacs extension for authoring documents with some neat outlining features, then went mad with power and became a complete personal information organiser.</p>
+
+<h3 id="but-wait-what-the--is-emacs">But wait, what the **** is Emacs?</h3>
+
+<p><a href="http://en.m.wikipedia.org/wiki/Emacs">Emacs</a> is the mother of all text editors. It’s one of the oldest pieces of free software, having been around since the <del>dawn of time</del> 1970’s, and is still under active development. Being so venerable, it still cleaves to the conventions of the 70’s and is entirely keyboard-controllable (though it now has excellent support for your favourite rodent as well).</p>
+
+<p>“Text editor” is actually a pretty loose term in this instance: it’s completely programmable, in a slightly odd language called Elisp (which appeals to my computer scientist side). Because many of the people who use it are programmers, it’s been extended to do almost anything that you might want, from transparently editing encrypted or remote (or both) files to browsing the web and checking your email.</p>
+
+<h2 id="my-needs-for-an-organisational-system">My needs for an organisational system</h2>
+
+<p>In my <a href="../../../blog/gtd-things-vs-omnifocus/">last productivity-related post</a> I mentioned that the key properties of a task management system were:</p>
+
+<ul>
+  <li>One system for everything</li>
+  <li>Multiple ways of structuring and viewing tasks</li>
+</ul>
+
+<p>I would now probably add a third property: the ability to “shrink-wrap”, or be as simple as possible for the current situation while keeping extra features hidden until needed.</p>
+
+<p>And Org very much fits the bill.</p>
+
+<h3 id="one-system-for-everything">One system for everything</h3>
+
+<p>Emacs has been ported to pretty much every operating system under the sun, so I know I can use it on my Linux desktop at work, my iMac at home plus whatever I end up with in the future. Because the files are all plain text, they’re trivial to keep synchronised between multiple machines.</p>
+
+<p>There are also <a href="http://orgmode.org/manual/MobileOrg.html">apps for iOS and Android</a>, and while they’re not perfect, they’re good enough for when I want to take my todo list on the road.</p>
+
+<h3 id="multiple-ways-of-structuring-and-viewing-tasks">Multiple ways of structuring and viewing tasks</h3>
+
+<p>Whatever I’m doing in Emacs, an instant agenda with all my current tasks is only two keystrokes away. That’s programmable too, so I have it customised to view my tasks in the way that makes most sense to me.</p>
+
+<h3 id="shrink-wrapping">Shrink wrapping</h3>
+
+<p>Org has a lot of very clever features added by its user community over its 10+ years, but you don’t have to use them, or even know they exist, until you need them. As an illustration, a simple task list in Org looks like this:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>* TODO Project 1
+** TODO Task one
+** TODO Task two
+
+* TODO Project 2
+** DONE Another task
+** TODO A further task
+</code></pre>
+</div>
+
+<p>And changing <code class="highlighter-rouge">TODO</code> to <code class="highlighter-rouge">DONE</code> is a single keystroke. Simplicity itself.</p>
+
+<p>Here’s <a href="http://article.gmane.org/gmane.emacs.orgmode/6224">Carsten Dominik on the subject</a></p>
+
+<blockquote>
+  <p>”[Org-mode] is a zero-setup, totally simple TODO manager that works with plain files, files that can be edited on pretty much any system out there, either as plain text in <strong>any</strong> editor …</p>
+
+  <p>Of course, Org-mode allows you to do more, but I would hope in a non-imposing way!  It has lots of features under the hood that you can pull in when you are ready, when you find out that there is something more you’d like to do.”</p>
+</blockquote>
+
+<h3 id="wow-what-else-can-it-do">Wow, what else can it do?</h3>
+
+<p><a href="HTTP://youtu.be/8uF4W29dGLk">“I didn’t know I could do <em>that</em>!”</a></p>
+
+<p>If that’s not enough, here are a few more reasons:</p>
+
+<ul>
+  <li>Keyboard shortcuts for quick outline editing</li>
+  <li>Lots of detailed organisational tools (but only when you need them):
+    <ul>
+      <li>Schedule and deadline dates for tasks</li>
+      <li>Flexible system for repeating tasks/projects</li>
+      <li>Complete tasks in series or parallel</li>
+      <li>Arbitrary properties, notes and tags for tasks and projects</li>
+    </ul>
+  </li>
+  <li>Use the same tools for <a href="http://orgmode.org/manual/Exporting.html">authoring HTML/LaTeX documents</a> or even <a href="http://orgmode.org/manual/Working-With-Source-Code.html#Working-With-Source-Code">literate programming</a>
+</li>
+  <li>It’s programmable! If it doesn’t have the functionality you want just write it, from adding keyboard shortcuts to whole new use cases (such as a <a href="http://julien.danjou.info/projects/emacs-packages#org-contacts">contact manager</a> or <a href="http://orgmode.org/manual/Tracking-your-habits.html">habit tracker</a>)</li>
+</ul>
+
+<h2 id="give-it-a-try">Give it a try</h2>
+
+<p>Emacs is worth trying on its own, especially if you do a lot of programming, web design or anything else that involves a lot of time editing text files. A recent version of Org is bundled with the latest GNU Emacs, and can easily be updated to the current version.</p>
+
+<ul>
+  <li><a href="http://www.gnu.org/software/emacs/">GNU Emacs</a></li>
+  <li><a href="http://orgmode.org/">Org-mode</a></li>
+</ul>
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2014-02-22:/blog/gtd-emacs-org-mode/" href="http://erambler.co.uk/blog/gtd-emacs-org-mode/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<article>
+<div class="row">
+<h1 class="post-title"><a href="../../../blog/doi2oa-status-update/">OA DOI resolver status update</a></h1>
+</div>
+<div class="row">
+<div class="post-info">
+<div class="post-date dt-published">
+<a class="u-url" href="http://erambler.co.uk/blog/doi2oa-status-update/">Wednesday 20 March 2013</a>
+</div>
+Tagged with
+<ul class="post-tags">
+<li class="p-category"><span class="tag">DOI</span></li>
+<li class="p-category"><span class="tag">Open access</span></li>
+<li class="p-category"><span class="tag">Open scholarship</span></li>
+<li class="p-category"><span class="tag">OAI-PMH</span></li>
+<li class="p-category"><span class="tag">Programming</span></li>
+<li class="p-category"><span class="tag">Open source</span></li>
+<li class="p-category"><span class="tag">Things I made</span></li>
+</ul>
+</div>
+<div class="post-body">
+<div class="post-content">
+<p>So, as you’ll have seen from my last post, I’ve been putting together an <a href="http://doi2oa.erambler.co.uk/">alternative DOI resolver that points to open access copies in institutional repositories</a>. I’m enjoying learning some new tools and the challenge of cleaning up some not-quite-ideal data, but if it’s to grow into a useful service, it needs several several things:</p>
+
+<h2 id="a-better-name">A better name</h2>
+
+<p>Seriously. “Open Access DOI Resolver” is descriptive but not very distinctive. Sadly, the only name I’ve come up with so far is “Duh-DOI!” (see the YouTube video below), which doesn’t quite convey the right impression.</p>
+
+<h2 id="a-new-home">A new home</h2>
+
+<p>I’ve grabbed a list of DOI endpoints for British institutional repositories — well over 100. Having tested the code on my iMac, I can confirm it happily harvests DOIs from most <a href="http://eprints.org/">EPrints</a>-based repositories. But I’ve hit 10,000 database rows (the free limit on <a href="http://heroku.com/">Heroku</a>, the current host) with just the DOIs from a single repository, which means the public version won’t be able to resolve anything from outside Bath until the situation changes.</p>
+
+<h2 id="better-standards-compliance">Better standards compliance</h2>
+
+<p>It’s a fact of life that everyone implements a standard differently. OAI-PMH and Dublin Core are no exception. Some repositories report both the DOI and the open access URL in <code class="highlighter-rouge">&lt;dc:identifier&gt;</code> elements; others use <code class="highlighter-rouge">&lt;dc:relation&gt;</code> for both while using <code class="highlighter-rouge">&lt;dc:identifier&gt;</code> for something totally different, like the title. Some don’t report a URL for the items repository entry at all, only the publisher’s (usually paywalled) official URL.</p>
+
+<p>There are efforts under way to improve the situation (like <a href="http://www.rioxx.net/about/">RIOXX</a>), but until then, the best I can do is to implement gradually better heuristics to standardise the diverse data available. To do that, I’m gradually collecting examples of repositories that break my harvesting algorithm and fixing them, but that’s a fairly slow process since I’m only working on this in my free time.</p>
+
+<p><a href="http://xkcd.com/927/"><em>xkcd: Standards</em></a></p>
+
+<h2 id="better-data">Better data</h2>
+
+<p>Even with better standards compliance, the tool can only be as good as the available data. I can only resolve a DOI if it’s actually been associated with its article in an institutional repository, but not every record that should have a DOI has one. It’s possible that a side benefit of this tool is that it will flag up the proportion of IR records that have DOIs assigned.</p>
+
+<p>Then there’s the fact that most repository front ends seem not to do any validation on DOIs. As they’re entered by humans, there’s always going to be scope for error, which there should be some validation in place to at least try and detect. Here are just a few of the “DOIs” from an anonymous sample of British repositories:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">+10.1063/1.3247966</code></li>
+  <li><code class="highlighter-rouge">/10.1016/S0921-4526(98)01208-3</code></li>
+  <li><code class="highlighter-rouge">0.1111/j.1467-8322.2006.00410.x</code></li>
+  <li><code class="highlighter-rouge">07510210.1088/0953-8984/21/7/075102</code></li>
+  <li><code class="highlighter-rouge">10.2436 / 20.2500.01.93</code></li>
+  <li><code class="highlighter-rouge">235109 10.1103/PhysRevB.71.235109</code></li>
+  <li><code class="highlighter-rouge">DOI: 10.1109/TSP.2012.2212434</code></li>
+  <li><code class="highlighter-rouge">ShowEdit 10.1074/jbc.274.22.15678</code></li>
+  <li><code class="highlighter-rouge">http://doi.acm.org/10.1145/989863.989893</code></li>
+  <li><code class="highlighter-rouge">http://hdl.handle.net/10.1007/s00191-008-0096-6</code></li>
+  <li><code class="highlighter-rouge">&lt;U+200B&gt;10.&lt;U+200B&gt;1104/&lt;U+200B&gt;pp.&lt;U+200B&gt;111.&lt;U+200B&gt;186957</code></li>
+</ul>
+
+<p>In some cases it’s clear what the error is and how to correct it programmatically. In other cases any attempt to correct it is guesswork at best and could introduce as many problems as it solves.</p>
+
+<p>That last one is particularly interesting: the <code class="highlighter-rouge">&lt;U+200B&gt;</code> codes are “zero width spaces”. They don’t show on screen but are still there to trip up computers trying to read the DOI. I’m not sure how they would get there other than by a deliberate attempt on the part of the publisher to obfuscate the identifier.</p>
+
+<p>It’s also only really useful where the repository record we’re pointing to actually has the open access full text, rather than just linking to the publisher version, which many do.</p>
+
+<h2 id="a-license">A license</h2>
+
+<p>Ok, this one’s pretty easy to solve. I’m releasing the code under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>. <a href="http://github.com/jezcope/doi2oa">It’s on github so go fork it</a>.</p>
+
+<p><em>And here’s the video I promised:</em></p>
+
+<div class="video-container"><iframe width="487" height="274" src="https://www.youtube.com/embed/gMiA8AIX03Q" frameborder="0" allowfullscreen=""></iframe></div>
+
+</div>
+<div class="post-comments-link"><a data-disqus-identifier="tag:erambler.co.uk,2013-03-20:/blog/doi2oa-status-update/" href="http://erambler.co.uk/blog/doi2oa-status-update/#disqus_thread">Comments</a></div>
+</div>
+</div>
+</article>
+<div id="page-nav">
+<div class="newer-posts">
+<a href="../../../">
+</a>
+</div>
+<div class="older-posts">
+<a href="../../../archives/2/">Older posts &gt;&gt;</a>
+</div>
+</div>
+
+</div>
+<div id="sidebar">
+<div class="sidebar-box about-me h-card">
+<p>Hi, I’m <a href="http://erambler.co.uk" class="p-name u-url">Jez Cope</a> and this is my
+blog, where I talk about technology in research and higher
+education, including:</p>
+
+<ul>
+  <li>Research data management;</li>
+  <li>e-Research;</li>
+  <li>Learning;</li>
+  <li>Teaching;</li>
+  <li>Educational technology.</li>
+</ul>
+</div>
+<div class="sidebar-box links">
+<h2>Me elsewhere</h2>
+<ul>
+  <li><a href="https://twitter.com/jezcope" rel="me">Twitter</a></li>
+  <li><a href="https://github.com/jezcope" rel="me">github</a></li>
+  <li><a href="https://linkedin.com/in/jezcope">LinkedIn</a></li>
+  <li><a href="http://diigo.com/user/jezcope">Diigo</a></li>
+  <li><a href="https://www.zotero.org/jezcope">Zotero</a></li>
+  <li><a href="http://gplus.to/jezcope">Google+</a></li>
+</ul>
+</div>
+</div>
+<div class="row">
+<footer><a class="license" href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+<img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="border-width:0">
+</a>
+<span href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type" xmlns:dct="http://purl.org/dc/terms/">
+eRambler
+</span>
+by
+<a href="http://erambler.co.uk/" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">
+Jez Cope
+</a>
+is licensed under a
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+Creative Commons Attribution-ShareAlike 4.0 International license
+</a>
+</footer>
+</div>
+</section>
+</div>
+<script>
+  if (!/^http:\/\/localhost/.test(window.location)) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10201101-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+
+</body>
+</html>

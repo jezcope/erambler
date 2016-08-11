@@ -13,6 +13,8 @@ deploy:
         key-id: $AWS_ACCESS_KEY_ID
         key-secret: $AWS_SECRET_ACCESS_KEY
   testing:
+    - install-packages:
+        packages: git ssh-client
     - script:
         name: configure git
         code: |-

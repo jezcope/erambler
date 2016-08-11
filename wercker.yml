@@ -5,7 +5,6 @@ build:
         packages: git ssh-client
     - script:
         code: |
-          cd ..
           git submodule update --init --recursive
     - arjen/hugo-build:
         version: '0.16'

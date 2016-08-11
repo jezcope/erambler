@@ -27,6 +27,8 @@ params:
   topline: 'research communication + higher education + technology + stuff'
   footline: 'brought to you by [hugo](http://gohugo.io/)'
   
+  googleAnalytics: UA-10201101-1
+
   github: jezcope
   twitter: jezcope
   linkedin: jezcope

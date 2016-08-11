@@ -1,3 +1,3 @@
 [submodule "themes/sidmouth"]
 	path = themes/sidmouth
-	url = git@github.com:jezcope/theme-sidmouth-hugo
+	url = https://github.com/jezcope/theme-sidmouth-hugo.git

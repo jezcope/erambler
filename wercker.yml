@@ -3,6 +3,7 @@ build:
   steps:
     - arjen/hugo-build:
         version: '0.16'
+        config: config.yaml
         disable_pygments: true
 deploy:
   steps:

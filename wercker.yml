@@ -25,7 +25,7 @@ deploy:
     - script:
         name: deploy to github pages
         code: |-
-          cd output
+          cd public
 
           git init
           git add .

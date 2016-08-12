@@ -4,6 +4,7 @@ copyright: "(c) 2016 Jez Cope — [CC-BY-SA](/license/)"
 
 languageCode: en-GB
 metaDataFormat: yaml
+rssuri: feed.xml
 
 ignoreFiles: ["^\\.#"]
 

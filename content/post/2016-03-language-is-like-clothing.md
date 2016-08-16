@@ -4,6 +4,8 @@ teaser: "Data is like information in more ways than one, and it's like water too
 date: 2016-03-31T17:40:00+01:00
 slug: language-is-like-clothing
 draft: false
+topics:
+- Stuff
 tags:
 - Language
 - Grammar

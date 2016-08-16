@@ -7,6 +7,8 @@ description: |
   In which I continue to avoid actually writing
   by moving to a new static site generator
 draft: false
+topics:
+- Stuff
 tags:
 - Meta
 - Web

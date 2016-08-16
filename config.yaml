@@ -18,6 +18,7 @@ permalinks:
 
 taxonomies:
   tag: tags
+  topic: topics
 
 author:
   name: Jez Cope
@@ -25,7 +26,11 @@ author:
 params:
   home: home
   brand: a blog about
-  topline: 'research communication + higher education + technology + stuff'
+  topline: |
+    [research communication](/topics/research-communication/)
+    + [higher education](/topics/higher-education)
+    + [technology](/topics/technology/)
+    + [stuff](/topics/stuff/)
   footline: 'brought to you by [hugo](http://gohugo.io/)'
   
   googleAnalytics: UA-10201101-1

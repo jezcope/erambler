@@ -28,9 +28,9 @@ params:
   brand: a blog about
   topline: |
     [research communication](/topics/research-communication/)
-    + [higher education](/topics/higher-education)
-    + [technology](/topics/technology/)
-    + [stuff](/topics/stuff/)
+    <span class="amp">&</span> [higher education](/topics/higher-education)
+    <span class="amp">&</span> [technology](/topics/technology/)
+    <span class="amp">&</span> [stuff](/topics/stuff/)
   footline: 'brought to you by [hugo](http://gohugo.io/)'
   
   googleAnalytics: UA-10201101-1

@@ -1,11 +1,12 @@
 10 about:
-  Name: "about"
+  Name: about
   URL: "/about/"
 
-20 rdm:
-  Name: "rdm resources"
+20 tags:
+  Name: tags
+  URL: "/tags/"
+
+50 rdm:
+  Name: rdm resources
   URL: "/rdm-resources/"
 
-90 license:
-  Name: license
-  URL: "/license/"

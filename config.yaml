@@ -40,4 +40,6 @@ params:
   linkedin: jezcope
 
   sidebar: left
+
+  highlight: solarized_light
 ...

@@ -12,6 +12,7 @@ topics:
 tags:
 - Software Carpentry
 - Web archaeology
+series: swc-archaeology
 ---
 
 > "Software Carpentry was originally a competition to design new software tools,

@@ -1,8 +1,8 @@
-box: debian
+box: jezcope/hugo:latest
 build:
   steps:
-    - install-packages:
-        packages: git ssh-client
+    # - install-packages:
+    #     packages: git ssh-client
     - script:
         code: |
           git submodule update --init --recursive
@@ -18,8 +18,8 @@ deploy:
         key-id: $AWS_ACCESS_KEY_ID
         key-secret: $AWS_SECRET_ACCESS_KEY
   testing:
-    - install-packages:
-        packages: git ssh-client
+    # - install-packages:
+    #     packages: git ssh-client
     - script:
         name: configure git
         code: |-

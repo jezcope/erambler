@@ -3,4 +3,4 @@
 FROM alpine:edge
 
 RUN echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories; \
-    apk update; apk add hugo@testing git openssh-client
+    apk update; apk add bash hugo@testing git openssh-client curl

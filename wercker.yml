@@ -2,11 +2,13 @@ box: jezcope/hugo:latest
 build:
   steps:
     - script:
+        name: update submodules
         code: |
           git submodule update --init --recursive
-    - arjen/hugo-build:
-        version: '0.16'
-        disable_pygments: true
+    - script:
+        name: compile site
+        code: |
+          hugo
 deploy:
   steps:
     - s3sync:

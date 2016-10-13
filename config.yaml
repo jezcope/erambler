@@ -39,6 +39,7 @@ params:
   github: jezcope
   twitter: jezcope
   linkedin: jezcope
+  wercker: eabedc12f9bc4c2e496bb85791b4207b
 
   sidebar: left
 

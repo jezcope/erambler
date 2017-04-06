@@ -1,0 +1,41 @@
+---
+title: "IDCC 2017 reflection"
+description: |
+  Every spring, the world's research data management and digital
+  curation communities congregate for the International Digital Curation
+  Conference. This year's conference was in picturesque Edinburgh.
+slug: idcc17-summary
+date: 2017-04-06T07:26:22+01:00
+draft: false
+type: post
+topics:
+- Research communication
+tags:
+- IDCC
+- Digital curation
+- Conference
+- Edinburgh
+- Research data management
+---
+
+
+For most of the last few years I've been lucky enough to attend the [[http://www.dcc.ac.uk/events/idcc][International Digital Curation Conference (IDCC)]]. One of the main audiences attending is people who, like me, work on research data management at universities around the world and it's begun to feel like a sort of "home" conference to me. This year, IDCC was held at the Royal College of Surgeons in the beautiful city of Edinburgh.
+
+For the last couple of years, my overall impression has been that, as a community, we're moving away from the "first-order" problem of trying to convince people (from PhD students to senior academics) to take RDM seriously and into a rich set of "second-order" problems around how to do things better and widen support to more people. This year has been no exception. Here are a few of my observations and takeaway points.
+
+- Everyone has a repository now :: Only last year, the most common question you'd get asked by strangers in the coffee break would be "Do you have a data repository?" Now the question is more likely to be "What are you using for your data repository?", along with more subtle questions about specific components of systems and how they interact.
+     
+- Integrating active storage and archival systems :: Now that more institutions have data worth preserving, there is more interest in (and in many cases experience of) setting up more seamless integrations between active and archival storage. There are lessons here we can learn.
+     
+- Freezing in amber vs actively maintaining assets :: There seemed to be an interesting debate going on throughout the conference around the aim of preservation: should we be faithfully preserving the bits and bytes provided without trying to interpret them, or should we take a more active approach by, for example, migrating obsolete formats to newer alternatives. If the former, should we attempt to preserve the software required to access the data as well? If the latter, how much effort do we invest and how do we ensure nothing is lost or altered in the migration?
+     
+- Demonstrating Data Science instead of debating what it is :: The phrase "Data Science" was once again one of the most commonly uttered of the conference. However, there is now less abstract discussion about what, exactly, is meant by this "data science" thing; this has been replaced more by concrete demonstrations. This change was exemplified perfectly by the keynote by data scientist [[https://twitter.com/alice_daish][Alice Daish]], who spent a riveting 40 minutes or so enthusing about all the cool stuff she does with data at the British Museum.
+     
+- Recognition of software as an issue :: Even as recently as last year, I've struggled to drum up much interest in discussing software sustainability and preservation at events like this; the interest was there, but there were higher priorities. So I was completely taken by surprise when we ended up with 30+ people in the Software Preservation Birds of a Feather (BoF) session, and when very little input was needed from me as chair to keep a productive discussion going for a full 90 minutes.
+     
+- Unashamed promotion of openness :: As a community we seem to have nearly overthrown our collective embarrassment about the phrase "open data" (although maybe this is just me). We've always known it was a good thing, but I know I've been a bit of an apologist in the past, feeling that I had to "soften the blow" when asking researchers to be more open. Now I feel more confident in leading with the benefits of openness, and it felt like that's a change reflected in the community more widely.
+     
+- Becoming more involved in the conference :: This year, I took a decision to try and do more to contribute to the conference itself, and I felt like this was pretty successful both in making that contribution and building up my own profile a bit. I presented a paper on one of my current passions, [[http://librarycarpentry.github.io][Library Carpentry]]; it felt really good to be able to share my enthusiasm. I presented a poster on our work integrating our data repository and digital preservation platform; this gave me more of a structure for networking during breaks, as I was able to stand by the poster and start discussions with anyone who seemed interested. I chaired a parallel session; a first for me, and a different challenge from presenting or simply attending the talks. And finally, I proposed and chaired the Software Preservation BoF session (blog post forthcoming).
+     
+- Renewed excitement :: It's weird, and possibly all in my imagination, but there seemed to be more energy at this conference than at the previous couple I've been to. More people seemed to be excited about the work we're all doing, recent achievements and the possibilities for the future.
+

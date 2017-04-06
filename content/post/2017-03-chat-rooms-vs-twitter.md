@@ -1,7 +1,8 @@
 ---
 title: "Chat rooms vs Twitter: how I communicate now"
 description: |
-  Description
+  I've got fed up with Twitter
+  - here's why.
 slug: chat-rooms-vs-twitter
 date: 2017-03-29T21:41:31+01:00
 draft: false

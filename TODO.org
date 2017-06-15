@@ -1,0 +1,3 @@
+* Site improvements
+
+- [ ] Run [[https://testmysite.withgoogle.com/intl/en-gb/][Google mobile site tester]] and make tweaks

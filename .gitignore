@@ -2,3 +2,5 @@
 /tmp/
 /output/
 output.diff
+/cache/
+.doit.db

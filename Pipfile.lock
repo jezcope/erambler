@@ -1,0 +1,122 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "0ebd7fc92d49105fb7beb509bab6e4ce801aedbba368a82e0334d7200207ae63"
+        },
+        "requires": {},
+        "sources": [
+            {
+                "url": "https://pypi.python.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "argh": {
+            "version": "==0.26.2"
+        },
+        "blinker": {
+            "version": "==1.4"
+        },
+        "certifi": {
+            "version": "==2017.4.17"
+        },
+        "chardet": {
+            "version": "==3.0.4"
+        },
+        "cloudpickle": {
+            "version": "==0.3.1"
+        },
+        "docutils": {
+            "version": "==0.13.1"
+        },
+        "doit": {
+            "version": "==0.30.3"
+        },
+        "idna": {
+            "version": "==2.5"
+        },
+        "jinja2": {
+            "version": "==2.9.6"
+        },
+        "logbook": {
+            "version": "==1.0.0"
+        },
+        "lxml": {
+            "version": "==3.8.0"
+        },
+        "mako": {
+            "version": "==1.0.6"
+        },
+        "markdown": {
+            "version": "==2.6.8"
+        },
+        "markupsafe": {
+            "version": "==1.0"
+        },
+        "natsort": {
+            "version": "==5.0.3"
+        },
+        "nikola": {
+            "version": "==7.8.9"
+        },
+        "olefile": {
+            "version": "==0.44"
+        },
+        "pathtools": {
+            "version": "==0.1.2"
+        },
+        "piexif": {
+            "version": "==1.0.12"
+        },
+        "pillow": {
+            "version": "==4.2.1"
+        },
+        "pygments": {
+            "version": "==2.2.0"
+        },
+        "pyinotify": {
+            "version": "==0.9.6"
+        },
+        "pyrss2gen": {
+            "version": "==1.1"
+        },
+        "python-dateutil": {
+            "version": "==2.6.1"
+        },
+        "pyyaml": {
+            "version": "==3.12"
+        },
+        "requests": {
+            "version": "==2.18.1"
+        },
+        "setuptools": {
+            "version": "==36.0.1"
+        },
+        "six": {
+            "version": "==1.10.0"
+        },
+        "smartypants": {
+            "version": "==2.0.0"
+        },
+        "typogrify": {
+            "version": "==2.0.7"
+        },
+        "unidecode": {
+            "version": "==0.04.21"
+        },
+        "urllib3": {
+            "version": "==1.21.1"
+        },
+        "watchdog": {
+            "version": "==0.8.3"
+        },
+        "ws4py": {
+            "version": "==0.4.2"
+        },
+        "yapsy": {
+            "version": "==1.11.223"
+        }
+    },
+    "develop": {}
+}

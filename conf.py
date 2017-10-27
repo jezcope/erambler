@@ -271,6 +271,7 @@ FILES_FOLDERS = {
 # 'html' assumes the file is HTML and just copies it
 COMPILERS = {
     "markdown": ('.md', '.mdown', '.markdown'),
+    "pandoc": ('.org',),
     "rest": ('.rst', '.txt'),
     "textile": ('.textile',),
     "txt2tags": ('.t2t',),
@@ -281,7 +282,6 @@ COMPILERS = {
     # Pandoc detects the input from the source filename
     # but is disabled by default as it would conflict
     # with many of the others.
-    "pandoc": ('.org'),
     # PHP files are rendered the usual way (i.e. with the full templates).
     # The resulting files have .php extensions, making it possible to run
     # them without reconfiguring your server to recognize them.

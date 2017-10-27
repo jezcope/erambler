@@ -1,9 +1,25 @@
-<figure class="{{class}}">
-		<img src="{{src}}" alt="{{alt}}" />
-    
+<figure class="${pageargs['class']}">
+  <img src="${src}" alt="${alt}" />
+
+  % if attr is not UNDEFINED or caption is not undefined:
     <figcaption>
-        <p>
-						<a href="{{attrlink}}">{{attr}}</a> 
-        </p> 
+      <p>
+        % if caption is not UNDEFINED:
+          ${caption}
+          % if attr is not UNDEFINED:
+            &middot;
+          % endif
+        % endif
+        % if attr is not UNDEFINED:
+          % if attrlink is not UNDEFINED:
+            <a href="${attrlink}">
+          % endif
+          ${attr}
+          % if attrlink is not UNDEFINED:
+            </a>
+          % endif
+        % endif
+      </p>
     </figcaption>
+  % endif
 </figure>

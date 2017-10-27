@@ -1,6 +1,6 @@
 /public/
 /tmp/
-/output/
+/.output/
 output.diff
-/cache/
+/.cache/
 .doit.db

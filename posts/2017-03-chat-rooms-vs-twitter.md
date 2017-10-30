@@ -5,9 +5,8 @@ slug: chat-rooms-vs-twitter
 date: '2017-03-29 21:41:31 UTC+01:00'
 draft: false
 type: post
-topics:
-- Technology
 tags:
+- Technology
 - Social media
 - Twitter
 - Slack

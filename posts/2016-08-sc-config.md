@@ -5,9 +5,8 @@ slug: sc-config
 date: 2016-08-26T19:47:40+01:00
 draft: false
 type: post
-topics:
-- Technology
 tags:
+- Technology
 - Software Carpentry
 - Web archaeology
 - autoconf

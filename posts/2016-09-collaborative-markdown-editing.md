@@ -5,10 +5,9 @@ author: Jez
 date: 2016-09-15T20:52:35+01:00
 description: "I can't believe it's taken this long to create tools that allow simultaneous editing of markdown documents, but they're finally here."
 draft: false
-topics:
+tags:
 - Research communication
 - Technology
-tags:
 - Markdown
 - Collaboration
 type: post

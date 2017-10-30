@@ -5,10 +5,9 @@ slug: mozilla-global-sprint-2017
 date: '2017-06-15 07:52:23 UTC+01:00'
 draft: false
 type: post
-topics:
-- librarianship
-- open culture
 tags:
+- Librarianship
+- Open culture
 - Library Carpentry
 - Mozilla Global Sprint
 - Mozilla

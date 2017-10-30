@@ -5,9 +5,8 @@ slug: certified-carpentry-instructor
 date: '2017-05-05 17:19:18 UTC+01:00'
 draft: false
 type: post
-topics:
-- Higher education
 tags:
+- Higher education
 - Carpentry
 - Teaching
 ---

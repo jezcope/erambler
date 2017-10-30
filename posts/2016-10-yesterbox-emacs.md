@@ -5,9 +5,8 @@ slug: yesterbox-emacs-mu4e
 date: 2016-10-27T08:30:33+01:00
 draft: false
 type: post
-topics:
-- Technology
 tags:
+- Technology
 - Emacs
 - Productivity
 - Email

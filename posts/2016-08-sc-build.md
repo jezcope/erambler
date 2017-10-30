@@ -5,9 +5,8 @@ slug: sc-build
 date: 2016-08-19T19:30:13+01:00
 draft: false
 type: post
-topics:
-- Technology
 tags:
+- Technology
 - Software Carpentry
 - Web archaeology
 - SCons

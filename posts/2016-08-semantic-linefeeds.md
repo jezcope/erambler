@@ -6,7 +6,6 @@ description: "Still letting your text editor break lines for you at 80 character
 draft: false
 tags:
 - Writing
-topics:
 - Stuff
 type: post
 ---

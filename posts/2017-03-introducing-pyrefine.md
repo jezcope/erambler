@@ -5,9 +5,8 @@ slug: introducing-pyrefine-openrefine-python
 date: 2017-03-27T21:00:56+01:00
 draft: false
 type: post
-topics:
-- Technology
 tags:
+- Technology
 - Python
 - OpenRefine
 - Data

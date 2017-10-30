@@ -5,9 +5,8 @@ slug: rewarding-good-practice-in-research
 date: 2016-10-13T08:32:50+01:00
 draft: false
 type: post
-topics:
-- Higher education
 tags:
+- Higher education
 - Research data management
 - Open Access
 - Research

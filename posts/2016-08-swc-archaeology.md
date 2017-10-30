@@ -5,9 +5,8 @@ slug: swc-the-competition
 date: 2016-08-16T18:03:13+01:00
 draft: false
 type: post
-topics:
-- Technology
 tags:
+- Technology
 - Software Carpentry
 - Web archaeology
 series: swc-archaeology

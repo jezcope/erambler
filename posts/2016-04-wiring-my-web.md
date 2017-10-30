@@ -3,9 +3,8 @@ title: 'Wiring my web'
 slug: wiring-my-web
 date: 2016-04-01T17:37:00+01:00
 type: post
-topics:
-- Technology
 tags:
+- Technology
 - APIs
 - Web
 - Automation

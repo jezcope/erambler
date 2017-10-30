@@ -3,9 +3,8 @@ title: 'Fairphone 2: initial thoughts on the original ethical smartphone'
 slug: fairphone-first-thoughts
 date: 2016-05-07T16:56:29+01:00
 type: post
-topics:
-- Technology
 tags:
+- Technology
 - Gadgets
 - Fairphone
 - Smartphone

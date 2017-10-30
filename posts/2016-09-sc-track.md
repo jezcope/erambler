@@ -5,9 +5,8 @@ slug: sc-track
 date: 2016-09-12T08:50:15+01:00
 draft: false
 type: post
-topics:
-- Technology
 tags:
+- Technology
 - Software Carpentry
 - Web archaeology
 - Bug trackers

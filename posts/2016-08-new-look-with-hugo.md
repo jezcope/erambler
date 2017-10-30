@@ -5,9 +5,8 @@ date: 2016-08-12T13:18:28+01:00
 slug: changing-static-site-generators-nanoc-hugo
 description: "In which I continue to avoid actually writing by moving to a new static site generator"
 draft: false
-topics:
-- Stuff
 tags:
+- Stuff
 - Meta
 - Web
 type: post

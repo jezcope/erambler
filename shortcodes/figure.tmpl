@@ -1,21 +1,21 @@
 <figure class="${pageargs['class']}">
   <img src="${src}" alt="${alt}" />
 
-  % if attr is not UNDEFINED or caption is not undefined:
+  % if attr or caption:
     <figcaption>
       <p>
-        % if caption is not UNDEFINED:
+        % if caption:
           ${caption}
-          % if attr is not UNDEFINED:
+          % if attr:
             &middot;
           % endif
         % endif
-        % if attr is not UNDEFINED:
-          % if attrlink is not UNDEFINED:
+        % if attr:
+          % if attrlink:
             <a href="${attrlink}">
           % endif
           ${attr}
-          % if attrlink is not UNDEFINED:
+          % if attrlink:
             </a>
           % endif
         % endif

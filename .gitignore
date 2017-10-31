@@ -4,3 +4,4 @@
 output.diff
 /.cache/
 .doit.db
+state_data.json

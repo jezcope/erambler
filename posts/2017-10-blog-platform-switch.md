@@ -3,6 +3,7 @@ date: 2017-10-29 21:40:00 UTC
 description: "I've just switched my blog over to the Nikola static site generator. Hopefully you won't notice a thing, but there might be a few weird spectres around til I get all the kinks ironed out."
 slug: blog-platform-switch-2017
 tags:
+- Stuff
 - Meta
 - Python
 title: 'Blog platform switch'

@@ -1338,3 +1338,7 @@ GLOBAL_CONTEXT_FILLER = []
 SASS_COMPILER = 'sassc'
 
 SASS_OPTIONS = []
+
+SERIES_DESCRIPTIONS = {
+    'swc-archaeology': 'the origins of [Software Carpentry](http://software-carpentry.org)'
+}

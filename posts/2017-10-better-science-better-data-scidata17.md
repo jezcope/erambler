@@ -15,7 +15,9 @@ caption="Better Science through Better Doughnuts"
 attr="Jez Cope"
 class="main-illustration fr" %}}
 
-Last week I had the honour of giving my first ever keynote talk, at an event entitled *Better Science Through Better Data* hosted jointly by Springer Nature and the Wellcome Trust. It was nerve-wracking but exciting and seemed to go down fairly well. I even got accidentally awarded a PhD in the programme — if only it was that easy! [The slides for the talk, "Supporting Open Research: The role of an academic library", are available online](https://jcope.shef.ac.uk/talks/2017-10-15-scidata17-libraries-open-research.html) ([doi:10.15131/shef.data.5537269](https://doi.org/10.15131/shef.data.5537269)), and the [whole event was video'd for posterity and viewable online](https://www.facebook.com/scientificdata/videos/1411142115680822/).
+***Update:** fixed the link to the slides so it works now!*
+
+Last week I had the honour of giving my first ever keynote talk, at an event entitled *Better Science Through Better Data* hosted jointly by Springer Nature and the Wellcome Trust. It was nerve-wracking but exciting and seemed to go down fairly well. I even got accidentally awarded a PhD in the programme — if only it was that easy! [The slides for the talk, "Supporting Open Research: The role of an academic library", are available online](http://jcope.shef.ac.uk/talks/2017-10-25-scidata17-libraries-open-research.html) ([doi:10.15131/shef.data.5537269](https://doi.org/10.15131/shef.data.5537269)), and the [whole event was video'd for posterity and viewable online](https://www.facebook.com/scientificdata/videos/1411142115680822/).
 
 I got some good questions too, mainly from the clever online question system. I didn't get to answer all of them, so I'm thinking of doing a blog post or two to address a few more.
 

@@ -11,12 +11,10 @@ build:
           nikola build
 deploy:
   steps:
-    - s3sync:
-        source_dir: .output/
-        delete-removed: true
-        bucket-url: $AWS_BUCKET_URL
-        key-id: $AWS_ACCESS_KEY_ID
-        key-secret: $AWS_SECRET_ACCESS_KEY
+    - script:
+        name: deploy site to production
+        code: |
+          nikola deploy
   testing:
     - script:
         name: configure git

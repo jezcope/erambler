@@ -1,4 +1,4 @@
-box: jezcope/hugo:latest
+box: jezcope/erambler-nikola:latest
 build:
   steps:
     - script:
@@ -8,11 +8,11 @@ build:
     - script:
         name: compile site
         code: |
-          hugo
+          nikola build
 deploy:
   steps:
     - s3sync:
-        source_dir: public/
+        source_dir: .output/
         delete-removed: true
         bucket-url: $AWS_BUCKET_URL
         key-id: $AWS_ACCESS_KEY_ID
@@ -28,7 +28,7 @@ deploy:
     - script:
         name: deploy to github pages
         code: |-
-          cd public
+          cd .output
 
           git init
           git add .

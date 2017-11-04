@@ -3,6 +3,7 @@
 
 from __future__ import unicode_literals
 import time
+import json
 
 # !! This is the configuration of Nikola. !! #
 # !!  You should edit it to your liking.  !! #
@@ -597,10 +598,17 @@ REDIRECTIONS = []
 # to `nikola deploy`.  If no arguments are specified, a preset
 # named `default` will be executed.  You can use as many presets
 # in a `nikola deploy` command as you like.
+CF_CONFIG = {
+    'Paths': {
+        'Quantity': 1,
+        'Items': ['/*'],
+    },
+    'CallerReference': f"deploy-{time.strftime('%Y%m%d%H%M%S', time.gmtime())}",
+}
 DEPLOY_COMMANDS = {
     'default': [
         "s3cmd sync .output/ s3://erambler.co.uk",
-        "aws cloudfront create-invalidation --distribution-id E3E9R6D3K2FTI2 --paths '/*'",
+        f"aws cloudfront create-invalidation --distribution-id E3E9R6D3K2FTI2 --invalidation-batch '{json.dumps(CF_CONFIG)}'",
     ]
 }
 

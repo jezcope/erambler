@@ -1,4 +1,4 @@
-box: jezcope/hugo:latest
+box: jezcope/erambler-nikola:latest
 build:
   steps:
     - script:
@@ -8,7 +8,7 @@ build:
     - script:
         name: compile site
         code: |
-          hugo
+          nikola build
 deploy:
   steps:
     - s3sync:

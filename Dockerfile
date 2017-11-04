@@ -1,6 +1,10 @@
 # This image is used to build and deploy the site using wercker
 
-FROM debian:sid
+FROM python:3.6
 
-RUN apt-get -y update && apt-get -y install wget git openssh-client curl
-RUN URL='https://github.com/spf13/hugo/releases/download/v0.19/hugo_0.19-64bit.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && dpkg -i $FILE; rm $FILE
+RUN apt-get update && apt-get install -y pandoc node-less locales
+RUN echo 'en_GB.UTF-8 UTF-8' > /etc/locale.gen && locale-gen
+RUN pip install pipenv
+COPY Pipfile Pipfile.lock /tmp/build/
+WORKDIR /tmp/build
+RUN pipenv install --system

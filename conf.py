@@ -1342,5 +1342,6 @@ SASS_COMPILER = 'sassc'
 SASS_OPTIONS = []
 
 SERIES_DESCRIPTIONS = {
-    'swc-archaeology': 'the origins of [Software Carpentry](http://software-carpentry.org)'
+    'swc-archaeology': 'the origins of [Software Carpentry](http://software-carpentry.org)',
+    'lean-libraries': 'applying lean principles in library & information work',
 }

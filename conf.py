@@ -607,7 +607,7 @@ CF_CONFIG = {
 }
 DEPLOY_COMMANDS = {
     'default': [
-        "s3cmd sync .output/ s3://erambler.co.uk",
+        "aws s3 sync --delete .output/ s3://erambler.co.uk",
         f"aws cloudfront create-invalidation --distribution-id E3E9R6D3K2FTI2 --invalidation-batch '{json.dumps(CF_CONFIG)}'",
     ]
 }

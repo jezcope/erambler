@@ -600,7 +600,7 @@ REDIRECTIONS = []
 # in a `nikola deploy` command as you like.
 DEPLOY_COMMANDS = {
     'default': [
-        "s3cmd sync --guess-mime-type .output/ s3://erambler.co.uk",
+        "s3cmd sync --no-mime-magic --guess-mime-type .output/ s3://erambler.co.uk",
         "aws cloudfront create-invalidation --distribution-id E3E9R6D3K2FTI2 --paths '/*'",
     ]
 }

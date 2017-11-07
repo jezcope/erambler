@@ -187,6 +187,7 @@ THEME_COLOR = '#5670d4'
 POSTS = (
     ("posts/*.md", "blog", "post.tmpl"),
     ("posts/*.org", "blog", "post.tmpl"),
+    ("posts/*.ipynb", "blog", "post.tmpl"),
     ("posts/*.rst", "blog", "post.tmpl"),
     ("posts/*.txt", "blog", "post.tmpl"),
     ("posts/*.html", "blog", "post.tmpl"),
@@ -846,7 +847,7 @@ IMAGE_FOLDERS = {'images': 'images'}
 # paraiso-light, pastie, perldoc, rrt, tango, trac, vim, vs, xcode
 # This list MAY be incomplete since pygments adds styles every now and then.
 # Check with list(pygments.styles.get_all_styles()) in an interpreter.
-# CODE_COLOR_SCHEME = 'default'
+CODE_COLOR_SCHEME = ''
 
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:

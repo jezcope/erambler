@@ -27,7 +27,7 @@ SITE_URL = "https://erambler.co.uk/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://example.com/"
 BLOG_EMAIL = "j.cope@erambler.co.uk"
-BLOG_DESCRIPTION = "This is a demo site for Nikola."  # (translatable)
+BLOG_DESCRIPTION = "Jez Cope's blog"  # (translatable)
 
 # Nikola is multilingual!
 #

@@ -260,9 +260,7 @@ FILES_FOLDERS = {
 
 # One or more folders containing code listings to be processed and published on
 # the site. The format is a dictionary of {source: relative destination}.
-# Default is:
-# LISTINGS_FOLDERS = {'listings': 'listings'}
-# Which means process listings from 'listings' into 'output/listings'
+LISTINGS_FOLDERS = {'code': 'code'}
 
 # A mapping of languages to file-extensions that represent that language.
 # Feel free to add or delete extensions to any list, but don't add any new
@@ -1345,4 +1343,5 @@ SASS_OPTIONS = []
 SERIES_DESCRIPTIONS = {
     'swc-archaeology': 'the origins of [Software Carpentry](http://software-carpentry.org)',
     'lean-libraries': 'applying lean principles in library & information work',
+    'aoc2017': 'my attempts to complete the [Advent of Code 2017](http://adventofcode.com) challenges',
 }

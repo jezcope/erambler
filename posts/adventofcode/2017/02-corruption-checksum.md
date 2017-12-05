@@ -11,6 +11,9 @@ tags:
 series: aoc2017
 ---
 
+[Today's challenge](http://adventofcode.com/2017/day/2) is to calculate a rather contrived "checksum" over a grid of numbers.
+
+[Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/02-corruption-checksum.py)
 
 !!! commentary
     Today I went back to plain Python, and I didn't do formal tests because only one test case was given for each part of the problem. I just got stuck in.

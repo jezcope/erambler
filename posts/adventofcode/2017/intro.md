@@ -10,6 +10,7 @@ tags:
 - Python
 - Haskell
 - Emacs
+series: aoc2017
 ---
 
 It's a common lament of mine that I don't get to write a lot of code in my day-to-day job. I like the feeling of making something from nothing, and I often look for excuses to write bits of code, both at work and outside it.

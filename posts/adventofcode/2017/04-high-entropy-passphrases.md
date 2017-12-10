@@ -13,7 +13,7 @@ series: aoc2017
 
 [Today's challenge](http://adventofcode.com/2017/day/4) describes some simple rules supposedly intended to enforce the use of secure passwords. All we have to do is test a list of passphrase and identify which ones meet the rules.
 
-[Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/04-high-entropy-passphrases.py)
+[→ Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/04-high-entropy-passphrases.py)
 
 !!! commentary
     Fearing that today might be as time-consuming as yesterday, I returned to Python and it's hugely powerful "batteries-included" standard library. Thankfully this challenge was more straightforward, and I actually finished this before finishing [day 3](../day-03/).

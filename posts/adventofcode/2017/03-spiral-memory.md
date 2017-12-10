@@ -13,7 +13,7 @@ series: aoc2017
 
 [Today's challenge](http://adventofcode.com/2017/day/3) requires us to perform some calculations on an "experimental memory layout", with cells moving outwards from the centre of a square spiral (squiral?).
 
-[Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/03-spiral-memory.go)
+[→ Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/03-spiral-memory.go)
 
 !!! commentary
     I've been wanting to try my hand at [Go](https://golang.com), the memory-safe, statically typed compiled language from Google for a while. Today's challenge seemed a bit more mathematical in nature, meaning that I wouldn't need too many advanced language features or knowledge of a standard library, so I thought I'd give it a "go". It might have been my imagination, but it was impressive how quickly the compiled program chomped through 60 different input values while I was debugging.

@@ -13,7 +13,7 @@ series: aoc2017
 
 [Today's challenge](http://adventofcode.com/2017/day/5) has us attempting to help the CPU escape from a maze of instructions. It's not quite a [Turing Machine](https://en.wikipedia.org/wiki/Turing%20Machine), but it has that feeling of moving a read/write head up and down a tape acting on and changing the data found there.
 
-[Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/05-a-maze-of-twisty-trampolines.cc)
+[→ Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/05-a-maze-of-twisty-trampolines.cc)
 
 !!! commentary
     I haven't written anything in C++ for over a decade. It sounds like there have been lots of interesting developments in the language since then, with C++11, C++14 and the freshly finalised C++17 standards (built-in parallelism in the STL!). I won't use any of those, but I thought I'd dust off my C++ and see what happened. Thankfully the Standard Template Library classes still did what I expected!

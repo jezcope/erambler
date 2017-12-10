@@ -13,6 +13,8 @@ series: aoc2017
 
 [Today's challenge](http://adventofcode.com/2017/day/6) asks us to follow a recipe for redistributing objects in memory that bears a striking resemblance to the rules of the African game [Mancala](http://en.wikipedia.org/wiki/Mancala).
 
+[→ Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/06-memory-reallocation.py)
+
 !!! commentary
     When I was doing my MSci, one of our programming exercises was to write (in Haskell, IIRC) a program to play a Mancala variant called [Oware](http://en.wikipedia.org/wiki/Oware), so this had a nice ring of nostalgia.
     

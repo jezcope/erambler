@@ -11,7 +11,7 @@ tags:
 series: aoc2017
 ---
 
-[Today's challenge](http://adventofcode.com/2017/day/15) 
+[Today's challenge](http://adventofcode.com/2017/day/15) introduces two pseudo-random number generators which are trying to agree on a series of numbers. We play the part of the "judge", counting the number of times their numbers agree in the lowest 16 bits.
 
 [→ Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/15-dueling-generators.rs)
 

@@ -90,4 +90,10 @@ print("Part 2:", lib.spinlock0(50_000_000, skip))
 
 This is a toy example as far as calling Rust from Python is concerned, but it's worth noting that already we can play with the parameters to the two Rust functions without having to recompile. For more serious work, I'd probably be looking at something like [PyO3](https://github.com/PyO3/pyo3) to make a proper Python module. Looks like there's also a [very early Rust numpy integration](https://github.com/termoshtt/rust-numpy) for integrating numerical stuff.
 
+You can also do the same thing from Julia, which has a `ccall` function built in:
+
+```julia
+ccall((:spinlock, "./spinlock.so"), Int32, (UInt64, UInt64), 2017, 377)
+```
+
 My next thing to try might be [Haskell → Python](https://wiki.python.org/moin/PythonVsHaskell#Using_both_Python_.26_Haskell_with_ctypes_.28-.3B) though…

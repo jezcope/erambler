@@ -13,7 +13,7 @@ series: aoc2017
 
 [Today's challenge](http://adventofcode.com/2017/day/20) finds us simulating the movements of particles in space.
 
-[→ Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/19-a-series-of-tubes.rs)
+[→ Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/20-particle-swarm.py)
 
 !!! commentary
     Back to Python for this one, another relatively straightforward simulation, although it's easier to calculate the answer to part 1 than to simulate.

@@ -11,9 +11,9 @@ tags:
 series: aoc2017
 ---
 
-[Today's challenge](http://adventofcode.com/2017/day/19)
+[Today's challenge](http://adventofcode.com/2017/day/19) asks us to help a network packet find its way.
 
-[→ Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/19-a-series-of-tubes.rs) asks us to help a network packet find its way.
+[→ Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/19-a-series-of-tubes.rs)
 
 !!! commentary
     Today's challenge was fairly straightforward, following an [ASCII art](http://en.wikipedia.org/wiki/ASCII_art) path, so I thought I'd give Rust another try. I'm a bit behind on the blog posts, so I'm presenting the code below without any further commentary. I'm not really convinced this is good idiomatic Rust, and it was interesting turning a set of strings into a 2D array of characters because there are both `u8` (byte) and `char` types to deal with.

@@ -13,7 +13,7 @@ series: aoc2017
 
 [Today's challenge](http://adventofcode.com/2017/day/21) asks us to assist an artist building fractal patterns from a rulebook.
 
-[→ Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/21-fractal-art.md)
+[→ Full code on GitHub](https://github.com/jezcope/aoc2017/blob/master/21-fractal-art.py)
 
 !!! commentary
     Another fairly straightforward algorithm: the really tricky part was breaking the pattern up into chunks and rejoining it again. I could probably have done that more efficiently, and would have needed to if I had to go for a few more iterations and the grid grows with every iteration and gets big fast.

@@ -1,9 +1,4 @@
 ---
-Categories: []
-Description: "About me"
-Tags: []
-date: "2016-07-19T07:33:41+01:00"
-menu: "main"
 title: "About me"
 slug: about
 ---

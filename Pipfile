@@ -3,12 +3,15 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 
 [packages]
+pip = "==18.0"
 "ws4py" = "*"
-watchdog = "*"
-typogrify = "*"
 nikola = "~=8.0.0"
 "jinja2" = "*"
 notebook = "*"
 "s3cmd" = "*"
 coconut = "*"
-pip = "==18.0"
+
+[dev-packages]
+aiohttp = "*"
+watchdog = "*"
+typogrify = "*"

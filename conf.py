@@ -1267,6 +1267,7 @@ GLOBAL_CONTEXT = {
         'higher education',
         'open culture',
         'technology',
+        'making',
         'librarianship',
         'stuff',
     ],

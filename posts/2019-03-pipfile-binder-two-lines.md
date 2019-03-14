@@ -17,18 +17,19 @@ attr="Photo by Sear Greyson on Unsplash"
 attrlink="https://unsplash.com/photos/K-ZsC7YdJ6Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
 class="main-illustration fw" %}}
 
-I recently attended a workshop, organised by the team of the Turing Way project, on a tool called BinderHub. BinderHub, along with public hosting platform [MyBinder][], allows you to publish computational notebooks online as "binders" such that they're not static but fully interactive. It's able to do this by using a tool called repo2docker to capture the full computational environment and dependencies required to run the notebook.
+I recently attended a workshop, organised by the excellent team of the [Turing Way project][], on a tool called BinderHub. BinderHub, along with public hosting platform [MyBinder][], allows you to publish computational notebooks online as "binders" such that they're not static but fully interactive. It's able to do this by using a tool called repo2docker to capture the full computational environment and dependencies required to run the notebook.
 
-The process goes roughly like this:
+!!! aside "What is the Turing Way?"
+    The Turing Way is, in its own words, "a lightly opinionated guide to reproducible data science." The team is building an open textbook and running a number of workshops for scientists and research software engineers, and you should [check out the project on Github][Turing Way project]. You could even contribute!
 
-1. Do some work in a computational notebook format (such as Jupyter or Rmd)
+The Binder process goes roughly like this:
+
+1. Do some work in a [Jupyter Notebook][] or similar
 2. Put it into a public git repository
 3. Add some extra metadata describing the packages and versions your code relies on
-4. Go to [mybinder.org][] and tell it where to find your repository
+4. Go to [mybinder.org][MyBinder] and tell it where to find your repository
 5. Open the URL it generates for you
 6. Profit
-
-[mybinder.org]: https://mybinder.org
 
 Other than step 5, which can take some time to build the binder, this is a remarkably quick process. It supports a number of different languages too, including built-in support for R, Python and Julia and the ability to configure pretty much any other language that will run on Linux.
 
@@ -57,3 +58,5 @@ With these two files, the binder builds and runs as expected. You can [see a com
 [Pipfile]: https://github.com/pypa/pipfile
 [pipenv]: https://pipenv.readthedocs.io/en/latest/
 [Kenneth Reitz]: http://kennethreitz.org/
+[Turing Way project]: https://github.com/alan-turing-institute/the-turing-way
+[Jupyter Notebook]: /blog/jupyter-notebooks-introduction/

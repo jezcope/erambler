@@ -10,7 +10,8 @@ nikola = "~=8.0.0"
 notebook = "*"
 "s3cmd" = "*"
 coconut = "*"
-pyyaml = "*"
+pygments = "*"
+ruamel-yaml = "*"
 
 [dev-packages]
 aiohttp = "*"

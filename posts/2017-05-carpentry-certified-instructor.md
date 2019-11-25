@@ -7,7 +7,7 @@ draft: false
 type: post
 tags:
 - Higher education
-- Carpentry
+- The Carpentries
 - Teaching
 ---
 

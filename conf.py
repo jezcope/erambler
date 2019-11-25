@@ -1000,7 +1000,7 @@ delimiters: [
 # Note: most Nikola-specific extensions are done via the Nikola plugin system,
 #       with the MarkdownExtension class and should not be added here.
 # The default is ['fenced_code', 'codehilite']
-MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'extra', 'admonition']
+MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'extra', 'admonition', 'toc', 'smarty']
 
 # Extra options to pass to the pandoc command.
 # by default, it's empty, is a list of strings, for example

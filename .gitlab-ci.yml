@@ -1,0 +1,17 @@
+default:
+  image: jezcope/erambler-nikola:latest
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - git submodule update --init --recursive
+    - nikola build
+
+production:
+  stage: deploy
+  script:
+    - nikola deploy

@@ -6,6 +6,7 @@ variables:
 
 pages:
   script:
+    - date -Iseconds
     - nikola version
     - nikola build
   artifacts:

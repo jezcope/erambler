@@ -4,23 +4,11 @@ default:
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
-cache:
-  key: "$CI_COMMIT_SHA"
-  paths:
-    - .output/
-
-stages:
-  - build
-  - deploy
-
-build:
-  stage: build
+pages:
   script:
-    - git submodule update --init --recursive
     - nikola build
-
-production:
-  stage: deploy
-  script:
-    - ls .output
-    - nikola deploy
+  artifacts:
+    paths:
+      - public
+  only:
+    - master

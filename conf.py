@@ -545,7 +545,7 @@ REDIRECTIONS = []
 # in a `nikola deploy` command as you like.
 DEPLOY_COMMANDS = {
     'default': [
-        "s3cmd sync --no-mime-magic --guess-mime-type .output/ s3://erambler.co.uk",
+        "s3cmd sync --no-mime-magic --guess-mime-type public/ s3://erambler.co.uk",
         "aws cloudfront create-invalidation --distribution-id E3E9R6D3K2FTI2 --paths '/*'",
     ]
 }
@@ -567,7 +567,7 @@ GITHUB_COMMIT_SOURCE = True
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
 # to the location of conf.py
-OUTPUT_FOLDER = '.output'
+OUTPUT_FOLDER = 'public'
 
 # where the "cache" of partial generated content should be located
 # default: 'cache'

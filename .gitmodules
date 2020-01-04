@@ -1,6 +1,6 @@
 [submodule "themes/sidmouth"]
 	path = themes/sidmouth
-	url = https://github.com/jezcope/theme-sidmouth-nikola.git
+	url = ../../jezcope/nikola-theme-sidmouth.git
 [submodule "plugins/series"]
 	path = plugins/series
-	url = https://github.com/jezcope/nikola-series.git
+	url = ../../jezcope/nikola-plugin-series.git

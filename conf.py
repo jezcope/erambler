@@ -1263,7 +1263,8 @@ GLOBAL_CONTEXT = {
     'social_github': 'jezcope',
     'social_linkedin': 'jezcope',
     'social_twitter': 'jezcope',
-    'wercker': 'eabedc12f9bc4c2e496bb85791b4207b',
+    'gitlab': 'jezcope/erambler',
+    'gitlab_ci': True,
 }
 
 # Add functions here and they will be called with template

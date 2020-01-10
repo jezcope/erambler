@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/jezcope
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://erambler.co.uk
+  * I am jezcope (https://keybase.io/jezcope) on keybase.
+  * I have a public key ASB4BQwg6WIwa_qSi2aW0UDEJLrfldr5yLar069qgrH_UQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01209aed3b345b62c909146567c6e805232c6c36dda301d532e3148d8af29381b1450a",
+      "host": "keybase.io",
+      "kid": "012078050c20e962306bfa928b6696d140c424badf95daf9c8b6abd3af6a82b1ff510a",
+      "uid": "e76508dfea61c4a19c0d8e34e7a4cb19",
+      "username": "jezcope"
+    },
+    "merkle_root": {
+      "ctime": 1578666875,
+      "hash": "376d8b5acb2a6a42698a52dbbe09330233741f1d1703f0bd3a2e703d9fb56fd7db6d9d56a914974567e56d0580811dd159e69e0c57e7928cbf31b62b65e9f26c",
+      "hash_meta": "16307437b1c39d09a7f1c9ed3b277e1d3010134846960fbdbdf3c335fe261b15",
+      "seqno": 14169819
+    },
+    "service": {
+      "entropy": "PkBTgsCfKjgu988z7PRz4CuT",
+      "hostname": "erambler.co.uk",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.1.1"
+  },
+  "ctime": 1578666880,
+  "expire_in": 504576000,
+  "prev": "6c265be555998d77ac47b035078568a9c73aa9f7140f5a52f34e9f85caefaee1",
+  "seqno": 35,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgeAUMIOliMGv6kotmltFAxCS635Xa+ci2q9OvaoKx/1EKp3BheWxvYWTESpcCI8QgbCZb5VWZjXesR7A1B4Voqcc6qfcUD1pS806fhcrvruHEIORRue0ATsp+4G0jWeJLox3NjpIXCB2CN3ho8FKyBaliAgHCo3NpZ8RAc+XCHta1TJr8vCyqA5qheE9A7IeG3iB0FVr47d8KJ6azwanwWAzSunFZzs3LJ9RV8d3swjVtLsZaKiP74zRyAahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIGOvnhdZXk6di08UYxexnfb421KlYRuQeyoRlAZIP9C8o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jezcope
+
+==================================================================

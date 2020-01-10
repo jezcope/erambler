@@ -15,7 +15,7 @@ tags:
 
 {{% figure alt="Telephones"
 class="main-illustration fr"
-src="/assets/images/posts/2017-03-29-phone.jpg"
+src="/images/posts/2017-03-29-phone.jpg"
 attr="CC0, Pixabay"
 attrlink="https://pixabay.com/en/phone-models-generations-old-1678289/" %}}
 

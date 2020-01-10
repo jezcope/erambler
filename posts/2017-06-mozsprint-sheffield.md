@@ -13,7 +13,7 @@ tags:
 - Mozilla
 ---
 
-{{% figure alt="Globes" src="/assets/images/posts/2017-06-15-globes.jpg" class="main-illustration fr"
+{{% figure alt="Globes" src="/images/posts/2017-06-15-globes.jpg" class="main-illustration fr"
     attr="Photo by Lena Bell on Unsplash" attrlink="https://unsplash.com/photos/mluSdDeOksc" %}}
 
 Every year, the Mozilla Foundation runs a [two-day Global Sprint](https://mozilla.github.io/global-sprint/), giving people around the world 50 hours to work on projects supporting and promoting open culture and tech.

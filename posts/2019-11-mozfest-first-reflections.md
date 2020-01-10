@@ -9,7 +9,7 @@ tags:
 ---
 
 {{% figure alt="A group of people at #mozfest, clustered around a wall with post-it notes on"
-src="/assets/images/posts/2019-11-mozfest.jpg" class="main-illustration fr"
+src="/images/posts/2019-11-mozfest.jpg" class="main-illustration fr"
 caption="Discussions of neurodiversity at #mozfest"
 attr="Photo by Jennifer Riggins"
 attrlink="https://twitter.com/jkriggins/status/1188533738105458689" %}}

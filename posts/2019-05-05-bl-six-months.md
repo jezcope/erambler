@@ -9,7 +9,7 @@ tags:
 - British Library
 ---
 
-{{% figure alt="The British Library" src="/assets/images/posts/2019-05-british-library-atrium.jpg" class="main-illustration fr" %}}
+{{% figure alt="The British Library" src="/images/posts/2019-05-british-library-atrium.jpg" class="main-illustration fr" %}}
 
 
 It barely seems like it, but I've been at the British Library now for nearly 6 months. It always takes a long time to adjust and from experience I know it'll be another year before I feel fully settled, but my team, department and other colleagues have really made me feel welcome and like I belong.

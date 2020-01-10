@@ -11,7 +11,7 @@ tags:
 
 {{% figure alt="Cloudy lakeside"
 class="main-illustration fr"
-src="/assets/images/posts/2018-02-04-irresolutions.jpg"
+src="/images/posts/2018-02-04-irresolutions.jpg"
 attr="Photo by Andrew Hughes on Unsplash"
 attrlink="https://unsplash.com/photos/__iliPPO20g?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" %}}
 

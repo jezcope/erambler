@@ -255,7 +255,6 @@ LOCALE_DEFAULT = 'en_GB.UTF-8'
 FILES_FOLDERS = {
     'static': '',
     'legacy': '',
-    'images': 'assets/images',
 }
 # Which means copy 'files' into 'output'
 

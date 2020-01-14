@@ -1259,6 +1259,7 @@ GLOBAL_CONTEXT = {
         'librarianship',
         'stuff',
     ],
+    'indieauth_endpoint': 'https://indieauth.com/auth',
     'social_github': 'jezcope',
     'social_linkedin': 'jezcope',
     'social_twitter': 'jezcope',

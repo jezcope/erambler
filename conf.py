@@ -1261,8 +1261,13 @@ GLOBAL_CONTEXT = {
     ],
     'indieauth_endpoint': 'https://indieauth.com/auth',
     'social_github': 'jezcope',
+    'social_gitlab': 'jezcope',
     'social_linkedin': 'jezcope',
     'social_twitter': 'jezcope',
+    'social_masto': ('petrichor', 'digipres.club'),
+    'social_orcid': '0000-0003-3629-1383',
+    'social_pypi': 'jezcope',
+    'social_keybase': 'jezcope',
     'gitlab': 'jezcope/erambler',
     'gitlab_ci': True,
 }

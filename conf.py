@@ -1268,8 +1268,12 @@ GLOBAL_CONTEXT = {
     'social_orcid': '0000-0003-3629-1383',
     'social_pypi': 'jezcope',
     'social_keybase': 'jezcope',
+
     'gitlab': 'jezcope/erambler',
     'gitlab_ci': True,
+
+    'webmention': 'https://webmention.io/erambler.co.uk/webmention',
+    'pingback': 'https://webmention.io/erambler.co.uk/xmlrpc',
 }
 
 # Add functions here and they will be called with template

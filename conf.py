@@ -877,7 +877,7 @@ RSS_COPYRIGHT_FORMATS = CONTENT_FOOTER_FORMATS
 # systems.  The following comment systems are supported by Nikola:
 #   disqus, facebook, googleplus, intensedebate, isso, livefyre, muut
 # You can leave this option blank to disable comments.
-COMMENT_SYSTEM = "disqus"
+COMMENT_SYSTEM = "webmention"
 # And you also need to add your COMMENT_SYSTEM_ID which
 # depends on what comment system you use. The default is
 # "nikolademo" which is a test account for Disqus. More information
@@ -1259,7 +1259,11 @@ GLOBAL_CONTEXT = {
         'librarianship',
         'stuff',
     ],
+
+    'webmention': 'https://webmention.io/erambler.co.uk/webmention',
+    'pingback': 'https://webmention.io/erambler.co.uk/xmlrpc',
     'indieauth_endpoint': 'https://indieauth.com/auth',
+
     'social_github': 'jezcope',
     'social_gitlab': 'jezcope',
     'social_linkedin': 'jezcope',
@@ -1271,9 +1275,6 @@ GLOBAL_CONTEXT = {
 
     'gitlab': 'jezcope/erambler',
     'gitlab_ci': True,
-
-    'webmention': 'https://webmention.io/erambler.co.uk/webmention',
-    'pingback': 'https://webmention.io/erambler.co.uk/xmlrpc',
 }
 
 # Add functions here and they will be called with template

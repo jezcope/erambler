@@ -6,3 +6,4 @@ output.diff
 .doit.db
 state_data.json
 .ropeproject
+node_modules

@@ -3,6 +3,8 @@
 
 from __future__ import unicode_literals
 import time
+from pathlib import Path
+import sys
 
 # !! This is the configuration of Nikola. !! #
 # !!  You should edit it to your liking.  !! #
@@ -17,7 +19,6 @@ import time
 # ! Option (b) is used for settings that are different in different languages.
 
 
-# Data about this site
 BLOG_AUTHOR = "Jez Cope"  # (translatable)
 BLOG_TITLE = "eRambler"  # (translatable)
 # This is the main URL for your site. It will be used
@@ -635,7 +636,11 @@ CACHE_FOLDER = '.cache'
 # use this feature if you do not understand what this means.
 
 # Compiler to process LESS files.
-LESS_COMPILER = 'lessc'
+LESS_COMPILER = './node_modules/.bin/lessc'
+if not Path(LESS_COMPILER).exists():
+    print(f"lessc not found at {LESS_COMPILER}")
+    print("Try running `yarn install`")
+    sys.exit(100)
 
 # A list of options to pass to the LESS compiler.
 # Final command is: LESS_COMPILER LESS_OPTIONS file.less
@@ -1259,6 +1264,7 @@ GLOBAL_CONTEXT = {
         'librarianship',
         'stuff',
     ],
+    'bio': '',
 
     'webmention': 'https://webmention.io/erambler.co.uk/webmention',
     'pingback': 'https://webmention.io/erambler.co.uk/xmlrpc',
@@ -1274,7 +1280,11 @@ GLOBAL_CONTEXT = {
     'social_keybase': 'jezcope',
 
     'gitlab': 'jezcope/erambler',
-    'gitlab_ci': True,
+
+    'netlify': {
+        'name': 'erambler',
+        'id': '0599621e-c4b4-4341-8e42-6f8b9c1d33cc',
+    },
 }
 
 # Add functions here and they will be called with template

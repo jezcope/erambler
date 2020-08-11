@@ -12,7 +12,7 @@ tags:
 ---
 
 <!-- [![XKCD: automation](http://imgs.xkcd.com/comics/automation.png){:.main-illustration}](https://xkcd.com/1319/) -->
-{{% figure alt="XKCD: automation" src="http://imgs.xkcd.com/comics/automation.png" class="main-illustration fr" link="https://xkcd.com/1319/" %}}
+{{% figure alt="XKCD: automation" src="https://imgs.xkcd.com/comics/automation.png" class="main-illustration fr" link="https://xkcd.com/1319/" %}}
 
 I'm a nut for automating repetitive tasks, so I was dead pleased a few years ago when I discovered that [IFTTT](https://ifttt.com) let me plug different bits of the web together. I now use it for tasks such as:
 

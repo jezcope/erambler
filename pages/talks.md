@@ -9,7 +9,7 @@ data: data/talks.yaml
 Here is a selection of talks that I've given.
 
 {{% template %}}
-<%! import datetime %>
+<%! import arrow %>
 <table>
   <thead>
     <tr>
@@ -22,7 +22,8 @@ Here is a selection of talks that I've given.
     <tr>
       <td>
         % if 'date' in talk:
-          ${talk['date'].strftime('%a')}
+          <% date = arrow.get(talk['date']) %>
+          ${date.format('ddd d MMM YYYY')}
         % endif
       </td>
       <td>

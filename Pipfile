@@ -2,18 +2,21 @@
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 
+[require]
+python_version = "3.7"
+
 [packages]
-pip = "==18.0"
-"ws4py" = "*"
-nikola = "~=8.0.0"
-"jinja2" = "*"
+nikola = "~=8.0"
+markdown = "~=3.1.1"
+jinja2 = "*"
 notebook = "*"
-"s3cmd" = "*"
+nbconvert = "~=5.6.1"
 coconut = "*"
 pygments = "*"
 ruamel-yaml = "*"
 
 [dev-packages]
 aiohttp = "*"
+ws4py = "*"
 watchdog = "*"
 typogrify = "*"

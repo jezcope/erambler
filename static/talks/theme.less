@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(https://fonts.googleapis.com/css?family=Gentium+Basic);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+
+@main-font: 'Gentium Basic';
+@heading-font: 'Indie Flower';
+@code-font: 'Inconsolata';
+
+// http://paletton.com/#uid=73x0X0kvWv+juDcoMy4y0oPD6jw
+@primary-color: #0B62A4;
+@secondary-color: #530FAD;
+@link-color: #FF9201;
+@highlight-color: #FFE801;
+
+body {
+}
+
+.remark-code, .remark-inline-code { font-family: @code-font; }
+.remark-slide-content {
+    background: #ffffff;
+    font-family: @main-font;
+    font-size: 36px;
+}
+
+h1, h2, h3 {
+    font-family: @heading-font;
+    font-weight: normal;
+    color: @primary-color;
+}
+
+em {
+    font-style: normal;
+    background-color: @highlight-color;
+}
+
+p, li {
+    margin: 0.5em 0;
+}
+
+blockquote {
+    border-left: @secondary-color solid 10px;
+    padding-left: 1em;
+    margin-left: 0;
+}
+
+a, a:visited {
+    color: @link-color;
+    background: lighten(@link-color, 80%);
+    text-decoration: none;
+    border-radius: 4px;
+    border: @link-color solid 2px;
+    padding: 0 4px;
+}
+a:hover {
+    background: lighten(@link-color, 90%);
+}
+
+img {
+    max-height: 600px;
+}

@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Indie Flower';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Indie Flower'), local('IndieFlower'), url(https://fonts.gstatic.com/s/indieflower/v12/m8JVjfNVeKWVnh3QMuKkFcZVaUuC.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gentium Basic'), local('GentiumBasic'), url(https://fonts.gstatic.com/s/gentiumbasic/v12/Wnz9HAw9aB_JD2VGQVR80We3LA2JjQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/inconsolata/v20/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WR32kg.ttf) format('truetype');
+}
+.remark-code,
+.remark-inline-code {
+  font-family: 'Inconsolata';
+}
+.remark-slide-content {
+  background: #ffffff;
+  font-family: 'Gentium Basic';
+  font-size: 36px;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Indie Flower';
+  font-weight: normal;
+  color: #0B62A4;
+}
+em {
+  font-style: normal;
+  background-color: #FFE801;
+}
+p,
+li {
+  margin: 0.5em 0;
+}
+blockquote {
+  border-left: #530FAD solid 10px;
+  padding-left: 1em;
+  margin-left: 0;
+}
+a,
+a:visited {
+  color: #FF9201;
+  background: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  border: #FF9201 solid 2px;
+  padding: 0 4px;
+}
+a:hover {
+  background: #ffffff;
+}
+img {
+  max-height: 600px;
+}

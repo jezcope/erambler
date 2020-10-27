@@ -6,7 +6,7 @@ class: title, right, middle
 
 *October 2020*
 
-**Jez Cope**  
+**Jez Cope** (he/him)  
 Data Services Lead  
 The British Library
 
@@ -15,12 +15,8 @@ The British Library
 # Agenda
 
 1. My fellowship plans
-2. (Not) gaining momentum
-3. Open Life Sciences programme
-
-???
-
-**TODO:** update agenda with final overview
+2. Then COVID happened
+3. So what now?
 
 ---
 
@@ -69,8 +65,10 @@ class: middle
 
 ## 2. Plan; Prepare
 
-- Fill out an [Open Canvas template](https://mozilla.github.io/open-leadership-training-series/articles/opening-your-project/develop-an-open-project-strategy-with-open-canvas/)
-- Draft a README
+- Find and try some planning tools:
+  - [Open Canvas](https://mozilla.github.io/open-leadership-training-series/articles/opening-your-project/develop-an-open-project-strategy-with-open-canvas/)
+  - [Community Canvas](https://community-canvas.org/)
+- Draft a [README](https://github.com/jezcope/chds-network/blob/main/README.md)
   - …a roadmap
   - …a Code of Conduct
 - Get the project online
@@ -112,4 +110,5 @@ class: middle, center
 
 - Slack channel for discussions
 - Journal/reading club
+- Joint blog post
 - …?

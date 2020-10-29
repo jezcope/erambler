@@ -14,7 +14,7 @@ The British Library
 
 # Agenda
 
-1. My fellowship plans
+1. I had fellowship plans
 2. Then COVID happened
 3. So what now?
 

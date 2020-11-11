@@ -1275,7 +1275,7 @@ GLOBAL_CONTEXT = {
     'social_gitlab': 'jezcope',
     'social_linkedin': 'jezcope',
     'social_twitter': 'jezcope',
-    'social_masto': ('petrichor', 'digipres.club'),
+    'social_masto': ('petrichor', 'scholar.social'),
     'social_orcid': '0000-0003-3629-1383',
     'social_pypi': 'jezcope',
     'social_keybase': 'jezcope',

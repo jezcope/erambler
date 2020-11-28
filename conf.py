@@ -1278,6 +1278,7 @@ GLOBAL_CONTEXT = {
     'social_masto': ('petrichor', 'scholar.social'),
     'social_orcid': '0000-0003-3629-1383',
     'social_pypi': 'jezcope',
+    'social_keyoxide': 'D9DA3E47E8BD377DA317B3D09E42CE071C4559D1',
     'social_keybase': 'jezcope',
 
     'gitlab': 'jezcope/erambler',

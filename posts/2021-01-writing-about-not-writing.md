@@ -1,6 +1,6 @@
 ---
 title: "Writing About Not Writing"
-description: "In which I get all reflective for no reason but maybe find some motivation to write more"
+description: "In which I get all reflective for no reason but maybe find some motivation to write more."
 slug: writing-about-not-writing
 date: 2021-01-08T16:11:36+00:00
 type: post

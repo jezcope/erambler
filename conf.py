@@ -1287,6 +1287,11 @@ GLOBAL_CONTEXT = {
         'name': 'erambler',
         'id': '0599621e-c4b4-4341-8e42-6f8b9c1d33cc',
     },
+
+    'webmention_js': {
+        'max-webmentions': 100,
+        'sort-dir': 'down',
+    },
 }
 
 # Add functions here and they will be called with template

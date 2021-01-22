@@ -1289,7 +1289,7 @@ GLOBAL_CONTEXT = {
     },
 
     'webmention_js': {
-        'max-webmentions': 100,
+        'max-webmentions': 200,
         'sort-dir': 'down',
     },
 }

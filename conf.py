@@ -1283,11 +1283,6 @@ GLOBAL_CONTEXT = {
 
     'gitlab': 'jezcope/erambler',
 
-    'netlify': {
-        'name': 'erambler',
-        'id': '0599621e-c4b4-4341-8e42-6f8b9c1d33cc',
-    },
-
     'webmention_js': {
         'max-webmentions': 200,
         'sort-dir': 'down',

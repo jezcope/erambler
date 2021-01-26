@@ -1,7 +1,0 @@
-{
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "less": "^3.12.2"
-  }
-}

@@ -8,3 +8,4 @@ state_data.json
 .ropeproject
 node_modules
 /drafts/
+deploy.yaml

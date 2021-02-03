@@ -1300,4 +1300,5 @@ SERIES_DESCRIPTIONS = {
     'swc-archaeology': 'the origins of [Software Carpentry](http://software-carpentry.org)',
     'lean-libraries': 'applying lean principles in library & information work',
     'aoc2017': 'my attempts to complete the [Advent of Code 2017](http://adventofcode.com) challenges',
+    'glam-dsn': 'a project to build a galleries, libraries, museums & archives data science network (GLAM DSN)',
 }

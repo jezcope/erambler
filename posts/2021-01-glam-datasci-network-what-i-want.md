@@ -5,6 +5,7 @@ description: |
 slug: glam-datasci-network-what-i-want
 date: 2021-01-18T17:27:00+00:00
 type: post
+series: glam-dsn
 tags:
 - Data science
 - GLAM

@@ -32,7 +32,7 @@ def deploy(c, clean=False):
         s.text = "add to IPFS"
         s.start()
         result = c.run(
-            f"ipfs add --recursive --quieter {CONFIG['deploy-dir']}",
+            f"ipfs add --recursive --hidden --quieter {CONFIG['deploy-dir']}",
             hide=True,
         )
         new_hash = result.stdout.rstrip()

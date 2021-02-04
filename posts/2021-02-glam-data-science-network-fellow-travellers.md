@@ -1,6 +1,8 @@
 ---
 title: "GLAM Data Science Network fellow travellers"
-description: "In which I get to grips with the existing groups and initiatives which could complement a GLAM DSN."
+description: |
+    In which I get to grips with the existing groups and initiatives which could
+    complement a GLAM DSN.
 slug: glam-data-science-network-fellow-travellers
 date: 2021-02-03T16:00:04+00:00
 type: post
@@ -13,9 +15,19 @@ tags:
 - Cultural heritage
 ---
 
-> “If you want to go fast, go alone. If you want to go far, go
-> together.” — [possibly an African
-> proverb?](https://www.goodreads.com/quotes/8024172-if-you-want-to-go-fast-go-alone-if-you)
+!!! updates
+    - *2021-02-04* Thanks to Gene [@dzshuniper@ausglam.space][] for suggesting
+    ADHO and a better attribution for the opening quote (see comments below for
+    details)
+
+    See [comments & webmentions](#webmentions) for details.
+
+[@dzshuniper@ausglam.space]: https://ausglam.space/@dzshuniper
+
+> “If you want to go fast, go alone. If you want to go far, go together.” —
+> *African proverb, probbly popularised in English by [Kenyan church leader Rev.
+> Samuel Kobia](https://diigo.com/0jn18x)
+> ([original](https://www.oikoumene.org/resources/documents/acceptance-of-election-as-general-secretary))*
 
 This quote is a popular one in the [Carpentries
 community](https://carpentries.org/), and I interpret it in this context
@@ -117,6 +129,8 @@ amount of funding to this project.
 -   [Digital Preservation Coalition](https://www.dpconline.org/) (DPC)
 -   [Software Sustainability Institute](https://software.ac.uk/) (SSI)
 -   [Research Data Alliance](https://rd-alliance.org/) (RDA)
+-   [Alliance of Digital Humanities Organizations (ADHO)](https://adho.org/)
+    -   ... and its [Libraries and Digital Humanities Special Interest Group (Lib&DH SIG)](https://adholibdh.github.io/)
 
 # Professional bodies
 

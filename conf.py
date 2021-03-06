@@ -189,7 +189,6 @@ THEME_COLOR = '#5670d4'
 POSTS = (
     ("posts/*.md", "blog", "post.tmpl"),
     ("posts/*.org", "blog", "post.tmpl"),
-    ("posts/*.ipynb", "blog", "post.tmpl"),
     ("posts/*.rst", "blog", "post.tmpl"),
     ("posts/*.txt", "blog", "post.tmpl"),
     ("posts/*.html", "blog", "post.tmpl"),
@@ -279,7 +278,6 @@ COMPILERS = {
     "txt2tags": ('.t2t',),
     "bbcode": ('.bb',),
     "wiki": ('.wiki',),
-    "ipynb": ('.ipynb',),
     "html": ('.html', '.htm'),
     # Pandoc detects the input from the source filename
     # but is disabled by default as it would conflict

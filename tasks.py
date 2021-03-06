@@ -3,21 +3,10 @@ from yaspin import yaspin
 import requests as rq
 from pathlib import Path
 from ruamel.yaml import YAML
+
 yaml = YAML()
 
-CONFIG = yaml.load(Path('deploy.yaml'))
-
-
-def pin_by_hash(hsh, name):
-    s = rq.Session()
-    s.headers = {"Authorization": f'Bearer {CONFIG["pinata-key"]}'}
-    params = {
-        "pinataMetadata": {"name": name},
-        "hashToPin": hsh,
-    }
-    r = s.post("https://api.pinata.cloud/pinning/pinByHash", json=params)
-    r.raise_for_status()
-    return r.json()
+CONFIG = yaml.load(Path("deploy.yaml"))
 
 
 @task
@@ -39,19 +28,48 @@ def deploy(c, clean=False):
         s.ok("[done]")
         s.write(f"- published at {new_hash}")
 
-        s.text = "pin at Pinata"
-        s.start()
-        try:
-            pin_result = pin_by_hash(new_hash, "erambler")
-            s.ok("[done]")
-            s.write(f'- pin status: {pin_result["status"]}')
-        except rq.HTTPError:
-            s.fail("[fail]")
+    pinata(c, new_hash, "erambler")
+    update_dnslink(c, f"/ipfs/{new_hash}")
 
-        s.text = "publish to IPNS"
-        s.start()
-        c.run(
-            f"ipfs name publish --key={CONFIG['ipns-key']} /ipfs/{new_hash}",
-            hide=True,
+
+@task
+def pinata(c, new_hash, name):
+    with yaspin(text="pin at pinata").yellow as s:
+        result = rq.post(
+            "https://api.pinata.cloud/pinning/pinByHash",
+            headers={"Authorization": f'Bearer {CONFIG["pinata-key"]}'},
+            json={
+                "pinataMetadata": {"name": name},
+                "hashToPin": new_hash,
+            },
         )
+        result.raise_for_status()
         s.ok("[done]")
+        details = result.json()
+        s.write(f'- pin status: {details["status"]}')
+
+
+@task
+def update_dnslink(c, ipfs_path):
+    with yaspin(text="update dnslink record").yellow as s:
+        cf_config = CONFIG["cloudflare"]
+        token = cf_config["token"]
+        zone_id = cf_config["zone_id"]
+        record_id = cf_config["record_id"]
+
+        result = rq.put(
+            f"https://api.cloudflare.com/client/v4/zones/{zone_id}/dns_records/{record_id}",
+            headers={"Authorization": f"Bearer {token}"},
+            json={
+                "type": "TXT",
+                "name": "_dnslink.erambler.co.uk",
+                "content": f"dnslink={ipfs_path}",
+                "ttl": 1,
+            },
+        )
+        result.raise_for_status()
+        details = result.json()
+        if details["success"]:
+            s.ok("[done]")
+        else:
+            s.fail()

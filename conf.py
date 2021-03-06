@@ -1274,6 +1274,7 @@ GLOBAL_CONTEXT = {
     'social_pypi': 'jezcope',
     'social_keyoxide': 'D9DA3E47E8BD377DA317B3D09E42CE071C4559D1',
     'social_keybase': 'jezcope',
+    'social_matrix': '@jez:petrichor.me',
 
     'gitlab': 'jezcope/erambler',
 
@@ -1300,3 +1301,4 @@ SERIES_DESCRIPTIONS = {
     'aoc2017': 'my attempts to complete the [Advent of Code 2017](http://adventofcode.com) challenges',
     'glam-dsn': 'a project to build a galleries, libraries, museums & archives data science network (GLAM DSN)',
 }
+

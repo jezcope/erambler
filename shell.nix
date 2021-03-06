@@ -23,26 +23,17 @@ let
   pythonWithPackages = python.withPackages (py: [
     py.python
 
+    # For locally-run tasks
     py.invoke
     py.rich
-    my_yaspin
     py.requests
+    my_yaspin
 
-    py.Nikola
-    py.markdown
-    py.jinja2
-    py.notebook
-    py.nbconvert
-    py.coconut
-    py.pygments
-    py.ruamel_yaml
-    py.arrow
-
+    # For `nikola auto` & `nikola serve`
     py.aiohttp
     py.ws4py
     py.watchdog
-    py.typogrify
   ]);
 in pkgs.mkShell {
-  buildInputs = with pkgs; [ pythonWithPackages zeromq lessc nodejs-14_x yarn ];
+  buildInputs = with pkgs; [ pythonWithPackages pipenv zeromq lessc nodejs-14_x yarn ];
 }

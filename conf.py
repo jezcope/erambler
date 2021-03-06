@@ -635,7 +635,11 @@ CACHE_FOLDER = '.cache'
 # use this feature if you do not understand what this means.
 
 # Compiler to process LESS files.
-LESS_COMPILER = 'lessc'
+LESS_COMPILER = './node_modules/.bin/lessc'
+if not Path(LESS_COMPILER).exists():
+    print(f"lessc not found at {LESS_COMPILER}")
+    print("Try running `yarn install`")
+    sys.exit(100)
 
 # A list of options to pass to the LESS compiler.
 # Final command is: LESS_COMPILER LESS_OPTIONS file.less

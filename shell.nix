@@ -27,6 +27,7 @@ let
     py.invoke
     py.rich
     py.requests
+    py.ruamel_yaml
     my_yaspin
 
     # For `nikola auto` & `nikola serve`
